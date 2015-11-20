@@ -286,12 +286,21 @@ void Plotter::createHistsFromTuple()
                 if(firstFile)
                 {
                     firstFile = false;
-                    for(auto& hist : histsToFill)
+                    for(auto ihist = histsToFill.begin(); ihist != histsToFill.end();)
                     {
                         using namespace std::placeholders;
                         
-                        //hist->fillHist = std::bind(Plotter::fillHist, hist->h, hist->variable, _1, _2);
-                        hist->fillHist = getHistFillFunc(hist->h, hist->variable, tr);
+                        try
+                        {
+                            (*ihist)->fillHist = getHistFillFunc((*ihist)->h, (*ihist)->variable, tr);
+                        }
+                        catch(std::string e)
+                        {
+                            ihist = histsToFill.erase(ihist);
+                            continue;
+                        }
+
+                        ++ihist;
                     }
                 }
 
@@ -316,6 +325,7 @@ void Plotter::createHistsFromTuple()
             f->Close();
         }
     }
+    exit(0);
 }
 
 void Plotter::createHistsFromFile()
@@ -875,15 +885,15 @@ std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(
     {
         if(type.find("*") != std::string::npos)
         {
-            if(type.find("TLorentzVector") != std::string::npos) return std::bind(fillHistFromVec<TLorentzVector*>, h, name, _1, _2);
+            if(type.find("TLorentzVector") != std::string::npos) return std::bind(returnHistFromVecFunc<TLorentzVector*>, h, name);
         }
         else
         {
-            if     (type.find("pair")           != std::string::npos) return std::bind(fillHistFromVec<std::pair<double, double>>, h, name, _1, _2);
-            else if(type.find("double")         != std::string::npos) return std::bind(fillHistFromVec<double>, h, name,  _1, _2);
-            else if(type.find("unsigned int")   != std::string::npos) return std::bind(fillHistFromVec<unsigned int>, h, name,  _1, _2);
-            else if(type.find("int")            != std::string::npos) return std::bind(fillHistFromVec<int>, h, name,  _1, _2);
-            else if(type.find("TLorentzVector") != std::string::npos) return std::bind(fillHistFromVec<TLorentzVector>, h, name,  _1, _2);
+            if     (type.find("pair")           != std::string::npos) return std::bind(returnHistFromVecFunc<std::pair<double, double>>, h, name);
+            else if(type.find("double")         != std::string::npos) return std::bind(returnHistFromVecFunc<double>, h, name);
+            else if(type.find("unsigned int")   != std::string::npos) return std::bind(returnHistFromVecFunc<unsigned int>, h, name);
+            else if(type.find("int")            != std::string::npos) return std::bind(returnHistFromVecFunc<int>, h, name);
+            else if(type.find("TLorentzVector") != std::string::npos) return std::bind(returnHistFromVecFunc<TLorentzVector>, h, name);
         }
     }
     else
@@ -893,6 +903,9 @@ std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(
         else if(type.find("int")          != std::string::npos) return std::bind(fillHistFromPrim<int>, h, name, _1, _2);
         else if(type.find("bool")         != std::string::npos) return std::bind(fillHistFromPrim<bool>, h, name, _1, _2);
     }
+
+    std::cout << "Plotter::getHistFillFunc(...):  Variable not found!!! Type:" << type << "\tVariable: " << name.name << "\t" << name.var << std::endl;
+    throw name.name;
 }
 
 template<> inline void Plotter::vectorFill(TH1 * const h, const VarName& name, const TLorentzVector& obj, const double weight)

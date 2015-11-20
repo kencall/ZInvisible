@@ -19,6 +19,8 @@
 #include "NTupleReader.h"
 #include "samples.h"
 
+#include <iostream>
+
 class Plotter
 {
 private:
@@ -244,12 +246,50 @@ private:
         }
     }
 
-    template<typename T> static void fillHistFromPrim(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    template<typename T> static std::function<void(const NTupleReader&, const double)> returnHistFromVecFunc(TH1* const h, const VarName& name)
     {
-        const auto& var = getVarFromVec<T>(name, tr);
-        if(&var != nullptr) h->Fill(tr.getVar<int>(name.name), weight);
+        using namespace std::placeholders;
+
+        if(name.var.compare("size") == 0)
+        {
+            return std::bind(fillHistFromVecSize<T>, h, name, _1, _2);
+        }
+        else
+        {
+            if(name.index >= 0)
+            {
+                return std::bind(fillHistFromVecSingle<T>, h, name, _1, _2);
+            }
+            else
+            {
+                return std::bind(fillHistFromVecAll<T>, h, name, _1, _2);
+            }
+        }
     }
 
+    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecSize(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& vec = tr.getVec<T>(name.name);
+        if(&vec != nullptr) h->Fill(vec.size(), weight);
+    }
+
+    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecSingle(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& var = getVarFromVec<T>(name, tr);
+        if(&var != nullptr) vectorFill(h, name, pointerDeref(var), weight);
+    }
+
+    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecAll(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& vec = tr.getVec<T>(name.name);
+        for(const auto& var : vec) vectorFill(h, name, pointerDeref(var), weight);
+    }
+
+    template<typename T> static void fillHistFromPrim(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& var = tr.getVar<T>(name.name);
+        if(&var != nullptr) h->Fill(var, weight);
+    }
 
     template<typename T, typename R = T> static const R& getVarFromVec(const VarName& name, const NTupleReader& tr)
     {
