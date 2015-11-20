@@ -97,6 +97,7 @@ void Plotter::Cuttable::extractCuts(std::set<std::string>& ab) const
 Plotter::HistSummary::HistSummary(std::string l, std::vector<Plotter::DataCollection> ns, std::pair<int, int> ratio, std::string cuts, int nb, double ll, double ul, bool log, bool norm, std::string xal, std::string yal, bool isRatio) : Cuttable(cuts), name(l), nBins(nb), low(ll), high(ul), isLog(log), isNorm(norm), xAxisLabel(xal), yAxisLabel(yal), ratio(ratio), isRatio(isRatio)
 {
     parseName(ns);
+    
 }
 
 void Plotter::HistSummary::parseName(std::vector<Plotter::DataCollection>& ns)
@@ -146,6 +147,10 @@ void Plotter::parseSingleVar(const std::string& name, VarName& var)
 }
 
 Plotter::HistSummary::~HistSummary()
+{
+}
+
+Plotter::HistCutSummary::HistCutSummary(const std::string& lab, const std::string& name, const VarName v, const HistSummary* hsum, const DatasetSummary& ds) : label(lab), name(name), h(nullptr), variable(v), hs(hsum), dss(ds) 
 {
 }
 
@@ -212,8 +217,7 @@ void Plotter::createHistsFromTuple()
                 {
                     //annoying hack to fix vector pointer issue
                     if(hist->hs == nullptr) hist->hs = &hs;
-
-                    // Make histogram if it is blank
+                    
                     if(hist->h == nullptr)
                     {
                         hist->h = new TH1D(hist->name.c_str(), hist->variable.name.c_str(), hs.nBins, hs.low, hs.high);
@@ -243,6 +247,7 @@ void Plotter::createHistsFromTuple()
 
         int fileCount = 0, startCount = 0;
         int NEvtsTotal = 0;
+        bool firstFile = true;
         for(const std::string& fname : file.filelist_)
         {
             if(startCount++ < startFile_) continue;
@@ -277,6 +282,19 @@ void Plotter::createHistsFromTuple()
 
             while(tr.getNextEvent())
             {
+                //Make links for filling histograms, must be done after first call of tr.getNextEvent()
+                if(firstFile)
+                {
+                    firstFile = false;
+                    for(auto& hist : histsToFill)
+                    {
+                        using namespace std::placeholders;
+                        
+                        //hist->fillHist = std::bind(Plotter::fillHist, hist->h, hist->variable, _1, _2);
+                        hist->fillHist = getHistFillFunc(hist->h, hist->variable, tr);
+                    }
+                }
+
                 if(maxEvts_ > 0 && NEvtsTotal > maxEvts_) break;
                 if(tr.getEvtNum() %1000 == 0) std::cout << "Event #: " << tr.getEvtNum() << std::endl;
                 for(auto& hist : histsToFill)
@@ -290,7 +308,8 @@ void Plotter::createHistsFromTuple()
                     //fill histograms here
                     double weight = file.getWeight() * hist->dss.getWeight(tr) * hist->dss.kfactor;
 
-                    fillHist(hist->h, hist->variable, tr, weight);
+                    //fillHist(hist->h, hist->variable, tr, weight);
+                    hist->fillHist(tr, weight);
                 }
                 ++NEvtsTotal;
             }
@@ -842,6 +861,37 @@ void Plotter::fillHist(TH1 * const h, const VarName& name, const NTupleReader& t
         if     (type.find("double")         != std::string::npos) h->Fill(tr.getVar<double>(name.name), weight);
         else if(type.find("unsigned int")   != std::string::npos) h->Fill(tr.getVar<unsigned int>(name.name), weight);
         else if(type.find("int")            != std::string::npos) h->Fill(tr.getVar<int>(name.name), weight);
+    }
+}
+
+std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(TH1 * const h, const VarName& name, const NTupleReader& tr)
+{
+    using namespace std::placeholders;
+
+    std::string type;
+    tr.getType(name.name, type);
+
+    if(type.find("vector") != std::string::npos)
+    {
+        if(type.find("*") != std::string::npos)
+        {
+            if(type.find("TLorentzVector") != std::string::npos) return std::bind(fillHistFromVec<TLorentzVector*>, h, name, _1, _2);
+        }
+        else
+        {
+            if     (type.find("pair")           != std::string::npos) return std::bind(fillHistFromVec<std::pair<double, double>>, h, name, _1, _2);
+            else if(type.find("double")         != std::string::npos) return std::bind(fillHistFromVec<double>, h, name,  _1, _2);
+            else if(type.find("unsigned int")   != std::string::npos) return std::bind(fillHistFromVec<unsigned int>, h, name,  _1, _2);
+            else if(type.find("int")            != std::string::npos) return std::bind(fillHistFromVec<int>, h, name,  _1, _2);
+            else if(type.find("TLorentzVector") != std::string::npos) return std::bind(fillHistFromVec<TLorentzVector>, h, name,  _1, _2);
+        }
+    }
+    else
+    {
+        if     (type.find("double")       != std::string::npos) return std::bind(fillHistFromPrim<double>, h, name, _1, _2);
+        else if(type.find("unsigned int") != std::string::npos) return std::bind(fillHistFromPrim<unsigned int>, h, name, _1, _2);
+        else if(type.find("int")          != std::string::npos) return std::bind(fillHistFromPrim<int>, h, name, _1, _2);
+        else if(type.find("bool")         != std::string::npos) return std::bind(fillHistFromPrim<bool>, h, name, _1, _2);
     }
 }
 
