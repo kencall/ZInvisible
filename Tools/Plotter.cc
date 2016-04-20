@@ -1119,7 +1119,7 @@ void Plotter::plot()
         mark.DrawLatex(1 - gPad->GetRightMargin(), 1 - (gPad->GetTopMargin() - 0.017), lumistamp);
 
         fixOverlay();
-        c->Print((plotDir_ + hist.name+".png").c_str());
+        //c->Print((plotDir_ + hist.name+".png").c_str());
         c->Print((plotDir_ + hist.name+".pdf").c_str());
 
         delete leg;

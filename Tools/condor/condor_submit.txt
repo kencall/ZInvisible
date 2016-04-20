@@ -1,0 +1,2046 @@
+universe = vanilla
+Executable = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh
+Requirements = OpSys == "LINUX"&& (Arch != "DUMMY" )
+Should_Transfer_Files = YES
+WhenToTransferOutput = ON_EXIT
+Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/makePlots, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/bTagEffHists.root,  $ENV(CMSSW_BASE)/src/ZInvisible/Tools/lepEffHists.root,  $ENV(CMSSW_BASE)/src/ZInvisible/Tools/njetWgtHists.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/dataMCweights.root, $ENV(CMSSW_BASE)/src/SusyAnaTools/Tools/CSVFiles/CSVv2_mod.csv, $ENV(CMSSW_BASE)/lib/$ENV(SCRAM_ARCH)/librecipeAUXOxbridgeMT2.so
+Output = logs/makePlots_$(Process).stdout
+Error = logs/makePlots_$(Process).stderr
+Log = logs/makePlots_$(Process).log
+notify_user = ${LOGNAME}@FNAL.GOV
+x509userproxy = $ENV(X509_USER_PROXY)
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 0 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 5 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 10 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 15 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 20 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 25 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 30 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 35 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 40 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 45 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 50 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 55 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 60 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 65 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 70 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 75 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 80 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 85 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 90 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 95 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 100 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 105 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 110 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 115 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 120 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 125 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 130 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 135 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 140 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 145 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 150 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 155 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 160 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 165 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 170 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 175 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 180 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 185 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 190 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 195 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 200 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 205 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 210 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 215 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 220 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 225 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 230 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 235 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 240 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 245 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 250 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 255 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 260 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 265 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 270 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 275 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 280 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 285 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 290 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 295 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 300 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 305 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 310 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 315 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 320 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 325 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 330 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 335 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 340 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 345 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 350 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 355 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 360 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 365 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 370 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 375 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 380 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 385 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 390 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 395 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 400 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 405 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 410 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 415 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 420 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 425 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 430 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 435 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 440 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 445 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 450 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 455 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 460 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 465 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 470 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 475 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 480 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 485 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 490 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 495 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 500 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 505 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 510 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 515 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 520 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 525 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 530 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 535 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 540 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 545 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 550 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 555 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 560 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 565 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 570 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 575 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 580 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 585 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 590 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 595 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 600 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 605 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 610 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 615 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 620 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 625 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 630 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 635 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 640 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 645 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 650 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 655 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 660 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 665 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 670 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 675 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 680 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 685 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 690 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 695 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 700 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 705 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 710 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 715 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 720 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 725 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 730 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 735 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 740 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 745 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 750 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 755 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 760 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 765 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 770 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 775 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 780 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 785 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 790 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 795 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 800 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 805 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 810 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 815 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 820 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 825 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 830 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 835 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 840 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 845 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 850 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 855 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 860 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 865 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 870 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 875 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 880 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 885 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 890 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 895 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 900 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 905 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 910 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 915 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 920 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 925 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 930 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 935 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 940 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 945 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 950 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 955 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 960 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 965 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 970 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 975 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 980 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 985 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 990 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 995 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1000 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1005 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1010 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1015 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1020 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1025 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1030 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1035 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1040 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1045 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1050 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1055 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1060 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1065 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1070 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1075 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1080 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1085 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1090 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1095 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1100 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1105 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1110 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1115 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1120 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1125 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1130 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1135 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1140 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1145 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1150 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1155 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1160 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1165 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1170 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1175 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1180 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1185 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1190 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1195 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1200 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1205 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1210 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1215 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1220 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1225 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1230 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1235 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1240 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1245 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1250 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1255 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1260 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1265 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1270 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1275 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1280 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1285 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1290 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1295 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1300 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1305 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1310 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1315 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1320 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepT $ENV(CMSSW_BASE) 5 1325 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromT_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 0 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 5 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 10 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 15 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 20 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 25 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 30 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 35 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 40 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 45 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 50 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 55 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 60 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 65 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 70 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 75 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 80 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 85 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 90 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 95 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 100 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 105 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 110 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 115 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 120 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 125 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 130 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 135 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 140 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 145 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 150 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 155 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 160 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 165 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 170 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 175 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 180 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 185 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 190 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 195 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 200 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 205 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 210 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 215 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 220 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 225 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 230 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 235 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 240 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 245 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 250 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 255 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 260 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 265 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 270 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 275 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 280 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 285 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 290 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 295 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 300 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 305 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 310 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 315 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 320 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 325 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 330 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 335 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 340 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 345 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 350 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 355 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 360 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 365 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 370 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 375 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 380 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 385 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 390 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 395 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 400 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 405 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 410 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 415 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 420 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 425 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 430 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 435 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 440 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 445 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 450 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 455 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 460 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 465 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 470 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 475 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 480 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 485 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 490 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 495 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 500 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 505 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 510 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 515 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 520 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 525 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 530 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 535 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 540 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 545 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 550 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 555 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 560 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 565 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 570 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 575 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 580 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 585 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 590 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 595 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 600 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 605 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 610 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 615 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 620 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 625 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 630 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 635 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 640 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 645 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 650 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 655 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 660 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 665 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 670 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 675 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 680 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 685 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 690 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 695 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 700 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 705 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 710 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 715 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 720 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 725 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 730 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 735 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 740 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 745 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 750 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 755 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 760 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 765 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 770 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 775 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 780 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 785 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 790 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 795 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 800 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 805 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 810 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 815 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 820 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 825 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 830 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 835 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 840 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 845 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 850 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 855 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 860 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 865 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 870 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 875 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 880 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 885 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 890 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 895 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 900 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 905 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 910 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 915 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 920 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 925 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 930 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 935 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 940 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 945 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 950 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 955 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 960 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 965 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 970 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 975 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 980 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 985 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 990 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 995 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1000 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1005 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1010 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1015 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1020 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1025 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1030 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1035 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1040 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1045 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1050 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1055 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1060 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1065 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1070 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1075 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1080 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1085 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1090 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1095 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1100 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1105 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1110 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1115 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1120 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1125 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1130 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1135 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1140 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1145 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1150 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1155 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1160 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1165 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1170 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1175 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1180 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1185 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1190 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1195 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1200 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1205 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1210 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1215 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1220 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1225 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1230 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1235 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1240 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1245 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1250 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1255 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1260 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1265 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1270 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1275 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1280 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1285 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1290 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1295 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1300 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1305 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1310 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1315 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1320 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1325 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1330 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1335 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1340 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1345 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarSingleLepTbar $ENV(CMSSW_BASE) 5 1350 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_SingleLeptFromTbar_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 0 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 5 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 10 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 15 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 20 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 25 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 30 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 35 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 40 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 45 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 50 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 55 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 60 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 65 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 70 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 75 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 80 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 85 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 90 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 95 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 100 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 105 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 110 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 115 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 120 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 125 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 130 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 135 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 140 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 145 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 150 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 155 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 160 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 165 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 170 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 175 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 180 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 185 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 190 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 195 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 200 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 205 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 210 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 215 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 220 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 225 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 230 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 235 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 240 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 245 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 250 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 255 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 260 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 265 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 270 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 275 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 280 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 285 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 290 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 295 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 300 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 305 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 310 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 315 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 320 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 325 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 330 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 335 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 340 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 345 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 350 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 355 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 360 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 365 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 370 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 375 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 380 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 385 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 390 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 395 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 400 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 405 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 410 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 415 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 420 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 425 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 430 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 435 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 440 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 445 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 450 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 455 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 460 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 465 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 470 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 475 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 480 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 485 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 490 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 495 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 500 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 505 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 510 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 515 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 520 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 525 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 530 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 535 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 540 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 545 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 550 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 555 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 560 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 565 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 570 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 575 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 580 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 585 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 590 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 595 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 600 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 605 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 610 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 615 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 620 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 625 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 630 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 635 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 640 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 645 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 650 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 655 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 660 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 665 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 670 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 675 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 680 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 685 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 690 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 695 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+
+Arguments = TTbarDiLep $ENV(CMSSW_BASE) 5 700 2262.000000 /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_DiLept_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt
+Queue
+

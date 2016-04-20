@@ -30,6 +30,13 @@ namespace plotterFunctions
         TH2* muEffIso;
         TH2* elecEffReco;
         TH2* elecEffIso;
+	TH2* elecEffRecoIso;//
+	TH2* elecEffCatchAll;//
+
+	TH1* hElecSamAccZPt;
+	TH2* hElecSamRecZPtZEta;
+	TH2* hElecSamIsoGmActDr;
+
         TH2* muAcc;
         TH1* hZEff;
         TH1* hZAcc;
@@ -149,77 +156,95 @@ namespace plotterFunctions
             zMassCurrent = 1.0e300;
             double zEffElec = 1.0e100, zAccElec = 1.0e100;
             for(int i = 0; i < cutElecVec.size(); ++i)
-            {
+	      {
                 if(cutElecVec[i].Pt() < 10) continue;
                 for(int j = 0; j < i && j < cutElecVec.size(); ++j)
-                {
+		  {
                     if(cutElecVec[j].Pt() < 10) continue;
                     double zm = (cutElecVec[i] + cutElecVec[j]).M();
-                    if(fabs(zm - zMass) < fabs(zMassCurrent - zMass))
-                    {
-                        zMassCurrent = zm;
-                        double elec1pt = cutElecVec[i].Pt();
-                        double elec2pt = cutElecVec[j].Pt();
+                    if (!(fabs(zm - zMass) < fabs(zMassCurrent - zMass))) continue;
+		    zMassCurrent = zm;
+		    double elec1pt = cutElecVec[i].Pt();
+		    double elec2pt = cutElecVec[j].Pt();
 
-                        double elec1Act = cutElecActivity[i];
-                        double elec2Act = cutElecActivity[j];
+		    double elec1Act = cutElecActivity[i];
+		    double elec2Act = cutElecActivity[j];
 
-                        //set to not overflow histograms
-                        if(elec1pt >= 2000.0) elec1pt = 1999.9;
-                        if(elec2pt >= 2000.0) elec2pt = 1999.9;
+		    //set to not overflow histograms
+		    if(elec1pt >= 2000.0) elec1pt = 1999.9;
+		    if(elec2pt >= 2000.0) elec2pt = 1999.9;
 
-                        //Get elec efficiencies
-                        double elecEff1 = 0.0, elecEff2 = 0.0;
-                        if(elecEffReco && elecEffIso)
-                        {
-                            //Fit to iso eff (eff = p0 + p1*pt + p2*pt^2
-                            const double fitStart =200.0;  // extended to 2000 GeV
-                            const double p0 =     0.989411; //   +/-   1.18467
-                            const double p1 =  3.66321e-06; //   +/-   0.00346729
-                            const double p2 = -5.68292e-09; //   +/-   1.90334e-06
+		    //Get elec efficiencies
+		    double elecEff1 = 0.0, elecEff2 = 0.0;
+		    if(!(elecEffReco && elecEffIso && elecEffRecoIso)) continue;//added third argument
+									 //Fit to iso eff (eff = p0 + p1*pt + p2*pt^2
+									 const double fitStart =200.0;  // extended to 2000 GeV
+		    const double p0 =     0.989411; //   +/-   1.18467
+		    const double p1 =  3.66321e-06; //   +/-   0.00346729
+		    const double p2 = -5.68292e-09; //   +/-   1.90334e-06
 
-                            double elecIsoEff = 0.0;
+		    double elecIsoEff = 0.0;
 
-                            //int isoPtBin = elecEffIso->GetXaxis()->FindBin(elec1pt);
-                            //if(elec1pt > fitStart) elecIsoEff = p0 + p1*elec1pt + p2*elec1pt*elec1pt;
-                            //else                   elecIsoEff = elecEffIso->GetBinContent(isoPtBin);
+		    //int isoPtBin = elecEffIso->GetXaxis()->FindBin(elec1pt);
+		    //if(elec1pt > fitStart) elecIsoEff = p0 + p1*elec1pt + p2*elec1pt*elec1pt;
+		    //else                   elecIsoEff = elecEffIso->GetBinContent(isoPtBin);
 
-                            int recoPtBin = elecEffReco->GetXaxis()->FindBin(elec1pt);
-                            if(recoPtBin >= elecEffReco->GetNbinsX()) recoPtBin = elecEffReco->GetNbinsX();
+		    int recoPtBin = elecEffReco->GetXaxis()->FindBin(elec1pt);
+		    if(recoPtBin >= elecEffReco->GetNbinsX()) recoPtBin = elecEffReco->GetNbinsX();
 
-                            int recoActBin = elecEffReco->GetYaxis()->FindBin(elec1Act);
-                            if(recoActBin >= elecEffReco->GetNbinsY()) recoActBin = elecEffReco->GetNbinsY();
+		    int recoActBin = elecEffReco->GetYaxis()->FindBin(elec1Act);
+		    if(recoActBin >= elecEffReco->GetNbinsY()) recoActBin = elecEffReco->GetNbinsY();
 
-                            elecIsoEff = elecEffIso->GetBinContent(recoPtBin, recoActBin);
-                            elecEff1 = elecIsoEff * elecEffReco->GetBinContent(recoPtBin, recoActBin);
-                            //std::cout << elec1pt << "\t" << recoPtBin << "\t" <<  elec1Act << "\t" << recoActBin << "\t" << elecEff1 << "\t" << elecIsoEff << "\t" << elecEffReco->GetBinContent(recoPtBin, recoActBin) << std::endl;
+		    elecIsoEff = elecEffIso->GetBinContent(recoPtBin, recoActBin);
+		    elecEff1 = elecIsoEff * elecEffReco->GetBinContent(recoPtBin, recoActBin);
+		    //std::cout << elec1pt << "\t" << recoPtBin << "\t" <<  elec1Act << "\t" << recoActBin << "\t" << elecEff1 << "\t" << elecIsoEff << "\t" << elecEffReco->GetBinContent(recoPtBin, recoActBin) << std::endl;
 
-                            elecIsoEff = 0.0;
-                            //isoPtBin = elecEffIso->GetXaxis()->FindBin(elec2pt);
-                            //if(elec2pt > fitStart) elecIsoEff = p0 + p1*elec2pt + p2*elec2pt*elec2pt;
-                            //else                   elecIsoEff = elecEffIso->GetBinContent(isoPtBin);
+		    elecIsoEff = 0.0;
+		    //isoPtBin = elecEffIso->GetXaxis()->FindBin(elec2pt);
+		    //if(elec2pt > fitStart) elecIsoEff = p0 + p1*elec2pt + p2*elec2pt*elec2pt;
+		    //else                   elecIsoEff = elecEffIso->GetBinContent(isoPtBin);
 
-                            recoPtBin = elecEffReco->GetXaxis()->FindBin(elec2pt);
-                            if(recoPtBin >= elecEffReco->GetNbinsX()) recoPtBin = elecEffReco->GetNbinsX();
+		    recoPtBin = elecEffReco->GetXaxis()->FindBin(elec2pt);
+		    if(recoPtBin >= elecEffReco->GetNbinsX()) recoPtBin = elecEffReco->GetNbinsX();
 
-                            recoActBin = elecEffReco->GetYaxis()->FindBin(elec2Act);
-                            if(recoActBin >= elecEffReco->GetNbinsY()) recoActBin = elecEffReco->GetNbinsY();
+		    recoActBin = elecEffReco->GetYaxis()->FindBin(elec2Act);
+		    if(recoActBin >= elecEffReco->GetNbinsY()) recoActBin = elecEffReco->GetNbinsY();
 
-                            elecIsoEff = elecEffIso->GetBinContent(recoPtBin, recoActBin);
-                            elecEff2 = elecIsoEff * elecEffReco->GetBinContent(recoPtBin, recoActBin);
-                            //std::cout << elec2pt << "\t" << recoPtBin << "\t" << elec2Act << "\t" << recoActBin << "\t" << elecEff2 << "\t" << elecIsoEff << "\t" << elecEffReco->GetBinContent(recoPtBin, recoActBin) << std::endl;
-                        }
+		    elecIsoEff = elecEffIso->GetBinContent(recoPtBin, recoActBin);
+		    elecEff2 = elecIsoEff * elecEffReco->GetBinContent(recoPtBin, recoActBin);
+		    //std::cout << elec2pt << "\t" << recoPtBin << "\t" << elec2Act << "\t" << recoActBin << "\t" << elecEff2 << "\t" << elecIsoEff << "\t" << elecEffReco->GetBinContent(recoPtBin, recoActBin) << std::endl;
+		    /* if((elec1pt > 33 && elec2pt > 33) && (elecEff1 < 1.0e-5 || elecEff2 < 1.0e-5))// /\*> 33*\/ for comment! */
+		    /*   { */
+		    /* 	std::cout << "SMALL elecEff!!! elecEff1: " << elecEff1 << "\telecEff2: " << elecEff2 << "\t" << elec1pt << "\t" << elec2pt << std::endl; */
+		    /* 	zEffElec = 1.0e-10; */
+		    /*   } */
+		    /* else zEffElec = elecEff1 * elecEff2;//this is one of the main weights */
+
+		    double Zpt = (cutElecVec[i]+cutElecVec[j]).Pt();
+		    double Dr = cutElecVec[i].DeltaR(cutElecVec[j]);
+		    int recoIsoZptBin = elecEffRecoIso->GetXaxis()->FindBin(Zpt);
+		    int recoIsoDrBin = elecEffRecoIso->GetYaxis()->FindBin(Dr);
+		    double effRecoIso_ = elecEffRecoIso->GetBinContent(recoIsoZptBin, recoIsoDrBin);
+		    double gmAct = TMath::Sqrt(elec1Act*elec2Act);
+		    int gmActBin =  elecEffReco->GetYaxis()->FindBin(gmAct);
+		    //zEffElec = effRecoIso_;//this is one of the main weights//catch all
+		    //zEffElec = 	elecEffCatchAll->GetBinContent(recoIsoZptBin,gmActBin);//catchall
 
 
-                        if((elec1pt > 33 && elec2pt) && (elecEff1 < 1.0e-5 || elecEff2 < 1.0e-5))
-                        {
-                            std::cout << "SMALL elecEff!!! elecEff1: " << elecEff1 << "\telecEff2: " << elecEff2 << "\t" << elec1pt << "\t" << elec2pt << std::endl;
-                            zEffElec = 1.0e-10;
-                        }
-                        else zEffElec = elecEff1 * elecEff2;
-                    }
-                }
-            }
+		    int accPtBin = hElecSamAccZPt->GetXaxis()->FindBin(Zpt);
+		    zAccElec = hElecSamAccZPt->GetBinContent(accPtBin);
+		    double eff = 1.0;
+		    double ZEta = fabs((cutElecVec[i]+cutElecVec[j]).Eta());
+		    int recPtBin = hElecSamRecZPtZEta->GetXaxis()->FindBin(Zpt);
+		    int recEtaBin = hElecSamRecZPtZEta->GetYaxis()->FindBin(ZEta);
+		    eff*=hElecSamRecZPtZEta->GetBinContent(recPtBin,recEtaBin);//these are x an dy
+		    
+		    int isoGmActBin = hElecSamIsoGmActDr->GetXaxis()->FindBin(gmAct);
+		    int isoDrBin = hElecSamIsoGmActDr->GetYaxis()->FindBin(Dr);
+		    eff*=hElecSamRecZPtZEta->GetBinContent(isoGmActBin,isoDrBin);//these are x an dy	
+		    zEffElec = eff;	    
+		  }
+	      }
 
             double genCleanHt = ht;
             for(auto& tlvp : genMuInAcc) if(tlvp->Pt() > 50) genCleanHt -= tlvp->Pt();
@@ -303,7 +328,7 @@ namespace plotterFunctions
                 else                  zAccElec = elecAcc_p2 - exp(elecAcc_p0 + elecAcc_p1 * bestRecoZPt);
 
                 //Pt portion of the acceptance
-                zAccElec = hZAccLepPtElec->GetBinContent(hZAccLepPtElec->GetXaxis()->FindBin(bestRecoZPt));
+                zAccElec = hZAccLepPtElec->GetBinContent(hZAccLepPtElec->GetXaxis()->FindBin(bestRecoZPt));//This is one of the main weights' numerators
             }
 
             if(passElecZinvSel && zAccElec < 0.05)
@@ -374,6 +399,12 @@ namespace plotterFunctions
                 hZAcc          = static_cast<TH1*>(f->Get("hZAccPtSmear_ratio"));
                 elecEffReco    = static_cast<TH2*>(f->Get("hElecEffPtActReco_ratio"));
                 elecEffIso     = static_cast<TH2*>(f->Get("hElecEffPtActIso_ratio"));
+                elecEffRecoIso     = static_cast<TH2*>(f->Get("hElecEffDrZptRecoIso_ratio"));//Sam
+                elecEffCatchAll = static_cast<TH2*>(f->Get("hElecEffPtCatchAll_ratio"));//
+		hElecSamAccZPt = static_cast<TH1*>(f->Get("hElecSamAccZPt_ratio"));//
+                hElecSamRecZPtZEta     = static_cast<TH2*>(f->Get("hElecSamRecZPtZEta_ratio"));
+                hElecSamIsoGmActDr     = static_cast<TH2*>(f->Get("hElecSamIsoGmActDr_ratio"));
+                hZAccLepPtElec = static_cast<TH1*>(f->Get("hZElecAccPtPtSmear_ratio"));
                 hZAccElec      = static_cast<TH1*>(f->Get("hZElecAccPtSmear_ratio"));
                 hZAccLepPt     = static_cast<TH1*>(f->Get("hZAccPtMuPtSmear_ratio"));
                 hZAccLepPtElec = static_cast<TH1*>(f->Get("hZElecAccPtPtSmear_ratio"));
@@ -483,15 +514,17 @@ namespace plotterFunctions
             else
             {
                 std::cout << "Failed to open: njetWgtHists.root" << std::endl;
-            }
+            }//elZinv_g1b, elZinv_0b
 
             f = new TFile("dataMCweights.root");
             if(f)
             {
                 njWTTbar_0b  = static_cast<TH1*>(f->Get("DataMC_nj_elmuZinv_0b_ht200_dphi"));
-                njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_0b_ht200_dphi"));
                 njWTTbar_g1b = static_cast<TH1*>(f->Get("DataMC_nj_elmuZinv_g1b_ht200_dphi"));
-                njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_g1b_ht200_dphi"));
+                //njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_0b_ht200_dphi"));//temporarily nixed
+                //njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_g1b_ht200_dphi"));//half baked for electron study
+                njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_0b_ht200_dphi"));//
+                njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_g1b_ht200_dphi"));//
                 f->Close();
                 delete f;
             }
@@ -625,7 +658,7 @@ namespace plotterFunctions
                     cutElecVecRecoOnly.push_back(elesLVec[i]);
                 }
 
-                if(AnaFunctions::passElectron(elesLVec[i], elesMiniIso[i], -1, elesisEB[i], elesFlagIDVec[i], AnaConsts::elesMiniIsoArr))
+                if(AnaFunctions::passElectron(elesLVec[i], elesMiniIso[i], -1, elesisEB[i], elesFlagIDVec[i], AnaConsts::elesMiniIsoArr) && elesLVec[i].Pt()>10)//was 33
                 {
                     cutElecVec->push_back(elesLVec[i]);
                     cutElecCharge->push_back(elesCharge[i]);
@@ -726,7 +759,7 @@ namespace plotterFunctions
                     {
                         genElec->push_back(&genDecayLVec[i]);
                         genElecAct->push_back(W_emu_pfActivityVec[index]);
-                        if(AnaFunctions::passElectronAccOnly(genDecayLVec[i], AnaConsts::elesMiniIsoArr) && genDecayLVec[i].Pt() > 20)
+                        if(AnaFunctions::passElectronAccOnly(genDecayLVec[i], AnaConsts::elesMiniIsoArr) && genDecayLVec[i].Pt() > 10)//it was 20
                         {
                             genElecInAcc->push_back(&genDecayLVec[i]);
                             genElecInAccAct->push_back(genElecAct->back());

@@ -13,9 +13,12 @@ xrdcp root://cmseos.fnal.gov/$(echo $6 | sed 's|/eos/uscms||') .
 
 ls
 
-./makePlots -st --condor -D $1 -N $3 -M $4 -L $5
+./makePlots -s --condor -D $1 -N $3 -M $4 -L $5
 
 ls
+
+xrdcp histoutput_$1_$4.root root://cmseos.fnal.gov//store/user/sbein/HadStop/HistOutput
+rm histoutput_$1_$4.root
 
 rm $(echo $6 | sed 's|.*/||')
 
