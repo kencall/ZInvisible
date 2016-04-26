@@ -7,9 +7,10 @@
 #include "ScaleFactors.h"
 
 #include "TopTagger.h"
-#include "TTModule.h"
+//#include "TTModule.h"
 #include "TopTaggerUtilities.h"
 #include "TopTaggerResults.h"
+//#include "TTException.h"
 
 #include "TH1.h"
 #include "TH2.h"
@@ -882,6 +883,9 @@ namespace plotterFunctions
             bool passElecZinvSel = passMuonVeto && (cutElecVec->size() == 2 && sumElecCharge == 0 && (*cutElecVec)[0].Pt() > highElecPt && (*cutElecVec)[1].Pt() > minElecPt) && (bestRecoElecZ.M() > zMassMin) && (bestRecoElecZ.M() < zMassMax);
             bool passElMuZinvSel = (cutMuVec->size() == 1 && cutElecVec->size() == 1 && sumElecCharge == -sumMuCharge && (*cutMuVec)[0].Pt() > highMuPt && (*cutElecVec)[0].Pt() > minMuPt) && (bestRecoElMuZ.M() > zMassMin) && (bestRecoElMuZ.M() < zMassMax);
 
+            ////HACK////
+            passMuZinvSel = passMuZinvSel || passElecZinvSel;
+
             double cutMuPt1 = -999.9;
             double cutMuPt2 = -999.9;
             if(cutMuVec->size() >= 1) cutMuPt1 = cutMuVec->at(0).Pt();
@@ -1582,7 +1586,6 @@ namespace plotterFunctions
 
             tt = new TopTagger();
             tt->setCfgFile("TopTagger.cfg");
-            //tt = ttf.makeTopTagger();
 	}
 
         ~PrepareTopVars()
