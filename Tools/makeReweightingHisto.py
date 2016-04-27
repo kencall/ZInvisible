@@ -225,14 +225,16 @@ def shapeSyst(filename):
     fout = TFile.Open("syst_shape.root", "RECREATE")
     # Run over the relevant histograms
     # histo names
-    hnameData = "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)sDatadata"
-    hnames2 =  ["%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)sDYstack",
-                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)sDY HT<100stack",
-                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)st#bar{t}stack",
-                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)ssingle topstack",
-                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)st#bar{t}Zstack",
-                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)sDibosonstack",
-                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)sRarestack"]
+
+
+    hnameData = "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)sDatadata"
+    hnames2 =  ["%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)sDYstack",
+                #"%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_mt2%(var)s%(var)sDY HT<100stack",
+                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)st#bar{t}stack",
+                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)sSingle topstack",
+                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)st#bar{t}Zstack",
+                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)sDibosonstack",
+                "%(var)s/DataMCw_SingleMuon_%(name)s_muZinv_loose0_ntop%(var)s%(var)sRarestack"]
 
     varList = [#["met", "cleanMetPt",             [0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 1500], "MET" ],
                #["mt2", "best_had_brJet_MT2Zinv", [0, 50, 100, 150, 200, 250, 300, 350, 400, 1500],      "M_{T2}" ],

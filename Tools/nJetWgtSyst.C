@@ -193,6 +193,9 @@ int main()
 
     AnaFunctions::prepareTopTagger();
 
+    try
+    {
+
     //for(auto& fs : sc["DYJetsToLL"])
     for(auto& fs : sc["ZJetsToNuNu"])
     {
@@ -200,10 +203,12 @@ int main()
         //size_t stop  = fs.filePath.rfind('.');
         //std::string treeName = fs.filePath.substr(start + 1, stop - start - 1);
 
+        std::cout << "File: " << fs.filePath << std::endl;
+        std::cout << "Tree: " << fs.treePath << std::endl;
+
         TChain *t = new TChain(fs.treePath.c_str());
         fs.addFilesToChain(t);
 
-        std::cout << "Tree: " << fs.treePath << std::endl;
         //std::cout << "sigma*lumi: " << fs.getWeight() << std::endl;
 
         plotterFunctions::PrepareMiniTupleVars pmt(false);
@@ -399,6 +404,11 @@ int main()
                 }
             }
         }
+    }
+    }
+    catch(const std::string& e)
+    {
+        std::cout << e << std::endl;
     }
 
     for(int ih = 0; ih < 5; ++ih)
