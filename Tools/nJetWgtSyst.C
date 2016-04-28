@@ -18,14 +18,14 @@ int main()
     TH1::AddDirectory(false);
 
     TH1* njWTTbar_0b;
-    TH1* njWDYZ_0b;
+    TH1* njWDYZ_0b, *njWDYZ_0bElec;//Sam
     TH1* njWTTbar_g1b;
-    TH1* njWDYZ_g1b;
+    TH1* njWDYZ_g1b, *njWDYZ_g1bElec;//Sam
 
-    TH1* shapeMET;
-    TH1* shapeMT2;
-    TH1* shapeNT;
-    TH1* shapeNB;
+    TH1* shapeMET, *shapeMETElec;
+    TH1* shapeMT2, *shapeMT2Elec;
+    TH1* shapeNT, *shapeNTElec;
+    TH1* shapeNB, *shapeNBElec;
     
     TRandom3 tr3(153474);
 
@@ -34,8 +34,11 @@ int main()
     {
         njWTTbar_0b  = static_cast<TH1*>(f->Get("DataMC_nj_elmuZinv_0b_ht200_dphi")->Clone());
         njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_0b_ht200_dphi")->Clone());
+        njWDYZ_0bElec    = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_0b_ht200_dphi")->Clone());//Sam
+
         njWTTbar_g1b = static_cast<TH1*>(f->Get("DataMC_nj_elmuZinv_g1b_ht200_dphi")->Clone());
         njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_g1b_ht200_dphi")->Clone());
+        njWDYZ_g1bElec   = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_g1b_ht200_dphi")->Clone());//Sam
         f->Close();
         delete f;
     }
@@ -51,6 +54,12 @@ int main()
         shapeMT2 = static_cast<TH1*>(f->Get("ShapeRatio_mt2")->Clone());
         shapeNT  = static_cast<TH1*>(f->Get("ShapeRatio_nt")->Clone());
         shapeNB  = static_cast<TH1*>(f->Get("ShapeRatio_nb")->Clone());
+
+	shapeMETElec = static_cast<TH1*>(f->Get("ShapeRatioElec_met")->Clone());
+        shapeMT2Elec = static_cast<TH1*>(f->Get("ShapeRatioElec_mt2")->Clone());
+        shapeNTElec  = static_cast<TH1*>(f->Get("ShapeRatioElec_nt")->Clone());
+        shapeNBElec  = static_cast<TH1*>(f->Get("ShapeRatioElec_nb")->Clone());
+
         f->Close();
         delete f;
     }
@@ -68,22 +77,39 @@ int main()
     const int NTRIALS = 1000;
     const int NSEARCHBINS = 37;
 
+
+
     TH1 *h[5][NSEARCHBINS];
     std::vector<std::string> hnames = {"njet", "met", "mt2", "nt", "nb"};
-
     float N0[NSEARCHBINS];
     float N0square[NSEARCHBINS];
     float N[5][NSEARCHBINS][NTRIALS];
 
+    TH1 *hElec[5][NSEARCHBINS];//Sam
+    float N0Elec[NSEARCHBINS];//Sam
+    float N0squareElec[NSEARCHBINS];//Sam
+    float NElec[5][NSEARCHBINS][NTRIALS];//Sam
+
+
+
+    
     float variations[5][20][NTRIALS];
+    float variationsElec[5][20][NTRIALS];
     for(int iT = 0; iT < NTRIALS; ++iT)
     {
         for(int i = 0; i < 5; ++i) for(int j = 0; j < 20; ++j) variations[i][j][iT] = 1.0;
-        for(int i = 0; i <= njWDYZ_g1b->GetNbinsX() + 1; ++i) if(njWDYZ_g1b->GetBinContent(i) > 1e-10) variations[0][i][iT] = (float)tr3.Gaus(1.0, njWDYZ_g1b->GetBinError(i)/njWDYZ_g1b->GetBinContent(i));
-        for(int i = 0; i <= shapeMET  ->GetNbinsX() + 1; ++i) if(shapeMET->GetBinContent(i) > 1e-10)   variations[1][i][iT] = (float)tr3.Gaus(1.0, shapeMET->GetBinError(i)/shapeMET->GetBinContent(i));
-        for(int i = 0; i <= shapeMT2  ->GetNbinsX() + 1; ++i) if(shapeMT2->GetBinContent(i) > 1e-10)   variations[2][i][iT] = (float)tr3.Gaus(1.0, shapeMT2->GetBinError(i)/shapeMT2->GetBinContent(i));
-        for(int i = 0; i <= shapeNT   ->GetNbinsX() + 1; ++i) if(shapeNT->GetBinContent(i) > 1e-10)    variations[3][i][iT] = (float)tr3.Gaus(1.0, shapeNT->GetBinError(i)/shapeNT->GetBinContent(i));
-        for(int i = 0; i <= shapeNB   ->GetNbinsX() + 1; ++i) if(shapeNB->GetBinContent(i) > 1e-10)    variations[4][i][iT] = (float)tr3.Gaus(1.0, shapeNB->GetBinError(i)/shapeNB->GetBinContent(i));
+        for(int i = 0; i<=njWDYZ_g1b->GetNbinsX() + 1; ++i) if(njWDYZ_g1b->GetBinContent(i) > 1e-10)variations[0][i][iT] = (float)tr3.Gaus(1.0,njWDYZ_g1b->GetBinError(i)/njWDYZ_g1b->GetBinContent(i));
+        for(int i = 0; i<=shapeMET  ->GetNbinsX() + 1; ++i) if(shapeMET->GetBinContent(i) > 1e-10)   variations[1][i][iT] = (float)tr3.Gaus(1.0, shapeMET->GetBinError(i)/shapeMET->GetBinContent(i));
+        for(int i = 0; i<=shapeMT2  ->GetNbinsX() + 1; ++i) if(shapeMT2->GetBinContent(i) > 1e-10)   variations[2][i][iT] = (float)tr3.Gaus(1.0, shapeMT2->GetBinError(i)/shapeMT2->GetBinContent(i));
+        for(int i = 0; i<=shapeNT   ->GetNbinsX() + 1; ++i) if(shapeNT->GetBinContent(i) > 1e-10)    variations[3][i][iT] = (float)tr3.Gaus(1.0, shapeNT->GetBinError(i)/shapeNT->GetBinContent(i));
+        for(int i = 0; i<=shapeNB   ->GetNbinsX() + 1; ++i) if(shapeNB->GetBinContent(i) > 1e-10)    variations[4][i][iT] = (float)tr3.Gaus(1.0, shapeNB->GetBinError(i)/shapeNB->GetBinContent(i));
+
+        for(int i = 0; i < 5; ++i) for(int j = 0; j < 20; ++j) variationsElec[i][j][iT] = 1.0;
+        for(int i = 0; i<=njWDYZ_g1bElec->GetNbinsX() + 1; ++i) if(njWDYZ_g1bElec->GetBinContent(i) > 1e-10) variationsElec[0][i][iT] = (float)tr3.Gaus(1.0, njWDYZ_g1bElec->GetBinError(i)/njWDYZ_g1bElec->GetBinContent(i));//Sam
+        for(int i = 0; i<=shapeMETElec  ->GetNbinsX() + 1; ++i) if(shapeMETElec->GetBinContent(i) > 1e-10)   variationsElec[1][i][iT] = (float)tr3.Gaus(1.0, shapeMETElec->GetBinError(i)/shapeMETElec->GetBinContent(i));//Sam
+        for(int i = 0; i<=shapeMT2Elec  ->GetNbinsX() + 1; ++i) if(shapeMT2Elec->GetBinContent(i) > 1e-10)   variationsElec[2][i][iT] = (float)tr3.Gaus(1.0, shapeMT2Elec->GetBinError(i)/shapeMT2Elec->GetBinContent(i));//Sam
+        for(int i = 0; i<=shapeNTElec   ->GetNbinsX() + 1; ++i) if(shapeNTElec->GetBinContent(i) > 1e-10)    variationsElec[3][i][iT] = (float)tr3.Gaus(1.0, shapeNTElec->GetBinError(i)/shapeNTElec->GetBinContent(i));//Sam
+        for(int i = 0; i<=shapeNBElec   ->GetNbinsX() + 1; ++i) if(shapeNBElec->GetBinContent(i) > 1e-10)    variationsElec[4][i][iT] = (float)tr3.Gaus(1.0, shapeNBElec->GetBinError(i)/shapeNBElec->GetBinContent(i));//Sam
     }
 
     for(int ih = 0; ih < 5; ++ih)
@@ -94,9 +120,13 @@ int main()
             sprintf(name, "hSB_%s_%d", hnames[ih].c_str(), i);
             h[ih][i] = new TH1D(name, name, 2000, -1, 3);
 
+            sprintf(name, "hSBElec_%s_%d", hnames[ih].c_str(), i);
+            hElec[ih][i] = new TH1D(name, name, 2000, -1, 3);
+
             for(int j = 0; j < NTRIALS; ++j)
             {
                 N[ih][i][j] = 0.0;
+                NElec[ih][i][j] = 0.0;
             }
         }
     }
@@ -105,20 +135,22 @@ int main()
     {
         N0square[i] = 0.0;
         N0[i] = 0.0;
+        N0squareElec[i] = 0.0;
+        N0Elec[i] = 0.0;
     }
 
-    //prep histograms for MET-MT2 corrolation study
-    TH1* hMET_nom  = new TH1D("hMET_nom",  "hMET_nom",  200, 0, 2000);
-    TH1* hMET_Gaus = new TH1D("hMET_Gaus", "hMET_Gaus", 200, 0, 2000);
-    TH1* hMET_Logi = new TH1D("hMET_Logi", "hMET_Logi", 200, 0, 2000);
+    // //prep histograms for MET-MT2 corrolation study
+    // TH1* hMET_nom  = new TH1D("hMET_nom",  "hMET_nom",  200, 0, 2000);
+    // TH1* hMET_Gaus = new TH1D("hMET_Gaus", "hMET_Gaus", 200, 0, 2000);
+    // TH1* hMET_Logi = new TH1D("hMET_Logi", "hMET_Logi", 200, 0, 2000);
 
-    TH1* hMT2_nom  = new TH1D("hMT2_nom",  "hMT2_nom",  200, 0, 2000);
-    TH1* hMT2_Gaus = new TH1D("hMT2_Gaus", "hMT2_Gaus", 200, 0, 2000);
-    TH1* hMT2_Logi = new TH1D("hMT2_Logi", "hMT2_Logi", 200, 0, 2000);
+    // TH1* hMT2_nom  = new TH1D("hMT2_nom",  "hMT2_nom",  200, 0, 2000);
+    // TH1* hMT2_Gaus = new TH1D("hMT2_Gaus", "hMT2_Gaus", 200, 0, 2000);
+    // TH1* hMT2_Logi = new TH1D("hMT2_Logi", "hMT2_Logi", 200, 0, 2000);
 
-    TH2* h2D_nom  = new TH2D("hMT2vMET_nom",  "h2D_nom ;MET;MT2", 200, 0, 2000, 200, 0, 2000);
-    TH2* h2D_Gaus = new TH2D("hMT2vMET_Gaus", "h2D_Gaus;MET;MT2", 200, 0, 2000, 200, 0, 2000);
-    TH2* h2D_Logi = new TH2D("hMT2vMET_Logi", "h2D_Logi;MET;MT2", 200, 0, 2000, 200, 0, 2000);
+    // TH2* h2D_nom  = new TH2D("hMT2vMET_nom",  "h2D_nom ;MET;MT2", 200, 0, 2000, 200, 0, 2000);
+    // TH2* h2D_Gaus = new TH2D("hMT2vMET_Gaus", "h2D_Gaus;MET;MT2", 200, 0, 2000, 200, 0, 2000);
+    // TH2* h2D_Logi = new TH2D("hMT2vMET_Logi", "h2D_Logi;MET;MT2", 200, 0, 2000, 200, 0, 2000);
 
     AnaFunctions::prepareTopTagger();
 
@@ -165,41 +197,6 @@ int main()
             const double& nJetWgtDYZ   = tr.getVar<double>("nJetWgtDYZ");
             const double& normWgt0b    = tr.getVar<double>("normWgt0b");
 
-            //Variables required only for MET-MT2 
-            //const bool& passNoiseEventFilterZinv = tr.getVar<bool>("passNoiseEventFilterZinv");
-            //const bool& passLeptVetoZinv         = tr.getVar<bool>("passLeptVetoZinv");
-            //const bool& passnJetsZinv            = tr.getVar<bool>("passnJetsZinv");
-            //const bool& passdPhisZinv            = tr.getVar<bool>("passdPhisZinv");
-            //
-            //const double& HTZinv                 = tr.getVar<double>("HTZinv");
-            //
-            //const double& met_logi_1   = tr.getVar<double>("met_logi_1");
-            //const double& met_gaus_30  = tr.getVar<double>("met_gaus_30");
-            //
-            //const double& mt2_logi_1   = tr.getVar<double>("mt2_logi_1");
-            //const double& mt2_gaus_30  = tr.getVar<double>("mt2_gaus_30");
-            //
-            //// Recreation of loose0 cut level - we remove passMuZinvSel and replace with passLeptVetoZinv for Zinvisible
-            //bool passLoose0 = passNoiseEventFilterZinv && passLeptVetoZinv && (HTZinv > 200) && passnJetsZinv && passdPhisZinv && (nTopCandSortedCntZinv>0);
-            //
-            //// Fill MET-MT2 histograms here
-            //if(passLoose0)
-            //{
-            //    //trigger efficiency is too coursely binned in low MET region, irrelivant in MET > 200 region
-            //    double weight = /*triggerEffMC * */nJetWgtDYZ * bTagSF_EventWeightSimple_Central * fs.getWeight();
-            //
-            //    hMET_nom ->Fill(cleanMetPt,  weight);
-            //    hMET_Gaus->Fill(met_gaus_30, weight);
-            //    hMET_Logi->Fill(met_logi_1,  weight);
-            //
-            //    hMT2_nom ->Fill(best_had_brJet_MT2Zinv, weight);
-            //    hMT2_Gaus->Fill(mt2_gaus_30,            weight);
-            //    hMT2_Logi->Fill(mt2_logi_1,             weight);
-            //
-            //    h2D_nom ->Fill(cleanMetPt,  best_had_brJet_MT2Zinv, weight);
-            //    h2D_Gaus->Fill(met_gaus_30, mt2_gaus_30,            weight);
-            //    h2D_Logi->Fill(met_logi_1,  mt2_logi_1,             weight);
-            //}
 
             //fill stat uncertainty histograms here
             if(passBaselineZinv && passLeptVeto)
@@ -210,6 +207,10 @@ int main()
                 {
                     N0[nSearchBin] += weight;
                     N0square[nSearchBin] += weight*weight;
+
+                    N0Elec[nSearchBin] += weight;//Sam
+                    N0squareElec[nSearchBin] += weight*weight;//Sam
+
                     for(int iTrial = 0; iTrial < NTRIALS; ++iTrial)
                     {
                         if(iTrial < NTRIALS)
@@ -219,6 +220,12 @@ int main()
                             N[2][nSearchBin][iTrial] += variations[2][shapeMT2->FindBin(best_had_brJet_MT2Zinv)][iTrial]  * weight;
                             N[3][nSearchBin][iTrial] += variations[3][shapeNT->FindBin(nTopCandSortedCntZinv)][iTrial]    * weight;
                             N[4][nSearchBin][iTrial] += variations[4][shapeNB->FindBin(cntCSVSZinv)][iTrial]              * weight;
+
+                            NElec[0][nSearchBin][iTrial] += variationsElec[0][njWDYZ_g1bElec->FindBin(cntNJetsPt30Eta24Zinv)][iTrial] * weight;//Sam
+                            NElec[1][nSearchBin][iTrial] += variationsElec[1][shapeMETElec->FindBin(cleanMetPt)][iTrial]              * weight;//Sam
+                            NElec[2][nSearchBin][iTrial] += variationsElec[2][shapeMT2Elec->FindBin(best_had_brJet_MT2Zinv)][iTrial]  * weight;//Sam
+                            NElec[3][nSearchBin][iTrial] += variationsElec[3][shapeNTElec->FindBin(nTopCandSortedCntZinv)][iTrial]    * weight;//Sam
+                            NElec[4][nSearchBin][iTrial] += variationsElec[4][shapeNBElec->FindBin(cntCSVSZinv)][iTrial]              * weight;//Sam
                         }
                     }
                 }
@@ -233,12 +240,14 @@ int main()
             for(int iTrial = 0; iTrial < NTRIALS; ++iTrial)
             {
                 h[ih][i]->Fill(N[ih][i][iTrial]/N0[i]);
+                hElec[ih][i]->Fill(NElec[ih][i][iTrial]/N0Elec[i]);
             }
         }
     }
 
     TFile fout("syst_nJetWgt.root", "RECREATE");
     TH1 *syst68Max = new TH1D("syst68Max", "syst68Max", NSEARCHBINS, 0, NSEARCHBINS);
+    TH1 *syst68MaxElec = new TH1D("syst68MaxElec", "syst68MaxElec", NSEARCHBINS, 0, NSEARCHBINS);
     for(int ih = 0; ih < 5; ++ih)
     {
         char name[128];
@@ -247,61 +256,97 @@ int main()
         sprintf(name, "systRMS_%s", hnames[ih].c_str());
         TH1 *systRMS = new TH1D(name, name, NSEARCHBINS, 0, NSEARCHBINS);
 
+        sprintf(name, "syst68Elec_%s", hnames[ih].c_str());//Sam
+        TH1 *syst68Elec = new TH1D(name, name, NSEARCHBINS, 0, NSEARCHBINS);//Sam
+        sprintf(name, "systRMSElec_%s", hnames[ih].c_str());//Sam
+        TH1 *systRMSElec = new TH1D(name, name, NSEARCHBINS, 0, NSEARCHBINS);//Sam
+
         for(int i = 0; i < NSEARCHBINS; ++i) 
         {
             h[ih][i]->Write();
             h[ih][i]->Scale(1/h[ih][i]->Integral(0, h[ih][i]->GetNbinsX() + 1));
+            hElec[ih][i]->Write();///////////////////////////////////////////////////Sam
+            hElec[ih][i]->Scale(1/hElec[ih][i]->Integral(0, hElec[ih][i]->GetNbinsX() + 1));//Sam
+
             double ll = -999.9, ul = -999.9;
+            double llElec = -999.9, ulElec = -999.9;//
             TH1* hint = (TH1*)h[ih][i]->Clone((std::string(h[ih][i]->GetName())+"_int").c_str());
+            TH1* hintElec = (TH1*)hElec[ih][i]->Clone((std::string(hElec[ih][i]->GetName())+"_int").c_str());//Elec
             for(int iBin = 1; iBin <= h[ih][i]->GetNbinsX(); ++iBin)
             {
                 hint->SetBinContent(iBin, h[ih][i]->Integral(0, iBin));
+                hintElec->SetBinContent(iBin, hElec[ih][i]->Integral(0, iBin));//Sam
                 if     (ll < 0 && h[ih][i]->Integral(0, iBin) > 0.16) ll = h[ih][i]->GetBinCenter(iBin);
                 else if(ul < 0 && h[ih][i]->Integral(0, iBin) > 0.84) ul = h[ih][i]->GetBinCenter(iBin);
+                if     (llElec < 0 && hElec[ih][i]->Integral(0, iBin) > 0.16) llElec = hElec[ih][i]->GetBinCenter(iBin);
+                else if(ulElec < 0 && hElec[ih][i]->Integral(0, iBin) > 0.84) ulElec = hElec[ih][i]->GetBinCenter(iBin);
             }
             if(ll < 0) ll = 0;
             if(ul < 0) ul = 2.0;
+            if(llElec < 0) llElec = 0;//Sam
+            if(ulElec < 0) ulElec = 2.0;//Sam
             syst68->SetBinContent(i + 1, (ul - ll) / 2.0);
             syst68Max->SetBinContent(i + 1, std::max(syst68Max->GetBinContent(i + 1), (ul - ll) / 2.0));
             systRMS->SetBinContent(i + 1, h[ih][i]->GetRMS());
+
+            syst68Elec->SetBinContent(i + 1, (ulElec - llElec) / 2.0);//Sam
+            syst68MaxElec->SetBinContent(i + 1, std::max(syst68MaxElec->GetBinContent(i + 1), (ulElec - llElec) / 2.0));//Sam
+            systRMSElec->SetBinContent(i + 1, hElec[ih][i]->GetRMS());//Sam
             //std::cout << "bin: " << i << "\tll: " << ll << "\tul: " << ul << "\tsym err: " << (ul - ll) / 2.0 << "\t:RMS: " << h[ih][i]->GetRMS() << std::endl;
             hint->Write();
+            hintElec->Write();
         }
         syst68->Write();
         systRMS->Write();
+        syst68Elec->Write();//Sam
+        systRMSElec->Write();//Sam
     }
     syst68Max->Write();
+    syst68MaxElec->Write();//Sam
 
     TH1 *centralvalue = new TH1D("centralvalue", "centralvalue", NSEARCHBINS, 0, NSEARCHBINS);
     TH1 *avgWgt = new TH1D("avgWgt", "avgWgt", NSEARCHBINS, 0, NSEARCHBINS);
     TH1 *neff = new TH1D("neff", "neff", NSEARCHBINS, 0, NSEARCHBINS);
+
+    TH1 *centralvalueElec = new TH1D("centralvalueElec", "centralvalueElec", NSEARCHBINS, 0, NSEARCHBINS);//Sam
+    TH1 *avgWgtElec = new TH1D("avgWgtElec", "avgWgtElec", NSEARCHBINS, 0, NSEARCHBINS);//Sam
+    TH1 *neffElec = new TH1D("neffElec", "neffElec", NSEARCHBINS, 0, NSEARCHBINS);//Sam
     
     for(int i = 0; i < NSEARCHBINS; ++i)
     {
         centralvalue->SetBinContent(i + 1, N0[i]);
         if(N0[i] > 1e-10) avgWgt->SetBinContent(i + 1, N0square[i]/N0[i]);
         if(N0square[i] > 1e-10) neff->SetBinContent(i + 1, N0[i]*N0[i]/N0square[i]);
+
+        centralvalueElec->SetBinContent(i + 1, N0Elec[i]);
+        if(N0Elec[i] > 1e-10) avgWgtElec->SetBinContent(i + 1, N0squareElec[i]/N0Elec[i]);
+        if(N0squareElec[i] > 1e-10) neffElec->SetBinContent(i + 1, N0Elec[i]*N0Elec[i]/N0squareElec[i]);
     }
 
     centralvalue->Write();
     avgWgt->Write();
     neff->Write();
+
+    centralvalueElec->Write();
+    avgWgtElec->Write();
+    neffElec->Write();
+
     fout.Close();
 
     //Write out MET-MT2 histograms
-    TFile fout2("Corrolation_MET-MT2.root", "RECREATE");
+    // TFile fout2("Corrolation_MET-MT2.root", "RECREATE");
 
-    hMET_nom ->Write();
-    hMET_Gaus->Write();
-    hMET_Logi->Write();
+    // hMET_nom ->Write();
+    // hMET_Gaus->Write();
+    // hMET_Logi->Write();
 
-    hMT2_nom ->Write();
-    hMT2_Gaus->Write();
-    hMT2_Logi->Write();
+    // hMT2_nom ->Write();
+    // hMT2_Gaus->Write();
+    // hMT2_Logi->Write();
 
-    h2D_nom ->Write();
-    h2D_Gaus->Write();
-    h2D_Logi->Write();
+    // h2D_nom ->Write();
+    // h2D_Gaus->Write();
+    // h2D_Logi->Write();
 
-    fout2.Close();
+    //fout2.Close();
 }

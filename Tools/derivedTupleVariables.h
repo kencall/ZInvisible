@@ -34,6 +34,7 @@ namespace plotterFunctions
 	TH2* elecEffCatchAll;//
 
 	TH1* hElecSamAccZPt;
+	TH2* hElecSamAccZPtZEta;
 	TH2* hElecSamRecZPtZEta;
 	TH2* hElecSamIsoGmActDr;
 
@@ -221,6 +222,7 @@ namespace plotterFunctions
 		    /* else zEffElec = elecEff1 * elecEff2;//this is one of the main weights */
 
 		    double Zpt = (cutElecVec[i]+cutElecVec[j]).Pt();
+		    double Zeta = fabs((cutElecVec[i]+cutElecVec[j]).Eta());
 		    double Dr = cutElecVec[i].DeltaR(cutElecVec[j]);
 		    int recoIsoZptBin = elecEffRecoIso->GetXaxis()->FindBin(Zpt);
 		    int recoIsoDrBin = elecEffRecoIso->GetYaxis()->FindBin(Dr);
@@ -231,8 +233,12 @@ namespace plotterFunctions
 		    //zEffElec = 	elecEffCatchAll->GetBinContent(recoIsoZptBin,gmActBin);//catchall
 
 
-		    int accPtBin = hElecSamAccZPt->GetXaxis()->FindBin(Zpt);
-		    zAccElec = hElecSamAccZPt->GetBinContent(accPtBin);
+		    //int accPtBin = hElecSamAccZPt->GetXaxis()->FindBin(Zpt);
+		    //zAccElec = hElecSamAccZPt->GetBinContent(accPtBin);
+		    int accPtBin = hElecSamAccZPtZEta->GetXaxis()->FindBin(Zpt);
+		    int accEtaBin = hElecSamAccZPtZEta->GetYaxis()->FindBin(Zeta);
+		    zAccElec = hElecSamAccZPtZEta->GetBinContent(accPtBin,accEtaBin);
+
 		    double eff = 1.0;
 		    double ZEta = fabs((cutElecVec[i]+cutElecVec[j]).Eta());
 		    int recPtBin = hElecSamRecZPtZEta->GetXaxis()->FindBin(Zpt);
@@ -241,7 +247,7 @@ namespace plotterFunctions
 		    
 		    int isoGmActBin = hElecSamIsoGmActDr->GetXaxis()->FindBin(gmAct);
 		    int isoDrBin = hElecSamIsoGmActDr->GetYaxis()->FindBin(Dr);
-		    eff*=hElecSamRecZPtZEta->GetBinContent(isoGmActBin,isoDrBin);//these are x an dy	
+		    eff*=hElecSamIsoGmActDr->GetBinContent(isoGmActBin,isoDrBin);//these are x an dy	
 		    zEffElec = eff;	    
 		  }
 	      }
@@ -321,7 +327,7 @@ namespace plotterFunctions
             double elecAcc_p1 = -5.34976e-03;
             double elecAcc_p2 = 9.33562e-01;
 
-            if(hZAccElec && hZAccLepPtElec)
+            if(hZAccElec && hZAccLepPtElec && false)
             {
                 //Eta portion of the acceptance
                 if(bestRecoZPt < 100) zAccElec = hZAccElec->GetBinContent(hZAccElec->GetXaxis()->FindBin(bestRecoZPt));
@@ -337,7 +343,7 @@ namespace plotterFunctions
                 zAccElec = 1.0e101;
             }
 
-            if(passElecZinvSel && zEffElec < 0.04)
+            if(passElecZinvSel && zEffElec < 0.05)
             {
                 std::cout << "WARNING: Elec Z efficiency < 0.05, forcing weight to zero! Eff_Z: " << zEffElec << "\tZ(Pt): " << bestRecoZPt <<  std::endl;
                 zEffElec = 1.0e101;
@@ -402,6 +408,7 @@ namespace plotterFunctions
                 elecEffRecoIso     = static_cast<TH2*>(f->Get("hElecEffDrZptRecoIso_ratio"));//Sam
                 elecEffCatchAll = static_cast<TH2*>(f->Get("hElecEffPtCatchAll_ratio"));//
 		hElecSamAccZPt = static_cast<TH1*>(f->Get("hElecSamAccZPt_ratio"));//
+		hElecSamAccZPtZEta = static_cast<TH2*>(f->Get("hElecSamAccZPtZEta_ratio"));//
                 hElecSamRecZPtZEta     = static_cast<TH2*>(f->Get("hElecSamRecZPtZEta_ratio"));
                 hElecSamIsoGmActDr     = static_cast<TH2*>(f->Get("hElecSamIsoGmActDr_ratio"));
                 hZAccLepPtElec = static_cast<TH1*>(f->Get("hZElecAccPtPtSmear_ratio"));
@@ -442,9 +449,9 @@ namespace plotterFunctions
     {
     private:
         TH1* njWTTbar_0b;
-        TH1* njWDYZ_0b;
+        TH1* njWDYZ_0b, *njWDYZ_0bElec;
         TH1* njWTTbar_g1b;
-        TH1* njWDYZ_g1b;
+        TH1* njWDYZ_g1b, *njWDYZ_g1bElec;
 
         TH1* MCfake1b;
         TH1* MCfake2b;
@@ -457,16 +464,19 @@ namespace plotterFunctions
 
             double wTT = 1.0;
             double wDY = 1.0;
+            double wDYElec = 1.0;
 
 	    if(cntCSVSZinv == 0)
 	    {
 		if(njWTTbar_0b)  wTT = njWTTbar_0b->GetBinContent(njWTTbar_0b->FindBin(cntNJetsPt30Eta24Zinv));
 		if(njWDYZ_0b)    wDY = njWDYZ_0b->GetBinContent(njWDYZ_0b->FindBin(cntNJetsPt30Eta24Zinv));
+		if(njWDYZ_0bElec)    wDYElec = njWDYZ_0bElec->GetBinContent(njWDYZ_0bElec->FindBin(cntNJetsPt30Eta24Zinv));
 	    }
 	    else
 	    {
 		if(njWTTbar_g1b) wTT = njWTTbar_g1b->GetBinContent(njWTTbar_g1b->FindBin(cntNJetsPt30Eta24Zinv));
 		if(njWDYZ_g1b)   wDY = njWDYZ_g1b->GetBinContent(njWDYZ_g1b->FindBin(cntNJetsPt30Eta24Zinv));
+		if(njWDYZ_g1bElec)   wDYElec = njWDYZ_g1bElec->GetBinContent(njWDYZ_g1bElec->FindBin(cntNJetsPt30Eta24Zinv));
 	    }
 
             double nJet1bfakeWgt = 1.0;
@@ -478,15 +488,18 @@ namespace plotterFunctions
             if(MCfake3b)   nJet3bfakeWgt = MCfake3b->GetBinContent(MCfake3b->FindBin(cntNJetsPt30Eta24Zinv));
 
 	    double normWgt0b = ScaleFactors::sf_norm0b();
+	    double normWgt0bElec = ScaleFactors::sf_norm0bElec();
 
             tr.registerDerivedVar("nJetWgtTTbar", wTT);
             tr.registerDerivedVar("nJetWgtDYZ",   wDY);
+            tr.registerDerivedVar("nJetWgtDYZElec",   wDYElec);
 
             tr.registerDerivedVar("nJet1bfakeWgt", nJet1bfakeWgt);
             tr.registerDerivedVar("nJet2bfakeWgt", nJet2bfakeWgt);
             tr.registerDerivedVar("nJet3bfakeWgt", nJet3bfakeWgt);
 
             tr.registerDerivedVar("normWgt0b", normWgt0b);
+            tr.registerDerivedVar("normWgt0bElec", normWgt0bElec);
         }
 
     public:
@@ -501,6 +514,9 @@ namespace plotterFunctions
             MCfake1b = nullptr;
             MCfake2b = nullptr;
             MCfake3b = nullptr;
+
+            njWDYZ_0bElec    = nullptr;
+            njWDYZ_g1bElec   = nullptr;
 
             TFile *f = new TFile("njetWgtHists.root");
             if(f)
@@ -521,10 +537,10 @@ namespace plotterFunctions
             {
                 njWTTbar_0b  = static_cast<TH1*>(f->Get("DataMC_nj_elmuZinv_0b_ht200_dphi"));
                 njWTTbar_g1b = static_cast<TH1*>(f->Get("DataMC_nj_elmuZinv_g1b_ht200_dphi"));
-                //njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_0b_ht200_dphi"));//temporarily nixed
-                //njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_g1b_ht200_dphi"));//half baked for electron study
-                njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_0b_ht200_dphi"));//
-                njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_g1b_ht200_dphi"));//
+                njWDYZ_0b    = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_0b_ht200_dphi"));//temporarily nixed
+		njWDYZ_g1b   = static_cast<TH1*>(f->Get("DataMC_nj_muZinv_g1b_ht200_dphi"));//half baked for electron study
+                njWDYZ_0bElec    = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_0b_ht200_dphi"));//
+                njWDYZ_g1bElec   = static_cast<TH1*>(f->Get("DataMC_nj_elZinv_g1b_ht200_dphi"));//
                 f->Close();
                 delete f;
             }
@@ -905,8 +921,14 @@ namespace plotterFunctions
             bool passDiElecSel = passMuonVeto && (cutElecVec->size() == 2 && sumElecCharge == 0 && (*cutElecVec)[0].Pt() > highElecPt && (*cutElecVec)[1].Pt() > minElecPt);
             bool passElMuSel = (cutMuVec->size() == 1 && cutElecVec->size() == 1 && sumElecCharge == -sumMuCharge && (*cutMuVec)[0].Pt() > highMuPt && (*cutElecVec)[0].Pt() > minMuPt);
 
-            bool passMuZinvSel   =  passEleVeto && (cutMuVec->size() == 2   && sumMuCharge == 0   && (*cutMuVec)[0].Pt() > highMuPt     && (*cutMuVec)[1].Pt() > minMuPt)     && (bestRecoMuZ.M() > zMassMin)   && (bestRecoMuZ.M() < zMassMax);
+
+            //bool passMuZinvSel   =  (passEleVeto && (cutMuVec->size() == 2   && sumMuCharge == 0   && (*cutMuVec)[0].Pt() > highMuPt     && (*cutMuVec)[1].Pt() > minMuPt)     && (bestRecoMuZ.M() > zMassMin)   && (bestRecoMuZ.M() < zMassMax));// || passElecZinvSel;
+
             bool passElecZinvSel = passMuonVeto && (cutElecVec->size() == 2 && sumElecCharge == 0 && (*cutElecVec)[0].Pt() > highElecPt && (*cutElecVec)[1].Pt() > minElecPt) && (bestRecoElecZ.M() > zMassMin) && (bestRecoElecZ.M() < zMassMax);
+
+            bool passMuZinvSel   =  (passEleVeto && (cutMuVec->size() == 2   && sumMuCharge == 0   && (*cutMuVec)[0].Pt() > highMuPt     && (*cutMuVec)[1].Pt() > minMuPt)     && (bestRecoMuZ.M() > zMassMin)   && (bestRecoMuZ.M() < zMassMax)) || passElecZinvSel;
+
+
             bool passElMuZinvSel = (cutMuVec->size() == 1 && cutElecVec->size() == 1 && sumElecCharge == -sumMuCharge && (*cutMuVec)[0].Pt() > highMuPt && (*cutElecVec)[0].Pt() > minMuPt) && (bestRecoElMuZ.M() > zMassMin) && (bestRecoElMuZ.M() < zMassMax);
 
             double cutMuPt1 = -999.9;
@@ -987,11 +1009,11 @@ namespace plotterFunctions
             tr.registerDerivedVar("passDiMuIsoTrig", passDiMuTrig);
             tr.registerDerivedVar("passSingleMu45", muTrigMu45);
 
-            tr.registerDerivedVar("passDiMuSel", passDiMuSel);
+            tr.registerDerivedVar("passDiMuSel", passDiMuSel);//yikes!
             tr.registerDerivedVar("passDiElecSel", passDiElecSel);
 	    tr.registerDerivedVar("passElMuSel", passElMuSel);
 
-            tr.registerDerivedVar("passMuZinvSel", passMuZinvSel);
+            tr.registerDerivedVar("passMuZinvSel", passMuZinvSel);///yikes Sam!
             tr.registerDerivedVar("passElecZinvSel", passElecZinvSel);
             tr.registerDerivedVar("passElMuZinvSel", passElMuZinvSel);
         }

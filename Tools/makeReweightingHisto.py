@@ -139,6 +139,7 @@ def njetWeights(filename):
         hname1_TT = hname1 % {"cut":cut, "selection":selection}
         hnames2_TT = [elem % {"cut":cut, "selection":selection} for elem in hnames2]
         # Get all histos
+        print 'going after',hname1_TT,hnames2_TT
         h1 = f.Get(hname1_TT)
         h2s = [f.Get(hname2_TT) for hname2_TT in hnames2_TT]
         newname = "DataMC_nj_%s_%s"%(cut,selection)

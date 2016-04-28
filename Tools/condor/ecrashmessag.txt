@@ -1,0 +1,75 @@
+[136.9kB/136.9kB][100%][==================================================][0B/s]  [136.9kB/136.9kB][100%][==================================================][0B/s]  
+
+ *** Break *** segmentation violation
+
+
+
+===========================================================
+There was a crash.
+This is the entire stack trace of all threads:
+===========================================================
+
+Thread 6 (Thread 0x2b11b9d47700 (LWP 5933)):
+#0  0x0000003be0ae8f33 in epoll_wait () from /lib64/libc.so.6
+#1  0x00002b11b981133a in XrdSys::IOEvents::PollE::Begin(XrdSysSemaphore*, int&, char const**) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdUtils.so.2
+#2  0x00002b11b980dc0d in XrdSys::IOEvents::BootStrap::Start(void*) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdUtils.so.2
+#3  0x00002b11b980c427 in XrdSysThread_Xeq () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdUtils.so.2
+#4  0x0000003be0e07aa1 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003be0ae893d in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x2b11b9f48700 (LWP 5934)):
+#0  0x0000003be0e0f00d in nanosleep () from /lib64/libpthread.so.0
+#1  0x00002b11b980cbbb in XrdSysTimer::Wait(int) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdUtils.so.2
+#2  0x00002b11b98b6f61 in XrdCl::TaskManager::RunTasks() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#3  0x00002b11b98b70c9 in ?? () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#4  0x0000003be0e07aa1 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003be0ae893d in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x2b11ba149700 (LWP 5935)):
+#0  0x0000003be0ae5199 in syscall () from /lib64/libc.so.6
+#1  0x00002b11b990f883 in XrdCl::JobManager::RunJobs() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#2  0x00002b11b990fa19 in ?? () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#3  0x0000003be0e07aa1 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003be0ae893d in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x2b11ba34a700 (LWP 5936)):
+#0  0x0000003be0ae5199 in syscall () from /lib64/libc.so.6
+#1  0x00002b11b990f883 in XrdCl::JobManager::RunJobs() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#2  0x00002b11b990fa19 in ?? () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#3  0x0000003be0e07aa1 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003be0ae893d in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x2b11ba54b700 (LWP 5937)):
+#0  0x0000003be0ae5199 in syscall () from /lib64/libc.so.6
+#1  0x00002b11b990f883 in XrdCl::JobManager::RunJobs() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#2  0x00002b11b990fa19 in ?? () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libXrdCl.so.2
+#3  0x0000003be0e07aa1 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003be0ae893d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x2b11b047c360 (LWP 5716)):
+#0  0x0000003be0aac69d in waitpid () from /lib64/libc.so.6
+#1  0x0000003be0a3e609 in do_system () from /lib64/libc.so.6
+#2  0x0000003be0a3e940 in system () from /lib64/libc.so.6
+#3  0x00002b11a95e1fc7 in TUnixSystem::StackTrace() () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libCore.so
+#4  0x00002b11a95e3f5c in TUnixSystem::DispatchSignals(ESignals) () from /cvmfs/cms.cern.ch/slc6_amd64_gcc491/cms/cmssw/CMSSW_7_4_15/external/slc6_amd64_gcc491/lib/libCore.so
+#5  <signal handler called>
+#6  0x00000000004eeba8 in Plotter::DatasetSummary::getWeight (this=0x729eb38, tr=...) at Plotter.cc:231
+#7  0x00000000004f02bd in Plotter::createHistsFromTuple (this=0x7fff132c94d0) at Plotter.cc:445
+#8  0x00000000004ed777 in Plotter::read (this=0x7fff132c94d0) at Plotter.cc:84
+#9  0x0000000000590567 in main (argc=11, argv=0x7fff1330d4d8) at MakePlots.C:1985
+===========================================================
+
+
+The lines below might hint at the cause of the crash.
+If they do not help you then please submit a bug report at
+http://root.cern.ch/bugs. Please post the ENTIRE stack trace
+from above as an attachment in addition to anything else
+that might help us fixing this issue.
+===========================================================
+#6  0x00000000004eeba8 in Plotter::DatasetSummary::getWeight (this=0x729eb38, tr=...) at Plotter.cc:231
+#7  0x00000000004f02bd in Plotter::createHistsFromTuple (this=0x7fff132c94d0) at Plotter.cc:445
+#8  0x00000000004ed777 in Plotter::read (this=0x7fff132c94d0) at Plotter.cc:84
+#9  0x0000000000590567 in main (argc=11, argv=0x7fff1330d4d8) at MakePlots.C:1985
+===========================================================
+
+

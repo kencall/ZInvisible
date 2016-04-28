@@ -1,0 +1,6547 @@
+Filelist file "/eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt" not found!!!!!!!
+Filelist file "/eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_HT-600to800_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt" not found!!!!!!!
+Filelist file "/eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_HT-800to1200_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt" not found!!!!!!!
+Filelist file "/eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_HT-1200to2500_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt" not found!!!!!!!
+Filelist file "/eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/TTJets_HT-2500toInf_TuneCUETP8M1_13TeV-madgraphMLM-pythia8.txt" not found!!!!!!!
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0000.dat
+CT10nlo PDF set, member #0, version 4; LHAPDF ID = 11000
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0001.dat
+CT10nlo PDF set, member #1, version 4; LHAPDF ID = 11001
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0002.dat
+CT10nlo PDF set, member #2, version 4; LHAPDF ID = 11002
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0003.dat
+CT10nlo PDF set, member #3, version 4; LHAPDF ID = 11003
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0004.dat
+CT10nlo PDF set, member #4, version 4; LHAPDF ID = 11004
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0005.dat
+CT10nlo PDF set, member #5, version 4; LHAPDF ID = 11005
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0006.dat
+CT10nlo PDF set, member #6, version 4; LHAPDF ID = 11006
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0007.dat
+CT10nlo PDF set, member #7, version 4; LHAPDF ID = 11007
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0008.dat
+CT10nlo PDF set, member #8, version 4; LHAPDF ID = 11008
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0009.dat
+CT10nlo PDF set, member #9, version 4; LHAPDF ID = 11009
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0010.dat
+CT10nlo PDF set, member #10, version 4; LHAPDF ID = 11010
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0011.dat
+CT10nlo PDF set, member #11, version 4; LHAPDF ID = 11011
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0012.dat
+CT10nlo PDF set, member #12, version 4; LHAPDF ID = 11012
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0013.dat
+CT10nlo PDF set, member #13, version 4; LHAPDF ID = 11013
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0014.dat
+CT10nlo PDF set, member #14, version 4; LHAPDF ID = 11014
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0015.dat
+CT10nlo PDF set, member #15, version 4; LHAPDF ID = 11015
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0016.dat
+CT10nlo PDF set, member #16, version 4; LHAPDF ID = 11016
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0017.dat
+CT10nlo PDF set, member #17, version 4; LHAPDF ID = 11017
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0018.dat
+CT10nlo PDF set, member #18, version 4; LHAPDF ID = 11018
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0019.dat
+CT10nlo PDF set, member #19, version 4; LHAPDF ID = 11019
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0020.dat
+CT10nlo PDF set, member #20, version 4; LHAPDF ID = 11020
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0021.dat
+CT10nlo PDF set, member #21, version 4; LHAPDF ID = 11021
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0022.dat
+CT10nlo PDF set, member #22, version 4; LHAPDF ID = 11022
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0023.dat
+CT10nlo PDF set, member #23, version 4; LHAPDF ID = 11023
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0024.dat
+CT10nlo PDF set, member #24, version 4; LHAPDF ID = 11024
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0025.dat
+CT10nlo PDF set, member #25, version 4; LHAPDF ID = 11025
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0026.dat
+CT10nlo PDF set, member #26, version 4; LHAPDF ID = 11026
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0027.dat
+CT10nlo PDF set, member #27, version 4; LHAPDF ID = 11027
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0028.dat
+CT10nlo PDF set, member #28, version 4; LHAPDF ID = 11028
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0029.dat
+CT10nlo PDF set, member #29, version 4; LHAPDF ID = 11029
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0030.dat
+CT10nlo PDF set, member #30, version 4; LHAPDF ID = 11030
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0031.dat
+CT10nlo PDF set, member #31, version 4; LHAPDF ID = 11031
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0032.dat
+CT10nlo PDF set, member #32, version 4; LHAPDF ID = 11032
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0033.dat
+CT10nlo PDF set, member #33, version 4; LHAPDF ID = 11033
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0034.dat
+CT10nlo PDF set, member #34, version 4; LHAPDF ID = 11034
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0035.dat
+CT10nlo PDF set, member #35, version 4; LHAPDF ID = 11035
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0036.dat
+CT10nlo PDF set, member #36, version 4; LHAPDF ID = 11036
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0037.dat
+CT10nlo PDF set, member #37, version 4; LHAPDF ID = 11037
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0038.dat
+CT10nlo PDF set, member #38, version 4; LHAPDF ID = 11038
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0039.dat
+CT10nlo PDF set, member #39, version 4; LHAPDF ID = 11039
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0040.dat
+CT10nlo PDF set, member #40, version 4; LHAPDF ID = 11040
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0041.dat
+CT10nlo PDF set, member #41, version 4; LHAPDF ID = 11041
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0042.dat
+CT10nlo PDF set, member #42, version 4; LHAPDF ID = 11042
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0043.dat
+CT10nlo PDF set, member #43, version 4; LHAPDF ID = 11043
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0044.dat
+CT10nlo PDF set, member #44, version 4; LHAPDF ID = 11044
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0045.dat
+CT10nlo PDF set, member #45, version 4; LHAPDF ID = 11045
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0046.dat
+CT10nlo PDF set, member #46, version 4; LHAPDF ID = 11046
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0047.dat
+CT10nlo PDF set, member #47, version 4; LHAPDF ID = 11047
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0048.dat
+CT10nlo PDF set, member #48, version 4; LHAPDF ID = 11048
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0049.dat
+CT10nlo PDF set, member #49, version 4; LHAPDF ID = 11049
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0050.dat
+CT10nlo PDF set, member #50, version 4; LHAPDF ID = 11050
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0051.dat
+CT10nlo PDF set, member #51, version 4; LHAPDF ID = 11051
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/CT10nlo/CT10nlo_0052.dat
+CT10nlo PDF set, member #52, version 4; LHAPDF ID = 11052
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0000.dat
+MMHT2014nlo68cl PDF set, member #0, version 1; LHAPDF ID = 25100
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0001.dat
+MMHT2014nlo68cl PDF set, member #1, version 1; LHAPDF ID = 25101
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0002.dat
+MMHT2014nlo68cl PDF set, member #2, version 1; LHAPDF ID = 25102
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0003.dat
+MMHT2014nlo68cl PDF set, member #3, version 1; LHAPDF ID = 25103
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0004.dat
+MMHT2014nlo68cl PDF set, member #4, version 1; LHAPDF ID = 25104
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0005.dat
+MMHT2014nlo68cl PDF set, member #5, version 1; LHAPDF ID = 25105
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0006.dat
+MMHT2014nlo68cl PDF set, member #6, version 1; LHAPDF ID = 25106
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0007.dat
+MMHT2014nlo68cl PDF set, member #7, version 1; LHAPDF ID = 25107
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0008.dat
+MMHT2014nlo68cl PDF set, member #8, version 1; LHAPDF ID = 25108
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0009.dat
+MMHT2014nlo68cl PDF set, member #9, version 1; LHAPDF ID = 25109
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0010.dat
+MMHT2014nlo68cl PDF set, member #10, version 1; LHAPDF ID = 25110
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0011.dat
+MMHT2014nlo68cl PDF set, member #11, version 1; LHAPDF ID = 25111
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0012.dat
+MMHT2014nlo68cl PDF set, member #12, version 1; LHAPDF ID = 25112
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0013.dat
+MMHT2014nlo68cl PDF set, member #13, version 1; LHAPDF ID = 25113
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0014.dat
+MMHT2014nlo68cl PDF set, member #14, version 1; LHAPDF ID = 25114
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0015.dat
+MMHT2014nlo68cl PDF set, member #15, version 1; LHAPDF ID = 25115
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0016.dat
+MMHT2014nlo68cl PDF set, member #16, version 1; LHAPDF ID = 25116
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0017.dat
+MMHT2014nlo68cl PDF set, member #17, version 1; LHAPDF ID = 25117
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0018.dat
+MMHT2014nlo68cl PDF set, member #18, version 1; LHAPDF ID = 25118
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0019.dat
+MMHT2014nlo68cl PDF set, member #19, version 1; LHAPDF ID = 25119
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0020.dat
+MMHT2014nlo68cl PDF set, member #20, version 1; LHAPDF ID = 25120
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0021.dat
+MMHT2014nlo68cl PDF set, member #21, version 1; LHAPDF ID = 25121
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0022.dat
+MMHT2014nlo68cl PDF set, member #22, version 1; LHAPDF ID = 25122
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0023.dat
+MMHT2014nlo68cl PDF set, member #23, version 1; LHAPDF ID = 25123
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0024.dat
+MMHT2014nlo68cl PDF set, member #24, version 1; LHAPDF ID = 25124
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0025.dat
+MMHT2014nlo68cl PDF set, member #25, version 1; LHAPDF ID = 25125
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0026.dat
+MMHT2014nlo68cl PDF set, member #26, version 1; LHAPDF ID = 25126
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0027.dat
+MMHT2014nlo68cl PDF set, member #27, version 1; LHAPDF ID = 25127
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0028.dat
+MMHT2014nlo68cl PDF set, member #28, version 1; LHAPDF ID = 25128
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0029.dat
+MMHT2014nlo68cl PDF set, member #29, version 1; LHAPDF ID = 25129
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0030.dat
+MMHT2014nlo68cl PDF set, member #30, version 1; LHAPDF ID = 25130
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0031.dat
+MMHT2014nlo68cl PDF set, member #31, version 1; LHAPDF ID = 25131
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0032.dat
+MMHT2014nlo68cl PDF set, member #32, version 1; LHAPDF ID = 25132
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0033.dat
+MMHT2014nlo68cl PDF set, member #33, version 1; LHAPDF ID = 25133
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0034.dat
+MMHT2014nlo68cl PDF set, member #34, version 1; LHAPDF ID = 25134
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0035.dat
+MMHT2014nlo68cl PDF set, member #35, version 1; LHAPDF ID = 25135
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0036.dat
+MMHT2014nlo68cl PDF set, member #36, version 1; LHAPDF ID = 25136
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0037.dat
+MMHT2014nlo68cl PDF set, member #37, version 1; LHAPDF ID = 25137
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0038.dat
+MMHT2014nlo68cl PDF set, member #38, version 1; LHAPDF ID = 25138
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0039.dat
+MMHT2014nlo68cl PDF set, member #39, version 1; LHAPDF ID = 25139
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0040.dat
+MMHT2014nlo68cl PDF set, member #40, version 1; LHAPDF ID = 25140
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0041.dat
+MMHT2014nlo68cl PDF set, member #41, version 1; LHAPDF ID = 25141
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0042.dat
+MMHT2014nlo68cl PDF set, member #42, version 1; LHAPDF ID = 25142
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0043.dat
+MMHT2014nlo68cl PDF set, member #43, version 1; LHAPDF ID = 25143
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0044.dat
+MMHT2014nlo68cl PDF set, member #44, version 1; LHAPDF ID = 25144
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0045.dat
+MMHT2014nlo68cl PDF set, member #45, version 1; LHAPDF ID = 25145
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0046.dat
+MMHT2014nlo68cl PDF set, member #46, version 1; LHAPDF ID = 25146
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0047.dat
+MMHT2014nlo68cl PDF set, member #47, version 1; LHAPDF ID = 25147
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0048.dat
+MMHT2014nlo68cl PDF set, member #48, version 1; LHAPDF ID = 25148
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0049.dat
+MMHT2014nlo68cl PDF set, member #49, version 1; LHAPDF ID = 25149
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/MMHT2014nlo68cl/MMHT2014nlo68cl_0050.dat
+MMHT2014nlo68cl PDF set, member #50, version 1; LHAPDF ID = 25150
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0000.dat
+NNPDF30_nlo_as_0118 PDF set, member #0, version 2; LHAPDF ID = 260000
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0001.dat
+NNPDF30_nlo_as_0118 PDF set, member #1, version 2; LHAPDF ID = 260001
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0002.dat
+NNPDF30_nlo_as_0118 PDF set, member #2, version 2; LHAPDF ID = 260002
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0003.dat
+NNPDF30_nlo_as_0118 PDF set, member #3, version 2; LHAPDF ID = 260003
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0004.dat
+NNPDF30_nlo_as_0118 PDF set, member #4, version 2; LHAPDF ID = 260004
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0005.dat
+NNPDF30_nlo_as_0118 PDF set, member #5, version 2; LHAPDF ID = 260005
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0006.dat
+NNPDF30_nlo_as_0118 PDF set, member #6, version 2; LHAPDF ID = 260006
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0007.dat
+NNPDF30_nlo_as_0118 PDF set, member #7, version 2; LHAPDF ID = 260007
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0008.dat
+NNPDF30_nlo_as_0118 PDF set, member #8, version 2; LHAPDF ID = 260008
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0009.dat
+NNPDF30_nlo_as_0118 PDF set, member #9, version 2; LHAPDF ID = 260009
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0010.dat
+NNPDF30_nlo_as_0118 PDF set, member #10, version 2; LHAPDF ID = 260010
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0011.dat
+NNPDF30_nlo_as_0118 PDF set, member #11, version 2; LHAPDF ID = 260011
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0012.dat
+NNPDF30_nlo_as_0118 PDF set, member #12, version 2; LHAPDF ID = 260012
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0013.dat
+NNPDF30_nlo_as_0118 PDF set, member #13, version 2; LHAPDF ID = 260013
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0014.dat
+NNPDF30_nlo_as_0118 PDF set, member #14, version 2; LHAPDF ID = 260014
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0015.dat
+NNPDF30_nlo_as_0118 PDF set, member #15, version 2; LHAPDF ID = 260015
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0016.dat
+NNPDF30_nlo_as_0118 PDF set, member #16, version 2; LHAPDF ID = 260016
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0017.dat
+NNPDF30_nlo_as_0118 PDF set, member #17, version 2; LHAPDF ID = 260017
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0018.dat
+NNPDF30_nlo_as_0118 PDF set, member #18, version 2; LHAPDF ID = 260018
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0019.dat
+NNPDF30_nlo_as_0118 PDF set, member #19, version 2; LHAPDF ID = 260019
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0020.dat
+NNPDF30_nlo_as_0118 PDF set, member #20, version 2; LHAPDF ID = 260020
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0021.dat
+NNPDF30_nlo_as_0118 PDF set, member #21, version 2; LHAPDF ID = 260021
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0022.dat
+NNPDF30_nlo_as_0118 PDF set, member #22, version 2; LHAPDF ID = 260022
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0023.dat
+NNPDF30_nlo_as_0118 PDF set, member #23, version 2; LHAPDF ID = 260023
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0024.dat
+NNPDF30_nlo_as_0118 PDF set, member #24, version 2; LHAPDF ID = 260024
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0025.dat
+NNPDF30_nlo_as_0118 PDF set, member #25, version 2; LHAPDF ID = 260025
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0026.dat
+NNPDF30_nlo_as_0118 PDF set, member #26, version 2; LHAPDF ID = 260026
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0027.dat
+NNPDF30_nlo_as_0118 PDF set, member #27, version 2; LHAPDF ID = 260027
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0028.dat
+NNPDF30_nlo_as_0118 PDF set, member #28, version 2; LHAPDF ID = 260028
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0029.dat
+NNPDF30_nlo_as_0118 PDF set, member #29, version 2; LHAPDF ID = 260029
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0030.dat
+NNPDF30_nlo_as_0118 PDF set, member #30, version 2; LHAPDF ID = 260030
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0031.dat
+NNPDF30_nlo_as_0118 PDF set, member #31, version 2; LHAPDF ID = 260031
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0032.dat
+NNPDF30_nlo_as_0118 PDF set, member #32, version 2; LHAPDF ID = 260032
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0033.dat
+NNPDF30_nlo_as_0118 PDF set, member #33, version 2; LHAPDF ID = 260033
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0034.dat
+NNPDF30_nlo_as_0118 PDF set, member #34, version 2; LHAPDF ID = 260034
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0035.dat
+NNPDF30_nlo_as_0118 PDF set, member #35, version 2; LHAPDF ID = 260035
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0036.dat
+NNPDF30_nlo_as_0118 PDF set, member #36, version 2; LHAPDF ID = 260036
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0037.dat
+NNPDF30_nlo_as_0118 PDF set, member #37, version 2; LHAPDF ID = 260037
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0038.dat
+NNPDF30_nlo_as_0118 PDF set, member #38, version 2; LHAPDF ID = 260038
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0039.dat
+NNPDF30_nlo_as_0118 PDF set, member #39, version 2; LHAPDF ID = 260039
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0040.dat
+NNPDF30_nlo_as_0118 PDF set, member #40, version 2; LHAPDF ID = 260040
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0041.dat
+NNPDF30_nlo_as_0118 PDF set, member #41, version 2; LHAPDF ID = 260041
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0042.dat
+NNPDF30_nlo_as_0118 PDF set, member #42, version 2; LHAPDF ID = 260042
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0043.dat
+NNPDF30_nlo_as_0118 PDF set, member #43, version 2; LHAPDF ID = 260043
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0044.dat
+NNPDF30_nlo_as_0118 PDF set, member #44, version 2; LHAPDF ID = 260044
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0045.dat
+NNPDF30_nlo_as_0118 PDF set, member #45, version 2; LHAPDF ID = 260045
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0046.dat
+NNPDF30_nlo_as_0118 PDF set, member #46, version 2; LHAPDF ID = 260046
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0047.dat
+NNPDF30_nlo_as_0118 PDF set, member #47, version 2; LHAPDF ID = 260047
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0048.dat
+NNPDF30_nlo_as_0118 PDF set, member #48, version 2; LHAPDF ID = 260048
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0049.dat
+NNPDF30_nlo_as_0118 PDF set, member #49, version 2; LHAPDF ID = 260049
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0050.dat
+NNPDF30_nlo_as_0118 PDF set, member #50, version 2; LHAPDF ID = 260050
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0051.dat
+NNPDF30_nlo_as_0118 PDF set, member #51, version 2; LHAPDF ID = 260051
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0052.dat
+NNPDF30_nlo_as_0118 PDF set, member #52, version 2; LHAPDF ID = 260052
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0053.dat
+NNPDF30_nlo_as_0118 PDF set, member #53, version 2; LHAPDF ID = 260053
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0054.dat
+NNPDF30_nlo_as_0118 PDF set, member #54, version 2; LHAPDF ID = 260054
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0055.dat
+NNPDF30_nlo_as_0118 PDF set, member #55, version 2; LHAPDF ID = 260055
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0056.dat
+NNPDF30_nlo_as_0118 PDF set, member #56, version 2; LHAPDF ID = 260056
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0057.dat
+NNPDF30_nlo_as_0118 PDF set, member #57, version 2; LHAPDF ID = 260057
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0058.dat
+NNPDF30_nlo_as_0118 PDF set, member #58, version 2; LHAPDF ID = 260058
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0059.dat
+NNPDF30_nlo_as_0118 PDF set, member #59, version 2; LHAPDF ID = 260059
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0060.dat
+NNPDF30_nlo_as_0118 PDF set, member #60, version 2; LHAPDF ID = 260060
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0061.dat
+NNPDF30_nlo_as_0118 PDF set, member #61, version 2; LHAPDF ID = 260061
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0062.dat
+NNPDF30_nlo_as_0118 PDF set, member #62, version 2; LHAPDF ID = 260062
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0063.dat
+NNPDF30_nlo_as_0118 PDF set, member #63, version 2; LHAPDF ID = 260063
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0064.dat
+NNPDF30_nlo_as_0118 PDF set, member #64, version 2; LHAPDF ID = 260064
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0065.dat
+NNPDF30_nlo_as_0118 PDF set, member #65, version 2; LHAPDF ID = 260065
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0066.dat
+NNPDF30_nlo_as_0118 PDF set, member #66, version 2; LHAPDF ID = 260066
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0067.dat
+NNPDF30_nlo_as_0118 PDF set, member #67, version 2; LHAPDF ID = 260067
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0068.dat
+NNPDF30_nlo_as_0118 PDF set, member #68, version 2; LHAPDF ID = 260068
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0069.dat
+NNPDF30_nlo_as_0118 PDF set, member #69, version 2; LHAPDF ID = 260069
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0070.dat
+NNPDF30_nlo_as_0118 PDF set, member #70, version 2; LHAPDF ID = 260070
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0071.dat
+NNPDF30_nlo_as_0118 PDF set, member #71, version 2; LHAPDF ID = 260071
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0072.dat
+NNPDF30_nlo_as_0118 PDF set, member #72, version 2; LHAPDF ID = 260072
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0073.dat
+NNPDF30_nlo_as_0118 PDF set, member #73, version 2; LHAPDF ID = 260073
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0074.dat
+NNPDF30_nlo_as_0118 PDF set, member #74, version 2; LHAPDF ID = 260074
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0075.dat
+NNPDF30_nlo_as_0118 PDF set, member #75, version 2; LHAPDF ID = 260075
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0076.dat
+NNPDF30_nlo_as_0118 PDF set, member #76, version 2; LHAPDF ID = 260076
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0077.dat
+NNPDF30_nlo_as_0118 PDF set, member #77, version 2; LHAPDF ID = 260077
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0078.dat
+NNPDF30_nlo_as_0118 PDF set, member #78, version 2; LHAPDF ID = 260078
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0079.dat
+NNPDF30_nlo_as_0118 PDF set, member #79, version 2; LHAPDF ID = 260079
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0080.dat
+NNPDF30_nlo_as_0118 PDF set, member #80, version 2; LHAPDF ID = 260080
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0081.dat
+NNPDF30_nlo_as_0118 PDF set, member #81, version 2; LHAPDF ID = 260081
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0082.dat
+NNPDF30_nlo_as_0118 PDF set, member #82, version 2; LHAPDF ID = 260082
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0083.dat
+NNPDF30_nlo_as_0118 PDF set, member #83, version 2; LHAPDF ID = 260083
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0084.dat
+NNPDF30_nlo_as_0118 PDF set, member #84, version 2; LHAPDF ID = 260084
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0085.dat
+NNPDF30_nlo_as_0118 PDF set, member #85, version 2; LHAPDF ID = 260085
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0086.dat
+NNPDF30_nlo_as_0118 PDF set, member #86, version 2; LHAPDF ID = 260086
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0087.dat
+NNPDF30_nlo_as_0118 PDF set, member #87, version 2; LHAPDF ID = 260087
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0088.dat
+NNPDF30_nlo_as_0118 PDF set, member #88, version 2; LHAPDF ID = 260088
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0089.dat
+NNPDF30_nlo_as_0118 PDF set, member #89, version 2; LHAPDF ID = 260089
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0090.dat
+NNPDF30_nlo_as_0118 PDF set, member #90, version 2; LHAPDF ID = 260090
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0091.dat
+NNPDF30_nlo_as_0118 PDF set, member #91, version 2; LHAPDF ID = 260091
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0092.dat
+NNPDF30_nlo_as_0118 PDF set, member #92, version 2; LHAPDF ID = 260092
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0093.dat
+NNPDF30_nlo_as_0118 PDF set, member #93, version 2; LHAPDF ID = 260093
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0094.dat
+NNPDF30_nlo_as_0118 PDF set, member #94, version 2; LHAPDF ID = 260094
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0095.dat
+NNPDF30_nlo_as_0118 PDF set, member #95, version 2; LHAPDF ID = 260095
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0096.dat
+NNPDF30_nlo_as_0118 PDF set, member #96, version 2; LHAPDF ID = 260096
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0097.dat
+NNPDF30_nlo_as_0118 PDF set, member #97, version 2; LHAPDF ID = 260097
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0098.dat
+NNPDF30_nlo_as_0118 PDF set, member #98, version 2; LHAPDF ID = 260098
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0099.dat
+NNPDF30_nlo_as_0118 PDF set, member #99, version 2; LHAPDF ID = 260099
+LHAPDF 6.1.5 loading /cvmfs/cms.cern.ch/slc6_amd64_gcc491/external/lhapdf/6.1.5-koleij/share/LHAPDF/NNPDF30_nlo_as_0118/NNPDF30_nlo_as_0118_0100.dat
+NNPDF30_nlo_as_0118 PDF set, member #100, version 2; LHAPDF ID = 260100
+Processing file(s): /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph.txt
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_1.root
+----------------------------------------------------------------------
+ M_T2 : a variable for measuring masses when missing energy is expected.
+ If you use MT2 or this library, please cite:
+ 	(o) C.G.Lester, D.J.Summers 
+ 	    Phys.Lett.B.463:99-103 (1999) hep-ph/9906349
+ 	(o) A.J.Barr, C.G.Lester, P.Stephens 
+ 	    J.Phys.G 29:2343-2363  (2003) hep-ph/0304226
+ If you use MTGEN please also cite:
+ 	(o) C.G.Lester, A.J.Barr (2007) arXiv:0708.1028 (hep-ph)
+ 	    JHEP 12(2007)102
+ If you use the ChengHanBisection MT2 calculator, please also cite:
+ 	(o) H.Cheng, Z.Han,  arXiv:0810.5178
+----------------------------------------------------------------------
+Event #: 1000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96432623088  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0852589664  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84339349537  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96432623088  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96432623088  sfEffLists[ja][2] : 1
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_10.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_100.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_101.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96325192529  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0841846608  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84231918979  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96325192529  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96325192529  sfEffLists[ja][2] : 1
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_102.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_103.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_104.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_105.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_106.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_107.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_108.root
+Event #: 1000
+Event #: 2000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96289872964  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0838314651  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84196599413  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96289872964  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96289872964  sfEffLists[ja][2] : 1
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_109.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_11.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_110.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96469455176  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0856272873  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84376181626  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96469455176  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96469455176  sfEffLists[ja][2] : 1
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_111.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_112.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_113.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_114.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_115.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_116.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_117.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_118.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_119.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_12.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_120.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96385179553  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.084784531  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84291906002  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96385179553  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96385179553  sfEffLists[ja][2] : 1
+Event #: 19000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_121.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_122.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_13.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_14.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_15.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_16.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_17.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_18.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_19.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96339153238  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0843242679  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84245879687  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96339153238  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96339153238  sfEffLists[ja][2] : 1
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_2.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_20.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96417239629  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0851051318  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84323966079  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96417239629  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96417239629  sfEffLists[ja][2] : 1
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_21.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_22.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_23.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_24.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_25.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97540703015  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0358733979  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.91494066239  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97540703015  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97540703015  sfEffLists[ja][2] : 1
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_26.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_27.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_28.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_29.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 10000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96338316969  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0843159052  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84245043419  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96338316969  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96338316969  sfEffLists[ja][2] : 1
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_3.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_30.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_31.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96355122943  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0844839649  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84261849393  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96355122943  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96355122943  sfEffLists[ja][2] : 1
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_32.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_33.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_34.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96297631295  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0839090484  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84204357744  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96297631295  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96297631295  sfEffLists[ja][2] : 1
+Event #: 20000
+Event #: 21000
+Event #: 22000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_35.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_36.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_37.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_38.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_39.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_4.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97640868224  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0973414177  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.85547594674  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97640868224  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97640868224  sfEffLists[ja][2] : 1
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0471599627  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.3062170243  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.78810290098  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0471599627  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0471599627  sfEffLists[ja][2] : 1
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_40.root
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96745526012  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0883879956  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84652252461  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96745526012  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96745526012  sfEffLists[ja][2] : 1
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96265522646  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.083587962  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84172249096  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96265522646  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96265522646  sfEffLists[ja][2] : 1
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_41.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96426619583  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0851989313  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84333346032  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96426619583  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96426619583  sfEffLists[ja][2] : 1
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_42.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_43.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96513954836  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0860722839  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84420681285  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96513954836  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96513954836  sfEffLists[ja][2] : 1
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_44.root
+Event #: 1000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96700189174  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0879346272  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84606915624  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96700189174  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96700189174  sfEffLists[ja][2] : 1
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_45.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_46.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96772096862  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0886537041  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84678823312  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96772096862  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96772096862  sfEffLists[ja][2] : 1
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_47.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96255009494  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0834828304  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84161735944  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96255009494  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96255009494  sfEffLists[ja][2] : 1
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_48.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_49.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.98069555118  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0454598166  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.91593128577  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.98069555118  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.98069555118  sfEffLists[ja][2] : 1
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_5.root
+Event #: 1000
+Event #: 2000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_50.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_51.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96422841422  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0851611497  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84329567871  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96422841422  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96422841422  sfEffLists[ja][2] : 1
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96387755435  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0848102899  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84294481885  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96387755435  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96387755435  sfEffLists[ja][2] : 1
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_52.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_53.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_54.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96375087726  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0846836128  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84281814176  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96375087726  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96375087726  sfEffLists[ja][2] : 1
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_55.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_56.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_57.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_58.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96326905251  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.084201788  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.842336317  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96326905251  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96326905251  sfEffLists[ja][2] : 1
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.9630945084  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0840272439  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84216177289  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.9630945084  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.9630945084  sfEffLists[ja][2] : 1
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_59.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_6.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96342155604  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0843542915  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84248882053  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96342155604  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96342155604  sfEffLists[ja][2] : 1
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_60.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_61.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_62.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_63.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_64.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_65.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_66.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96396028623  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0848930217  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84302755073  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96396028623  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96396028623  sfEffLists[ja][2] : 1
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_67.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_68.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97645570841  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0973884439  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.8555229729  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97645570841  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.97645570841  sfEffLists[ja][2] : 1
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_69.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_7.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96654093616  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0874736717  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84560820066  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96654093616  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96654093616  sfEffLists[ja][2] : 1
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 33000
+Event #: 34000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_70.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_71.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96267059907  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0836033346  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84173786357  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96267059907  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96267059907  sfEffLists[ja][2] : 1
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_72.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_73.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_74.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.54022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.74022  sfEffLists[ja][2] : 1
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_75.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_76.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_77.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_78.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_79.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_8.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_80.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_81.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_82.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_83.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_84.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_85.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_86.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_87.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_88.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_89.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_9.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_90.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96365181264  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0845845481  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.84271907714  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96365181264  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.96365181264  sfEffLists[ja][2] : 1
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_91.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_92.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_93.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_94.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_95.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_96.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_97.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.14022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.34022  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.94022  sfEffLists[ja][2] : 1
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_98.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-100To200_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-100To200/160213_200345/0000/stopFlatNtuples_99.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Processing file(s): /eos/uscms/store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph.txt
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_1.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_10.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_100.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_101.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_102.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_103.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_104.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_105.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0471599627  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.3062170243  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 0.78810290098  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0471599627  sfEffLists[ja][2] : 1
+sfEffLists[ja][0] : 0  sfEffLists[ja][1] : 1.0471599627  sfEffLists[ja][2] : 1
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_106.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_107.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+Event #: 49000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_108.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000
+Event #: 26000
+Event #: 27000
+Event #: 28000
+Event #: 29000
+Event #: 30000
+Event #: 31000
+Event #: 32000
+Event #: 33000
+Event #: 34000
+Event #: 35000
+Event #: 36000
+Event #: 37000
+Event #: 38000
+Event #: 39000
+Event #: 40000
+Event #: 41000
+Event #: 42000
+Event #: 43000
+Event #: 44000
+Event #: 45000
+Event #: 46000
+Event #: 47000
+Event #: 48000
+	root://cmseos.fnal.gov//store/user/lpcsusyhad/Spring15_74X_Feb_2016_Ntp_v6X_forMoriond/ZJetsToNuNu_HT-200To400_13TeV-madgraph/Spring15_74X_Feb_2016_Ntp_v6p0_forMoriond_ZJetsToNuNu_HT-200To400/160213_201425/0000/stopFlatNtuples_109.root
+Event #: 1000
+Event #: 2000
+Event #: 3000
+Event #: 4000
+Event #: 5000
+Event #: 6000
+Event #: 7000
+Event #: 8000
+Event #: 9000
+Event #: 10000
+Event #: 11000
+Event #: 12000
+Event #: 13000
+Event #: 14000
+Event #: 15000
+Event #: 16000
+Event #: 17000
+Event #: 18000
+Event #: 19000
+Event #: 20000
+Event #: 21000
+Event #: 22000
+Event #: 23000
+Event #: 24000
+Event #: 25000

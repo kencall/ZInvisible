@@ -105,6 +105,9 @@ int main(int argc, char* argv[])
 
     TH1 *hElecSamAccZPt_num = new TH1D("hElecSamAccZPt_num", "hElecSamAccZPt_num", 200, 0, 2000);//
     TH1 *hElecSamAccZPt_den = new TH1D("hElecSamAccZPt_den", "hElecSamAccZPt_den", 200, 0, 2000);//
+
+    TH2 *hElecSamAccZPtZEta_num = new TH2D("hElecSamAccZPtZEta_num", "hElecSamAccZPtZEta_num", 200, 0, 2000,50,0,5);//
+    TH2 *hElecSamAccZPtZEta_den = new TH2D("hElecSamAccZPtZEta_den", "hElecSamAccZPtZEta_den", 200, 0, 2000,50,0,5);//
     TH2 *hElecSamRecZPtZEta_num = new TH2D("hElecSamRecZPtZEta_num", "hElecSamRecZPtZEta_num", 50, 0, 2000,50,0,5);//
     TH2 *hElecSamRecZPtZEta_den = new TH2D("hElecSamRecZPtZEta_den", "hElecSamRecZPtZEta_den", 50, 0, 2000,50,0,5);//
     TH2 *hElecSamIsoGmActDr_num = new TH2D("hElecSamIsoGmActDr_num", "hElecSamIsoGmActDr_num", 50,0,1,200,0,4);//
@@ -208,6 +211,7 @@ int main(int argc, char* argv[])
             const double& recoZPt    = tr.getVar<double>("bestRecoZPt");
             const double& genZPt     = tr.getVar<double>("genZPt");
             const double& genZM      = tr.getVar<double>("genZmass");
+            const double& genZEta      = tr.getVar<double>("genZEta");//////
             const double& cleanHt    = tr.getVar<double>("ht");
             const double& cleanMetPt = tr.getVar<double>("cleanMetPt");
             const int&    pdgIdZDec  = tr.getVar<int>("pdgIdZDec");
@@ -392,18 +396,22 @@ int main(int argc, char* argv[])
 		    double gmMeanAct = TMath::Sqrt(genElecAct[0]*genElecAct[1]);
 		    hElecEffPtCatchAll_den->Fill(genZPt,gmMeanAct,file.getWeight());
 		    if(genElecInAcc.size() >= 2 && genMatchElecInAcc.size() >= 2 && genMatchIsoElecInAcc.size() >= 2)
-		      hElecEffPtCatchAll_num->Fill(genZPt,gmMeanAct,file.getWeight());//just let this do its thing
+		      hElecEffPtCatchAll_num->Fill(genZPt,gmMeanAct,file.getWeight());//just let this do its thing (not used atm)
 
-		    hElecSamAccZPt_den->Fill(genZPt,file.getWeight());
-		    if(genElecInAcc.size() >= 2 && genElecInAcc[0]->Pt()>33 && genElecInAcc[1]->Pt()>33)//added these two
+		    double smearedGenZPt = genZPt*(1+hZRes->GetRandom());
+		    hElecSamAccZPt_den->Fill(smearedGenZPt,file.getWeight());
+		    hElecSamAccZPtZEta_den->Fill(smearedGenZPt,fabs(genZEta),file.getWeight());
+		    if(genElecInAcc.size() >= 2 && genElecInAcc[0]->Pt()>33 && genElecInAcc[1]->Pt()>33 && fabs(genZM-91)<10)//added these two &&  fabs(genZM-91)<10
 		      {
-			hElecSamAccZPt_num->Fill(genZPt,file.getWeight());
+			hElecSamAccZPt_num->Fill(smearedGenZPt,file.getWeight());
+			hElecSamAccZPtZEta_num->Fill(smearedGenZPt,fabs(genZEta),file.getWeight());
 			double eta = fabs((*genElecInAcc[0]+*genElecInAcc[1]).Eta());
-			hElecSamRecZPtZEta_den->Fill(genZPt,eta,file.getWeight());
+			hElecSamRecZPtZEta_den->Fill(smearedGenZPt,eta,file.getWeight());
 			if(genMatchElecInAcc.size() >= 2)
 			  {
-			    hElecSamRecZPtZEta_num->Fill(genZPt,eta,file.getWeight());
+			    hElecSamRecZPtZEta_num->Fill(smearedGenZPt,eta,file.getWeight());
 			    double dr = (*genElecInAcc[0]).DeltaR(*genElecInAcc[1]);
+			    
 			    hElecSamIsoGmActDr_den->Fill(gmMeanAct,dr,file.getWeight());
 			    if(genMatchIsoElecInAcc.size() >= 2)
 			      {
@@ -490,6 +498,8 @@ int main(int argc, char* argv[])
 
     hElecSamAccZPt_num->Write();
     hElecSamAccZPt_den->Write();
+    hElecSamAccZPtZEta_num->Write();
+    hElecSamAccZPtZEta_den->Write();
     hElecSamRecZPtZEta_num->Write();
     hElecSamRecZPtZEta_den->Write();
     hElecSamIsoGmActDr_num->Write();

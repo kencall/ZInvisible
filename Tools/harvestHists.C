@@ -163,6 +163,7 @@ int main ()
     makeRatio2D("hElecEffPtCatchAll", fin, fout, zptbins, nzptbins, actbins, nactbins);//
     std::cout << "B" << std::endl;
     makeRatio1D("hElecSamAccZPt", fin, fout, zptbins2, nzptbins2);//
+    makeRatio2D("hElecSamAccZPtZEta", fin, fout);//
     std::cout << "C" << std::endl;
     makeRatio2D("hElecSamRecZPtZEta", fin, fout);
     std::cout << "D" << std::endl;
