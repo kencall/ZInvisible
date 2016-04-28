@@ -28,7 +28,7 @@ LHAPDFLIB  = -L$(LHAPDF_DATA_PATH)/../../lib -lLHAPDF
 
 #OBJS       = $(patsubst %, $(ODIR)/%, $(OBJ))
 
-PROGRAMS = calcEff harvestHists makePlots systematics nJetWgtSyst moneyplot plot2d scalefactorplot systplot miniMakePlots beffCalc makeSignalHistograms makeTopPlots
+PROGRAMS = calcEff harvestHists makePlots systematics nJetWgtSyst moneyplot plot2d scalefactorplot systplot miniMakePlots beffCalc makeTopPlots
 
 all: mkobj sampPyWrap $(PROGRAMS)
 
@@ -96,8 +96,8 @@ plot2d: $(ODIR)/plot2D.o $(ODIR)/NTupleReader.o $(ODIR)/Plotter.o $(ODIR)/PDFUnc
 beffCalc: $(ODIR)/bTagEfficiencyCalc.o $(ODIR)/NTupleReader.o $(ODIR)/samples.o
 	$(LD) $^ $(LIBS) -o $@
 
-makeSignalHistograms: $(ODIR)/makeSignalHistograms.o $(ODIR)/NTupleReader.o $(ODIR)/samples.o 
-	$(LD) $^ $(LIBS) $(MT2LIB) -o $@
+#makeSignalHistograms: $(ODIR)/makeSignalHistograms.o $(ODIR)/NTupleReader.o $(ODIR)/samples.o 
+#	$(LD) $^ $(LIBS) $(MT2LIB) -o $@
 
 clean:
 	rm -f $(ODIR)/*.o $(ODIR)/*.so $(ODIR)/*.d $(PROGRAMS) core 
