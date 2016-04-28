@@ -107,10 +107,13 @@ public:
     {
     public:
         std::string type;
-        std::vector<std::pair<std::string, DatasetSummary>> datasets;
+        std::vector<std::pair<std::string, std::vector<DatasetSummary>>> datasets;
 
-        DataCollection(std::string type, std::vector<std::pair<std::string, DatasetSummary>> ds) : type(type), datasets(ds) {}
+        DataCollection(std::string type, std::vector<std::pair<std::string, DatasetSummary>> ds);
         DataCollection(std::string type, std::string var, std::vector<DatasetSummary> ds);
+
+        DataCollection(std::string type, std::vector<std::pair<std::string, std::vector<DatasetSummary>>> ds);
+        DataCollection(std::string type, std::string var, std::vector<std::vector<DatasetSummary>> vvds);
     };
 
     class HistSummary : public Cuttable
@@ -141,9 +144,9 @@ public:
         TH1 *h;
         std::string name;
         Plotter::DataCollection dc;
-        Plotter::DatasetSummary* dss;
+        const Plotter::DatasetSummary* dssp;
 
-        void setDSS(Plotter::DatasetSummary* d) { dss = d; }
+        void setDSS(const Plotter::DatasetSummary* d) { dssp = d; }
         void fillHist(const NTupleReader& tr, const double& weight);
         void generateHist();
 
@@ -197,9 +200,10 @@ private:
         VarName variable;
         TH1 *h;
         const HistSummary *hs;
-        DatasetSummary dss;
+        const DatasetSummary* dssp;
+        std::vector<DatasetSummary> dss;
 
-        HistCutSummary(const std::string& lab, const std::string& name, const VarName v, const HistSummary* hsum, const DatasetSummary& ds) : label(lab), name(name), h(nullptr), variable(v), hs(hsum), dss(ds) {}
+    HistCutSummary(const std::string& lab, const std::string& name, const VarName v, const HistSummary* hsum, const std::vector<DatasetSummary>& ds) : label(lab), name(name), h(nullptr), variable(v), hs(hsum), dss(ds) {}
         ~HistCutSummary();
     };
 
