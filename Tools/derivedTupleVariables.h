@@ -884,7 +884,7 @@ namespace plotterFunctions
             bool passElMuZinvSel = (cutMuVec->size() == 1 && cutElecVec->size() == 1 && sumElecCharge == -sumMuCharge && (*cutMuVec)[0].Pt() > highMuPt && (*cutElecVec)[0].Pt() > minMuPt) && (bestRecoElMuZ.M() > zMassMin) && (bestRecoElMuZ.M() < zMassMax);
 
             ////HACK////
-            passMuZinvSel = passMuZinvSel || passElecZinvSel;
+            passMuZinvSel = passElecZinvSel; //||passMuZinvSel;
 
             double cutMuPt1 = -999.9;
             double cutMuPt2 = -999.9;

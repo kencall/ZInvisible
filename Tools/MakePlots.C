@@ -870,154 +870,154 @@ int main(int argc, char* argv[])
 
     // Collections for all variables, no cuts applied yet
     // met
-    Plotter::DataCollection dcData_SingleMuon_met("data",   "cleanMetPt", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_met("data",   "cleanMetPt", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_met(  "data",   "cleanMetPt", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_met(             "stack",  "cleanMetPt", stack_MC);
     Plotter::DataCollection dcwMC_met(            "stack",  "cleanMetPt", stackw_MC);
     Plotter::DataCollection dcwttMC_met(          "stack",  "cleanMetPt", stackwtt_MC);
     Plotter::DataCollection dcwwMC_met(           "stack",  "cleanMetPt", stackww_MC);
     // ntops
-    Plotter::DataCollection dcData_SingleMuon_nt("data",   "nTopCandSortedCntZinv", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nt("data",   "nTopCandSortedCntZinv", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nt(  "data",   "nTopCandSortedCntZinv", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nt(             "stack",  "nTopCandSortedCntZinv", stack_MC);
     Plotter::DataCollection dcwMC_nt(            "stack",  "nTopCandSortedCntZinv", stackw_MC);
     Plotter::DataCollection dcwttMC_nt(          "stack",  "nTopCandSortedCntZinv", stackwtt_MC);
     Plotter::DataCollection dcwwMC_nt(           "stack",  "nTopCandSortedCntZinv", stackww_MC);
     // MT2
-    Plotter::DataCollection dcData_SingleMuon_mt2("data",   "best_had_brJet_MT2Zinv", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_mt2("data",   "best_had_brJet_MT2Zinv", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_mt2(  "data",   "best_had_brJet_MT2Zinv", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_mt2(             "stack",  "best_had_brJet_MT2Zinv", stack_MC);
     Plotter::DataCollection dcwMC_mt2(            "stack",  "best_had_brJet_MT2Zinv", stackw_MC);
     Plotter::DataCollection dcwttMC_mt2(          "stack",  "best_had_brJet_MT2Zinv", stackwtt_MC);
     Plotter::DataCollection dcwwMC_mt2(           "stack",  "best_had_brJet_MT2Zinv", stackww_MC);
     // nb
-    Plotter::DataCollection dcData_SingleMuon_nb("data",   "cntCSVSZinv", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nb("data",   "cntCSVSZinv", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nb(  "data",   "cntCSVSZinv", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nb(             "stack",  "cntCSVSZinv", stack_MC);
     Plotter::DataCollection dcwMC_nb(            "stack",  "cntCSVSZinv", stackw_MC);
     Plotter::DataCollection dcwttMC_nb(          "stack",  "cntCSVSZinv", stackwtt_MC);
     Plotter::DataCollection dcwwMC_nb(           "stack",  "cntCSVSZinv", stackww_MC);
     // nj
-    Plotter::DataCollection dcData_SingleMuon_nj("data",   "cntNJetsPt30Eta24Zinv", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nj("data",   "cntNJetsPt30Eta24Zinv", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nj(  "data",   "cntNJetsPt30Eta24Zinv", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nj(             "stack",  "cntNJetsPt30Eta24Zinv", stack_MC);
     Plotter::DataCollection dcwMC_nj(            "stack",  "cntNJetsPt30Eta24Zinv", stackw_MC);
     Plotter::DataCollection dcwttMC_nj(          "stack",  "cntNJetsPt30Eta24Zinv", stackwtt_MC);
     Plotter::DataCollection dcwwMC_nj(           "stack",  "cntNJetsPt30Eta24Zinv", stackww_MC);
     // ht
-    Plotter::DataCollection dcData_SingleMuon_ht("data",   "HTZinv", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_ht("data",   "HTZinv", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_ht(  "data",   "HTZinv", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_ht(             "stack",  "HTZinv", stack_MC);
     Plotter::DataCollection dcwMC_ht(            "stack",  "HTZinv", stackw_MC);
     Plotter::DataCollection dcwttMC_ht(          "stack",  "HTZinv", stackwtt_MC);
     Plotter::DataCollection dcwwMC_ht(           "stack",  "HTZinv", stackww_MC);
     // mht
-    Plotter::DataCollection dcData_SingleMuon_mht("data",   "cleanMHt", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_mht("data",   "cleanMHt", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_mht(  "data",   "cleanMHt", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_mht(             "stack",  "cleanMHt", stack_MC);
     Plotter::DataCollection dcwMC_mht(            "stack",  "cleanMHt", stackw_MC);
     Plotter::DataCollection dcwttMC_mht(          "stack",  "cleanMHt", stackwtt_MC);
     Plotter::DataCollection dcwwMC_mht(           "stack",  "cleanMHt", stackww_MC);
     // jpt
-    Plotter::DataCollection dcData_SingleMuon_jpt("data",   "jetsLVecLepCleaned(pt)", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_jpt("data",   "jetsLVecLepCleaned(pt)", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_jpt(  "data",   "jetsLVecLepCleaned(pt)", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_jpt(             "stack",  "jetsLVecLepCleaned(pt)", stack_MC);
     Plotter::DataCollection dcwMC_jpt(            "stack",  "jetsLVecLepCleaned(pt)", stackw_MC);
     Plotter::DataCollection dcwttMC_jpt(          "stack",  "jetsLVecLepCleaned(pt)", stackwtt_MC);
     Plotter::DataCollection dcwwMC_jpt(           "stack",  "jetsLVecLepCleaned(pt)", stackww_MC);
     // j1pt
-    Plotter::DataCollection dcData_SingleMuon_j1pt("data",   "jetsLVecLepCleaned[0](pt)", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_j1pt("data",   "jetsLVecLepCleaned[0](pt)", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_j1pt(  "data",   "jetsLVecLepCleaned[0](pt)", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_j1pt(             "stack",  "jetsLVecLepCleaned[0](pt)", stack_MC);
     Plotter::DataCollection dcwMC_j1pt(            "stack",  "jetsLVecLepCleaned[0](pt)", stackw_MC);
     Plotter::DataCollection dcwttMC_j1pt(          "stack",  "jetsLVecLepCleaned[0](pt)", stackwtt_MC);
     Plotter::DataCollection dcwwMC_j1pt(           "stack",  "jetsLVecLepCleaned[0](pt)", stackww_MC);
     // j2pt
-    Plotter::DataCollection dcData_SingleMuon_j2pt("data",   "jetsLVecLepCleaned[1](pt)", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_j2pt("data",   "jetsLVecLepCleaned[1](pt)", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_j2pt(  "data",   "jetsLVecLepCleaned[1](pt)", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_j2pt(             "stack",  "jetsLVecLepCleaned[1](pt)", stack_MC);
     Plotter::DataCollection dcwMC_j2pt(            "stack",  "jetsLVecLepCleaned[1](pt)", stackw_MC);
     Plotter::DataCollection dcwttMC_j2pt(          "stack",  "jetsLVecLepCleaned[1](pt)", stackwtt_MC);
     Plotter::DataCollection dcwwMC_j2pt(           "stack",  "jetsLVecLepCleaned[1](pt)", stackww_MC);
     // j3pt
-    Plotter::DataCollection dcData_SingleMuon_j3pt("data",   "jetsLVecLepCleaned[2](pt)", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_j3pt("data",   "jetsLVecLepCleaned[2](pt)", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_j3pt(  "data",   "jetsLVecLepCleaned[2](pt)", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_j3pt(             "stack",  "jetsLVecLepCleaned[2](pt)", stack_MC);
     Plotter::DataCollection dcwMC_j3pt(            "stack",  "jetsLVecLepCleaned[2](pt)", stackw_MC);
     Plotter::DataCollection dcwttMC_j3pt(          "stack",  "jetsLVecLepCleaned[2](pt)", stackwtt_MC);
     Plotter::DataCollection dcwwMC_j3pt(           "stack",  "jetsLVecLepCleaned[2](pt)", stackww_MC);
     // mupt
-    Plotter::DataCollection dcData_SingleMuon_mupt("data",   "cutMuVec(pt)", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_mupt("data",   "cutMuVec(pt)", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_mupt(  "data",   "cutMuVec(pt)", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_mupt(             "stack",  "cutMuVec(pt)", stack_MC);
     Plotter::DataCollection dcwMC_mupt(            "stack",  "cutMuVec(pt)", stackw_MC);
     Plotter::DataCollection dcwttMC_mupt(          "stack",  "cutMuVec(pt)", stackwtt_MC);
     Plotter::DataCollection dcwwMC_mupt(           "stack",  "cutMuVec(pt)", stackww_MC);
     // mu1pt
-    Plotter::DataCollection dcData_SingleMuon_mu1pt("data",   "cutMuPt1", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_mu1pt("data",   "cutMuPt1", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_mu1pt(  "data",   "cutMuPt1", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_mu1pt(             "stack",  "cutMuPt1", stack_MC);
     Plotter::DataCollection dcwMC_mu1pt(            "stack",  "cutMuPt1", stackw_MC);
     Plotter::DataCollection dcwttMC_mu1pt(          "stack",  "cutMuPt1", stackwtt_MC);
     Plotter::DataCollection dcwwMC_mu1pt(           "stack",  "cutMuPt1", stackww_MC);
     // mu2pt
-    Plotter::DataCollection dcData_SingleMuon_mu2pt("data",   "cutMuPt2", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_mu2pt("data",   "cutMuPt2", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_mu2pt(  "data",   "cutMuPt2", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_mu2pt(             "stack",  "cutMuPt2", stack_MC);
     Plotter::DataCollection dcwMC_mu2pt(            "stack",  "cutMuPt2", stackw_MC);
     Plotter::DataCollection dcwttMC_mu2pt(          "stack",  "cutMuPt2", stackwtt_MC);
     Plotter::DataCollection dcwwMC_mu2pt(           "stack",  "cutMuPt2", stackww_MC);
     // elpt
-    Plotter::DataCollection dcData_SingleMuon_elpt("data",   "cutElecVec(pt)", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_elpt("data",   "cutElecVec(pt)", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_elpt(  "data",   "cutElecVec(pt)", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_elpt(             "stack",  "cutElecVec(pt)", stack_MC);
     Plotter::DataCollection dcwMC_elpt(            "stack",  "cutElecVec(pt)", stackw_MC);
     Plotter::DataCollection dcwttMC_elpt(          "stack",  "cutElecVec(pt)", stackwtt_MC);
     Plotter::DataCollection dcwwMC_elpt(           "stack",  "cutElecVec(pt)", stackww_MC);
     // el1pt
-    Plotter::DataCollection dcData_SingleMuon_el1pt("data",   "cutElecPt1", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_el1pt("data",   "cutElecPt1", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_el1pt(  "data",   "cutElecPt1", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_el1pt(             "stack",  "cutElecPt1", stack_MC);
     Plotter::DataCollection dcwMC_el1pt(            "stack",  "cutElecPt1", stackw_MC);
     Plotter::DataCollection dcwttMC_el1pt(          "stack",  "cutElecPt1", stackwtt_MC);
     Plotter::DataCollection dcwwMC_el1pt(           "stack",  "cutElecPt1", stackww_MC);
     // el2pt
-    Plotter::DataCollection dcData_SingleMuon_el2pt("data",   "cutElecPt2", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_el2pt("data",   "cutElecPt2", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_el2pt(  "data",   "cutElecPt2", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_el2pt(             "stack",  "cutElecPt2", stack_MC);
     Plotter::DataCollection dcwMC_el2pt(            "stack",  "cutElecPt2", stackw_MC);
     Plotter::DataCollection dcwttMC_el2pt(          "stack",  "cutElecPt2", stackwtt_MC);
     Plotter::DataCollection dcwwMC_el2pt(           "stack",  "cutElecPt2", stackww_MC);
     // mll
-    Plotter::DataCollection dcData_SingleMuon_mll("data",   "bestRecoZM", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_mll("data",   "bestRecoZM", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_mll(  "data",   "bestRecoZM", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_mll(             "stack",  "bestRecoZM", stack_MC);
     Plotter::DataCollection dcwMC_mll(            "stack",  "bestRecoZM", stackw_MC);
     Plotter::DataCollection dcwttMC_mll(          "stack",  "bestRecoZM", stackwtt_MC);
     Plotter::DataCollection dcwwMC_mll(           "stack",  "bestRecoZM", stackww_MC);
     // nsearchbins
-    Plotter::DataCollection dcData_SingleMuon_nSearchBin("data",   "nSearchBin", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nSearchBin("data",   "nSearchBin", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nSearchBin(  "data",   "nSearchBin", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nSearchBin(             "stack",  "nSearchBin", stack_MC);
     Plotter::DataCollection dcwMC_nSearchBin(            "stack",  "nSearchBin", stackw_MC);
     Plotter::DataCollection dcwttMC_nSearchBin(          "stack",  "nSearchBin", stackwtt_MC);
     Plotter::DataCollection dcwwMC_nSearchBin(           "stack",  "nSearchBin", stackww_MC);
     // nb0Bins
-    Plotter::DataCollection dcData_SingleMuon_nb0Bins("data",   "nb0Bins", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nb0Bins("data",   "nb0Bins", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nb0Bins(  "data",   "nb0Bins", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nb0Bins(             "stack",  "nb0Bins", stack_MC);
     Plotter::DataCollection dcwMC_nb0Bins(            "stack",  "nb0Bins", stackw_MC);
     Plotter::DataCollection dcwttMC_nb0Bins(          "stack",  "nb0Bins", stackwtt_MC);
     Plotter::DataCollection dcwwMC_nb0Bins(           "stack",  "nb0Bins", stackww_MC);
     // nb0BinsNW
-    Plotter::DataCollection dcData_SingleMuon_nb0BinsNW("data",   "nb0BinsNW", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nb0BinsNW("data",   "nb0BinsNW", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nb0BinsNW(  "data",   "nb0BinsNW", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nb0BinsNW(             "stack",  "nb0BinsNW", stack_MC);
     Plotter::DataCollection dcwMC_nb0BinsNW(            "stack",  "nb0BinsNW", stackw_MC);
     Plotter::DataCollection dcwttMC_nb0BinsNW(          "stack",  "nb0BinsNW", stackwtt_MC);
     Plotter::DataCollection dcwwMC_nb0BinsNW(           "stack",  "nb0BinsNW", stackww_MC);
     // nb0NJwBins
-    Plotter::DataCollection dcData_SingleMuon_nb0NJwBins("data",   "nb0NJwBins", std::vector<std::vector<PDS>>({{dsData_SingleMuon,dsData_DoubleEG}}));
+    Plotter::DataCollection dcData_SingleMuon_nb0NJwBins("data",   "nb0NJwBins", std::vector<std::vector<PDS>>({{dsData_DoubleEG}}));
     Plotter::DataCollection dcData_DoubleEG_nb0NJwBins(  "data",   "nb0NJwBins", {dsData_DoubleEG});
     Plotter::DataCollection dcMC_nb0NJwBins(             "stack",  "nb0NJwBins", stack_MC);
     Plotter::DataCollection dcwMC_nb0NJwBins(            "stack",  "nb0NJwBins", stackw_MC);

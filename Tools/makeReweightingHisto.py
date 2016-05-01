@@ -1,4 +1,5 @@
 from optparse import OptionParser
+from utils import *
 
 import array, sys
 # Check if we want the help, if not import ROOT (otherwise ROOT overwrites the help)
@@ -93,6 +94,7 @@ def subtract(h, hlist):
     new_h = h.Clone()
     new_h.Sumw2()
     for hl in hlist:
+        print 'hl',hl
         new_h.Add(hl,-1.)
         #print hl.GetName(), new_h.Integral()
     return new_h
@@ -187,9 +189,9 @@ def normWeight(filename):
     # histo names
     hname1 = "cntCSVSZinv/DataMC_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvDatadata"
     hnames2 = ["cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvDYstack",
-               "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvDY HT<100stack",
+    #"cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvDY HT<100stack",
                "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvt#bar{t}stack",
-               "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvsingle topstack",
+               "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvSingle topstack",
                "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvt#bar{t}Zstack",
                "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvDibosonstack",
                "cntCSVSZinv/DataMCw_SingleMuon_nb_%(cut)s_%(selection)scntCSVSZinvcntCSVSZinvRarestack"
@@ -206,9 +208,13 @@ def normWeight(filename):
         # Get all histos
         #h1 = add([f.Get(hname1a_DY) for hname1a_DY in hname1_DY])
         #h2s = [add([f.Get(sel) for sel in hname2a_DY]) for hname2a_DY in hnames2_DY]
+        print 'hname1_DY',hname1_DY
+        print 'hname2_DY',hnames2_DY
         h1 = f.Get(hname1_DY)
         h2s = [f.Get(sel) for sel in hnames2_DY]
+        print 'h2s[2:]',h2s[2:]
         # subtract relevant histograms from data
+        #pause()
         data_subtracted = subtract(h1, h2s[2:])
         #print data_subtracted.Integral()
         newname = "DataMC_nb_%s_%s"%(cut,selection2)
@@ -381,70 +387,6 @@ def systHarvest(filename):
 
     fout = TFile("syst_all.root", "RECREATE")
     hShape_final.Write()
-
-
-    # Get correlation study info
-    hCorr_METGaus_Nom = f.Get("nSearchBin/CorrMETGaus_cleanMetPtnSearchBinnSearchBinNominalsingle")
-    hCorr_METGaus_Var = f.Get("nSearchBin/CorrMETGaus_cleanMetPtnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2Gaus_Nom = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2Gaus_Var = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2vMETGaus_Nom = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2vMETGaus_Var = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-    hCorr_METLogi_Nom = f.Get("nSearchBin/CorrMETLogi_cleanMetPtnSearchBinnSearchBinNominalsingle")
-    hCorr_METLogi_Var = f.Get("nSearchBin/CorrMETLogi_cleanMetPtnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2Logi_Nom = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2Logi_Var = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2vMETLogi_Nom = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2vMETLogi_Var = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-
-    hCorr_METGaus_ratio = hCorr_METGaus_Var.Clone(hCorr_METGaus_Nom.GetName()+"_ratio")
-    hCorr_METGaus_ratio.Divide(hCorr_METGaus_Nom)
-    hCorr_METGaus_ratio.Write()
-
-    hCorr_MT2Gaus_ratio = hCorr_MT2Gaus_Var.Clone(hCorr_MT2Gaus_Nom.GetName()+"_ratio")
-    hCorr_MT2Gaus_ratio.Divide(hCorr_MT2Gaus_Nom)
-    hCorr_MT2Gaus_ratio.Write()
-
-    hCorr_MT2vMETGaus_ratio = hCorr_MT2vMETGaus_Var.Clone(hCorr_MT2vMETGaus_Nom.GetName()+"_ratio")
-    hCorr_MT2vMETGaus_ratio.Divide(hCorr_MT2vMETGaus_Nom)
-
-    hCorr_METLogi_ratio = hCorr_METLogi_Var.Clone(hCorr_METLogi_Nom.GetName()+"_ratio")
-    hCorr_METLogi_ratio.Divide(hCorr_METLogi_Nom)
-    hCorr_METLogi_ratio.Write()
-
-    hCorr_MT2Logi_ratio = hCorr_MT2Logi_Var.Clone(hCorr_MT2Logi_Nom.GetName()+"_ratio")
-    hCorr_MT2Logi_ratio.Divide(hCorr_MT2Logi_Nom)
-    hCorr_MT2Logi_ratio.Write()
-
-    hCorr_MT2vMETLogi_ratio = hCorr_MT2vMETLogi_Var.Clone(hCorr_MT2vMETLogi_Nom.GetName()+"_ratio")
-    hCorr_MT2vMETLogi_ratio.Divide(hCorr_MT2vMETLogi_Nom)
-
-    hCorr_Gaus_final = hCorr_METGaus_ratio.Clone("Corr_1D_Gauss")
-    hCorr_Logi_final = hCorr_METLogi_ratio.Clone("Corr_1D_Logistic")
-    for i in xrange(1, hCorr_METGaus_ratio.GetNbinsX() + 1):
-        uncertCorrMET = hCorr_METGaus_ratio.GetBinContent(i) - 1 if hCorr_METGaus_ratio.GetBinContent(i) > 0 else 0
-        uncertCorrMT2 = hCorr_MT2Gaus_ratio.GetBinContent(i) - 1 if hCorr_MT2Gaus_ratio.GetBinContent(i) > 0 else 0
-        hCorr_Gaus_final.SetBinContent(i, sqrt(uncertCorrMET**2 + uncertCorrMT2**2))
-    for i in xrange(1, hCorr_METLogi_ratio.GetNbinsX() + 1):
-        uncertCorrMET = hCorr_METLogi_ratio.GetBinContent(i) - 1 if hCorr_METLogi_ratio.GetBinContent(i) > 0 else 0
-        uncertCorrMT2 = hCorr_MT2Logi_ratio.GetBinContent(i) - 1 if hCorr_MT2Logi_ratio.GetBinContent(i) > 0 else 0
-        hCorr_Logi_final.SetBinContent(i, sqrt(uncertCorrMET**2 + uncertCorrMT2**2))
-    for i in xrange(1, hCorr_MT2vMETGaus_ratio.GetNbinsX()+1):
-        hCorr_MT2vMETGaus_ratio.SetBinContent(i,abs(hCorr_MT2vMETGaus_ratio.GetBinContent(i)-1) if hCorr_MT2vMETGaus_ratio.GetBinContent(i)>0 else 0)
-        hCorr_MT2vMETLogi_ratio.SetBinContent(i,abs(hCorr_MT2vMETLogi_ratio.GetBinContent(i)-1) if hCorr_MT2vMETLogi_ratio.GetBinContent(i)>0 else 0)
-
-    hCorr_Gaus_final.Write()
-    hCorr_Logi_final.Write()
-    hCorr_MT2vMETGaus_ratio.Write("Corr_2D_Gauss")
-    hCorr_MT2vMETLogi_ratio.Write("Corr_2D_Logistic")
-
-    # Pull
-    hPull = hCorr_MT2vMETLogi_ratio.Clone("Pull_Logi")
-    hPull.Add(hCorr_Logi_final,-1)
-    for i in xrange(1, hPull.GetNbinsX()+1):
-        sf = sqrt(hCorr_Logi_final.GetBinError(i)**2 + hCorr_MT2vMETLogi_ratio.GetBinError(i)**2)
-        hPull.SetBinContent(i, hPull.GetBinContent(i)/sf)
-    hPull.Write()
 
     # Get shape stats uncertainty
     f2 = TFile("syst_nJetWgt.root")
@@ -682,8 +624,10 @@ def systHarvest(filename):
     print "stat_unc_dn = xxx yy zz"
     print ""
 
-    print "%-25s = %s"%("syst_unc_norm_up", ' '.join(NSB*["%8.5f" % 0.194125]))
-    print "%-25s = %s"%("syst_unc_norm_dn", ' '.join(NSB*["%8.5f" % 0.194125]))
+    #print "%-25s = %s"%("syst_unc_norm_up", ' '.join(NSB*["%8.5f" % 0.194125]))
+    #print "%-25s = %s"%("syst_unc_norm_dn", ' '.join(NSB*["%8.5f" % 0.194125]))
+    print "%-25s = %s"%("syst_unc_norm_up", ' '.join(NSB*["%8.5f" % 0.1264]))
+    print "%-25s = %s"%("syst_unc_norm_dn", ' '.join(NSB*["%8.5f" % 0.1264]))    
 
     for (name, h) in hists:
         print "%-25s = %s"%(name, ' '.join(["%8.5f" % (abs(h.GetBinContent(i))) for i in xrange(1, NSB+1)]))

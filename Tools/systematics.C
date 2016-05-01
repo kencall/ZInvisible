@@ -115,22 +115,22 @@ int main(int argc, char* argv[])
     TH1 *shapeMETGaus, *shapeMT2Gaus, *shapeMETLogi, *shapeMT2Logi;
     TH2 *shapeMT2vMETGaus, *shapeMT2vMETLogi;
     
-    TFile *f2 = new TFile("correlations_ratio.root");
-    if(f2)
-    {
-        shapeMETGaus = static_cast<TH1*>(f->Get("Ratio_MET_Gaus")->Clone());
-        shapeMT2Gaus = static_cast<TH1*>(f->Get("Ratio_MT2_Gaus")->Clone());
-        shapeMT2vMETGaus = static_cast<TH2*>(f->Get("Ratio_MT2vMET_Gaus")->Clone());
-        shapeMETLogi  = static_cast<TH1*>(f->Get("Ratio_MET_Logi")->Clone());
-        shapeMT2Logi  = static_cast<TH1*>(f->Get("Ratio_MT2_Logi")->Clone());
-        shapeMT2vMETLogi  = static_cast<TH2*>(f->Get("Ratio_MT2vMET_Logi")->Clone());
-        f2->Close();
-        delete f2;
-    }
-    else
-    {
-        std::cout << "Failed to open: correlations_ratio.root" << std::endl;
-    }
+    //TFile *f2 = new TFile("correlations_ratio.root");
+    //if(f2)
+   //{
+    //    shapeMETGaus = static_cast<TH1*>(f->Get("Ratio_MET_Gaus")->Clone());
+     //   shapeMT2Gaus = static_cast<TH1*>(f->Get("Ratio_MT2_Gaus")->Clone());
+    //    shapeMT2vMETGaus = static_cast<TH2*>(f->Get("Ratio_MT2vMET_Gaus")->Clone());
+    //    shapeMETLogi  = static_cast<TH1*>(f->Get("Ratio_MET_Logi")->Clone());
+     //   shapeMT2Logi  = static_cast<TH1*>(f->Get("Ratio_MT2_Logi")->Clone());
+      //  shapeMT2vMETLogi  = static_cast<TH2*>(f->Get("Ratio_MT2vMET_Logi")->Clone());
+     //  f2->Close();
+      // delete f2;
+    //}
+    //else
+    //{
+     //   std::cout << "Failed to open: correlations_ratio.root" << std::endl;
+    //}
 
 
     RegisterFunctions *rf = new RegisterFunctionsSyst;
@@ -174,35 +174,35 @@ int main(int argc, char* argv[])
     NBSyst.bookHist(vh, fileMap["ZJetsToNuNu"]);
     static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(NBSyst, std::placeholders::_1));
 
-    //MET Gaus correlation study uncertainty
-    Systematic CorrMETGaus("CorrMETGaus", "cleanMetPt", shapeMETGaus);
-    CorrMETGaus.bookHist(vh, fileMap["ZJetsToNuNu"]);
-    static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMETGaus, std::placeholders::_1));
+    // //MET Gaus correlation study uncertainty
+    // Systematic CorrMETGaus("CorrMETGaus", "cleanMetPt", shapeMETGaus);
+    // CorrMETGaus.bookHist(vh, fileMap["ZJetsToNuNu"]);
+    // static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMETGaus, std::placeholders::_1));
 
-    //MT2 Gaus correlation study uncertainty
-    Systematic CorrMT2Gaus("CorrMT2Gaus", "best_had_brJet_MT2Zinv", shapeMT2Gaus);
-    CorrMT2Gaus.bookHist(vh, fileMap["ZJetsToNuNu"]);
-    static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2Gaus, std::placeholders::_1));
+    // //MT2 Gaus correlation study uncertainty
+    // Systematic CorrMT2Gaus("CorrMT2Gaus", "best_had_brJet_MT2Zinv", shapeMT2Gaus);
+    // CorrMT2Gaus.bookHist(vh, fileMap["ZJetsToNuNu"]);
+    // static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2Gaus, std::placeholders::_1));
 
-    //MT2vMET Gaus correlation study uncertainty
-    Systematic CorrMT2vMETGaus("CorrMT2vMETGaus", "cleanMetPt", "best_had_brJet_MT2Zinv", shapeMT2vMETGaus);
-    CorrMT2vMETGaus.bookHist(vh, fileMap["ZJetsToNuNu"]);
-    static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2vMETGaus, std::placeholders::_1));
+    // //MT2vMET Gaus correlation study uncertainty
+    // Systematic CorrMT2vMETGaus("CorrMT2vMETGaus", "cleanMetPt", "best_had_brJet_MT2Zinv", shapeMT2vMETGaus);
+    // CorrMT2vMETGaus.bookHist(vh, fileMap["ZJetsToNuNu"]);
+    // static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2vMETGaus, std::placeholders::_1));
 
-    //MET Logi correlation study uncertainty
-    Systematic CorrMETLogi("CorrMETLogi", "cleanMetPt", shapeMETLogi);
-    CorrMETLogi.bookHist(vh, fileMap["ZJetsToNuNu"]);
-    static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMETLogi, std::placeholders::_1));
+    // //MET Logi correlation study uncertainty
+    // Systematic CorrMETLogi("CorrMETLogi", "cleanMetPt", shapeMETLogi);
+    // CorrMETLogi.bookHist(vh, fileMap["ZJetsToNuNu"]);
+    // static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMETLogi, std::placeholders::_1));
 
-    //MT2 Logi correlation study uncertainty
-    Systematic CorrMT2Logi("CorrMT2Logi", "best_had_brJet_MT2Zinv", shapeMT2Logi);
-    CorrMT2Logi.bookHist(vh, fileMap["ZJetsToNuNu"]);
-    static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2Logi, std::placeholders::_1));
+    // //MT2 Logi correlation study uncertainty
+    // Systematic CorrMT2Logi("CorrMT2Logi", "best_had_brJet_MT2Zinv", shapeMT2Logi);
+    // CorrMT2Logi.bookHist(vh, fileMap["ZJetsToNuNu"]);
+    // static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2Logi, std::placeholders::_1));
 
-    //MT2vMET Logi correlation study uncertainty
-    Systematic CorrMT2vMETLogi("CorrMT2vMETLogi", "cleanMetPt", "best_had_brJet_MT2Zinv", shapeMT2vMETLogi);
-    CorrMT2vMETLogi.bookHist(vh, fileMap["ZJetsToNuNu"]);
-    static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2vMETLogi, std::placeholders::_1));
+    // //MT2vMET Logi correlation study uncertainty
+    // Systematic CorrMT2vMETLogi("CorrMT2vMETLogi", "cleanMetPt", "best_had_brJet_MT2Zinv", shapeMT2vMETLogi);
+    // CorrMT2vMETLogi.bookHist(vh, fileMap["ZJetsToNuNu"]);
+    // static_cast<RegisterFunctionsSyst*>(rf)->addFunction(std::bind(CorrMT2vMETLogi, std::placeholders::_1));
 
     Plotter::DataCollection dcDY_nunu_nJetWgtSyst( "single", {{"njSystWeightedSB", dsZ_nunu}, {"njSystUnweightedSB", dsZ_nunu}});
     vh.emplace_back(PHS("systNJetWgtStat", {dcDY_nunu_nJetWgtSyst}, {2, 1}, "", 45, 0, 45, true, true, "Search Bin", "Events"));
