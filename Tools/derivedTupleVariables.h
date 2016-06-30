@@ -6,10 +6,10 @@
 #include "SusyAnaTools/Tools/searchBins.h"
 #include "ScaleFactors.h"
 
-#include "TopTagger.h"
-#include "TTModule.h"
-#include "TopTaggerUtilities.h"
-#include "TopTaggerResults.h"
+#include "TopTagger/TopTagger/include/TopTagger.h"
+#include "TopTagger/TopTagger/include/TTModule.h"
+#include "TopTagger/TopTagger/include/TopTaggerUtilities.h"
+#include "TopTagger/TopTagger/include/TopTaggerResults.h"
 
 #include "TH1.h"
 #include "TH2.h"
@@ -1163,6 +1163,7 @@ namespace plotterFunctions
     private:
 	int indexMuTrigger;
 	int indexElecTrigger;
+	int indexSingleMuTrigger;
         bool miniTuple_;
 
 	double GetTriggerEffWeight(const double& met) 
@@ -1223,9 +1224,11 @@ namespace plotterFunctions
 
 	    bool passMuTrigger = false;
 	    bool passElecTrigger = false;
+	    bool passSingleMuTrigger = false;
 
 	    const std::string muTrigName = "HLT_Mu45_eta2p1_v";
 	    const std::string elecTrigName = "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v";
+	    const std::string singleMuTrigName = "HLT_Mu15_IsoVVVL_PFHT350_v";
 
 	    // Find the index of our triggers if we don't know them already
 	    if(indexMuTrigger == -1 || indexElecTrigger == -1)
@@ -1240,6 +1243,10 @@ namespace plotterFunctions
 		    {
 			indexElecTrigger = i;
 		    }
+		    else if(triggerNames[i].find(singleMuTrigName) != std::string::npos)
+		    {
+			indexSingleMuTrigger = i;
+		    }
 		}
 	    }
 	    if(indexMuTrigger != -1 && indexElecTrigger != -1)
@@ -1249,6 +1256,8 @@ namespace plotterFunctions
 		    passMuTrigger = true;
 		if(triggerNames[indexElecTrigger].find(elecTrigName) != std::string::npos && passTrigger[indexElecTrigger])
 		    passElecTrigger = true;
+		if(triggerNames[indexSingleMuTrigger].find(singleMuTrigName) != std::string::npos && passTrigger[indexSingleMuTrigger])
+		    passSingleMuTrigger = true;
 	    }
 	    else
 	    {
@@ -1257,6 +1266,7 @@ namespace plotterFunctions
 
 	    tr.registerDerivedVar("passMuTrigger",passMuTrigger);
 	    tr.registerDerivedVar("passElecTrigger",passElecTrigger);
+	    tr.registerDerivedVar("passSingleMuTrigger", passSingleMuTrigger);
         }
 
         void triggerInfoMC(NTupleReader& tr)
@@ -1282,6 +1292,7 @@ namespace plotterFunctions
 	{
 	    indexMuTrigger = -1;
 	    indexElecTrigger = -1;
+	    indexSingleMuTrigger = -1;
             miniTuple_ = miniTuple;
 	}
 
