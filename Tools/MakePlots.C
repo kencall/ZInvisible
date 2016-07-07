@@ -122,7 +122,7 @@ int main(int argc, char* argv[])
     if(dataSets.compare("TEST") == 0)
     {
         fileMap["DYJetsToLL"]  = {ss["DYJetsToLL_HT_600toInf"]};
-        fileMap["ZJetsToNuNu"] = {ss["ZJetsToNuNu_HT_2500toInf"]};
+        //fileMap["ZJetsToNuNu"] = {ss["ZJetsToNuNu_HT_2500toInf"]};
         fileMap["DYJetsToLL_HT_600toInf"] = {ss["DYJetsToLL_HT_600toInf"]};
         fileMap["ZJetsToNuNu_HT_2500toInf"] = {ss["ZJetsToNuNu_HT_2500toInf"]};
         fileMap["TTbarDiLep"] = {ss["TTbarDiLep"]};
@@ -194,49 +194,92 @@ int main(int argc, char* argv[])
     // Datasetsummaries we are using
     // no weight (genWeight deals with negative weights)
     //                                        legend label  sample commection           cuts               weights
-    Plotter::DatasetSummary dsData_SingleMuon("Data",       fileMap["Data_SingleMuon"], "passMuTrigger",   "");
-    Plotter::DatasetSummary dsData_DoubleEG(  "Data",       fileMap["Data_DoubleEG"],   "passElecTrigger", "");
+    Plotter::DatasetSummary dsData_SingleMuon("Data",       fileMap["Data_HTMHT"], "passSingleMuTrigger",   "");
+    Plotter::DatasetSummary dsData_SingleMuonNotrig("Data",       fileMap["Data_HTMHT"], "",   "");
+    Plotter::DatasetSummary dsData_HTMHT(  "Data",       fileMap["Data_HTMHT"],   "passhtmhtTrigger", "");
     Plotter::DatasetSummary dsDY(             "DY",         fileMap["DYJetsToLL"],      "",                "");
-    Plotter::DatasetSummary dsDYInc(          "DY HT<100",  fileMap["IncDY"],           "genHT<100",       "");
+    Plotter::DatasetSummary dsT1tttt1500(             "T1tttt(1500,100)",         fileMap["Signal_T1tttt_mGluino1500_mLSP100"],      "",                "");
+    Plotter::DatasetSummary dsT1tttt1200(             "T1tttt(1200,800)",         fileMap["Signal_T1tttt_mGluino1200_mLSP800"],      "",                "");
+    Plotter::DatasetSummary dsT2tt1500(             "T2tt(500,325)",         fileMap["Signal_T2tt_mStop500_mLSP325"],      "",                "");
+    Plotter::DatasetSummary dsT2tt800(             "T2tt(800,100)",         fileMap["Signal_T2tt_mStop850_mLSP100"],      "",                "");
+    //Plotter::DatasetSummary dsDYInc(          "DY HT<100",  fileMap["IncDY"],           "",       "");
     Plotter::DatasetSummary dstt2l(           "t#bar{t}",   fileMap["TTbarNoHad"],      "",                "");
     Plotter::DatasetSummary dstW(             "Single top", fileMap["tW"],              "",                "");
     Plotter::DatasetSummary dsttZ(            "t#bar{t}Z",  fileMap["TTZ"],             "",                "genWeight");
     Plotter::DatasetSummary dsVV(             "Diboson",    fileMap["Diboson"],         "",                "");
+    Plotter::DatasetSummary dsVVV(             "Other",    fileMap["Triboson"],         "",                "genWeight");
     Plotter::DatasetSummary dsRare(           "Rare",       fileMap["Rare"],            "",                "genWeight");
-    std::vector<std::vector<Plotter::DatasetSummary>> stack_MC = {{dsDY, dsDYInc}, {dstt2l}, {dstW}, {dsttZ}, {dsVV}, {dsRare}};
-    // Collections for all variables, no cuts applied yet
+    Plotter::DatasetSummary dsQCD(             "QCD",    fileMap["QCD"],         "passQCD",                "");
+    Plotter::DatasetSummary dsZJets(             "ZJetsToNuNu",    fileMap["ZJetsToNuNu"],         "",                "");
+    Plotter::DatasetSummary dsWJets(             "WJetsToLNu",    fileMap["WJetsToLNu"],         "",                "");
+    Plotter::DatasetSummary dsTTW(             "TTW",    fileMap["TTW"],         "",                "genWeight");
+    std::vector<std::vector<Plotter::DatasetSummary>> stack_MC = {{dstt2l}, {dsWJets}, {dstW}, {dsZJets}, {dsttZ}, {dsQCD}, {dsRare,dsDY,dsVV}};
+    std::vector<std::vector<Plotter::DatasetSummary>> stack_MC_hong = {{dstt2l}, {dsWJets}, {dstW}, {dsZJets}, {dsttZ}, {dsQCD}, {dsVVV,dsVV,dsTTW}};
+    std::vector<std::vector<Plotter::DatasetSummary>> singal_points= {{dsT2tt800},{dsT2tt1500},{dsT1tttt1200},{dsT1tttt1500}};
+     // Collections for all variables, no cuts applied yet
     // met
 
     auto PDCMaker = [&](std::string var) 
     {
       //                                                   plotType  var  vector of datasetsummary
 	return  std::vector<PDC>({ Plotter::DataCollection("data",   var, {dsData_SingleMuon}),
-		                   Plotter::DataCollection("stack",  var, stack_MC)             });
+		                   Plotter::DataCollection("stack",  var, stack_MC),             
+                                   Plotter::DataCollection("single",   var, singal_points)  });
     };
 
-    // pair of cutlevels
+    auto PDCMaker1 = [&](std::string var)
+    {
+        return  std::vector<PDC>({ Plotter::DataCollection("data",   var, {dsData_HTMHT}),
+                                   Plotter::DataCollection("stack",  var, stack_MC), 
+                                   Plotter::DataCollection("single",   var, singal_points)  });
+    };
+
+    auto PDCMaker_nonesig = [&](std::string var)
+    {
+         return  std::vector<PDC>({ Plotter::DataCollection("data",   var, {dsData_SingleMuon}),
+                                   Plotter::DataCollection("stack",  var, stack_MC)  });
+    };
+
+    auto PDCMaker1_nonesig = [&](std::string var)
+    {
+        return  std::vector<PDC>({ Plotter::DataCollection("data",   var, {dsData_HTMHT}),
+                                   Plotter::DataCollection("stack",  var, stack_MC)  });
+    };
+
+    auto PDCMaker1_nonesig_notrig = [&](std::string var)
+    {
+         return  std::vector<PDC>({ Plotter::DataCollection("data",   var, {dsData_SingleMuonNotrig}),
+                                   Plotter::DataCollection("stack",  var, stack_MC)  });
+    };
+    auto PDCMaker1_rare = [&](std::string var)
+    {
+        return  std::vector<PDC>({ Plotter::DataCollection("data",   var, {dsData_HTMHT}),
+                                   Plotter::DataCollection("stack",  var, stack_MC_hong),
+                                   Plotter::DataCollection("single",   var, singal_points)  });
+    };
     std::vector<std::pair<std::string,std::string>> cutlevels_muon = {
         //cut name                    cut string
-	{"nosel",                     "passNoiseEventFilterZinv"},
-	{"2mu",                       "passNoiseEventFilterZinv;passDiMuSel"},
-	{"muZinv",                    "passNoiseEventFilterZinv;passMuZinvSel"},
-	{"muZinv_ht200",              "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200"},
-	{"muZinv_ht200_dphi",         "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passdPhisZinv"},
-	{"muZinv_ht50_met50_dphi",    "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>50;cleanMetPt>50;passdPhisZinv"},
-	{"muZinv_loose0",             "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv"},
-	{"muZinv_loose0_mt2",         "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv>0"},
-	{"muZinv_loose0_mt21b",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv1b>0"},
-	{"muZinv_loose0_mt22b",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv2b>0"},
-	{"muZinv_loose0_mt23b",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv3b>0"},
-	{"muZinv_loose0_ntop",        "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;nTopCandSortedCntZinv>0"},
-	{"muZinv_loose0_nb2",         "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;cntCSVSZinv>=2"},
-	{"muZinv_loose0_ht300",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>300;passnJetsZinv;passdPhisZinv"},
-	{"muZinv_loose0_ht400",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>400;passnJetsZinv;passdPhisZinv"},
-	{"muZinv_loose0_ht500",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>500;passnJetsZinv;passdPhisZinv"},
-	{"muZinv_blnotagmt2",         "passMuZinvSel;passBaselineNoTagMT2Zinv"},
-	{"muZinv_blnotag",            "passMuZinvSel;passBaselineNoTagZinv"},
-	{"muZinv_bl",                 "passMuZinvSel;passBaselineZinv"},
-	{"muZinv_0b",                 "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0"},
+	{"Koushik",                     "passnJets;passdPhis;passMET;passBJets;passTagger;passHT;passMT2;passNoiseEventFilter;passKoushik"},
+	//{"2mu",                       "passNoiseEventFilterZinv;passDiMuSel"},
+	//{"muZinv",                    "passNoiseEventFilterZinv;passMuZinvSel"},
+	//{"muZinv_ht200",              "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200"},
+	//{"muZinv_ht200_dphi",         "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passdPhisZinv"},
+	//{"muZinv_ht50_met50_dphi",    "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>50;cleanMetPt>50;passdPhisZinv"},
+	//{"muZinv_loose0",             "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv"},
+	//{"muZinv_loose0_mt2",         "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv>0"},
+	//{"muZinv_loose0_mt21b",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv1b>0"},
+	//{"muZinv_loose0_mt22b",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv2b>0"},
+	//{"muZinv_loose0_mt23b",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv3b>0"},
+	//{"muZinv_loose0_ntop",        "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;nTopCandSortedCntZinv>0"},
+	//{"muZinv_loose0_nb2",         "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>200;passnJetsZinv;passdPhisZinv;cntCSVSZinv>=2"},
+	//{"muZinv_loose0_ht300",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>300;passnJetsZinv;passdPhisZinv"},
+	//{"muZinv_loose0_ht400",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>400;passnJetsZinv;passdPhisZinv"},
+	//{"muZinv_loose0_ht500",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>500;passnJetsZinv;passdPhisZinv"},
+	//{"muZinv_blnotagmt2",         "passMuZinvSel;passBaselineNoTagMT2Zinv"},
+	{"baseline",            "passBaseline"},
+	{"baseline_Zinv",                 "passBaselineZinv;passNoiseEventFilter;passKoushik"},
+	//{"muZinv_0b",                 "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0"},
+/*
 	{"muZinv_0b_ht200",           "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0;HTZinv>200"},
 	{"muZinv_0b_ht200_dphi",      "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0;HTZinv>200;passdPhisZinv"},
 	{"muZinv_0b_ht50_met50_dphi", "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0;HTZinv>50;cleanMetPt>50;passdPhisZinv"},
@@ -271,7 +314,8 @@ int main(int argc, char* argv[])
 	{"elmuZinv_g1b_ht200",        "passNoiseEventFilterZinv;passElMuZinvSel;passBJetsZinv;HTZinv>200"},
 	{"elmuZinv_g1b_ht200_dphi",   "passNoiseEventFilterZinv;passElMuZinvSel;passBJetsZinv;HTZinv>200;passdPhisZinv"},
 	{"elmuZinv_g1b_loose0",       "passNoiseEventFilterZinv;passElMuZinvSel;passBJetsZinv;HTZinv>200;passnJetsZinv;passdPhisZinv"}
-    };
+*/ 
+   };
 
 
     //push the histograms in a loop, save some copy-paste time
@@ -279,8 +323,134 @@ int main(int argc, char* argv[])
     {
 	// unweighted
         //               histogram name                         vector of PDC           ratio  cutstring    bins ll ul   log   norm    x-axis      y-axis     
-	vh.push_back(PHS("DataMC_SingleMuon_met_" + cut.first,  PDCMaker("cleamMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,  "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_ht_"  + cut.first,  PDCMaker("HTZinv"),     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_metZinv_" + cut.first,  PDCMaker("cleanMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_ht_Zinv"  + cut.first,  PDCMaker("HTZinv"), {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_ht_"  + cut.first,  PDCMaker("HT"),     {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_met_"  + cut.first,  PDCMaker("met"),     {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NBJetsZInv_"  + cut.first,  PDCMaker("cntCSVSZinv"),   {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NBJEts_"  + cut.first,  PDCMaker("cntCSVS"),     {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NJEtsZInv_" + cut.first, PDCMaker("cntNJetsPt30Eta24Zinv"), {1, 2}, cut.second, 20, 0, 20, false, true,  label_nj, "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NJEts_"  + cut.first,  PDCMaker("cntNJetsPt30Eta24"),{1, 2}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events")); 
+       vh.push_back(PHS("DataMC_SingleMuon_model_NTopsZinv_"  + cut.first,  PDCMaker("nTopCandSortedCntZinv"), {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NTops_"  + cut.first,  PDCMaker("nTopCandSortedCnt"),     {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_MT2ZInv_"  + cut.first,  PDCMaker("best_had_brJet_MT2Zinv"), {1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2, "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_MT2_"  + cut.first,  PDCMaker("best_had_brJet_MT2"),     {1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_metNoratio_" + cut.first,  PDCMaker("met"), {1, 1}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events")); 
+       vh.push_back(PHS("DataMC_SingleMuon_model_htNoratio_"  + cut.first,  PDCMaker("HT"),     {1, 1}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NBJEtsNoratio_"  + cut.first,  PDCMaker("cntCSVS"),     {1, 1}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NJEtsNoratio_"  + cut.first,  PDCMaker("cntNJetsPt30Eta24"),{1, 1}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_NTopsNoratio_"  + cut.first, PDCMaker("nTopCandSortedCnt"), {1, 1}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_model_MT2Noratio_"  + cut.first,  PDCMaker("best_had_brJet_MT2"), {1, 1}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+    }
+
+    for(std::pair<std::string,std::string>& cut : cutlevels_muon)
+    {
+       vh.push_back(PHS("DataMC_HTMHT_model_metZinv_" + cut.first,  PDCMaker1("cleanMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_ht_Zinv"  + cut.first,  PDCMaker1("HTZinv"), {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_ht_"  + cut.first,  PDCMaker1("HT"),     {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_met_"  + cut.first,  PDCMaker1("met"),     {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NBJetsZInv_"  + cut.first,  PDCMaker1("cntCSVSZinv"),   {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NBJEts_"  + cut.first,  PDCMaker1("cntCSVS"),     {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NJEtsZInv_" + cut.first, PDCMaker1("cntNJetsPt30Eta24Zinv"), {1, 2}, cut.second, 20, 0, 20, false, true,  label_nj, "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NJEts_"  + cut.first,  PDCMaker1("cntNJetsPt30Eta24"),{1, 2}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NTops_"  + cut.first,  PDCMaker1("nTopCandSortedCntZinv"), {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NTops_"  + cut.first,  PDCMaker1("nTopCandSortedCnt"),     {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_MT2ZInv_"  + cut.first,  PDCMaker1("best_had_brJet_MT2Zinv"),  {1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_MT2_"  + cut.first,  PDCMaker1("best_had_brJet_MT2"), {1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_metNoratio_" + cut.first,  PDCMaker1("met"), {1, 1}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_htNoratio_"  + cut.first,  PDCMaker1("HT"),     {1, 1}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NBJEtsNoratio_"  + cut.first,  PDCMaker1("cntCSVS"),     {1, 1}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NJEtsNoratio_"  + cut.first,  PDCMaker1("cntNJetsPt30Eta24"),{1, 1}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_NTopsNoratio_"  + cut.first,  PDCMaker1("nTopCandSortedCnt"),     {1, 1}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_model_MT2Noratio_"  + cut.first,  PDCMaker1("best_had_brJet_MT2"),  {1, 1}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+    }
+
+    for(std::pair<std::string,std::string>& cut : cutlevels_muon)
+    {
+       vh.push_back(PHS("DataMC_SingleMuon_metZinv_" + cut.first,  PDCMaker_nonesig("cleanMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_ht_Zinv"  + cut.first,  PDCMaker_nonesig("HTZinv"), {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_ht_"  + cut.first,  PDCMaker_nonesig("HT"),     {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_met_"  + cut.first,  PDCMaker_nonesig("met"),     {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NBJetsZInv_"  + cut.first,  PDCMaker_nonesig("cntCSVSZinv"),   {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NBJEts_"  + cut.first,  PDCMaker_nonesig("cntCSVS"),     {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NJEtsZInv_" + cut.first, PDCMaker_nonesig("cntNJetsPt30Eta24Zinv"), {1, 2}, cut.second, 20, 0, 20, false, true,  label_nj, "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NJEts_"  + cut.first,  PDCMaker_nonesig("cntNJetsPt30Eta24"),{1, 2}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NTops_"  + cut.first,  PDCMaker_nonesig("nTopCandSortedCntZinv"), {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NTops_"  + cut.first,  PDCMaker_nonesig("nTopCandSortedCnt"),     {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_MT2ZInv_"  + cut.first,  PDCMaker_nonesig("best_had_brJet_MT2Zinv"),{1, 2}, cut.second,100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_MT2_"  + cut.first,  PDCMaker_nonesig("best_had_brJet_MT2"),     {1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_metNoratio_" + cut.first,  PDCMaker_nonesig("met"), {1, 1}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_htNoratio_"  + cut.first,  PDCMaker_nonesig("HT"),     {1, 1}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NBJEtsNoratio_"  + cut.first,  PDCMaker_nonesig("cntCSVS"),     {1, 1}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NJEtsNoratio_"  + cut.first,  PDCMaker_nonesig("cntNJetsPt30Eta24"),{1, 1}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_NTopsNoratio_"  + cut.first,  PDCMaker_nonesig("nTopCandSortedCnt"), {1, 1}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuon_MT2Noratio_"  + cut.first,  PDCMaker_nonesig("best_had_brJet_MT2"), {1, 1}, cut.second,100, 0, 1500, true, true,  label_mt2,   "Events"));
+    }
+
+    for(std::pair<std::string,std::string>& cut : cutlevels_muon)
+    {
+       vh.push_back(PHS("DataMC_HTMHT_metZinv_" + cut.first,  PDCMaker1_nonesig("cleanMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_ht_Zinv"  + cut.first,  PDCMaker1_nonesig("HTZinv"), {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__ht_"  + cut.first,  PDCMaker1_nonesig("HT"),     {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__met_"  + cut.first,  PDCMaker1_nonesig("met"),     {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NBJetsZInv_"  + cut.first,  PDCMaker1_nonesig("cntCSVSZinv"),   {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NBJEts_"  + cut.first,  PDCMaker1_nonesig("cntCSVS"),     {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NJEtsZInv_" + cut.first, PDCMaker1_nonesig("cntNJetsPt30Eta24Zinv"), {1, 2}, cut.second, 20, 0, 20, false, true,  label_nj, "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NJEts_"  + cut.first,  PDCMaker1_nonesig("cntNJetsPt30Eta24"),{1, 2}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NTops_"  + cut.first,  PDCMaker1_nonesig("nTopCandSortedCntZinv"), {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NTops_"  + cut.first,  PDCMaker1_nonesig("nTopCandSortedCnt"),     {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__MT2ZInv_"  + cut.first,  PDCMaker1_nonesig("best_had_brJet_MT2Zinv"), {1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__MT2_"  + cut.first,  PDCMaker1_nonesig("best_had_brJet_MT2"),{1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__metNoratio_" + cut.first,  PDCMaker1_nonesig("met"), {1, 1}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__htNoratio_"  + cut.first,  PDCMaker1_nonesig("HT"),     {1, 1}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NBJEtsNoratio_"  + cut.first,  PDCMaker1_nonesig("cntCSVS"),     {1, 1}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NJEtsNoratio_"  + cut.first,  PDCMaker1_nonesig("cntNJetsPt30Eta24"),{1, 1}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__NTopsNoratio_"  + cut.first,  PDCMaker1_nonesig("nTopCandSortedCnt"),  {1, 1}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH__MT2Noratio_"  + cut.first,  PDCMaker1_nonesig("best_had_brJet_MT2"),  {1, 1}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+    }
+
+    for(std::pair<std::string,std::string>& cut : cutlevels_muon)
+    {
+       vh.push_back(PHS("DataMC_SingleMuonT_metZinv_" + cut.first,  PDCMaker1_nonesig_notrig("cleanMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_ht_Zinv"  + cut.first,  PDCMaker1_nonesig_notrig("HTZinv"), {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_ht_"  + cut.first,  PDCMaker1_nonesig_notrig("HT"),     {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_met_"  + cut.first,  PDCMaker1_nonesig_notrig("met"),     {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,   "Events"));
+    vh.push_back(PHS("DataMC_SingleMuonT_NBJetsZInv_"  + cut.first,  PDCMaker1_nonesig_notrig("cntCSVSZinv"),   {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_NBJEts_"  + cut.first,  PDCMaker1_nonesig_notrig("cntCSVS"),     {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+  vh.push_back(PHS("DataMC_SingleMuonT_NJEtsZInv_" + cut.first, PDCMaker1_nonesig_notrig("cntNJetsPt30Eta24Zinv"), {1, 2},cut.second, 20, 0, 20, false, true,  label_nj, "Events"));
+      vh.push_back(PHS("DataMC_SingleMuonT_NJEts_"  + cut.first,  PDCMaker1_nonesig_notrig("cntNJetsPt30Eta24"),{1, 2}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+     vh.push_back(PHS("DataMC_SingleMuonT_NTopsZinv_"  + cut.first,PDCMaker1_nonesig_notrig("nTopCandSortedCntZinv"),{1, 2}, cut.second, 10, 0, 10, false, true, label_nt,"Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_NTops_"  + cut.first,  PDCMaker1_nonesig_notrig("nTopCandSortedCnt"),{1, 2}, cut.second, 10, 0, 10, false, true,  label_nt, "Events"));
+vh.push_back(PHS("DataMC_SingleMuonT_MT2ZInv_"  + cut.first,  PDCMaker1_nonesig_notrig("best_had_brJet_MT2Zinv"),{1, 2}, cut.second,100, 0, 1500, true, true,  label_mt2, "Events"));
+     vh.push_back(PHS("DataMC_SingleMuonT_MT2_"  + cut.first,  PDCMaker1_nonesig_notrig("best_had_brJet_MT2"),{1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_metNoratio_" + cut.first,  PDCMaker1_nonesig_notrig("met"), {1, 1}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_htNoratio_"  + cut.first,  PDCMaker1_nonesig_notrig("HT"),  {1, 1}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_SingleMuonT_NBJEtsNoratio_"  + cut.first,  PDCMaker1_nonesig_notrig("cntCSVS"), {1, 1}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+  vh.push_back(PHS("DataMC_SingleMuonT_NJEtsNoratio_"  + cut.first,  PDCMaker1_nonesig_notrig("cntNJetsPt30Eta24"),{1, 1}, cut.second, 20, 0, 20, false, true,  label_nj,"Events"));
+  vh.push_back(PHS("DataMC_SingleMuonT_NTopsNoratio_"  + cut.first,  PDCMaker1_nonesig_notrig("nTopCandSortedCnt"),{1, 1}, cut.second, 10, 0, 10, false, true,  label_nt,"Events"));
+  vh.push_back(PHS("DataMC_SingleMuonT_MT2Noratio_"  + cut.first,  PDCMaker1_nonesig_notrig("best_had_brJet_MT2"),{1, 1},cut.second, 100,0, 1500, true, true,  label_mt2, "Events"));
+    }
+
+    for(std::pair<std::string,std::string>& cut : cutlevels_muon)
+    {
+       vh.push_back(PHS("DataMC_HTMHT_rare_metZinv_" + cut.first,  PDCMaker1_rare("cleanMetPt"), {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_ht_Zinv"  + cut.first,  PDCMaker1_rare("HTZinv"), {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_ht_"  + cut.first,  PDCMaker1_rare("HT"),     {1, 2}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_met_"  + cut.first,  PDCMaker1_rare("met"),     {1, 2}, cut.second, 50, 0, 1500, true, true,  label_met,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NBJetsZInv_"  + cut.first,  PDCMaker1_rare("cntCSVSZinv"),   {1, 2}, cut.second, 6, 0, 10, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NBJEts_"  + cut.first,  PDCMaker1_rare("cntCSVS"),     {1, 2}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NJEtsZInv_" + cut.first, PDCMaker1_rare("cntNJetsPt30Eta24Zinv"), {1, 2}, cut.second, 20, 0, 20, false, true,  label_nj, "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NJEts_"  + cut.first,  PDCMaker1_rare("cntNJetsPt30Eta24"),{1, 2}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NTops_"  + cut.first,  PDCMaker1_rare("nTopCandSortedCntZinv"), {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NTops_"  + cut.first,  PDCMaker1_rare("nTopCandSortedCnt"),     {1, 2}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_MT2ZInv_"  + cut.first,  PDCMaker1_rare("best_had_brJet_MT2Zinv"),{1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_MT2_"  + cut.first,  PDCMaker1_rare("best_had_brJet_MT2"),{1, 2}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_metNoratio_" + cut.first,  PDCMaker1_rare("met"), {1, 1}, cut.second, 50, 0, 1500, true, true,  label_met,  "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_htNoratio_"  + cut.first,  PDCMaker1_rare("HT"),     {1, 1}, cut.second, 50, 0, 2000, true, true,  label_ht,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NBJEtsNoratio_"  + cut.first,  PDCMaker1_rare("cntCSVS"),     {1, 1}, cut.second, 6, 0, 6, false, true,  label_nb,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NJEtsNoratio_"  + cut.first,  PDCMaker1_rare("cntNJetsPt30Eta24"),{1, 1}, cut.second, 20, 0, 20, false, true,  label_nj,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_NTopsNoratio_"  + cut.first,  PDCMaker1_rare("nTopCandSortedCnt"),   {1, 1}, cut.second, 10, 0, 10, false, true,  label_nt,   "Events"));
+       vh.push_back(PHS("DataMC_HTMTH_rare_MT2Noratio_"  + cut.first,  PDCMaker1_rare("best_had_brJet_MT2"),{1, 1}, cut.second, 100, 0, 1500, true, true,  label_mt2,   "Events"));
     }
 
     set<AnaSamples::FileSummary> vvf;

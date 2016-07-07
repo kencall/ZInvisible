@@ -25,7 +25,25 @@ const int colors[] = {
     kGreen
 };
 const int NCOLORS = sizeof(colors)/sizeof(int);
-
+/*
+const int stackColors[] = {
+    kAzure+2,
+    kOrange+2,
+    kSpring-5,
+    kMagenta-2,
+    kAzure-4,
+    kTeal-7,
+    kRed-7,
+    kAzure,
+    kGreen + 2,
+    kMagenta - 1,
+    kYellow + 4,
+    kRed + 1,
+    kAzure - 4,
+    kCyan + 2,
+    kOrange + 7
+};
+*/
 const int stackColors[] = {
     kAzure+2,
     kOrange+2,
@@ -911,7 +929,15 @@ void Plotter::plot()
                     stack->Add((*ih)->h);
                 }
                 smartMax(thstacksucks, leg, static_cast<TPad*>(gPad), min, max, lmax);
-                minAvgWgt = std::min(minAvgWgt, sow/te);
+                if(hist.isNorm)
+		{
+		  double scale = hist.fhist()->Integral()/thstacksucks->Integral();
+                  for(auto ih = hvec.hcsVec.rbegin(); ih != hvec.hcsVec.rend(); ++ih)
+		  {
+		      (*ih)->h->Scale(scale);
+		  }
+		}
+		minAvgWgt = std::min(minAvgWgt, sow/te);
                 if(thstacksucks) delete thstacksucks;
             }
         }
