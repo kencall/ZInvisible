@@ -1,0 +1,3 @@
+To submit to condor run:
+./condorSubmit.py -r Data_HTMHT -d Samples.cc name
+

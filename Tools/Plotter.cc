@@ -25,7 +25,7 @@ const int colors[] = {
     kGreen
 };
 const int NCOLORS = sizeof(colors)/sizeof(int);
-
+/*
 const int stackColors[] = {
     kAzure+2,
     kOrange+2,
@@ -43,6 +43,32 @@ const int stackColors[] = {
     kCyan + 2,
     kOrange + 7
 };
+*/
+const int stackColors[] = {
+    kAzure+2,
+    kOrange+2,
+    kSpring-5,
+    kMagenta-2,
+    kAzure-4,
+    kTeal-7,
+    kRed-7,
+    kAzure,
+    kGreen + 2,
+    kMagenta - 1,
+    kYellow + 4,
+    kRed + 1,
+    kAzure - 4,
+    kCyan + 2,
+    kOrange + 7
+};
+
+const int lineStyle[] = {
+   1,
+   2,
+   3,
+   4
+};
+
 const int NSTACKCOLORS = sizeof(stackColors) / sizeof(int);
 
 Plotter::Plotter(std::vector<HistSummary>& h, std::set<AnaSamples::FileSummary>& t, const bool readFromTuple, std::string ofname, const int nFile, const int startFile, const int nEvts) : nFile_(nFile), startFile_(startFile), maxEvts_(nEvts)
@@ -810,12 +836,15 @@ void Plotter::plot()
             else if(hvec.type.compare("stack") == 0)                             NlegEntries += hvec.hcsVec.size();
         }
 
-        TLegend *leg = new TLegend(0.50, 0.88 - NlegEntries * 0.045, 0.89, 0.88);
+        TLegend *leg = new TLegend(0.25, 0.88 - NlegEntries/2 * 0.045, 0.89, 0.88);//0.25
+       //0.50, 0.88 - NlegEntries * 0.045, 0.89, 0.88);
         leg->SetFillStyle(0);
         leg->SetBorderSize(0);
         leg->SetLineWidth(1);
         leg->SetNColumns(1);
         leg->SetTextFont(42);
+
+        leg-> SetNColumns(2);    
 
         double max = 0.0, lmax = 0.0, min = 1.0e300, minAvgWgt = 1.0e300;
         int iSingle = 0, iRatio = 0;
@@ -835,7 +864,7 @@ void Plotter::plot()
                     if(     integral < 3.0)   sprintf(legEntry, "%s (%0.2lf)", hvec.hcsVec.front()->label.c_str(), integral);
                     else if(integral < 1.0e5) sprintf(legEntry, "%s (%0.0lf)", hvec.hcsVec.front()->label.c_str(), integral);
                     else                      sprintf(legEntry, "%s (%0.2e)",  hvec.hcsVec.front()->label.c_str(), integral);
-                    leg->AddEntry(hvec.hcsVec.front()->h, legEntry, "PE");
+                    leg->AddEntry(hvec.hcsVec.front()->h, legEntry, "PE");//"PE");
                     if(hist.isNorm) hvec.hcsVec.front()->h->Scale(hist.fhist()->Integral()/hvec.hcsVec.front()->h->Integral());
                     smartMax(hvec.hcsVec.front()->h, leg, static_cast<TPad*>(gPad), min, max, lmax, true);
 
@@ -847,13 +876,15 @@ void Plotter::plot()
                 for(auto& h : hvec.hcsVec)
                 {
                     h->h->SetLineColor(colors[iSingle%NCOLORS]);
+                    h->h->SetLineStyle(lineStyle[iSingle%NCOLORS]);
                     h->h->SetLineWidth(3);
                     iSingle++;
                     double integral = h->h->Integral(0, h->h->GetNbinsX() + 1);
-                    if(     integral < 3.0)   sprintf(legEntry, "%s (%0.2lf)", h->label.c_str(), integral);
-                    else if(integral < 1.0e5) sprintf(legEntry, "%s (%0.0lf)", h->label.c_str(), integral);
-                    else                      sprintf(legEntry, "%s (%0.2e)",  h->label.c_str(), integral);
-                    leg->AddEntry(h->h, legEntry);
+                    double bullshit = hist.fhist()->Integral()/h->h->Integral();//"%s (%0.2lf #times %0.2lf)"
+                    if(     integral < 3.0)   sprintf(legEntry, "%s (#times%0.2lf)", h->label.c_str(),  bullshit);
+                    else if(integral < 1.0e5) sprintf(legEntry, "%s (#times%0.0lf)", h->label.c_str(),  bullshit);
+                    else                      sprintf(legEntry, "%s (#times%0.2e)",  h->label.c_str(),  bullshit);
+                    leg->AddEntry(h->h, legEntry, "l");
                     if(hist.isNorm) h->h->Scale(hist.fhist()->Integral()/h->h->Integral());
                     smartMax(h->h, leg, static_cast<TPad*>(gPad), min, max, lmax);
                     minAvgWgt = std::min(minAvgWgt, h->h->GetSumOfWeights()/h->h->GetEntries());
@@ -911,7 +942,15 @@ void Plotter::plot()
                     stack->Add((*ih)->h);
                 }
                 smartMax(thstacksucks, leg, static_cast<TPad*>(gPad), min, max, lmax);
-                minAvgWgt = std::min(minAvgWgt, sow/te);
+                if(hist.isNorm)
+		{
+		  double scale = hist.fhist()->Integral()/thstacksucks->Integral();
+                  for(auto ih = hvec.hcsVec.rbegin(); ih != hvec.hcsVec.rend(); ++ih)
+		  {
+		      (*ih)->h->Scale(scale);
+		  }
+		}
+		minAvgWgt = std::min(minAvgWgt, sow/te);
                 if(thstacksucks) delete thstacksucks;
             }
         }
@@ -920,22 +959,22 @@ void Plotter::plot()
         if(hist.isLog)
         {
             double locMin = std::min(0.2*minAvgWgt, std::max(0.00011, 0.05 * min));
-            double legSpan = (log10(3*max) - log10(locMin)) * (leg->GetY1() - gPad->GetBottomMargin()) / ((1 - gPad->GetTopMargin()) - gPad->GetBottomMargin());
+            double legSpan = (log10(max) - log10(locMin)) * (leg->GetY1() - gPad->GetBottomMargin()) / ((1 - gPad->GetTopMargin()) - gPad->GetBottomMargin());
             double legMin = legSpan + log10(locMin);
             if(log10(lmax) > legMin)
             {
                 double scale = (log10(lmax) - log10(locMin)) / (legMin - log10(locMin));
                 max = pow(max/locMin, scale)*locMin;
             }
-            dummy->GetYaxis()->SetRangeUser(locMin, 3*max);
+            dummy->GetYaxis()->SetRangeUser(0.109, max);//locMin
         }
         else
         {
             double locMin = 0.0;
             double legMin = (1.2*max - locMin) * (leg->GetY1() - gPad->GetBottomMargin()) / ((1 - gPad->GetTopMargin()) - gPad->GetBottomMargin());
             if(lmax > legMin) max *= (lmax - locMin)/(legMin - locMin);
-            dummy->GetYaxis()->SetRangeUser(0.0, max*1.2);
-            if(hist.hists.front().type.compare("ratio") == 0 && max > 5) dummy->GetYaxis()->SetRangeUser(0.0, 5*1.2);
+            dummy->GetYaxis()->SetRangeUser(0.0, max*1.2);//1.2
+            if(hist.hists.front().type.compare("ratio") == 0 && max > 5) dummy->GetYaxis()->SetRangeUser(0.0, 4*1.2);
         }
         dummy->Draw();
 
@@ -962,7 +1001,7 @@ void Plotter::plot()
                 if(hvec.type.compare("data") == 0)  hvec.h->Draw("same");
             }
         }
-        leg->Draw();
+        leg->Draw("L");
 
         fixOverlay();
 
@@ -1069,7 +1108,7 @@ void Plotter::plot()
                             d2ymax = std::max(d2ymax, h1->GetBinContent(iBin));
                         }
                     }
-                    dummy2->GetYaxis()->SetRangeUser(d2ymin, 1.5*d2ymax);
+                    dummy2->GetYaxis()->SetRangeUser(0.109, 1.5*d2ymax);//d2ymin
                 }
                 else // pull distribution
                 {
@@ -1113,9 +1152,9 @@ void Plotter::plot()
                         h1->SetBinContent(iBin, binVal/binErr);
                         if(fabs(h1->GetBinContent(iBin)) < absoluteMaxPull) maxPull = std::max(maxPull, fabs(h1->GetBinContent(iBin)));
                     }
-                    double d2ymin = -std::min(ceil(maxPull*1.2), absoluteMaxPull);
+                    double d2ymin = -std::min(ceil(maxPull*1.0), absoluteMaxPull);//1.2
                     double d2ymax =  std::min(ceil(maxPull*1.2), absoluteMaxPull);
-                    dummy2->GetYaxis()->SetRangeUser(d2ymin, d2ymax);
+                    dummy2->GetYaxis()->SetRangeUser(0.109, d2ymax);//d2ymin, d2ymax);
                     dummy2->GetYaxis()->SetTitle("Pull");
                     dummy2->GetYaxis()->SetNdivisions(2, 5, 0);
 
@@ -1156,8 +1195,8 @@ void Plotter::plot()
         mark.SetTextSize(0.042 * fontScale);
         //mark.SetTextSize(0.04 * 1.1 * 8 / 6.5 * fontScale);
         mark.SetTextFont(52);
-        //mark.DrawLatex(gPad->GetLeftMargin() + 0.095, 1 - (gPad->GetTopMargin() - 0.017), "Preliminary");
-        mark.DrawLatex(gPad->GetLeftMargin() + 0.095, 1 - (gPad->GetTopMargin() - 0.017), "Supplementary");
+        mark.DrawLatex(gPad->GetLeftMargin() + 0.095, 1 - (gPad->GetTopMargin() - 0.017), "Preliminary");
+        //mark.DrawLatex(gPad->GetLeftMargin() + 0.095, 1 - (gPad->GetTopMargin() - 0.017), "Supplementary");
 
         //Draw lumistamp
         mark.SetTextFont(42);

@@ -6,10 +6,10 @@
 #include "SusyAnaTools/Tools/searchBins.h"
 #include "ScaleFactors.h"
 
-#include "TopTagger.h"
-#include "TTModule.h"
-#include "TopTaggerUtilities.h"
-#include "TopTaggerResults.h"
+#include "TopTagger/TopTagger/include/TopTagger.h"
+#include "TopTagger/TopTagger/include/TTModule.h"
+#include "TopTagger/TopTagger/include/TopTaggerUtilities.h"
+#include "TopTagger/TopTagger/include/TopTaggerResults.h"
 
 #include "TH1.h"
 #include "TH2.h"
@@ -546,10 +546,15 @@ namespace plotterFunctions
             const double& met                            = tr.getVar<double>("met");
             const double& metphi                         = tr.getVar<double>("metphi");
 
+            const double& calomet                        = tr.getVar<double>("calomet");
+
             const std::vector<TLorentzVector, std::allocator<TLorentzVector> > elesLVec = tr.getVec<TLorentzVector>("elesLVec");
             const std::vector<double>& elesMiniIso          = tr.getVec<double>("elesMiniIso");
             const std::vector<double>& elesCharge           = tr.getVec<double>("elesCharge");
             const std::vector<unsigned int>& elesisEB       = tr.getVec<unsigned int>("elesisEB");
+
+            int nElectrons = tr.getVar<int>("nElectrons_CUT");
+            int nMuons = tr.getVar<int>("nMuons_CUT");
 
             bool passMuonVeto = false;
             bool passEleVeto = false;
@@ -967,8 +972,25 @@ namespace plotterFunctions
             tr.registerDerivedVar("passMuZinvSel", passMuZinvSel);
             tr.registerDerivedVar("passElecZinvSel", passElecZinvSel);
             tr.registerDerivedVar("passElMuZinvSel", passElMuZinvSel);
+            bool passKoushik = false;
+            bool passQCD = false;
+            if(  nMuons == 1 && nElectrons == AnaConsts::nElectronsSel ) {
+                 passKoushik = true;
+            }
+           if(met/calomet<3.0 && calomet>80){
+                passQCD = true;
+           }
+           tr.registerDerivedVar("passKoushik", passKoushik);
+           tr.registerDerivedVar("passQCD", passQCD);
         }
+/*
+       void Singlemuon(NTupleReader& tr)
+      {
+            if(  nMuons_CUT == 1 && nElectrons == AnaConsts::nElectronsSel ) {
 
+            }
+       }
+*/
     public:
         LepInfo()
         {
@@ -1163,6 +1185,8 @@ namespace plotterFunctions
     private:
 	int indexMuTrigger;
 	int indexElecTrigger;
+	int indexSingleMuTrigger;
+        int indexHTMHTTrigger;
         bool miniTuple_;
 
 	double GetMuonTriggerEff(const double& muEta) 
@@ -1302,9 +1326,13 @@ namespace plotterFunctions
 
 	    bool passMuTrigger = false;
 	    bool passElecTrigger = false;
+	    bool passSingleMuTrigger = false;
+            bool passhtmhtTrigger = false;
 
 	    const std::string muTrigName = "HLT_Mu45_eta2p1_v";
 	    const std::string elecTrigName = "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v";
+	    const std::string singleMuTrigName = "HLT_Mu15_IsoVVVL_PFHT350_v";
+            const std::string htmhtTrigName = "HLT_PFHT300_PFMET100_v";
 
 	    // Find the index of our triggers if we don't know them already
 	    if(indexMuTrigger == -1 || indexElecTrigger == -1)
@@ -1319,15 +1347,27 @@ namespace plotterFunctions
 		    {
 			indexElecTrigger = i;
 		    }
+		    else if(triggerNames[i].find(singleMuTrigName) != std::string::npos)
+		    {
+			indexSingleMuTrigger = i;
+		    }
+                    else if(triggerNames[i].find(htmhtTrigName) != std::string::npos)
+                    {
+                        indexHTMHTTrigger = i;
+                    }
 		}
 	    }
-	    if(indexMuTrigger != -1 && indexElecTrigger != -1)
+	    if(indexMuTrigger != -1 && indexElecTrigger != -1 && indexSingleMuTrigger != -1 && indexHTMHTTrigger != -1)
 	    {
 		// Check if the event passes the trigger, and double check that we are looking at the right trigger
 		if(triggerNames[indexMuTrigger].find(muTrigName) != std::string::npos && passTrigger[indexMuTrigger])
 		    passMuTrigger = true;
 		if(triggerNames[indexElecTrigger].find(elecTrigName) != std::string::npos && passTrigger[indexElecTrigger])
 		    passElecTrigger = true;
+		if(triggerNames[indexSingleMuTrigger].find(singleMuTrigName) != std::string::npos && passTrigger[indexSingleMuTrigger])
+		    passSingleMuTrigger = true;
+                if(triggerNames[indexHTMHTTrigger].find(htmhtTrigName) != std::string::npos && passTrigger[indexHTMHTTrigger])
+                    passhtmhtTrigger = true;
 	    }
 	    else
 	    {
@@ -1336,6 +1376,8 @@ namespace plotterFunctions
 
 	    tr.registerDerivedVar("passMuTrigger",passMuTrigger);
 	    tr.registerDerivedVar("passElecTrigger",passElecTrigger);
+	    tr.registerDerivedVar("passSingleMuTrigger", passSingleMuTrigger);
+            tr.registerDerivedVar("passhtmhtTrigger", passhtmhtTrigger);
         }
 
         void triggerInfoMC(NTupleReader& tr)
@@ -1380,6 +1422,8 @@ namespace plotterFunctions
 	{
 	    indexMuTrigger = -1;
 	    indexElecTrigger = -1;
+	    indexSingleMuTrigger = -1;
+            indexHTMHTTrigger = -1;
             miniTuple_ = miniTuple;
 	}
 

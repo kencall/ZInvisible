@@ -56,6 +56,7 @@ void activateBranches(std::set<std::string>& activeBranches)
     activeBranches.insert("elesisEB");
     activeBranches.insert("elesMiniIso");
     activeBranches.insert("elesCharge");
+    activeBranches.insert("calomet");
 }
 
 ////////////////////////////////
