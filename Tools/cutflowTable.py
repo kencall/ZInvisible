@@ -48,43 +48,58 @@ if __name__ == "__main__":
     parser.add_option("-o", "--out", dest="outfilename",
                       help="Output filename to store the latex cutflow", metavar="FILE")
 
+
     (options, args) = parser.parse_args()
 
     # Open file
     f = rt.TFile.Open(options.filename)
 
+    print f
+
     # Get the relevant histograms
-    hnames = ["CutFlows/DYtoMuMu",
-              "CutFlows/DYtoMuMu_Unscaled",
-              "CutFlows/Data_MuMu",
-              "CutFlows/Data_ElMu",
-              "CutFlows/TTBar_ElMu",
-              "CutFlows/ZtoNuNu",
+    hnames = ["CutFlows/Data",
+              "CutFlows/MC",
+              "CutFlows/Rare",
+              "CutFlows/QCD",
+              "CutFlows/Single top",
+             # "CutFlows/Signal Points",
+              "CutFlows/t#bar{t}Z",
+              "CutFlows/t#bar{t}",
+              "CutFlows/WJets",
+              "CutFlows/ZJets",
               ]
 
-    samples = ["DY$\\rightarrow\\mu\\mu$",
-               "DY$\\rightarrow\\mu\\mu$ Unscaled",
-               "Data ($\\mu\\mu$)",
-               "Data ($e\\mu$)",
-               "TTBar ($e\\mu$)",
-               "Z$\\rightarrow\\nu\\nu$",
+    samples = ["Data HTMHT",
+               "Total MC",
+               "Rare",
+               "QCD",
+               "Single top",
+               "t#bar{t}Z",
+               "t#bar{t}",
+               "WJets",
+               "ZJets",
+               #"Z$\\rightarrow\\nu\\nu$",
+               #"Z$\\rightarrow\\nu\\nu$",
               ] 
 
-    cuts = ["No cuts",
+    cuts = [" ",
             "Noise filters",
-            "Dilepton",
-            "Trigger",
             "Njets",
-            "Dphi",
-            "$\\textrm{HT}>500$",
+            "Muon Veto",
+            "Electron Veto",
+            "IsoTrkVeto",
+            "dPhi",
+            "B Jets",
             "$\\textrm{MET}>200$",
-            "$\\textrm{Nb}>0$",
+            "$\\textrm{HT}>500$",
             "$\\textrm{Nt}>0$",
             "$\\textrm{MT2}>200$",
             "Baseline"]
 
 
     hs = [f.Get(hname) for hname in hnames]
+
+    print hs
 
     # extract the info from the histograms
     info = {}
