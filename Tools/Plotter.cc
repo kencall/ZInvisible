@@ -1163,7 +1163,7 @@ void Plotter::plot()
         //Draw lumistamp
         mark.SetTextFont(42);
         mark.SetTextAlign(31);
-        mark.DrawLatex(1 - gPad->GetRightMargin(), 1 - (gPad->GetTopMargin() - 0.017), lumistamp);
+        //mark.DrawLatex(1 - gPad->GetRightMargin(), 1 - (gPad->GetTopMargin() - 0.017), lumistamp);
 
         fixOverlay();
         c->Print((plotDir_ + hist.name+".png").c_str());

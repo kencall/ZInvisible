@@ -172,6 +172,7 @@ int main(int argc, char* argv[])
     std::string label_nj  = "N_{jets}";
     std::string label_nb  = "N_{b}";
     std::string label_nt  = "N_{t}";
+    std::string label_nw  = "N_{W}";
     std::string label_mt2 = "M_{T2} [GeV]";
     std::string label_mupt  = "#mu p_{T} [GeV]";
     std::string label_mu1pt = "#mu_{1} p_{T} [GeV]";
@@ -214,8 +215,8 @@ int main(int argc, char* argv[])
     Plotter::DatasetSummary dsZJets(             "Z(#nu#nu)+jets",    fileMap["ZJetsToNuNu"],         "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsWJets(             "W(l#nu)+jets",    fileMap["WJetsToLNu"],         "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsTTW(             "TTW",    fileMap["TTW"],         "",                "genWeight;TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
-    Plotter::DatasetSummary ds_TTBar(      "ttbar ak8",  fileMap["TTbarAll"], "",     "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
-    Plotter::DatasetSummary ds_ZINV(      "ZJets",  fileMap["ZJetsToNuNu"],         "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
+    Plotter::DatasetSummary ds_TTBar(      "t#bar{t} (1l)",  fileMap["TTbarAll"], "",     "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
+    Plotter::DatasetSummary ds_ZINV(      "Z(#nu#nu)+jets",  fileMap["ZJetsToNuNu"],         "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary ds_TTBarHT(   "TTbarHT", fileMap["TTbarHT"],    "",  "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     std::vector<std::vector<Plotter::DatasetSummary>> stack_MC = {{dstt2l}, {dsWJets}, {dstW}, {dsZJets}, {dsttZ}, {dsQCD}, {dsRare,dsDY,dsVV}};
     std::vector<std::vector<Plotter::DatasetSummary>> stack_MC_hong = {{dstt2l}, {dsWJets}, {dstW}, {dsZJets}, {dsttZ}, {dsQCD}, {dsVVV,dsVV,dsTTW}};
@@ -267,10 +268,10 @@ int main(int argc, char* argv[])
         return std::vector<PDC>({Plotter::DataCollection("single",   var, {ds_ZINV}),
                                  Plotter::DataCollection("single",   var, {ds_TTBar}),
                                  Plotter::DataCollection("single",   var, {dsT1tttt1200}),
-                                 Plotter::DataCollection("single",   var, {dsT2tt800}),
+                                 //Plotter::DataCollection("single",   var, {dsT2tt800}),
                                  Plotter::DataCollection("single",   var, {dsT1tttt1500}),
-                                 Plotter::DataCollection("single",   var, {dsT2tt500}),
-                                 Plotter::DataCollection("single",   var, {ds_TTBarHT})  });
+                                 Plotter::DataCollection("single",   var, {dsT2tt500}) });
+                                 //Plotter::DataCollection("single",   var, {ds_TTBarHT})  });
     };
 
     std::vector<std::pair<std::string,std::string>> cutlevels_muon = {
@@ -409,12 +410,12 @@ int main(int argc, char* argv[])
        vh.push_back(PHS("nJetsAK41_b0.20.4"+ cut.first,  PDCMaker12("nJetsAK42_med"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
        vh.push_back(PHS("nJetsAK41_b0.40.8"+ cut.first,  PDCMaker12("nJetsAK42_lar"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
        vh.push_back(PHS("puppi_Top_T_PT"+ cut.first,  PDCMaker12("puppiLVectight_top(pt)"),  {1, 1}, cut.second, 20, 0, 1200, false, true,  "PT",   "Events"));
-       vh.push_back(PHS("puppi_Top_T_Num"+ cut.first,  PDCMaker12("puppiLVectight_top(size)"),  {1, 1}, cut.second, 15, 0, 15, false, true,  "nJets",   "Events")); 
+       vh.push_back(PHS("puppi_Top_T_Num"+ cut.first,  PDCMaker12("puppiLVectight_top(size)"),  {1, 1}, cut.second, 5, 0, 5, false, true,  label_nt,   "Events")); 
        vh.push_back(PHS("puppi_Top_L_PT"+ cut.first,  PDCMaker12("puppiLVecLoose_top(pt)"),  {1, 1}, cut.second, 20, 0, 1200, false, true,  "PT",   "Events"));
-       vh.push_back(PHS("puppi_Top_L_Num"+ cut.first,  PDCMaker12("puppiLVecLoose_top(size)"),  {1, 1}, cut.second, 15, 0, 15, false, true,  "nJets",   "Events"));
+       vh.push_back(PHS("puppi_Top_L_Num"+ cut.first,  PDCMaker12("puppiLVecLoose_top(size)"),  {1, 1}, cut.second, 5, 0, 5, false, true,  label_nt,   "Events"));
        vh.push_back(PHS("puppi_w_T_PT"+ cut.first,  PDCMaker12("puppiLVectight_w(pt)"),  {1, 1}, cut.second, 50, 0, 1200, false, true,  "PT",   "Events"));
-       vh.push_back(PHS("puppi_w_T_Num"+ cut.first,  PDCMaker12("puppiLVectight_w(size)"),  {1, 1}, cut.second, 15, 0, 15, false, true,  "nJets",   "Events"));
-       vh.push_back(PHS("puppi_w_L_Num"+ cut.first,  PDCMaker12("puppiLVecLoose_w(size)"),  {1, 1}, cut.second, 15, 0, 15, false, true,  "nJets",   "Events"));
+       vh.push_back(PHS("puppi_w_T_Num"+ cut.first,  PDCMaker12("puppiLVectight_w(size)"),  {1, 1}, cut.second, 5, 0, 5, false, true,  label_nw,   "Events"));
+       vh.push_back(PHS("puppi_w_L_Num"+ cut.first,  PDCMaker12("puppiLVecLoose_w(size)"),  {1, 1}, cut.second, 5, 0, 5, false, true,  label_nw,   "Events"));
        vh.push_back(PHS("puppi_w_L_PT"+ cut.first,  PDCMaker12("puppiLVecLoose_w(pt)"),  {1, 1}, cut.second, 50, 0, 1200, false, true,  "PT",   "Events"));
        vh.push_back(PHS("nJetsPuppi_L_l0.2"+ cut.first,  PDCMaker12("nJetsPuppi_L1_min"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
        vh.push_back(PHS("nJetsPuppi_L_.20.4"+ cut.first,  PDCMaker12("nJetsPuppi_L1_med"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
@@ -424,6 +425,8 @@ int main(int argc, char* argv[])
        vh.push_back(PHS("nJetsPuppi_T_b0.40.8"+ cut.first,  PDCMaker12("nJetsPuppi_T1_lar"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
        vh.push_back(PHS("puppiJetsLVec"  + cut.first,  PDCMaker12("puppiJetsLVec(pt)"),  {1, 1}, cut.second, 20, 200, 1200, false, false,  "pt",   "Events"));
        vh.push_back(PHS("puppiJetsLVec_size"  + cut.first,  PDCMaker12("puppiJetsLVec(size)"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
+       vh.push_back(PHS("puppitau3Dtau2_SDM"+ cut.first,  PDCMaker12("puppitau3Dtau2_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tauD",   "Events"));
+       vh.push_back(PHS("puppitau2Dtau1_SDM"+ cut.first,  PDCMaker12("puppitau2Dtau1_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tauD",   "Events"));
        }
 /*
     for(std::pair<std::string,std::string>& cut : cutlevels_muon)
