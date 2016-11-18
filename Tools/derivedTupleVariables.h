@@ -10,6 +10,7 @@
 #include "TTModule.h"
 #include "TopTaggerUtilities.h"
 #include "TopTaggerResults.h"
+#include "TopTagger/Tools/PlotUtility.h"
 
 #include "TH1.h"
 #include "TH2.h"
@@ -2298,21 +2299,154 @@ namespace plotterFunctions
 	     const std::vector<double>& puppiSubJetsBdisc = tr.getVec<double>("puppiSubJetsBdisc");
 
 	     // For each tagged top/W, find the corresponding subjets
+	     std::vector< std::vector<TLorentzVector> > W_subjets;
+	     std::vector<double>* W_subjets_pt_reldiff = new std::vector<double>();
 	     for( TLorentzVector myW : puppiLVectight_w)
 	     {
-		 std::vector<double> dR_W_subjet;
+		 std::vector<TLorentzVector> myW_subjets;
+		 int i = 0;
 		 for(TLorentzVector puppiSubJet : puppiSubJetsLVec)
 		 {
-		     dR_W_subjet.push_back(ROOT::Math::VectorUtil::DeltaR(myW, puppiSubJet));
+		     double myDR = ROOT::Math::VectorUtil::DeltaR(myW, puppiSubJet);
+		     if (myDR < 0.8)
+		     {
+			 myW_subjets.push_back(puppiSubJet);
+		     }
+		     ++i;
 		 }
-		 std::sort( dR_W_subjet.begin(), dR_W_subjet.end() );
-		 //std::cout << "closest subjets: " << dR_W_subjet[0] << " " << dR_W_subjet[1] << " " << dR_W_subjet[2] << std::endl;
+		 // If more than 2 matches, find the best combination of two subjets by checking diff in 4-vector
+		 if (myW_subjets.size() > 2) {
+		     double min_diff = 999999.;
+		     int min_j=0, min_k=1;
+		     for (int j=0 ; j<myW_subjets.size(); ++j)
+		     {
+			 for (int k=j+1; k<myW_subjets.size(); ++k)
+			 {
+			     TLorentzVector diff_LV = myW - myW_subjets[j] - myW_subjets[k];
+			     double diff = abs(diff_LV.M());
+			     if(diff < min_diff)
+			     {
+				 min_diff = diff;
+				 min_j = j;
+				 min_k = k;
+			     }
+			 }
+		     }
+		     std::vector<TLorentzVector> mynewW_subjets = {myW_subjets[min_j], myW_subjets[min_k]};
+		     W_subjets.push_back(mynewW_subjets);
+		     W_subjets_pt_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).Pt()-myW.Pt())/myW.Pt());
+		 } else {
+		     W_subjets.push_back(myW_subjets);
+		     W_subjets_pt_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Pt()-myW.Pt())/myW.Pt());
+		 }
 	     }
+	     tr.registerDerivedVec("W_subjets_pt_reldiff", W_subjets_pt_reldiff);
+
+	     // For each tagged top/W, find the corresponding subjets
+	     std::vector< std::vector< TLorentzVector> > top_subjets;
+	     std::vector<double>* top_subjets_pt_reldiff = new std::vector<double>();
+	     for( TLorentzVector mytop : puppiLVectight_top)
+	     {
+		 std::vector<TLorentzVector> mytop_subjets;
+		 int i = 0;
+		 for(TLorentzVector puppiSubJet : puppiSubJetsLVec)
+		 {
+		     double myDR = ROOT::Math::VectorUtil::DeltaR(mytop, puppiSubJet);
+		     if (myDR < 0.8)
+		     {
+			 mytop_subjets.push_back(puppiSubJet);
+		     }
+		     ++i;
+		 }
+		 // If more than 2 matches, find the best combination of two subjets
+		 if (mytop_subjets.size() > 2) {
+		     double min_diff = 999999.;
+		     int min_j=0, min_k=1;
+		     for (int j=0 ; j<mytop_subjets.size(); ++j)
+		     {
+			 for (int k=j+1; k<mytop_subjets.size(); ++k)
+			 {
+			     TLorentzVector diff_LV = mytop - mytop_subjets[j] - mytop_subjets[k];
+			     double diff = abs(diff_LV.M());
+			     if(diff < min_diff)
+			     {
+				 min_diff = diff;
+				 min_j = j;
+				 min_k = k;
+			     }
+			 }
+		     }
+		     std::vector<TLorentzVector> mynewtop_subjets = {mytop_subjets[min_j], mytop_subjets[min_k]};
+		     top_subjets.push_back(mynewtop_subjets);
+		     top_subjets_pt_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).Pt()-mytop.Pt())/mytop.Pt());
+		 } else {
+		     top_subjets.push_back(mytop_subjets);
+		     top_subjets_pt_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).Pt()-mytop.Pt())/mytop.Pt());
+		 }
+	     }
+	     tr.registerDerivedVec("top_subjets_pt_reldiff", top_subjets_pt_reldiff);
 
 	     // Figure out gen matching..
-	     
+	     const std::vector<int>& genDecayPdgIdVec        = tr.getVec<int>("genDecayPdgIdVec");
+	     const std::vector<int>& genDecayIdxVec          = tr.getVec<int>("genDecayIdxVec");
+	     const std::vector<int>& genDecayMomIdxVec       = tr.getVec<int>("genDecayMomIdxVec");
+	     const std::vector<TLorentzVector>& genDecayLVec = tr.getVec<TLorentzVector>("genDecayLVec");
+
+	     std::vector<bool>* gentop_match = new std::vector<bool>(); // helpful to make plots of matched and unmatched number of tops
+	     if(tr.checkBranch("genDecayPdgIdVec") && &genDecayLVec != nullptr)
+	     {
+		 // For each tagged top, find the matching gen particles
+
+		 // These are the hadronically decaying top quarks in the event:
+		 std::vector<TLorentzVector> hadtopLVec = genUtility::GetHadTopLVec(genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec);
+		 // check all tagged tops
+		 for(TLorentzVector mytop : puppiLVectight_top) 
+		 {
+		     //std::cout << "Mytop info: " << mytop.Pt() << " " << mytop.Eta() << " " << mytop.Phi() << std::endl;
+		     // For now find the closest hadtop in deltaR
+		     TLorentzVector temp_gentop_match_LV;
+		     double min_DR = 99.;
+		     for(TLorentzVector myhadtop : hadtopLVec)
+		     {
+			 double DR_top = ROOT::Math::VectorUtil::DeltaR(mytop, myhadtop);
+			 if (DR_top < min_DR) 
+			 {
+			     temp_gentop_match_LV = myhadtop;
+			     min_DR = DR_top;
+			 }
+		     }
+		     // DR should be small for it to actually be a match
+		     if(min_DR < 0.4)
+		     {
+			 gentop_match->push_back(true);
+			 // Now find the gen daughters for this gentop
+			 std::vector<TLorentzVector> gentopdauLVec = genUtility::GetTopdauLVec(temp_gentop_match_LV, genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec);
+			 // Now we have the tagged top (mytop), the gen had top (temp_gentop_match_LV), and the gen daughters (gentopdauLVec)
+			 // ready for some matching FUN!
+
+			 // PART 1: Removing AK4 jets based on DR matching with tagged top
+			 // Scarlet to work here
+
+
+
+
+			 // PART 2: Removing AK4 jets based on DR matching with subjets of tagged top
+			 // Nadja to work here
+
+
+
+			 
+		     } else // No match
+		     { 
+			 gentop_match->push_back(false);
+		     }
+
+		 }
+	     }
+	     tr.registerDerivedVec("gentop_match", gentop_match);
 
 	 }
+
      public:
 	 Ak8DrMatch() {
 	 }
