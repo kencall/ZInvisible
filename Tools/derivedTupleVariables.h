@@ -2103,6 +2103,8 @@ namespace plotterFunctions
             const std::vector<TLorentzVector>& ak8JetsLVec  = tr.getVec<TLorentzVector>("ak8JetsLVec");
             const std::vector<TLorentzVector>& puppiJetsLVec  = tr.getVec<TLorentzVector>("puppiJetsLVec");
 
+            std::vector<TLorentzVector> *puppiLVec_200 = new std::vector<TLorentzVector>();
+            std::vector<TLorentzVector> *puppiLVec_400 = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVecLoose_top = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVectight_top = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVecLoose_w = new std::vector<TLorentzVector>();
@@ -2116,18 +2118,30 @@ namespace plotterFunctions
             const int& nJetsPuppi = puppiJetsLVec.size();
             tr.registerDerivedVar("nJetsAk8", nJetsAk8);
             tr.registerDerivedVar("nJetsPuppi", nJetsPuppi);
-            
-            if(puppitau2.size()!=0 && puppitau1.size()!=0 && puppitau2.size()==puppitau1.size()){
-		for(int iJet = 0; iJet < nJetsPuppi; ++iJet){
-		    puppitau2Dtau1->push_back(puppitau2[iJet]/(puppitau1[iJet]));
-		}
+
+         for(int i = 0; i < nJetsPuppi; ++i){
+          if(puppiJetsLVec[i].Pt() > 200){
+           puppiLVec_200->push_back(puppiJetsLVec[i]);
+           if(puppiJetsLVec[i].Pt() > 400){
+           puppiLVec_400->push_back(puppiJetsLVec[i]);
             }
+            }
+           }
+            tr.registerDerivedVec("puppiLVec_200",puppiLVec_200);
+            tr.registerDerivedVec("puppiLVec_400",puppiLVec_400);
+
+            //tau21 division
+            if(puppitau2.size()!=0 && puppitau1.size()!=0 && puppitau2.size()==puppitau1.size()){
+            for(int iJet = 0; iJet < (*puppiLVec_200).size(); ++iJet){
+             puppitau2Dtau1->push_back(puppitau2[iJet]/(puppitau1[iJet]));
+              }
+           } 
             else { 
 		puppitau2Dtau1->push_back( -1);
 	    }
 
             if(puppitau2.size()!=0 && puppitau3.size()!=0 && puppitau2.size()==puppitau3.size()){
-		for(int iJet = 0; iJet < nJetsPuppi; ++iJet){
+		for(int iJet = 0; iJet < (*puppiLVec_400).size(); ++iJet){
 		    puppitau3Dtau2->push_back(puppitau3[iJet]/(puppitau2[iJet]));
 		}
 	    }
