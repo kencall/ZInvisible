@@ -12,6 +12,7 @@ export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$2/src/opencv/lib/
 
 #cd /uscms_data/d3/snorberg/CMSSW_8_0_12/src/ZInvisible/Tools/
 
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$2/src/opencv/lib/
 
 echo "xrdcp root://cmseos.fnal.gov/$(echo $6 | sed 's|/eos/uscms||') ."
 xrdcp root://cmseos.fnal.gov/$(echo $6 | sed 's|/eos/uscms||') .

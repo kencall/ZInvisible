@@ -200,7 +200,8 @@ int main(int argc, char* argv[])
     Plotter::DatasetSummary dsData_SingleMuonNotrig("Data",   fileMap["Data_HTMHT"], "",   "");
     Plotter::DatasetSummary dsData_HTMHT(  "Data",            fileMap["Data_HTMHT"],   "passhtmhtTrigger", "");
     Plotter::DatasetSummary dsDY(             "DY",           fileMap["DYJetsToLL"],      "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
-    Plotter::DatasetSummary dsT1tttt1500( "T1tttt(1500,100)", fileMap["Signal_T1tttt_mGluino1500_mLSP100"], "", "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
+    Plotter::DatasetSummary dsT1tttt1500( "T1tttt(1500,100)", fileMap["Signal_T1tttt_mGluino1500_mLSP100"], "", "");//;bTagSF_EventWeightSimple_Central");
+    //Plotter::DatasetSummary dsT1tttt1500( "T1tttt(1500,100)", fileMap["Signal_T1tttt_mGluino1500_mLSP100"], "", "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsT1tttt1200( "T1tttt(1200,800)", fileMap["Signal_T1tttt_mGluino1200_mLSP800"],      "",  "TriggerEffMC");
     Plotter::DatasetSummary dsT2tt500(    "T2tt(500,325)",    fileMap["Signal_T2tt_mStop500_mLSP325"],      "",        "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsT2tt800( "T2tt(850,100)",         fileMap["Signal_T2tt_mStop850_mLSP100"],      "",       "TriggerEffMC");
@@ -270,8 +271,21 @@ int main(int argc, char* argv[])
                                  Plotter::DataCollection("single",   var, {dsT1tttt1200}),
                                  //Plotter::DataCollection("single",   var, {dsT2tt800}),
                                  Plotter::DataCollection("single",   var, {dsT1tttt1500}),
+<<<<<<< HEAD
                                  Plotter::DataCollection("single",   var, {dsT2tt500}) });
                                  //Plotter::DataCollection("single",   var, {ds_TTBarHT})  });
+=======
+                                 Plotter::DataCollection("single",   var, {dsT2tt500}),
+                    //             Plotter::DataCollection("single",   var, {ds_TTBarHT}) 
+		    });
+    };
+
+    auto PDCMaker_boost = [&](std::string var)
+    {
+        return std::vector<PDC>({Plotter::DataCollection("single",   var, {dsT1tttt1500}),
+//                                 Plotter::DataCollection("single",   var, {dsT2tt800}),
+		    });
+>>>>>>> 6e312bd9ac586f2115560f260ec56b831a417c3f
     };
 
     std::vector<std::pair<std::string,std::string>> cutlevels_muon = {
@@ -428,6 +442,30 @@ int main(int argc, char* argv[])
        vh.push_back(PHS("puppitau3Dtau2_SDM"+ cut.first,  PDCMaker12("puppitau3Dtau2_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tauD",   "Events"));
        vh.push_back(PHS("puppitau2Dtau1_SDM"+ cut.first,  PDCMaker12("puppitau2Dtau1_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tauD",   "Events"));
        }
+
+
+
+    vh.push_back(PHS("top_N_AK4_matched_genmatched",        PDCMaker_boost("top_N_AK4_matched_genmatched"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatched",     PDCMaker_boost("top_N_AK4_matched_notgenmatched"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_genmatched",     PDCMaker_boost("top_N_AK4_notmatched_genmatched"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_notgenmatched",  PDCMaker_boost("top_N_AK4_notmatched_notgenmatched"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_genmatched_0p6",        PDCMaker_boost("top_N_AK4_matched_genmatched_0p6"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatched_0p6",     PDCMaker_boost("top_N_AK4_matched_notgenmatched_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_genmatched_0p6",     PDCMaker_boost("top_N_AK4_notmatched_genmatched_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_notgenmatched_0p6",  PDCMaker_boost("top_N_AK4_notmatched_notgenmatched_0p6"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+    vh.push_back(PHS("top_N_AK4_matched_genmatchedother",        PDCMaker_boost("top_N_AK4_matched_genmatchedother"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_genmatchedother_0p6",        PDCMaker_boost("top_N_AK4_matched_genmatchedother_0p6"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother_0p6",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+
+    vh.push_back(PHS("dR_top_gentop",  PDCMaker_boost("dR_top_gentop"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(top, gentop)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_topsubjet_genmatched",  PDCMaker_boost("dR_AK4_topsubjet_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_top_genmatched",  PDCMaker_boost("dR_AK4_top_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, top)",   "Entries"));
+
+
+
 /*
     for(std::pair<std::string,std::string>& cut : cutlevels_muon)
     {
@@ -520,7 +558,7 @@ vh.push_back(PHS("DataMC_SingleMuonT_MT2ZInv_"  + cut.first, PDCMaker1_nonesig_n
     }
 */
 
-vector<string> cfsSync = {"",
+    vector<string> cfsSync = {"",
                               "passNoiseEventFilter",
                               "passNoiseEventFilter;passMuonVeto",
                               "passNoiseEventFilter;passMuonVeto;passEleVeto",
@@ -534,22 +572,22 @@ vector<string> cfsSync = {"",
                               "passNoiseEventFilter;passnJets;passMuonVeto;passEleVeto;passIsoTrkVeto;passdPhis;passBJets;passMET;passHT;passTagger;passMT2",
                               "passBaseline"};
 
-vector<Plotter::CutFlowSummary> cutFlowSummaries;
+    vector<Plotter::CutFlowSummary> cutFlowSummaries;
 
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Data",          PDC("", "" , {dsData_HTMHT}),        cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("MC",            PDC(" ", " ", {stack_MC}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("t#bar{t}",            PDC(" ", " ", {dstt2l}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("W(l#nu)+jets",            PDC(" ", " ", {dsWJets}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Single top",            PDC(" ", " ", {dstW}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Z(#nu#nu)+jets",            PDC(" ", " ", {dsZJets}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("t#bar{t}Z",            PDC(" ", " ", {dsttZ}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("QCD",            PDC(" ", " ", {dsQCD}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Rare",            PDC(" ", " ", {dsRare,dsDY,dsVV}),            cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Signal Points", PDC(" ", " ", {singal_points}),       cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T1tttt(1500,100)", PDC(" ", " ", {dsT1tttt1500}),       cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T1tttt(1200,800)", PDC(" ", " ", {dsT1tttt1200}),       cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T2tt(500,325)", PDC(" ", " ", {dsT2tt500}),       cfsSync));
-cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T2tt(850,100)", PDC(" ", " ", {dsT2tt800}),       cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Data",          PDC("", "" , {dsData_HTMHT}),        cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("MC",            PDC(" ", " ", {stack_MC}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("t#bar{t}",            PDC(" ", " ", {dstt2l}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("W(l#nu)+jets",            PDC(" ", " ", {dsWJets}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Single top",            PDC(" ", " ", {dstW}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Z(#nu#nu)+jets",            PDC(" ", " ", {dsZJets}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("t#bar{t}Z",            PDC(" ", " ", {dsttZ}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("QCD",            PDC(" ", " ", {dsQCD}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Rare",            PDC(" ", " ", {dsRare,dsDY,dsVV}),            cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("Signal Points", PDC(" ", " ", {singal_points}),       cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T1tttt(1500,100)", PDC(" ", " ", {dsT1tttt1500}),       cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T1tttt(1200,800)", PDC(" ", " ", {dsT1tttt1200}),       cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T2tt(500,325)", PDC(" ", " ", {dsT2tt500}),       cfsSync));
+    cutFlowSummaries.emplace_back(Plotter::CutFlowSummary("T2tt(850,100)", PDC(" ", " ", {dsT2tt800}),       cfsSync));
 
     set<AnaSamples::FileSummary> vvf;
     for(auto& fsVec : fileMap) for(auto& fs : fsVec.second) vvf.insert(fs);
