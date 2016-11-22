@@ -271,11 +271,7 @@ int main(int argc, char* argv[])
                                  Plotter::DataCollection("single",   var, {dsT1tttt1200}),
                                  //Plotter::DataCollection("single",   var, {dsT2tt800}),
                                  Plotter::DataCollection("single",   var, {dsT1tttt1500}),
-<<<<<<< HEAD
-                                 Plotter::DataCollection("single",   var, {dsT2tt500}) });
-                                 //Plotter::DataCollection("single",   var, {ds_TTBarHT})  });
-=======
-                                 Plotter::DataCollection("single",   var, {dsT2tt500}),
+                                 Plotter::DataCollection("single",   var, {dsT2tt500}) 
                     //             Plotter::DataCollection("single",   var, {ds_TTBarHT}) 
 		    });
     };
@@ -285,7 +281,6 @@ int main(int argc, char* argv[])
         return std::vector<PDC>({Plotter::DataCollection("single",   var, {dsT1tttt1500}),
 //                                 Plotter::DataCollection("single",   var, {dsT2tt800}),
 		    });
->>>>>>> 6e312bd9ac586f2115560f260ec56b831a417c3f
     };
 
     std::vector<std::pair<std::string,std::string>> cutlevels_muon = {
