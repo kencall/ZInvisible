@@ -2123,20 +2123,9 @@ namespace plotterFunctions
             tr.registerDerivedVar("nJetsAk8", nJetsAk8);
             tr.registerDerivedVar("nJetsPuppi", nJetsPuppi);
 
-            for(int i = 0; i < nJetsPuppi; ++i){
-                if(puppiJetsLVec[i].Pt() > 200){
-                    puppiLVec_200->push_back(puppiJetsLVec[i]);
-                    if(puppiJetsLVec[i].Pt() > 400){
-                        puppiLVec_400->push_back(puppiJetsLVec[i]);
-                    }
-                }
-            }
-            tr.registerDerivedVec("puppiLVec_200",puppiLVec_200);
-            tr.registerDerivedVec("puppiLVec_400",puppiLVec_400);
-
             //tau21 division
             if(puppitau2.size()!=0 && puppitau1.size()!=0 && puppitau2.size()==puppitau1.size()){
-                for(int iJet = 0; iJet < (*puppiLVec_200).size(); ++iJet){
+                for(int iJet = 0; iJet < puppiJetsLVec.size(); ++iJet){
                     puppitau2Dtau1->push_back(puppitau2[iJet]/(puppitau1[iJet]));
                 }
             } 
@@ -2145,7 +2134,7 @@ namespace plotterFunctions
             }
 
             if(puppitau2.size()!=0 && puppitau3.size()!=0 && puppitau2.size()==puppitau3.size()){
-                for(int iJet = 0; iJet < (*puppiLVec_400).size(); ++iJet){
+                for(int iJet = 0; iJet < puppiJetsLVec.size(); ++iJet){
                     puppitau3Dtau2->push_back(puppitau3[iJet]/(puppitau2[iJet]));
                 }
             }
@@ -2156,41 +2145,57 @@ namespace plotterFunctions
             tr.registerDerivedVec("puppitau3Dtau2", puppitau3Dtau2);
             
             ///WTagging
-            for(int tau = 0; tau < (*puppitau2Dtau1).size(); ++tau){
+            for(int tau = 0; tau < (*puppitau2Dtau1).size(); ++tau)
+            {
                 // do pt cuts first
-
-                if (puppisoftDropMass[tau]>65 && puppisoftDropMass[tau]<100){
-                    // push back tau variables after mass cut
-                    puppitau2Dtau1_SDM->push_back(puppitau2Dtau1->at(tau));
-
-                    if ((*puppitau2Dtau1)[tau] >= 0 && (*puppitau2Dtau1)[tau] < 0.6){ // loose
-                        puppiLVecLoose_w->push_back(puppiJetsLVec[tau]);  
-                        //std::cout <<"PT_puupi"<< (*puppiLVectight_w).size()  << std::endl;    // (*puppiLVectight_w)[0].Pt() 
-
-                        if ((*puppitau2Dtau1)[tau] < 0.45){ // tight
-                            puppiLVectight_w->push_back(puppiJetsLVec[tau]); 
-                            puppiLVectight_w_index->push_back(tau);
+                if (puppiJetsLVec[tau].Pt() > 200 )
+                {
+                    puppiLVec_200->push_back(puppiJetsLVec[tau]);
+                    if (puppisoftDropMass[tau]>65 && puppisoftDropMass[tau]<100)
+                    {
+                        // push back tau variables after mass cut
+                        puppitau2Dtau1_SDM->push_back(puppitau2Dtau1->at(tau));
+                        // apply loose tau21 cuts
+                        if ((*puppitau2Dtau1)[tau] >= 0 && (*puppitau2Dtau1)[tau] < 0.6) 
+                        { 
+                            puppiLVecLoose_w->push_back(puppiJetsLVec[tau]);  
+                            // also do tight cuts
+                            if ((*puppitau2Dtau1)[tau] < 0.45) 
+                            {
+                                puppiLVectight_w->push_back(puppiJetsLVec[tau]); 
+                                puppiLVectight_w_index->push_back(tau);
+                            }
                         }
-                    }
-                } 
+                    } 
+                }
             }
-
             //Top 1%
-            for(int tau = 0; tau < (*puppitau3Dtau2).size(); ++tau){
-                if (puppisoftDropMass[tau]>105 && puppisoftDropMass[tau]<210){
-                    puppitau3Dtau2_SDM->push_back(puppitau3Dtau2->at(tau));
-                    
-                    if ((*puppitau3Dtau2)[tau] >= 0 && (*puppitau3Dtau2)[tau] < 0.65){
-                        puppiLVecLoose_top->push_back(puppiJetsLVec[tau]);
-
-                        if ((*puppitau3Dtau2)[tau] < 0.54){ 
-                            puppiLVectight_top->push_back(puppiJetsLVec[tau]);
-                            puppiLVectight_top_index->push_back(tau);
+            for(int tau = 0; tau < (*puppitau3Dtau2).size(); ++tau)
+            {
+                // do pt cuts first
+                if (puppiJetsLVec[tau].Pt() > 400)
+                {
+                    puppiLVec_400->push_back(puppiJetsLVec[tau]);
+                    if (puppisoftDropMass[tau]>105 && puppisoftDropMass[tau]<210)
+                    {
+                        puppitau3Dtau2_SDM->push_back(puppitau3Dtau2->at(tau));
+                        // loose tau32 cuts
+                        if ((*puppitau3Dtau2)[tau] >= 0 && (*puppitau3Dtau2)[tau] < 0.65)
+                        {
+                            puppiLVecLoose_top->push_back(puppiJetsLVec[tau]);
+                            // tight tau32 cuts
+                            if ((*puppitau3Dtau2)[tau] < 0.54)
+                            { 
+                                puppiLVectight_top->push_back(puppiJetsLVec[tau]);
+                                puppiLVectight_top_index->push_back(tau);
+                            }
                         }
                     }
                 }
             }
             
+            tr.registerDerivedVec("puppiLVec_200",puppiLVec_200);
+            tr.registerDerivedVec("puppiLVec_400",puppiLVec_400);
             tr.registerDerivedVec("puppiLVectight_top", puppiLVectight_top);
             tr.registerDerivedVec("puppiLVectight_top_index", puppiLVectight_top_index);
             tr.registerDerivedVec("puppiLVecLoose_top", puppiLVecLoose_top);
