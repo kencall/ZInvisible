@@ -2109,8 +2109,10 @@ namespace plotterFunctions
             std::vector<TLorentzVector> *puppiLVec_400 = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVecLoose_top = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVectight_top = new std::vector<TLorentzVector>();
+            std::vector<int> *puppiLVectight_top_index = new std::vector<int>();
             std::vector<TLorentzVector> *puppiLVecLoose_w = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVectight_w = new std::vector<TLorentzVector>();
+            std::vector<int> *puppiLVectight_w_index = new std::vector<int>();
             std::vector<double>* puppitau2Dtau1 = new std::vector<double>();
             std::vector<double>* puppitau3Dtau2 = new std::vector<double>();
             std::vector<double>* puppitau2Dtau1_SDM = new std::vector<double>();
@@ -2121,23 +2123,23 @@ namespace plotterFunctions
             tr.registerDerivedVar("nJetsAk8", nJetsAk8);
             tr.registerDerivedVar("nJetsPuppi", nJetsPuppi);
 
-         for(int i = 0; i < nJetsPuppi; ++i){
-          if(puppiJetsLVec[i].Pt() > 200){
-           puppiLVec_200->push_back(puppiJetsLVec[i]);
-           if(puppiJetsLVec[i].Pt() > 400){
-           puppiLVec_400->push_back(puppiJetsLVec[i]);
-            }
-            }
-           }
+	    for(int i = 0; i < nJetsPuppi; ++i){
+		if(puppiJetsLVec[i].Pt() > 200){
+		    puppiLVec_200->push_back(puppiJetsLVec[i]);
+		    if(puppiJetsLVec[i].Pt() > 400){
+			puppiLVec_400->push_back(puppiJetsLVec[i]);
+		    }
+		}
+	    }
             tr.registerDerivedVec("puppiLVec_200",puppiLVec_200);
             tr.registerDerivedVec("puppiLVec_400",puppiLVec_400);
 
             //tau21 division
             if(puppitau2.size()!=0 && puppitau1.size()!=0 && puppitau2.size()==puppitau1.size()){
-            for(int iJet = 0; iJet < (*puppiLVec_200).size(); ++iJet){
-             puppitau2Dtau1->push_back(puppitau2[iJet]/(puppitau1[iJet]));
-              }
-           } 
+		for(int iJet = 0; iJet < (*puppiLVec_200).size(); ++iJet){
+		    puppitau2Dtau1->push_back(puppitau2[iJet]/(puppitau1[iJet]));
+		}
+	    } 
             else { 
 		puppitau2Dtau1->push_back( -1);
 	    }
@@ -2165,6 +2167,7 @@ namespace plotterFunctions
 
 		       if ((*puppitau2Dtau1)[tau] < 0.45){ // tight
 			   puppiLVectight_w->push_back(puppiJetsLVec[tau]); 
+			   puppiLVectight_w_index->push_back(tau);
 		       }
 		   }
                } 
@@ -2180,14 +2183,17 @@ namespace plotterFunctions
 
 			if ((*puppitau3Dtau2)[tau] < 0.54){ 
 			    puppiLVectight_top->push_back(puppiJetsLVec[tau]);
+			    puppiLVectight_top_index->push_back(tau);
 			}
 		    }
 		}
 	    }
 	    
 	    tr.registerDerivedVec("puppiLVectight_top", puppiLVectight_top);
+	    tr.registerDerivedVec("puppiLVectight_top_index", puppiLVectight_top_index);
 	    tr.registerDerivedVec("puppiLVecLoose_top", puppiLVecLoose_top);
 	    tr.registerDerivedVec("puppiLVectight_w", puppiLVectight_w);
+	    tr.registerDerivedVec("puppiLVectight_w_index", puppiLVectight_w_index);
 	    tr.registerDerivedVec("puppiLVecLoose_w", puppiLVecLoose_w);
 	    tr.registerDerivedVec("puppitau2Dtau1_SDM", puppitau2Dtau1_SDM);
 	    tr.registerDerivedVec("puppitau3Dtau2_SDM", puppitau3Dtau2_SDM);
@@ -2302,6 +2308,10 @@ namespace plotterFunctions
 	     // For each tagged top/W, find the corresponding subjets
 	     std::vector< std::vector<TLorentzVector> > W_subjets;
 	     std::vector<double>* W_subjets_pt_reldiff = new std::vector<double>();
+	     std::vector<double>* W_subjets_eta_reldiff = new std::vector<double>();
+	     std::vector<double>* W_subjets_phi_reldiff = new std::vector<double>();
+	     std::vector<double>* W_subjets_mass_reldiff = new std::vector<double>();
+	     std::vector<double>* W_subjets_SDmass_reldiff = new std::vector<double>();
 	     for( TLorentzVector myW : puppiLVectight_w)
 	     {
 		 std::vector<TLorentzVector> myW_subjets;
@@ -2336,12 +2346,24 @@ namespace plotterFunctions
 		     std::vector<TLorentzVector> mynewW_subjets = {myW_subjets[min_j], myW_subjets[min_k]};
 		     W_subjets.push_back(mynewW_subjets);
 		     W_subjets_pt_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).Pt()-myW.Pt())/myW.Pt());
+		     W_subjets_eta_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).Eta()-myW.Eta())/myW.Eta());
+		     W_subjets_phi_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).Phi()-myW.Phi())/myW.Phi());
+		     W_subjets_mass_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).M()-myW.M())/myW.M());
+		     W_subjets_SDmass_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).M()-myW.M())/myW.M());
 		 } else {
 		     W_subjets.push_back(myW_subjets);
 		     W_subjets_pt_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Pt()-myW.Pt())/myW.Pt());
+		     W_subjets_eta_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Eta()-myW.Eta())/myW.Eta());
+		     W_subjets_phi_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Phi()-myW.Phi())/myW.Phi());
+		     W_subjets_mass_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).M()-myW.M())/myW.M());
+		     W_subjets_SDmass_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).M()-myW.Pt())/myW.Pt());
 		 }
 	     }
 	     tr.registerDerivedVec("W_subjets_pt_reldiff", W_subjets_pt_reldiff);
+	     tr.registerDerivedVec("W_subjets_eta_reldiff", W_subjets_eta_reldiff);
+	     tr.registerDerivedVec("W_subjets_phi_reldiff", W_subjets_phi_reldiff);
+	     tr.registerDerivedVec("W_subjets_mass_reldiff", W_subjets_mass_reldiff);
+	     tr.registerDerivedVec("W_subjets_SDmass_reldiff", W_subjets_SDmass_reldiff);
 
 	     // For each tagged top/W, find the corresponding subjets
 	     std::vector< std::vector< TLorentzVector> > top_subjets;
