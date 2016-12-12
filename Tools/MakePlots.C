@@ -139,6 +139,11 @@ int main(int argc, char* argv[])
         fileMap["TTbarNoHad"] = {ss["TTbarDiLep"]};
         fileMap["Data_SingleMuon"] = {ss["Data_SingleMuon_2015C"]};
     }
+    else if(dataSets.compare("TESTNADJA") == 0)
+    {
+        fileMap["Signal_T1tttt_mGluino1500_mLSP100"] = {ss["Signal_T1tttt_mGluino1500_mLSP100"]};
+        fileMap["Signal_T2tt_mStop850_mLSP100"] = {ss["Signal_T2tt_mStop850_mLSP100"]};
+    }
     else
     {
         if(ss[dataSets] != ss.null())
@@ -204,7 +209,7 @@ int main(int argc, char* argv[])
     //Plotter::DatasetSummary dsT1tttt1500( "T1tttt(1500,100)", fileMap["Signal_T1tttt_mGluino1500_mLSP100"], "", "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsT1tttt1200( "T1tttt(1200,800)", fileMap["Signal_T1tttt_mGluino1200_mLSP800"],      "",  "TriggerEffMC");
     Plotter::DatasetSummary dsT2tt500(    "T2tt(500,325)",    fileMap["Signal_T2tt_mStop500_mLSP325"],      "",        "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
-    Plotter::DatasetSummary dsT2tt800( "T2tt(850,100)",         fileMap["Signal_T2tt_mStop850_mLSP100"],      "",       "TriggerEffMC");
+    Plotter::DatasetSummary dsT2tt800( "T2tt(850,100)",         fileMap["Signal_T2tt_mStop850_mLSP100"],      "",       "");
     //Plotter::DatasetSummary dsDYInc(          "DY HT<100",  fileMap["IncDY"],           "",       "");
     Plotter::DatasetSummary dstt2l(           "t#bar{t}",   fileMap["TTbarNoHad"],      "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dstW(             "Single top", fileMap["tW"],              "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
@@ -267,11 +272,11 @@ int main(int argc, char* argv[])
     auto PDCMaker12 = [&](std::string var)
     {
         return std::vector<PDC>({Plotter::DataCollection("single",   var, {ds_ZINV}),
-                                 Plotter::DataCollection("single",   var, {ds_TTBar}),
-                                 Plotter::DataCollection("single",   var, {dsT1tttt1200}),
-                                 //Plotter::DataCollection("single",   var, {dsT2tt800}),
-                                 Plotter::DataCollection("single",   var, {dsT1tttt1500}),
-                                 Plotter::DataCollection("single",   var, {dsT2tt500}) 
+                    Plotter::DataCollection("single",   var, {ds_TTBar}),
+                    //Plotter::DataCollection("single",   var, {dsT1tttt1200}),
+                    Plotter::DataCollection("single",   var, {dsT1tttt1500}),
+                    Plotter::DataCollection("single",   var, {dsT2tt800})
+                    //Plotter::DataCollection("single",   var, {dsT2tt500}) 
                     //             Plotter::DataCollection("single",   var, {ds_TTBarHT}) 
 		    });
     };
@@ -279,7 +284,7 @@ int main(int argc, char* argv[])
     auto PDCMaker_boost = [&](std::string var)
     {
         return std::vector<PDC>({Plotter::DataCollection("single",   var, {dsT1tttt1500}),
-//                                 Plotter::DataCollection("single",   var, {dsT2tt800}),
+                    //Plotter::DataCollection("single",   var, {dsT2tt800})
 		    });
     };
 
@@ -434,8 +439,8 @@ int main(int argc, char* argv[])
        vh.push_back(PHS("nJetsPuppi_T_b0.40.8"+ cut.first,  PDCMaker12("nJetsPuppi_T1_lar"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
        vh.push_back(PHS("puppiJetsLVec"  + cut.first,  PDCMaker12("puppiJetsLVec(pt)"),  {1, 1}, cut.second, 20, 200, 1200, false, false,  "pt",   "Events"));
        vh.push_back(PHS("puppiJetsLVec_size"  + cut.first,  PDCMaker12("puppiJetsLVec(size)"),  {1, 1}, cut.second, 7, 0, 7, false, true,  "nJets",   "Events"));
-       vh.push_back(PHS("puppitau3Dtau2_SDM"+ cut.first,  PDCMaker12("puppitau3Dtau2_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tauD",   "Events"));
-       vh.push_back(PHS("puppitau2Dtau1_SDM"+ cut.first,  PDCMaker12("puppitau2Dtau1_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tauD",   "Events"));
+       vh.push_back(PHS("puppitau3Dtau2_SDM"+ cut.first,  PDCMaker12("puppitau3Dtau2_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tau32",   "Events"));
+       vh.push_back(PHS("puppitau2Dtau1_SDM"+ cut.first,  PDCMaker12("puppitau2Dtau1_SDM"),  {1, 1}, cut.second, 100, 0, 1, false, true,  "tau21",   "Events"));
        }
 
 
@@ -454,10 +459,120 @@ int main(int argc, char* argv[])
     vh.push_back(PHS("top_N_AK4_matched_genmatchedother_0p6",        PDCMaker_boost("top_N_AK4_matched_genmatchedother_0p6"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
     vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother_0p6",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
 
+    // low pt
+    vh.push_back(PHS("top_N_AK4_matched_genmatched_lowpt",        PDCMaker_boost("top_N_AK4_matched_genmatched_lowpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatched_lowpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatched_lowpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_genmatched_lowpt",     PDCMaker_boost("top_N_AK4_notmatched_genmatched_lowpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_notgenmatched_lowpt",  PDCMaker_boost("top_N_AK4_notmatched_notgenmatched_lowpt"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_genmatched_0p6_lowpt",        PDCMaker_boost("top_N_AK4_matched_genmatched_0p6_lowpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatched_0p6_lowpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatched_0p6_lowpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_genmatched_0p6_lowpt",     PDCMaker_boost("top_N_AK4_notmatched_genmatched_0p6_lowpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_notgenmatched_0p6_lowpt",  PDCMaker_boost("top_N_AK4_notmatched_notgenmatched_0p6_lowpt"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+    vh.push_back(PHS("top_N_AK4_matched_genmatchedother_lowpt",        PDCMaker_boost("top_N_AK4_matched_genmatchedother_lowpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother_lowpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother_lowpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_genmatchedother_0p6_lowpt",        PDCMaker_boost("top_N_AK4_matched_genmatchedother_0p6_lowpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother_0p6_lowpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother_0p6_lowpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+
+    // high pt
+    vh.push_back(PHS("top_N_AK4_matched_genmatched_highpt",        PDCMaker_boost("top_N_AK4_matched_genmatched_highpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatched_highpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatched_highpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_genmatched_highpt",     PDCMaker_boost("top_N_AK4_notmatched_genmatched_highpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_notgenmatched_highpt",  PDCMaker_boost("top_N_AK4_notmatched_notgenmatched_highpt"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_genmatched_0p6_highpt",        PDCMaker_boost("top_N_AK4_matched_genmatched_0p6_highpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatched_0p6_highpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatched_0p6_highpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_genmatched_0p6_highpt",     PDCMaker_boost("top_N_AK4_notmatched_genmatched_0p6_highpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_notmatched_notgenmatched_0p6_highpt",  PDCMaker_boost("top_N_AK4_notmatched_notgenmatched_0p6_highpt"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+    vh.push_back(PHS("top_N_AK4_matched_genmatchedother_highpt",        PDCMaker_boost("top_N_AK4_matched_genmatchedother_highpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother_highpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother_highpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_genmatchedother_0p6_highpt",        PDCMaker_boost("top_N_AK4_matched_genmatchedother_0p6_highpt"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("top_N_AK4_matched_notgenmatchedother_0p6_highpt",     PDCMaker_boost("top_N_AK4_matched_notgenmatchedother_0p6_highpt"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+
 
     vh.push_back(PHS("dR_top_gentop",  PDCMaker_boost("dR_top_gentop"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(top, gentop)",   "Entries"));
     vh.push_back(PHS("dR_AK4_topsubjet_genmatched",  PDCMaker_boost("dR_AK4_topsubjet_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
     vh.push_back(PHS("dR_AK4_top_genmatched",  PDCMaker_boost("dR_AK4_top_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, top)",   "Entries"));
+
+    vh.push_back(PHS("dR_top_gentop_lowpt",  PDCMaker_boost("dR_top_gentop_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(top, gentop)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_topsubjet_genmatched_lowpt",  PDCMaker_boost("dR_AK4_topsubjet_genmatched_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_top_genmatched_lowpt",  PDCMaker_boost("dR_AK4_top_genmatched_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, top)",   "Entries"));
+
+    vh.push_back(PHS("dR_top_gentop_highpt",  PDCMaker_boost("dR_top_gentop_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(top, gentop)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_topsubjet_genmatched_highpt",  PDCMaker_boost("dR_AK4_topsubjet_genmatched_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_top_genmatched_highpt",  PDCMaker_boost("dR_AK4_top_genmatched_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, top)",   "Entries"));
+
+    vh.push_back(PHS("pt_diff_top_gentop",  PDCMaker_boost("pt_diff_top_gentop"),  {1, 1}, "", 50, -250, 250, false, false,  "pt diff (top, gentop)",   "Entries"));
+    vh.push_back(PHS("pt_diff_top_gentop_log",  PDCMaker_boost("pt_diff_top_gentop"),  {1, 1}, "", 50, -250, 250, true, false,  "pt diff (top, gentop)",   "Entries"));
+    vh.push_back(PHS("pt_reldiff_top_gentop",  PDCMaker_boost("pt_reldiff_top_gentop"),  {1, 1}, "", 50, -1, 1, false, false,  "rel pt diff (top, gentop)",   "Entries"));
+    vh.push_back(PHS("pt_reldiff_top_gentop_log",  PDCMaker_boost("pt_reldiff_top_gentop"),  {1, 1}, "", 50, -1, 1, true, false,  "rel pt diff (top, gentop)",   "Entries"));
+
+
+
+    vh.push_back(PHS("top_subjets_pt_reldiff",      PDCMaker_boost("top_subjets_pt_reldiff"),      {1, 1}, "", 50, -1, 1, false, false,  "rel pt diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_eta_reldiff",     PDCMaker_boost("top_subjets_eta_reldiff"),     {1, 1}, "", 50, -1.5, 1.5,   false, false,  "rel eta diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_phi_reldiff",     PDCMaker_boost("top_subjets_phi_reldiff"),     {1, 1}, "", 50, -2, 2,   false, false,  "rel phi diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_mass_reldiff",    PDCMaker_boost("top_subjets_mass_reldiff"),    {1, 1}, "", 50, -1, 1,   false, false,  "rel mass diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_SDmass_reldiff",  PDCMaker_boost("top_subjets_SDmass_reldiff"),  {1, 1}, "", 50, -1, 1,   false, false,  "rel SDmass diff(sum of subjets, top)",   "Entries"));
+
+    vh.push_back(PHS("top_subjets_pt_diff",      PDCMaker_boost("top_subjets_pt_diff"),      {1, 1}, "", 50, -200, 100, false, false,  "pt diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_eta_diff",     PDCMaker_boost("top_subjets_eta_diff"),     {1, 1}, "", 50, -0.4, 0.4,   false, false,  "eta diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_phi_diff",     PDCMaker_boost("top_subjets_phi_diff"),     {1, 1}, "", 50, -0.4, 0.4,   false, false,  "phi diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_mass_diff",    PDCMaker_boost("top_subjets_mass_diff"),    {1, 1}, "", 50, -300, 100,   false, false,  "mass diff(sum of subjets, top)",   "Entries"));
+    vh.push_back(PHS("top_subjets_SDmass_diff",  PDCMaker_boost("top_subjets_SDmass_diff"),  {1, 1}, "", 50, -200, 200,   false, false,  "SDmass diff(sum of subjets, top)",   "Entries"));
+
+
+
+    // same for Ws
+    vh.push_back(PHS("W_N_AK4_matched_genmatched",        PDCMaker_boost("W_N_AK4_matched_genmatched"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_matched_notgenmatched",     PDCMaker_boost("W_N_AK4_matched_notgenmatched"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_notmatched_genmatched",     PDCMaker_boost("W_N_AK4_notmatched_genmatched"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_notmatched_notgenmatched",  PDCMaker_boost("W_N_AK4_notmatched_notgenmatched"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_matched_genmatched_0p6",        PDCMaker_boost("W_N_AK4_matched_genmatched_0p6"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_matched_notgenmatched_0p6",     PDCMaker_boost("W_N_AK4_matched_notgenmatched_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_notmatched_genmatched_0p6",     PDCMaker_boost("W_N_AK4_notmatched_genmatched_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_notmatched_notgenmatched_0p6",  PDCMaker_boost("W_N_AK4_notmatched_notgenmatched_0p6"),  {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+    vh.push_back(PHS("W_N_AK4_matched_genmatchedother",        PDCMaker_boost("W_N_AK4_matched_genmatchedother"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_matched_notgenmatchedother",     PDCMaker_boost("W_N_AK4_matched_notgenmatchedother"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_matched_genmatchedother_0p6",        PDCMaker_boost("W_N_AK4_matched_genmatchedother_0p6"),        {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+    vh.push_back(PHS("W_N_AK4_matched_notgenmatchedother_0p6",     PDCMaker_boost("W_N_AK4_matched_notgenmatchedother_0p6"),     {1, 1}, "", 10, 0, 10, false, false,  "N_AK4",   "Entries"));
+
+
+    vh.push_back(PHS("dR_W_genW",  PDCMaker_boost("dR_W_genW"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(W, genW)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_Wsubjet_genmatched",  PDCMaker_boost("dR_AK4_Wsubjet_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_W_genmatched",  PDCMaker_boost("dR_AK4_W_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, W)",   "Entries"));
+
+    vh.push_back(PHS("dR_W_genW_lowpt",  PDCMaker_boost("dR_W_genW_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(W, genW)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_Wsubjet_genmatched_lowpt",  PDCMaker_boost("dR_AK4_Wsubjet_genmatched_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_W_genmatched_lowpt",  PDCMaker_boost("dR_AK4_W_genmatched_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, W)",   "Entries"));
+
+    vh.push_back(PHS("dR_W_genW_highpt",  PDCMaker_boost("dR_W_genW_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(W, genW)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_Wsubjet_genmatched_highpt",  PDCMaker_boost("dR_AK4_Wsubjet_genmatched_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
+    vh.push_back(PHS("dR_AK4_W_genmatched_highpt",  PDCMaker_boost("dR_AK4_W_genmatched_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, W)",   "Entries"));
+
+    vh.push_back(PHS("pt_diff_W_genW",  PDCMaker_boost("pt_diff_W_genW"),  {1, 1}, "", 50, -250, 250, false, false,  "pt diff (W, genW)",   "Entries"));
+    vh.push_back(PHS("pt_diff_W_genW_log",  PDCMaker_boost("pt_diff_W_genW"),  {1, 1}, "", 50, -250, 250, true, false,  "pt diff (W, genW)",   "Entries"));
+    vh.push_back(PHS("pt_reldiff_W_genW",  PDCMaker_boost("pt_reldiff_W_genW"),  {1, 1}, "", 50, -1, 1, false, false,  "rel pt diff (W, genW)",   "Entries"));
+    vh.push_back(PHS("pt_reldiff_W_genW_log",  PDCMaker_boost("pt_reldiff_W_genW"),  {1, 1}, "", 50, -1, 1, true, false,  "rel pt diff (W, genW)",   "Entries"));
+
+
+
+    vh.push_back(PHS("W_subjets_pt_reldiff",      PDCMaker_boost("W_subjets_pt_reldiff"),      {1, 1}, "", 50, -1, 1, false, false,  "rel pt diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_eta_reldiff",     PDCMaker_boost("W_subjets_eta_reldiff"),     {1, 1}, "", 50, -1.5, 1.5,   false, false,  "rel eta diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_phi_reldiff",     PDCMaker_boost("W_subjets_phi_reldiff"),     {1, 1}, "", 50, -2, 2,   false, false,  "rel phi diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_mass_reldiff",    PDCMaker_boost("W_subjets_mass_reldiff"),    {1, 1}, "", 50, -1, 1,   false, false,  "rel mass diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_SDmass_reldiff",  PDCMaker_boost("W_subjets_SDmass_reldiff"),  {1, 1}, "", 50, -1, 1,   false, false,  "rel SDmass diff(sum of subjets, W)",   "Entries"));
+
+    vh.push_back(PHS("W_subjets_pt_diff",      PDCMaker_boost("W_subjets_pt_diff"),      {1, 1}, "", 50, -200, 100, false, false,  "pt diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_eta_diff",     PDCMaker_boost("W_subjets_eta_diff"),     {1, 1}, "", 50, -0.4, 0.4,   false, false,  "eta diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_phi_diff",     PDCMaker_boost("W_subjets_phi_diff"),     {1, 1}, "", 50, -0.4, 0.4,   false, false,  "phi diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_mass_diff",    PDCMaker_boost("W_subjets_mass_diff"),    {1, 1}, "", 50, -300, 100,   false, false,  "mass diff(sum of subjets, W)",   "Entries"));
+    vh.push_back(PHS("W_subjets_SDmass_diff",  PDCMaker_boost("W_subjets_SDmass_diff"),  {1, 1}, "", 50, -200, 200,   false, false,  "SDmass diff(sum of subjets, W)",   "Entries"));
+
+
 
 
 

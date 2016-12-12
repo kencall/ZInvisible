@@ -2108,9 +2108,11 @@ namespace plotterFunctions
             std::vector<TLorentzVector> *puppiLVec_200 = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVec_400 = new std::vector<TLorentzVector>();
             std::vector<TLorentzVector> *puppiLVecLoose_top = new std::vector<TLorentzVector>();
+            std::vector<int> *puppiLVecLoose_top_index = new std::vector<int>();
             std::vector<TLorentzVector> *puppiLVectight_top = new std::vector<TLorentzVector>();
             std::vector<int> *puppiLVectight_top_index = new std::vector<int>();
             std::vector<TLorentzVector> *puppiLVecLoose_w = new std::vector<TLorentzVector>();
+            std::vector<int> *puppiLVecLoose_w_index = new std::vector<int>();
             std::vector<TLorentzVector> *puppiLVectight_w = new std::vector<TLorentzVector>();
             std::vector<int> *puppiLVectight_w_index = new std::vector<int>();
             std::vector<double>* puppitau2Dtau1 = new std::vector<double>();
@@ -2159,6 +2161,7 @@ namespace plotterFunctions
                         if ((*puppitau2Dtau1)[tau] >= 0 && (*puppitau2Dtau1)[tau] < 0.6) 
                         { 
                             puppiLVecLoose_w->push_back(puppiJetsLVec[tau]);  
+                            puppiLVecLoose_w_index->push_back(tau);  
                             // also do tight cuts
                             if ((*puppitau2Dtau1)[tau] < 0.45) 
                             {
@@ -2183,6 +2186,7 @@ namespace plotterFunctions
                         if ((*puppitau3Dtau2)[tau] >= 0 && (*puppitau3Dtau2)[tau] < 0.65)
                         {
                             puppiLVecLoose_top->push_back(puppiJetsLVec[tau]);
+                            puppiLVecLoose_top_index->push_back(tau);
                             // tight tau32 cuts
                             if ((*puppitau3Dtau2)[tau] < 0.54)
                             { 
@@ -2199,9 +2203,11 @@ namespace plotterFunctions
             tr.registerDerivedVec("puppiLVectight_top", puppiLVectight_top);
             tr.registerDerivedVec("puppiLVectight_top_index", puppiLVectight_top_index);
             tr.registerDerivedVec("puppiLVecLoose_top", puppiLVecLoose_top);
+            tr.registerDerivedVec("puppiLVecLoose_top_index", puppiLVecLoose_top_index);
             tr.registerDerivedVec("puppiLVectight_w", puppiLVectight_w);
             tr.registerDerivedVec("puppiLVectight_w_index", puppiLVectight_w_index);
             tr.registerDerivedVec("puppiLVecLoose_w", puppiLVecLoose_w);
+            tr.registerDerivedVec("puppiLVecLoose_w_index", puppiLVecLoose_w_index);
             tr.registerDerivedVec("puppitau2Dtau1_SDM", puppitau2Dtau1_SDM);
             tr.registerDerivedVec("puppitau3Dtau2_SDM", puppitau3Dtau2_SDM);
         }
@@ -2224,10 +2230,23 @@ namespace plotterFunctions
             const std::vector<TLorentzVector>& jetsLVec     = tr.getVec<TLorentzVector>("jetsLVec");
             const std::vector<TLorentzVector>& ak8JetsLVec  = tr.getVec<TLorentzVector>("ak8JetsLVec");
             const std::vector<TLorentzVector>& puppiLVectight_top = tr.getVec<TLorentzVector>("puppiLVectight_top");
+            const std::vector<int>& puppiLVectight_top_index = tr.getVec<int>("puppiLVectight_top_index");
             const std::vector<TLorentzVector>& puppiLVecLoose_top = tr.getVec<TLorentzVector>("puppiLVecLoose_top");
+            const std::vector<int>& puppiLVecLoose_top_index = tr.getVec<int>("puppiLVecLoose_top_index");
             const std::vector<TLorentzVector>& puppiLVectight_w = tr.getVec<TLorentzVector>("puppiLVectight_w");
+            const std::vector<int>& puppiLVectight_w_index = tr.getVec<int>("puppiLVectight_w_index");
             const std::vector<TLorentzVector>& puppiLVecLoose_w = tr.getVec<TLorentzVector>("puppiLVecLoose_w");  
+            const std::vector<int>& puppiLVecLoose_w_index = tr.getVec<int>("puppiLVecLoose_w_index");  
             const std::vector<TLorentzVector>& puppiJetsLVec  = tr.getVec<TLorentzVector>("puppiJetsLVec");
+            const std::vector<double>& puppisoftDropMass = tr.getVec<double>("puppisoftDropMass");
+
+            // get AK4 jets with pt threshold
+            std::vector<TLorentzVector> jetsLVec_pt30;
+            for(const TLorentzVector& myjet : jetsLVec)
+            {
+                if(myjet.Pt()>30)
+                    jetsLVec_pt30.push_back(myjet);
+            }
 
             int nJetsAK41_min = 0;
             int nJetsAK41_med = 0; 
@@ -2319,8 +2338,16 @@ namespace plotterFunctions
             std::vector<double>* W_subjets_phi_reldiff = new std::vector<double>();
             std::vector<double>* W_subjets_mass_reldiff = new std::vector<double>();
             std::vector<double>* W_subjets_SDmass_reldiff = new std::vector<double>();
-            for( TLorentzVector myW : puppiLVectight_w)
+            std::vector<double>* W_subjets_pt_diff = new std::vector<double>();
+            std::vector<double>* W_subjets_eta_diff = new std::vector<double>();
+            std::vector<double>* W_subjets_phi_diff = new std::vector<double>();
+            std::vector<double>* W_subjets_mass_diff = new std::vector<double>();
+            std::vector<double>* W_subjets_SDmass_diff = new std::vector<double>();
+            //for(unsigned int imyW=0; imyW<puppiLVectight_w.size(); ++imyW)
+            for(unsigned int imyW=0; imyW<puppiLVecLoose_w.size(); ++imyW)
             {
+                //TLorentzVector myW = puppiLVectight_w[imyW];
+                TLorentzVector myW = puppiLVecLoose_w[imyW];
                 std::vector<TLorentzVector> myW_subjets;
                 int i = 0;
                 for(TLorentzVector puppiSubJet : puppiSubJetsLVec)
@@ -2356,14 +2383,30 @@ namespace plotterFunctions
                     W_subjets_eta_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).Eta()-myW.Eta())/myW.Eta());
                     W_subjets_phi_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).Phi()-myW.Phi())/myW.Phi());
                     W_subjets_mass_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).M()-myW.M())/myW.M());
-                    W_subjets_SDmass_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).M()-myW.M())/myW.M());
+                    //W_subjets_SDmass_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).M()-puppisoftDropMass[puppiLVectight_w_index[imyW]])/puppisoftDropMass[puppiLVectight_w_index[imyW]]);
+                    W_subjets_SDmass_reldiff->push_back( ((myW_subjets[min_j]+myW_subjets[min_k]).M()-puppisoftDropMass[puppiLVecLoose_w_index[imyW]])/puppisoftDropMass[puppiLVecLoose_w_index[imyW]]);
+
+                    W_subjets_pt_diff->push_back( (myW_subjets[min_j]+myW_subjets[min_k]).Pt()-myW.Pt());
+                    W_subjets_eta_diff->push_back( (myW_subjets[min_j]+myW_subjets[min_k]).Eta()-myW.Eta());
+                    W_subjets_phi_diff->push_back( (myW_subjets[min_j]+myW_subjets[min_k]).Phi()-myW.Phi());
+                    W_subjets_mass_diff->push_back( (myW_subjets[min_j]+myW_subjets[min_k]).M()-myW.M());
+                    //W_subjets_SDmass_diff->push_back( (myW_subjets[min_j]+myW_subjets[min_k]).M()-puppisoftDropMass[puppiLVectight_w_index[imyW]]);
+                    W_subjets_SDmass_diff->push_back( (myW_subjets[min_j]+myW_subjets[min_k]).M()-puppisoftDropMass[puppiLVecLoose_w_index[imyW]]);
                 } else {
                     W_subjets.push_back(myW_subjets);
                     W_subjets_pt_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Pt()-myW.Pt())/myW.Pt());
                     W_subjets_eta_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Eta()-myW.Eta())/myW.Eta());
                     W_subjets_phi_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).Phi()-myW.Phi())/myW.Phi());
                     W_subjets_mass_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).M()-myW.M())/myW.M());
-                    W_subjets_SDmass_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).M()-myW.Pt())/myW.Pt());
+                    //W_subjets_SDmass_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).M()-puppisoftDropMass[puppiLVectight_w_index[imyW]])/puppisoftDropMass[puppiLVectight_w_index[imyW]]);
+                    W_subjets_SDmass_reldiff->push_back( ((myW_subjets[0]+myW_subjets[1]).M()-puppisoftDropMass[puppiLVecLoose_w_index[imyW]])/puppisoftDropMass[puppiLVecLoose_w_index[imyW]]);
+
+                    W_subjets_pt_diff->push_back( (myW_subjets[0]+myW_subjets[1]).Pt()-myW.Pt());
+                    W_subjets_eta_diff->push_back( (myW_subjets[0]+myW_subjets[1]).Eta()-myW.Eta());
+                    W_subjets_phi_diff->push_back( (myW_subjets[0]+myW_subjets[1]).Phi()-myW.Phi());
+                    W_subjets_mass_diff->push_back( (myW_subjets[0]+myW_subjets[1]).M()-myW.M());
+                    //W_subjets_SDmass_diff->push_back( (myW_subjets[0]+myW_subjets[1]).M()-puppisoftDropMass[puppiLVectight_w_index[imyW]]);
+                    W_subjets_SDmass_diff->push_back( (myW_subjets[0]+myW_subjets[1]).M()-puppisoftDropMass[puppiLVecLoose_w_index[imyW]]);
                 }
             }
             tr.registerDerivedVec("W_subjets_pt_reldiff", W_subjets_pt_reldiff);
@@ -2371,12 +2414,29 @@ namespace plotterFunctions
             tr.registerDerivedVec("W_subjets_phi_reldiff", W_subjets_phi_reldiff);
             tr.registerDerivedVec("W_subjets_mass_reldiff", W_subjets_mass_reldiff);
             tr.registerDerivedVec("W_subjets_SDmass_reldiff", W_subjets_SDmass_reldiff);
+            tr.registerDerivedVec("W_subjets_pt_diff", W_subjets_pt_diff);
+            tr.registerDerivedVec("W_subjets_eta_diff", W_subjets_eta_diff);
+            tr.registerDerivedVec("W_subjets_phi_diff", W_subjets_phi_diff);
+            tr.registerDerivedVec("W_subjets_mass_diff", W_subjets_mass_diff);
+            tr.registerDerivedVec("W_subjets_SDmass_diff", W_subjets_SDmass_diff);
 
             // For each tagged top/W, find the corresponding subjets
             std::vector< std::vector< TLorentzVector> > top_subjets;
             std::vector<double>* top_subjets_pt_reldiff = new std::vector<double>();
-            for( TLorentzVector mytop : puppiLVectight_top)
+            std::vector<double>* top_subjets_eta_reldiff = new std::vector<double>();
+            std::vector<double>* top_subjets_phi_reldiff = new std::vector<double>();
+            std::vector<double>* top_subjets_mass_reldiff = new std::vector<double>();
+            std::vector<double>* top_subjets_SDmass_reldiff = new std::vector<double>();
+            std::vector<double>* top_subjets_pt_diff = new std::vector<double>();
+            std::vector<double>* top_subjets_eta_diff = new std::vector<double>();
+            std::vector<double>* top_subjets_phi_diff = new std::vector<double>();
+            std::vector<double>* top_subjets_mass_diff = new std::vector<double>();
+            std::vector<double>* top_subjets_SDmass_diff = new std::vector<double>();
+            //for( unsigned int imytop=0; imytop<puppiLVectight_top.size(); ++imytop)
+            for( unsigned int imytop=0; imytop<puppiLVecLoose_top.size(); ++imytop)
             {
+                //TLorentzVector mytop = puppiLVectight_top[imytop];
+                TLorentzVector mytop = puppiLVecLoose_top[imytop];
                 std::vector<TLorentzVector> mytop_subjets;
                 int i = 0;
                 for(TLorentzVector puppiSubJet : puppiSubJetsLVec)
@@ -2409,12 +2469,47 @@ namespace plotterFunctions
                     std::vector<TLorentzVector> mynewtop_subjets = {mytop_subjets[min_j], mytop_subjets[min_k]};
                     top_subjets.push_back(mynewtop_subjets);
                     top_subjets_pt_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).Pt()-mytop.Pt())/mytop.Pt());
-                } else {
+                    top_subjets_eta_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).Eta()-mytop.Eta())/mytop.Eta());
+                    top_subjets_phi_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).Phi()-mytop.Phi())/mytop.Phi());
+                    top_subjets_mass_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).M()-mytop.M())/mytop.M());
+                    //top_subjets_SDmass_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).M()-puppisoftDropMass[puppiLVectight_top_index[imytop]])/puppisoftDropMass[puppiLVectight_top_index[imytop]]);
+                    top_subjets_SDmass_reldiff->push_back( ((mytop_subjets[min_j]+mytop_subjets[min_k]).M()-puppisoftDropMass[puppiLVecLoose_top_index[imytop]])/puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
+
+                    top_subjets_pt_diff->push_back( (mytop_subjets[min_j]+mytop_subjets[min_k]).Pt()-mytop.Pt());
+                    top_subjets_eta_diff->push_back( (mytop_subjets[min_j]+mytop_subjets[min_k]).Eta()-mytop.Eta());
+                    top_subjets_phi_diff->push_back( (mytop_subjets[min_j]+mytop_subjets[min_k]).Phi()-mytop.Phi());
+                    top_subjets_mass_diff->push_back( (mytop_subjets[min_j]+mytop_subjets[min_k]).M()-mytop.M());
+                    //top_subjets_SDmass_diff->push_back( (mytop_subjets[min_j]+mytop_subjets[min_k]).M()-puppisoftDropMass[puppiLVectight_top_index[imytop]]);
+                    top_subjets_SDmass_diff->push_back( (mytop_subjets[min_j]+mytop_subjets[min_k]).M()-puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
+                } 
+                else 
+                {
                     top_subjets.push_back(mytop_subjets);
                     top_subjets_pt_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).Pt()-mytop.Pt())/mytop.Pt());
+                    top_subjets_eta_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).Eta()-mytop.Eta())/mytop.Eta());
+                    top_subjets_phi_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).Phi()-mytop.Phi())/mytop.Phi());
+                    top_subjets_mass_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).M()-mytop.M())/mytop.M());
+                    //top_subjets_SDmass_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).M()-puppisoftDropMass[puppiLVectight_top_index[imytop]])/puppisoftDropMass[puppiLVectight_top_index[imytop]]);
+                    top_subjets_SDmass_reldiff->push_back( ((mytop_subjets[0]+mytop_subjets[1]).M()-puppisoftDropMass[puppiLVecLoose_top_index[imytop]])/puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
+
+                    top_subjets_pt_diff->push_back(  (mytop_subjets[0]+mytop_subjets[1]).Pt() - mytop.Pt());
+                    top_subjets_eta_diff->push_back( (mytop_subjets[0]+mytop_subjets[1]).Eta() - mytop.Eta());
+                    top_subjets_phi_diff->push_back( (mytop_subjets[0]+mytop_subjets[1]).Phi() - mytop.Phi());
+                    top_subjets_mass_diff->push_back( (mytop_subjets[0]+mytop_subjets[1]).M() - mytop.M());
+                    //top_subjets_SDmass_diff->push_back( (mytop_subjets[0]+mytop_subjets[1]).M() - puppisoftDropMass[puppiLVectight_top_index[imytop]]);
+                    top_subjets_SDmass_diff->push_back( (mytop_subjets[0]+mytop_subjets[1]).M() - puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
                 }
             }
             tr.registerDerivedVec("top_subjets_pt_reldiff", top_subjets_pt_reldiff);
+            tr.registerDerivedVec("top_subjets_eta_reldiff", top_subjets_eta_reldiff);
+            tr.registerDerivedVec("top_subjets_phi_reldiff", top_subjets_phi_reldiff);
+            tr.registerDerivedVec("top_subjets_mass_reldiff", top_subjets_mass_reldiff);
+            tr.registerDerivedVec("top_subjets_SDmass_reldiff", top_subjets_SDmass_reldiff);
+            tr.registerDerivedVec("top_subjets_pt_diff", top_subjets_pt_diff);
+            tr.registerDerivedVec("top_subjets_eta_diff", top_subjets_eta_diff);
+            tr.registerDerivedVec("top_subjets_phi_diff", top_subjets_phi_diff);
+            tr.registerDerivedVec("top_subjets_mass_diff", top_subjets_mass_diff);
+            tr.registerDerivedVec("top_subjets_SDmass_diff", top_subjets_SDmass_diff);
 
             // Figure out gen matching..
             const std::vector<int>& genDecayPdgIdVec        = tr.getVec<int>("genDecayPdgIdVec");
@@ -2424,20 +2519,85 @@ namespace plotterFunctions
 
             std::vector<bool>* gentop_match = new std::vector<bool>(); // helpful to make plots of matched and unmatched number of tops
             std::vector<double>* dR_top_gentop = new std::vector<double>(); 
+            std::vector<double>* pt_diff_top_gentop = new std::vector<double>(); 
+            std::vector<double>* pt_reldiff_top_gentop = new std::vector<double>(); 
             std::vector<double>* dR_AK4_topsubjet_genmatched = new std::vector<double>(); 
             std::vector<double>* dR_AK4_top_genmatched = new std::vector<double>(); 
+
             std::vector<int>* top_N_AK4_matched_genmatched = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_matched_notgenmatched = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_notmatched_genmatched = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_notmatched_notgenmatched = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_genmatchedother = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatchedother = new std::vector<int>(); 
+
             std::vector<int>* top_N_AK4_matched_genmatched_0p6 = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_matched_notgenmatched_0p6 = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_notmatched_genmatched_0p6 = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_notmatched_notgenmatched_0p6 = new std::vector<int>(); 
-            std::vector<int>* top_N_AK4_matched_genmatchedother = new std::vector<int>(); 
-            std::vector<int>* top_N_AK4_matched_notgenmatchedother = new std::vector<int>(); 
             std::vector<int>* top_N_AK4_matched_genmatchedother_0p6 = new std::vector<int>(); 
-            std::vector<int>* top_N_AK4_matched_notgenmatchedother_0p6 = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatchedother_0p6 = new std::vector<int>();
+
+            // pt 400-700
+            std::vector<double>* dR_top_gentop_lowpt = new std::vector<double>(); 
+            std::vector<double>* dR_AK4_topsubjet_genmatched_lowpt = new std::vector<double>(); 
+            std::vector<double>* dR_AK4_top_genmatched_lowpt = new std::vector<double>(); 
+
+            std::vector<int>* top_N_AK4_matched_genmatched_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatched_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_genmatched_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_notgenmatched_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_genmatchedother_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatchedother_lowpt = new std::vector<int>(); 
+
+            std::vector<int>* top_N_AK4_matched_genmatched_0p6_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatched_0p6_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_genmatched_0p6_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_notgenmatched_0p6_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_genmatchedother_0p6_lowpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatchedother_0p6_lowpt = new std::vector<int>();
+
+            // pt 700+
+            std::vector<double>* dR_top_gentop_highpt = new std::vector<double>(); 
+            std::vector<double>* dR_AK4_topsubjet_genmatched_highpt = new std::vector<double>(); 
+            std::vector<double>* dR_AK4_top_genmatched_highpt = new std::vector<double>(); 
+
+            std::vector<int>* top_N_AK4_matched_genmatched_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatched_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_genmatched_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_notgenmatched_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_genmatchedother_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatchedother_highpt = new std::vector<int>(); 
+
+            std::vector<int>* top_N_AK4_matched_genmatched_0p6_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatched_0p6_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_genmatched_0p6_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_notmatched_notgenmatched_0p6_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_genmatchedother_0p6_highpt = new std::vector<int>(); 
+            std::vector<int>* top_N_AK4_matched_notgenmatchedother_0p6_highpt = new std::vector<int>();
+
+            // also check Ws
+            std::vector<bool>* genW_match = new std::vector<bool>(); // helpful to make plots of matched and unmatched number of Ws
+            std::vector<double>* dR_W_genW = new std::vector<double>(); 
+            std::vector<double>* pt_diff_W_genW = new std::vector<double>(); 
+            std::vector<double>* pt_reldiff_W_genW = new std::vector<double>(); 
+            std::vector<double>* dR_AK4_Wsubjet_genmatched = new std::vector<double>(); 
+            std::vector<double>* dR_AK4_W_genmatched = new std::vector<double>(); 
+
+            std::vector<int>* W_N_AK4_matched_genmatched = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_matched_notgenmatched = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_notmatched_genmatched = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_notmatched_notgenmatched = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_matched_genmatchedother = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_matched_notgenmatchedother = new std::vector<int>(); 
+
+            std::vector<int>* W_N_AK4_matched_genmatched_0p6 = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_matched_notgenmatched_0p6 = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_notmatched_genmatched_0p6 = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_notmatched_notgenmatched_0p6 = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_matched_genmatchedother_0p6 = new std::vector<int>(); 
+            std::vector<int>* W_N_AK4_matched_notgenmatchedother_0p6 = new std::vector<int>();
+ 
             if(tr.checkBranch("genDecayPdgIdVec") && &genDecayLVec != nullptr)
             {
                 // For each tagged top, find the matching gen particles
@@ -2451,9 +2611,11 @@ namespace plotterFunctions
                 }
 
                 // check all tagged tops
-                for(unsigned int imytop=0; imytop<puppiLVectight_top.size(); ++imytop) 
+                //for(unsigned int imytop=0; imytop<puppiLVectight_top.size(); ++imytop) 
+                for(unsigned int imytop=0; imytop<puppiLVecLoose_top.size(); ++imytop) 
                 {
-                    TLorentzVector mytop = puppiLVectight_top[imytop];
+                    //TLorentzVector mytop = puppiLVectight_top[imytop];
+                    TLorentzVector mytop = puppiLVecLoose_top[imytop];
                     //std::cout << "Mytop info: " << mytop.Pt() << " " << mytop.Eta() << " " << mytop.Phi() << std::endl;
                     // For now find the closest hadtop in deltaR
                     TLorentzVector temp_gentop_match_LV;
@@ -2471,11 +2633,18 @@ namespace plotterFunctions
                         }
                     }
                     dR_top_gentop->push_back(min_DR);
+                    if(mytop.Pt() > 700)
+                        dR_top_gentop_highpt->push_back(min_DR);
+                    else 
+                        dR_top_gentop_lowpt->push_back(min_DR);
+                    
                     // DR should be small for it to actually be a match
                     if(min_DR < 0.4)
                     {
                         //std::cout << "Mytop info: " << mytop.Pt() << " " << mytop.Eta() << " " << mytop.Phi() << std::endl;
                         gentop_match->push_back(true);
+                        pt_diff_top_gentop->push_back(mytop.Pt() - temp_gentop_match_LV.Pt());
+                        pt_reldiff_top_gentop->push_back((mytop.Pt() - temp_gentop_match_LV.Pt())/temp_gentop_match_LV.Pt());
                         // Now find the gen daughters for this gentop
                         std::vector<TLorentzVector> gentopdauLVec = hadtopdauLVec[matched_hadtop_index];
 
@@ -2505,17 +2674,49 @@ namespace plotterFunctions
                         int N_AK4_matched_notgenmatchedother = 0;
                         int N_AK4_matched_genmatchedother_0p6 = 0;
                         int N_AK4_matched_notgenmatchedother_0p6 = 0;
+                        
+                        // low pt
+                        int N_AK4_matched_genmatched_lowpt = 0;
+                        int N_AK4_matched_notgenmatched_lowpt = 0;
+                        int N_AK4_notmatched_genmatched_lowpt = 0;
+                        int N_AK4_notmatched_notgenmatched_lowpt = 0;
+                        // some counters
+                        int N_AK4_matched_genmatched_0p6_lowpt = 0;
+                        int N_AK4_matched_notgenmatched_0p6_lowpt = 0;
+                        int N_AK4_notmatched_genmatched_0p6_lowpt = 0;
+                        int N_AK4_notmatched_notgenmatched_0p6_lowpt = 0;
+                        // matched to another gentop
+                        int N_AK4_matched_genmatchedother_lowpt = 0;
+                        int N_AK4_matched_notgenmatchedother_lowpt = 0;
+                        int N_AK4_matched_genmatchedother_0p6_lowpt = 0;
+                        int N_AK4_matched_notgenmatchedother_0p6_lowpt = 0;
 
-                        for (unsigned int j=0; j<jetsLVec.size(); ++j)
+                        // high pt
+                        int N_AK4_matched_genmatched_highpt = 0;
+                        int N_AK4_matched_notgenmatched_highpt = 0;
+                        int N_AK4_notmatched_genmatched_highpt = 0;
+                        int N_AK4_notmatched_notgenmatched_highpt = 0;
+                        // some counters
+                        int N_AK4_matched_genmatched_0p6_highpt = 0;
+                        int N_AK4_matched_notgenmatched_0p6_highpt = 0;
+                        int N_AK4_notmatched_genmatched_0p6_highpt = 0;
+                        int N_AK4_notmatched_notgenmatched_0p6_highpt = 0;
+                        // matched to another gentop
+                        int N_AK4_matched_genmatchedother_highpt = 0;
+                        int N_AK4_matched_notgenmatchedother_highpt = 0;
+                        int N_AK4_matched_genmatchedother_0p6_highpt = 0;
+                        int N_AK4_matched_notgenmatchedother_0p6_highpt = 0;
+
+                        for (unsigned int j=0; j<jetsLVec_pt30.size(); ++j)
                         {
-                            double DR1 = ROOT::Math::VectorUtil::DeltaR(jetsLVec[j], mysubjets[0]);
-                            double DR2 = ROOT::Math::VectorUtil::DeltaR(jetsLVec[j], mysubjets[1]);
+                            double DR1 = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mysubjets[0]);
+                            double DR2 = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mysubjets[1]);
                             //std::cout << "DR1, DR2: " << DR1 << " " << DR2 << std::endl;
                             // Check if it matches a gen daughter
                             bool genmatch = false;
                             for (TLorentzVector gendau : gentopdauLVec)
                             {
-                                double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec[j], gendau);
+                                double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], gendau);
                                 //std::cout << "gen DR " << DR_AK4_gen << std::endl;
                                 if (DR_AK4_gen < 0.4)
                                 {
@@ -2526,7 +2727,18 @@ namespace plotterFunctions
                             }
                             if(genmatch){
                                 dR_AK4_topsubjet_genmatched->push_back(std::min(DR1,DR2));
-                                dR_AK4_top_genmatched->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec[j], mytop));
+                                dR_AK4_top_genmatched->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mytop));
+                                if(mytop.Pt() > 700)
+                                {
+                                    dR_AK4_topsubjet_genmatched_highpt->push_back(std::min(DR1,DR2));
+                                    dR_AK4_top_genmatched_highpt->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mytop));
+                                } else 
+                                {
+                                    dR_AK4_topsubjet_genmatched_lowpt->push_back(std::min(DR1,DR2));
+                                    dR_AK4_top_genmatched_lowpt->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mytop));
+
+                                }
+
                             }
                             // should merge this with 'genmatch' finding...
                             bool genmatch_other = false;
@@ -2536,7 +2748,7 @@ namespace plotterFunctions
                                     continue;
                                 for (TLorentzVector gendau : hadtopdauLVec[other])
                                 {
-                                    double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec[j], gendau);
+                                    double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], gendau);
                                     //std::cout << "gen DR " << DR_AK4_gen << std::endl;
                                     if (DR_AK4_gen < 0.4)
                                     {
@@ -2566,54 +2778,157 @@ namespace plotterFunctions
 
                             if(genmatch){
                                 if(subjetmatch)
+                                {
                                     N_AK4_matched_genmatched++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_matched_genmatched_highpt++;
+                                    else
+                                        N_AK4_matched_genmatched_lowpt++;
+                                }
                                 else
+                                {
                                     N_AK4_notmatched_genmatched++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_notmatched_genmatched_highpt++;
+                                    else
+                                        N_AK4_notmatched_genmatched_lowpt++;
+                                }
                                 if(subjetmatch_0p6)
+                                {
                                     N_AK4_matched_genmatched_0p6++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_matched_genmatched_0p6_highpt++;
+                                    else
+                                        N_AK4_matched_genmatched_0p6_lowpt++;
+                                }
                                 else
+                                {
                                     N_AK4_notmatched_genmatched_0p6++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_notmatched_genmatched_0p6_highpt++;
+                                    else
+                                        N_AK4_notmatched_genmatched_0p6_lowpt++;
+                                }
                             } else { // Not genmatched to any of the correct top daughters
                                 if(subjetmatch)
+                                {
                                     N_AK4_matched_notgenmatched++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_matched_notgenmatched_highpt++;
+                                    else
+                                        N_AK4_matched_notgenmatched_lowpt++;
+                                }
                                 else
+                                {
                                     N_AK4_notmatched_notgenmatched++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_notmatched_notgenmatched_highpt++;
+                                    else
+                                        N_AK4_notmatched_notgenmatched_lowpt++;
+                                }
                                 if(subjetmatch_0p6)
+                                {
                                     N_AK4_matched_notgenmatched_0p6++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_matched_notgenmatched_0p6_highpt++;
+                                    else
+                                        N_AK4_matched_notgenmatched_0p6_lowpt++;
+                                }
                                 else
+                                {
                                     N_AK4_notmatched_notgenmatched_0p6++;
+                                    if(mytop.Pt() > 700)
+                                        N_AK4_notmatched_notgenmatched_0p6_highpt++;
+                                    else
+                                        N_AK4_notmatched_notgenmatched_0p6_lowpt++;
+                                }
 
                                 if(genmatch_other){
                                     if(subjetmatch)
+                                    {
                                         N_AK4_matched_genmatchedother++;
+                                        if(mytop.Pt() > 700)
+                                            N_AK4_matched_genmatchedother_highpt++;
+                                        else
+                                            N_AK4_matched_genmatchedother_lowpt++;
+                                    }
                                     if(subjetmatch_0p6)
+                                    {
                                         N_AK4_matched_genmatchedother_0p6++;
+                                        if(mytop.Pt() > 700)
+                                            N_AK4_matched_genmatchedother_0p6_highpt++;
+                                        else
+                                            N_AK4_matched_genmatchedother_0p6_lowpt++;
+                                    }
                                 } else {
                                     if(subjetmatch)
+                                    {
                                         N_AK4_matched_notgenmatchedother++;
+                                        if(mytop.Pt() > 700)
+                                            N_AK4_matched_notgenmatchedother_highpt++;
+                                        else
+                                            N_AK4_matched_notgenmatchedother_lowpt++;
+                                    }
                                     if(subjetmatch_0p6)
+                                    {
                                         N_AK4_matched_notgenmatchedother_0p6++;
+                                        if(mytop.Pt() > 700)
+                                            N_AK4_matched_notgenmatchedother_0p6_highpt++;
+                                        else
+                                            N_AK4_matched_notgenmatchedother_0p6_lowpt++;
+                                    }
                                 }
-
                             }
-
-
-
 
                         }
                         top_N_AK4_matched_genmatched->push_back(N_AK4_matched_genmatched);
                         top_N_AK4_matched_notgenmatched->push_back(N_AK4_matched_notgenmatched);
                         top_N_AK4_notmatched_genmatched->push_back(N_AK4_notmatched_genmatched);
                         top_N_AK4_notmatched_notgenmatched->push_back(N_AK4_notmatched_notgenmatched);
+                        top_N_AK4_matched_genmatchedother->push_back(N_AK4_matched_genmatchedother);
+                        top_N_AK4_matched_notgenmatchedother->push_back(N_AK4_matched_notgenmatchedother);
+
                         top_N_AK4_matched_genmatched_0p6->push_back(N_AK4_matched_genmatched_0p6);
                         top_N_AK4_matched_notgenmatched_0p6->push_back(N_AK4_matched_notgenmatched_0p6);
                         top_N_AK4_notmatched_genmatched_0p6->push_back(N_AK4_notmatched_genmatched_0p6);
                         top_N_AK4_notmatched_notgenmatched_0p6->push_back(N_AK4_notmatched_notgenmatched_0p6);
-
-                        top_N_AK4_matched_genmatchedother->push_back(N_AK4_matched_genmatchedother);
-                        top_N_AK4_matched_notgenmatchedother->push_back(N_AK4_matched_notgenmatchedother);
                         top_N_AK4_matched_genmatchedother_0p6->push_back(N_AK4_matched_genmatchedother_0p6);
                         top_N_AK4_matched_notgenmatchedother_0p6->push_back(N_AK4_matched_notgenmatchedother_0p6);
+
+                        if(mytop.Pt() > 700)
+                        {
+                            // high pt
+                            top_N_AK4_matched_genmatched_highpt->push_back(N_AK4_matched_genmatched_highpt);
+                            top_N_AK4_matched_notgenmatched_highpt->push_back(N_AK4_matched_notgenmatched_highpt);
+                            top_N_AK4_notmatched_genmatched_highpt->push_back(N_AK4_notmatched_genmatched_highpt);
+                            top_N_AK4_notmatched_notgenmatched_highpt->push_back(N_AK4_notmatched_notgenmatched_highpt);
+                            top_N_AK4_matched_genmatchedother_highpt->push_back(N_AK4_matched_genmatchedother_highpt);
+                            top_N_AK4_matched_notgenmatchedother_highpt->push_back(N_AK4_matched_notgenmatchedother_highpt);
+                            
+                            top_N_AK4_matched_genmatched_0p6_highpt->push_back(N_AK4_matched_genmatched_0p6_highpt);
+                            top_N_AK4_matched_notgenmatched_0p6_highpt->push_back(N_AK4_matched_notgenmatched_0p6_highpt);
+                            top_N_AK4_notmatched_genmatched_0p6_highpt->push_back(N_AK4_notmatched_genmatched_0p6_highpt);
+                            top_N_AK4_notmatched_notgenmatched_0p6_highpt->push_back(N_AK4_notmatched_notgenmatched_0p6_highpt);
+                            top_N_AK4_matched_genmatchedother_0p6_highpt->push_back(N_AK4_matched_genmatchedother_0p6_highpt);
+                            top_N_AK4_matched_notgenmatchedother_0p6_highpt->push_back(N_AK4_matched_notgenmatchedother_0p6_highpt);
+                        }
+                        else
+                        {
+                            // low pt
+                            top_N_AK4_matched_genmatched_lowpt->push_back(N_AK4_matched_genmatched_lowpt);
+                            top_N_AK4_matched_notgenmatched_lowpt->push_back(N_AK4_matched_notgenmatched_lowpt);
+                            top_N_AK4_notmatched_genmatched_lowpt->push_back(N_AK4_notmatched_genmatched_lowpt);
+                            top_N_AK4_notmatched_notgenmatched_lowpt->push_back(N_AK4_notmatched_notgenmatched_lowpt);
+                            top_N_AK4_matched_genmatchedother_lowpt->push_back(N_AK4_matched_genmatchedother_lowpt);
+                            top_N_AK4_matched_notgenmatchedother_lowpt->push_back(N_AK4_matched_notgenmatchedother_lowpt);
+                            
+                            top_N_AK4_matched_genmatched_0p6_lowpt->push_back(N_AK4_matched_genmatched_0p6_lowpt);
+                            top_N_AK4_matched_notgenmatched_0p6_lowpt->push_back(N_AK4_matched_notgenmatched_0p6_lowpt);
+                            top_N_AK4_notmatched_genmatched_0p6_lowpt->push_back(N_AK4_notmatched_genmatched_0p6_lowpt);
+                            top_N_AK4_notmatched_notgenmatched_0p6_lowpt->push_back(N_AK4_notmatched_notgenmatched_0p6_lowpt);
+                            top_N_AK4_matched_genmatchedother_0p6_lowpt->push_back(N_AK4_matched_genmatchedother_0p6_lowpt);
+                            top_N_AK4_matched_notgenmatchedother_0p6_lowpt->push_back(N_AK4_matched_notgenmatchedother_0p6_lowpt);
+                        }
                          
                     } else // No match
                     { 
@@ -2621,24 +2936,299 @@ namespace plotterFunctions
                     }
 
                 }
+
+                // Now do Ws
+                // For each tagged W, find the matching gen particles
+
+                // These are the hadronically decaying Ws in the event:
+                std::vector<TLorentzVector> hadWLVec = genUtility::GetHadWLVec(genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec);
+                std::vector< std::vector<TLorentzVector> > hadWdauLVec;
+                for(TLorentzVector hadW : hadWLVec)
+                {
+                    hadWdauLVec.push_back(genUtility::GetWdauLVec(hadW, genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec));
+                }
+
+                // check all tagged Ws
+                //for(unsigned int imyW=0; imyW<puppiLVectight_w.size(); ++imyW) 
+                for(unsigned int imyW=0; imyW<puppiLVecLoose_w.size(); ++imyW) 
+                {
+                    //TLorentzVector myW = puppiLVectight_w[imyW];
+                    TLorentzVector myW = puppiLVecLoose_w[imyW];
+                    // For now find the closest hadW in deltaR
+                    TLorentzVector temp_genW_match_LV;
+                    double min_DR = 99.;
+                    int matched_hadW_index = -1;
+                    for(unsigned int myhadW_i=0; myhadW_i<hadWLVec.size(); ++myhadW_i)
+                    {
+                        TLorentzVector myhadW = hadWLVec[myhadW_i];
+                        double DR_W = ROOT::Math::VectorUtil::DeltaR(myW, myhadW);
+                        if (DR_W < min_DR) 
+                        {
+                            temp_genW_match_LV = myhadW;
+                            min_DR = DR_W;
+                            matched_hadW_index = myhadW_i;
+                        }
+                    }
+                    dR_W_genW->push_back(min_DR);
+                    
+                    // DR should be small for it to actually be a match
+                    if(min_DR < 0.4)
+                    {
+                        //std::cout << "Mytop info: " << mytop.Pt() << " " << mytop.Eta() << " " << mytop.Phi() << std::endl;
+                        genW_match->push_back(true);
+                        pt_diff_W_genW->push_back(myW.Pt() - temp_genW_match_LV.Pt());
+                        pt_reldiff_W_genW->push_back((myW.Pt() - temp_genW_match_LV.Pt())/temp_genW_match_LV.Pt());
+                        // Now find the gen daughters for this gentop
+                        std::vector<TLorentzVector> genWdauLVec = hadWdauLVec[matched_hadW_index];
+
+                        // Now we have the tagged W (myW), the gen had W (temp_genW_match_LV), and the gen daughters (genWdauLVec)
+                        // ready for some matching FUN!
+
+                        // Removing AK4 jets based on DR matching with subjets of tagged W
+                        std::vector<TLorentzVector> mysubjets = W_subjets[imyW];
+                        std::vector<int> ak4_removed_W;
+                        if(mysubjets.size() != 2)
+                            std::cout << "Attention: found " << mysubjets.size() << " subjets instead of 2" << std::endl;
+                        //std::cout << "Subjet 0: " << mysubjets[0].Pt() << " " << mysubjets[0].Eta() << " " << mysubjets[0].Phi() << std::endl;
+                        //std::cout << "Subjet 0: " << mysubjets[1].Pt() << " " << mysubjets[1].Eta() << " " << mysubjets[1].Phi() << std::endl;
+                         
+                        // some counters
+                        int N_W_AK4_matched_genmatched = 0;
+                        int N_W_AK4_matched_notgenmatched = 0;
+                        int N_W_AK4_notmatched_genmatched = 0;
+                        int N_W_AK4_notmatched_notgenmatched = 0;
+                        // some counters
+                        int N_W_AK4_matched_genmatched_0p6 = 0;
+                        int N_W_AK4_matched_notgenmatched_0p6 = 0;
+                        int N_W_AK4_notmatched_genmatched_0p6 = 0;
+                        int N_W_AK4_notmatched_notgenmatched_0p6 = 0;
+                        // matched to another genW
+                        int N_W_AK4_matched_genmatchedother = 0;
+                        int N_W_AK4_matched_notgenmatchedother = 0;
+                        int N_W_AK4_matched_genmatchedother_0p6 = 0;
+                        int N_W_AK4_matched_notgenmatchedother_0p6 = 0;
+                        
+                        for (unsigned int j=0; j<jetsLVec_pt30.size(); ++j)
+                        {
+                            double DR1 = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mysubjets[0]);
+                            double DR2 = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mysubjets[1]);
+                            //std::cout << "DR1, DR2: " << DR1 << " " << DR2 << std::endl;
+                            // Check if it matches a gen daughter
+                            bool genmatch = false;
+                            for (TLorentzVector gendau : genWdauLVec)
+                            {
+                                double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], gendau);
+                                //std::cout << "gen DR " << DR_AK4_gen << std::endl;
+                                if (DR_AK4_gen < 0.4)
+                                {
+                                    // matches gendaughter
+                                    genmatch = true;
+                                    break;
+                                }
+                            }
+                            if(genmatch){
+                                dR_AK4_Wsubjet_genmatched->push_back(std::min(DR1,DR2));
+                                dR_AK4_W_genmatched->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], myW));
+                            }
+                            // should merge this with 'genmatch' finding...
+                            bool genmatch_other = false;
+                            for (unsigned int other=0; other<hadWdauLVec.size() && !genmatch_other; ++other)
+                            {
+                                if(other == matched_hadW_index)
+                                    continue;
+                                for (TLorentzVector gendau : hadWdauLVec[other])
+                                {
+                                    double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], gendau);
+                                    //std::cout << "gen DR " << DR_AK4_gen << std::endl;
+                                    if (DR_AK4_gen < 0.4)
+                                    {
+                                        // matches gendaughter
+                                        genmatch_other = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            bool subjetmatch = false;
+                            bool subjetmatch_0p6 = false;
+                            if (DR1 < 0.4 || DR2 < 0.4)
+                            {
+                                //std::cout << "Found AK4 jet matching a subjet" << std::endl;
+                                // found a match
+                                subjetmatch = true;
+                                ak4_removed_W.push_back(j);
+                            }
+                            if (DR1 < 0.6 || DR2 < 0.6)
+                            {
+                                //std::cout << "Found AK4 jet matching a subjet" << std::endl;
+                                // found a match
+                                subjetmatch_0p6 = true;
+                            }
+
+
+                            if(genmatch){
+                                if(subjetmatch)
+                                {
+                                    N_W_AK4_matched_genmatched++;
+                                }
+                                else
+                                {
+                                    N_W_AK4_notmatched_genmatched++;
+                                }
+                                if(subjetmatch_0p6)
+                                {
+                                    N_W_AK4_matched_genmatched_0p6++;
+                                }
+                                else
+                                {
+                                    N_W_AK4_notmatched_genmatched_0p6++;
+                                }
+                            } else { // Not genmatched to any of the correct top daughters
+                                if(subjetmatch)
+                                {
+                                    N_W_AK4_matched_notgenmatched++;
+                                }
+                                else
+                                {
+                                    N_W_AK4_notmatched_notgenmatched++;
+                                }
+                                if(subjetmatch_0p6)
+                                {
+                                    N_W_AK4_matched_notgenmatched_0p6++;
+                                }
+                                else
+                                {
+                                    N_W_AK4_notmatched_notgenmatched_0p6++;
+                                }
+
+                                if(genmatch_other){
+                                    if(subjetmatch)
+                                    {
+                                        N_W_AK4_matched_genmatchedother++;
+                                    }
+                                    if(subjetmatch_0p6)
+                                    {
+                                        N_W_AK4_matched_genmatchedother_0p6++;
+                                    }
+                                } else {
+                                    if(subjetmatch)
+                                    {
+                                        N_W_AK4_matched_notgenmatchedother++;
+                                    }
+                                    if(subjetmatch_0p6)
+                                    {
+                                        N_W_AK4_matched_notgenmatchedother_0p6++;
+                                    }
+                                }
+                            }
+
+                        }
+                        W_N_AK4_matched_genmatched->push_back(N_W_AK4_matched_genmatched);
+                        W_N_AK4_matched_notgenmatched->push_back(N_W_AK4_matched_notgenmatched);
+                        W_N_AK4_notmatched_genmatched->push_back(N_W_AK4_notmatched_genmatched);
+                        W_N_AK4_notmatched_notgenmatched->push_back(N_W_AK4_notmatched_notgenmatched);
+                        W_N_AK4_matched_genmatchedother->push_back(N_W_AK4_matched_genmatchedother);
+                        W_N_AK4_matched_notgenmatchedother->push_back(N_W_AK4_matched_notgenmatchedother);
+
+                        W_N_AK4_matched_genmatched_0p6->push_back(N_W_AK4_matched_genmatched_0p6);
+                        W_N_AK4_matched_notgenmatched_0p6->push_back(N_W_AK4_matched_notgenmatched_0p6);
+                        W_N_AK4_notmatched_genmatched_0p6->push_back(N_W_AK4_notmatched_genmatched_0p6);
+                        W_N_AK4_notmatched_notgenmatched_0p6->push_back(N_W_AK4_notmatched_notgenmatched_0p6);
+                        W_N_AK4_matched_genmatchedother_0p6->push_back(N_W_AK4_matched_genmatchedother_0p6);
+                        W_N_AK4_matched_notgenmatchedother_0p6->push_back(N_W_AK4_matched_notgenmatchedother_0p6);
+
+                    } else // No match
+                    { 
+                        genW_match->push_back(false);
+                    }
+
+                }
+
+
+
             }
             tr.registerDerivedVec("gentop_match", gentop_match);
             tr.registerDerivedVec("dR_top_gentop", dR_top_gentop);
             tr.registerDerivedVec("dR_AK4_topsubjet_genmatched", dR_AK4_topsubjet_genmatched);
             tr.registerDerivedVec("dR_AK4_top_genmatched", dR_AK4_top_genmatched);
+            tr.registerDerivedVec("pt_diff_top_gentop", pt_diff_top_gentop);
+            tr.registerDerivedVec("pt_reldiff_top_gentop", pt_reldiff_top_gentop);
+
             tr.registerDerivedVec("top_N_AK4_matched_genmatched", top_N_AK4_matched_genmatched);
             tr.registerDerivedVec("top_N_AK4_matched_notgenmatched", top_N_AK4_matched_notgenmatched);
             tr.registerDerivedVec("top_N_AK4_notmatched_genmatched", top_N_AK4_notmatched_genmatched);
             tr.registerDerivedVec("top_N_AK4_notmatched_notgenmatched", top_N_AK4_notmatched_notgenmatched);
+            tr.registerDerivedVec("top_N_AK4_matched_genmatchedother", top_N_AK4_matched_genmatchedother);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother", top_N_AK4_matched_notgenmatchedother);
+
             tr.registerDerivedVec("top_N_AK4_matched_genmatched_0p6", top_N_AK4_matched_genmatched_0p6);
             tr.registerDerivedVec("top_N_AK4_matched_notgenmatched_0p6", top_N_AK4_matched_notgenmatched_0p6);
             tr.registerDerivedVec("top_N_AK4_notmatched_genmatched_0p6", top_N_AK4_notmatched_genmatched_0p6);
             tr.registerDerivedVec("top_N_AK4_notmatched_notgenmatched_0p6", top_N_AK4_notmatched_notgenmatched_0p6);
-
-            tr.registerDerivedVec("top_N_AK4_matched_genmatchedother", top_N_AK4_matched_genmatchedother);
-            tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother", top_N_AK4_matched_notgenmatchedother);
             tr.registerDerivedVec("top_N_AK4_matched_genmatchedother_0p6", top_N_AK4_matched_genmatchedother_0p6);
             tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother_0p6", top_N_AK4_matched_notgenmatchedother_0p6);
+
+            // low pt
+            tr.registerDerivedVec("dR_top_gentop_lowpt", dR_top_gentop_lowpt);
+            tr.registerDerivedVec("dR_AK4_topsubjet_genmatched_lowpt", dR_AK4_topsubjet_genmatched_lowpt);
+            tr.registerDerivedVec("dR_AK4_top_genmatched_lowpt", dR_AK4_top_genmatched_lowpt);
+
+            tr.registerDerivedVec("top_N_AK4_matched_genmatched_lowpt", top_N_AK4_matched_genmatched_lowpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatched_lowpt", top_N_AK4_matched_notgenmatched_lowpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_genmatched_lowpt", top_N_AK4_notmatched_genmatched_lowpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_notgenmatched_lowpt", top_N_AK4_notmatched_notgenmatched_lowpt);
+            tr.registerDerivedVec("top_N_AK4_matched_genmatchedother_lowpt", top_N_AK4_matched_genmatchedother_lowpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother_lowpt", top_N_AK4_matched_notgenmatchedother_lowpt);
+
+            tr.registerDerivedVec("top_N_AK4_matched_genmatched_0p6_lowpt", top_N_AK4_matched_genmatched_0p6_lowpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatched_0p6_lowpt", top_N_AK4_matched_notgenmatched_0p6_lowpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_genmatched_0p6_lowpt", top_N_AK4_notmatched_genmatched_0p6_lowpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_notgenmatched_0p6_lowpt", top_N_AK4_notmatched_notgenmatched_0p6_lowpt);
+            tr.registerDerivedVec("top_N_AK4_matched_genmatchedother_0p6_lowpt", top_N_AK4_matched_genmatchedother_0p6_lowpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother_0p6_lowpt", top_N_AK4_matched_notgenmatchedother_0p6_lowpt);
+
+            // high pt
+            tr.registerDerivedVec("dR_top_gentop_highpt", dR_top_gentop_highpt);
+            tr.registerDerivedVec("dR_AK4_topsubjet_genmatched_highpt", dR_AK4_topsubjet_genmatched_highpt);
+            tr.registerDerivedVec("dR_AK4_top_genmatched_highpt", dR_AK4_top_genmatched_highpt);
+
+            tr.registerDerivedVec("top_N_AK4_matched_genmatched_highpt", top_N_AK4_matched_genmatched_highpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatched_highpt", top_N_AK4_matched_notgenmatched_highpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_genmatched_highpt", top_N_AK4_notmatched_genmatched_highpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_notgenmatched_highpt", top_N_AK4_notmatched_notgenmatched_highpt);
+            tr.registerDerivedVec("top_N_AK4_matched_genmatchedother_highpt", top_N_AK4_matched_genmatchedother_highpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother_highpt", top_N_AK4_matched_notgenmatchedother_highpt);
+
+            tr.registerDerivedVec("top_N_AK4_matched_genmatched_0p6_highpt", top_N_AK4_matched_genmatched_0p6_highpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatched_0p6_highpt", top_N_AK4_matched_notgenmatched_0p6_highpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_genmatched_0p6_highpt", top_N_AK4_notmatched_genmatched_0p6_highpt);
+            tr.registerDerivedVec("top_N_AK4_notmatched_notgenmatched_0p6_highpt", top_N_AK4_notmatched_notgenmatched_0p6_highpt);
+            tr.registerDerivedVec("top_N_AK4_matched_genmatchedother_0p6_highpt", top_N_AK4_matched_genmatchedother_0p6_highpt);
+            tr.registerDerivedVec("top_N_AK4_matched_notgenmatchedother_0p6_highpt", top_N_AK4_matched_notgenmatchedother_0p6_highpt);
+
+            // Ws
+            tr.registerDerivedVec("genW_match", genW_match);
+            tr.registerDerivedVec("dR_W_genW", dR_W_genW);
+            tr.registerDerivedVec("dR_AK4_Wsubjet_genmatched", dR_AK4_Wsubjet_genmatched);
+            tr.registerDerivedVec("dR_AK4_W_genmatched", dR_AK4_W_genmatched);
+            tr.registerDerivedVec("pt_diff_W_genW", pt_diff_W_genW);
+            tr.registerDerivedVec("pt_reldiff_W_genW", pt_reldiff_W_genW);
+
+            tr.registerDerivedVec("W_N_AK4_matched_genmatched", W_N_AK4_matched_genmatched);
+            tr.registerDerivedVec("W_N_AK4_matched_notgenmatched", W_N_AK4_matched_notgenmatched);
+            tr.registerDerivedVec("W_N_AK4_notmatched_genmatched", W_N_AK4_notmatched_genmatched);
+            tr.registerDerivedVec("W_N_AK4_notmatched_notgenmatched", W_N_AK4_notmatched_notgenmatched);
+            tr.registerDerivedVec("W_N_AK4_matched_genmatchedother", W_N_AK4_matched_genmatchedother);
+            tr.registerDerivedVec("W_N_AK4_matched_notgenmatchedother", W_N_AK4_matched_notgenmatchedother);
+
+            tr.registerDerivedVec("W_N_AK4_matched_genmatched_0p6", W_N_AK4_matched_genmatched_0p6);
+            tr.registerDerivedVec("W_N_AK4_matched_notgenmatched_0p6", W_N_AK4_matched_notgenmatched_0p6);
+            tr.registerDerivedVec("W_N_AK4_notmatched_genmatched_0p6", W_N_AK4_notmatched_genmatched_0p6);
+            tr.registerDerivedVec("W_N_AK4_notmatched_notgenmatched_0p6", W_N_AK4_notmatched_notgenmatched_0p6);
+            tr.registerDerivedVec("W_N_AK4_matched_genmatchedother_0p6", W_N_AK4_matched_genmatchedother_0p6);
+            tr.registerDerivedVec("W_N_AK4_matched_notgenmatchedother_0p6", W_N_AK4_matched_notgenmatchedother_0p6);
+
+
 
         }
 
