@@ -8,10 +8,10 @@ eval `scramv1 runtime -sh`
 
 cd ${_CONDOR_SCRATCH_DIR}
 
-export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$2/src/opencv/lib/
+# This should work to use the copied over library?
+export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:${PWD}
 
-#cd /uscms_data/d3/snorberg/CMSSW_8_0_12/src/ZInvisible/Tools/
-
+# Backup way that might be demanding on the file system
 export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:$2/src/opencv/lib/
 
 echo "xrdcp root://cmseos.fnal.gov/$(echo $6 | sed 's|/eos/uscms||') ."
