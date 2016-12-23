@@ -481,12 +481,12 @@ int main(int argc, char* argv[])
         //vh.push_back(PHS(cuts.first + "_MCComp_ht_2t",    vPDCMaker_All_0l("HT", "HT", 2),                            {2, 1}, /*cuts.second + */"",  50,  0, 2000,  true,  false,  "HT [GeV]",  "Events"));
         //vh.push_back(PHS(cuts.first + "_MCComp_ht_3t",    vPDCMaker_All_0l("HT", "HT", 3),                            {2, 1}, /*cuts.second + */"",  50,  0, 2000,  true,  false,  "HT [GeV]",  "Events"));
 
-        vh.push_back(PHS(cuts.first + "_" + "fakerate_met",   vPDCMaker_fake("met"),                {1, 1}, cuts.second + "",   30,  0,  1200,     false,  false,  "met [GeV]",   "Fakerate"));
-        vh.push_back(PHS(cuts.first + "_" + "fakerate_njet",  vPDCMaker_fake("cntNJetsPt50Eta24"),  {1, 1}, cuts.second + "",   20,  0,    20,     false,  false,  "N Jets",      "Fakerate"));
-        vh.push_back(PHS(cuts.first + "_" + "fakerate_nbjet", vPDCMaker_fake("nbjets"),             {1, 1}, cuts.second + "",   10,  0,    10,     false,  false,  "N b-jets",    "Fakerate"));
+        vh.push_back(PHS(cuts.first + "_" + "fakerate_met",   vPDCMaker_fake("met"),                      {1, 1}, cuts.second + "",   30,  0,  1200,     false,  false,  "met [GeV]",   "Fakerate"));
+        vh.push_back(PHS(cuts.first + "_" + "fakerate_njet",  vPDCMaker_fake("cntNJetsPt50Eta24TopTag"),  {1, 1}, cuts.second + "",   20,  0,    20,     false,  false,  "N Jets",      "Fakerate"));
+        vh.push_back(PHS(cuts.first + "_" + "fakerate_nbjet", vPDCMaker_fake("cntCSVSTopTag"),                   {1, 1}, cuts.second + "",   10,  0,    10,     false,  false,  "N b-jets",    "Fakerate"));
 
-        vh.push_back(PHS(cuts.first + "_" + "nbNotInTop", {PDCMaker("nBNotInTop")}, {1, 1}, cuts.second,  10, 0, 10,  true,  false,  "N_{b}", "Events"));
-        vh.push_back(PHS(cuts.first + "_" + "nb",         {PDCMaker("nbjets")},     {1, 1}, cuts.second,  10, 0, 10,  true,  false,  "N_{b}", "Events"));
+        //vh.push_back(PHS(cuts.first + "_" + "nbNotInTop", {PDCMaker("nBNotInTop")}, {1, 1}, cuts.second,  10, 0, 10,  true,  false,  "N_{b}", "Events"));
+        vh.push_back(PHS(cuts.first + "_" + "nb",         {PDCMaker("cntCSVSTopTag")},     {1, 1}, cuts.second,  10, 0, 10,  true,  false,  "N_{b}", "Events"));
 
         vh.push_back(PHS(cuts.first + "_" + "topMass1", {PDCMaker("vTops[0](M)")}, {1, 1}, cuts.second,  100, 0, 500,  false,  true,  "Top Mass [GeV]", "Norm Events"));
         vh.push_back(PHS(cuts.first + "_" + "topMass2", {PDCMaker("vTops[1](M)")}, {1, 1}, cuts.second,  100, 0, 500,  false,  true,  "Top Mass [GeV]", "Norm Events"));
