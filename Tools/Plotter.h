@@ -19,7 +19,10 @@
 #include "NTupleReader.h"
 #include "samples.h"
 
+#include <iostream>
+
 class RegisterFunctions;
+
 
 class Plotter
 {
@@ -203,13 +206,16 @@ private:
         const DatasetSummary* dssp;
         std::vector<DatasetSummary> dss;
 
-    HistCutSummary(const std::string& lab, const std::string& name, const VarName v, const HistSummary* hsum, const std::vector<DatasetSummary>& ds) : label(lab), name(name), h(nullptr), variable(v), hs(hsum), dss(ds) {}
+        std::function<void(const NTupleReader&, const double)> fillHist;
+
+        HistCutSummary(const std::string& lab, const std::string& name, const VarName v, const HistSummary* hsum, const std::vector<DatasetSummary>& ds) : label(lab), name(name), h(nullptr), variable(v), hs(hsum), dss(ds) {}
         ~HistCutSummary();
     };
 
     void createHistsFromTuple();
     void createHistsFromFile();
-    void fillHist(TH1 * const h, const VarName& name, const NTupleReader& tr, const double weight);
+    void static fillHist(TH1 * const h, const VarName& name, const NTupleReader& tr, const double weight);
+    static std::function<void(const NTupleReader&, const double)> getHistFillFunc(TH1 * const h, const VarName& name, const NTupleReader& tr);
     void smartMax(const TH1* const h, const TLegend* const l, const TPad* const p, double& gmin, double& gmax, double& gpThreshMax, const bool error = false) const;
 
     template<typename T> static const double& tlvGetValue(const std::string& name, const T& v)
@@ -252,17 +258,17 @@ private:
         }
     }
 
-    template<typename T> inline const T pointerDeref(T obj) const
+    template<typename T> inline static const T pointerDeref(T obj)
     {
         return obj;
     }
 
-    template<typename T> inline const T& pointerDeref(T* const obj) const
+    template<typename T> inline static const T& pointerDeref(T* const obj)
     {
         return *obj;
     }
 
-    template<typename T> void fillHistFromVec(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    template<typename T> static void fillHistFromVec(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
     {
         if(name.var.compare("size") == 0)
         {
@@ -273,15 +279,60 @@ private:
         {
             if(name.index >= 0)
             {
-                auto& var = getVarFromVec<T>(name, tr);
+                const auto& var = getVarFromVec<T>(name, tr);
                 if(&var != nullptr) vectorFill(h, name, pointerDeref(var), weight);
             }
             else
             {
                 const auto& vec = tr.getVec<T>(name.name);
-                for(auto& var : vec) vectorFill(h, name, pointerDeref(var), weight);
+                for(const auto& var : vec) vectorFill(h, name, pointerDeref(var), weight);
             }
         }
+    }
+
+    template<typename T> static std::function<void(const NTupleReader&, const double)> returnHistFromVecFunc(TH1* const h, const VarName& name)
+    {
+        using namespace std::placeholders;
+
+        if(name.var.compare("size") == 0)
+        {
+            return std::bind(fillHistFromVecSize<T>, h, name, _1, _2);
+        }
+        else
+        {
+            if(name.index >= 0)
+            {
+                return std::bind(fillHistFromVecSingle<T>, h, name, _1, _2);
+            }
+            else
+            {
+                return std::bind(fillHistFromVecAll<T>, h, name, _1, _2);
+            }
+        }
+    }
+
+    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecSize(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& vec = tr.getVec<T>(name.name);
+        if(&vec != nullptr) h->Fill(vec.size(), weight);
+    }
+
+    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecSingle(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& var = getVarFromVec<T>(name, tr);
+        if(&var != nullptr) vectorFill(h, name, pointerDeref(var), weight);
+    }
+
+    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecAll(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& vec = tr.getVec<T>(name.name);
+        for(const auto& var : vec) vectorFill(h, name, pointerDeref(var), weight);
+    }
+
+    template<typename T> static void fillHistFromPrim(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    {
+        const auto& var = tr.getVar<T>(name.name);
+        if(&var != nullptr) h->Fill(var, weight);
     }
 
     template<typename T, typename R = T> static const R& getVarFromVec(const VarName& name, const NTupleReader& tr)
@@ -291,13 +342,17 @@ private:
         if(&vec != nullptr)
         {
             const int& i = name.index;
-            if(i < vec.size()) return vec.at(i);
+            if(i < vec.size()) 
+            {
+                const auto& retval = vec.at(i); //stupid hack to stop false compiler warning
+                return retval;
+            }
             else return *static_cast<R*>(nullptr);
         }
         return *static_cast<R*>(nullptr);
     }
 
-    template<typename T> inline void vectorFill(TH1 * const h, const VarName& name, const T& obj, const double weight)
+    template<typename T> inline static void vectorFill(TH1 * const h, const VarName& name, const T& obj, const double weight)
     {
         h->Fill(obj, weight);
     }

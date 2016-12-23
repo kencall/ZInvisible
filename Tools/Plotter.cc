@@ -133,6 +133,7 @@ void Plotter::Cuttable::extractCuts(std::set<std::string>& ab) const
 Plotter::HistSummary::HistSummary(std::string l, std::vector<Plotter::DataCollection> ns, std::pair<int, int> ratio, std::string cuts, int nb, double ll, double ul, bool log, bool norm, std::string xal, std::string yal, bool isRatio) : Cuttable(cuts), name(l), nBins(nb), low(ll), high(ul), isLog(log), isNorm(norm), xAxisLabel(xal), yAxisLabel(yal), ratio(ratio), isRatio(isRatio)
 {
     parseName(ns);
+    
 }
 
 Plotter::HistSummary::HistSummary(std::string l, std::vector<Plotter::DataCollection> ns, std::pair<int, int> ratio, std::string cuts, std::vector<double> be, bool log, bool norm, std::string xal, std::string yal, bool isRatio) : Cuttable(cuts), name(l), nBins(0), low(0.0), high(0.0), binEdges(be), isLog(log), isNorm(norm), xAxisLabel(xal), yAxisLabel(yal), ratio(ratio), isRatio(isRatio)
@@ -188,6 +189,10 @@ void Plotter::parseSingleVar(const std::string& name, VarName& var)
 Plotter::HistSummary::~HistSummary()
 {
 }
+
+//Plotter::HistCutSummary::HistCutSummary(const std::string& lab, const std::string& name, const VarName v, const HistSummary* hsum, const DatasetSummary& ds) : label(lab), name(name), h(nullptr), variable(v), hs(hsum), dss(ds) 
+//{
+//}
 
 Plotter::HistCutSummary::~HistCutSummary()
 {
@@ -311,8 +316,7 @@ void Plotter::createHistsFromTuple()
                 {
                     //annoying hack to fix vector pointer issue
                     if(hist->hs == nullptr) hist->hs = &hs;
-
-                    // Make histogram if it is blank
+                    
                     if(hist->h == nullptr)
                     {
                         if(hs.binEdges.size()) hist->h = new TH1D(hist->name.c_str(), hist->variable.name.c_str(), hs.binEdges.size() - 1, hs.binEdges.data());
@@ -403,6 +407,7 @@ void Plotter::createHistsFromTuple()
 
         int fileCount = 0, startCount = 0;
         int NEvtsTotal = 0;
+        bool firstFile = true;
         for(const std::string& fname : file.filelist_)
         {
             if(startCount++ < startFile_) continue;
@@ -438,6 +443,28 @@ void Plotter::createHistsFromTuple()
 
                 while(tr.getNextEvent())
                 {
+                    //Make links for filling histograms, must be done after first call of tr.getNextEvent()
+                    if(firstFile)
+                    {
+                        firstFile = false;
+                        for(auto ihist = histsToFill.begin(); ihist != histsToFill.end();)
+                        {
+                            using namespace std::placeholders;
+                        
+                            try
+                            {
+                                (*ihist)->fillHist = getHistFillFunc((*ihist)->h, (*ihist)->variable, tr);
+                            }
+                            catch(std::string e)
+                            {
+                                ihist = histsToFill.erase(ihist);
+                                continue;
+                            }
+
+                            ++ihist;
+                        }
+                    }
+
                     //Things to run only on first event
                     if(tr.isFirstEvent())
                     {
@@ -472,8 +499,9 @@ void Plotter::createHistsFromTuple()
 
                             //fill histograms here
                             double weight = file.getWeight() * hist->dssp->getWeight(tr) * hist->dssp->kfactor;
-
-                            fillHist(hist->h, hist->variable, tr, weight);
+                            
+                            //fillHist(hist->h, hist->variable, tr, weight);
+                            hist->fillHist(tr, weight);
                         }
                     }
 
@@ -520,6 +548,7 @@ void Plotter::createHistsFromTuple()
         }
         if(mtm) delete mtm;
     }
+    throw 123;
 }
 
 void Plotter::createHistsFromFile()
@@ -1225,6 +1254,40 @@ void Plotter::fillHist(TH1 * const h, const VarName& name, const NTupleReader& t
         else if(type.find("short")          != std::string::npos) h->Fill(tr.getVar<short>(name.name), weight);
         else if(type.find("long")           != std::string::npos) h->Fill(tr.getVar<long>(name.name), weight);
     }
+}
+
+std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(TH1 * const h, const VarName& name, const NTupleReader& tr)
+{
+    using namespace std::placeholders;
+
+    std::string type;
+    tr.getType(name.name, type);
+
+    if(type.find("vector") != std::string::npos)
+    {
+        if(type.find("*") != std::string::npos)
+        {
+            if(type.find("TLorentzVector") != std::string::npos) return std::bind(returnHistFromVecFunc<TLorentzVector*>, h, name);
+        }
+        else
+        {
+            if     (type.find("pair")           != std::string::npos) return returnHistFromVecFunc<std::pair<double, double>>(h, name);
+            else if(type.find("double")         != std::string::npos) return returnHistFromVecFunc<double>(h, name);
+            else if(type.find("unsigned int")   != std::string::npos) return returnHistFromVecFunc<unsigned int>(h, name);
+            else if(type.find("int")            != std::string::npos) return returnHistFromVecFunc<int>(h, name);
+            else if(type.find("TLorentzVector") != std::string::npos) return returnHistFromVecFunc<TLorentzVector>(h, name);
+        }
+    }
+    else
+    {
+        if     (type.find("double")       != std::string::npos) return std::bind(fillHistFromPrim<double>, h, name, _1, _2);
+        else if(type.find("unsigned int") != std::string::npos) return std::bind(fillHistFromPrim<unsigned int>, h, name, _1, _2);
+        else if(type.find("int")          != std::string::npos) return std::bind(fillHistFromPrim<int>, h, name, _1, _2);
+        else if(type.find("bool")         != std::string::npos) return std::bind(fillHistFromPrim<bool>, h, name, _1, _2);
+    }
+
+    std::cout << "Plotter::getHistFillFunc(...):  Variable not found!!! Type:" << type << "\tVariable: " << name.name << "\t" << name.var << std::endl;
+    throw name.name;
 }
 
 template<> inline void Plotter::vectorFill(TH1 * const h, const VarName& name, const TLorentzVector& obj, const double weight)
