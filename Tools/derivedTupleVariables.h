@@ -2598,6 +2598,20 @@ namespace plotterFunctions
             std::vector<int>* W_N_AK4_matched_genmatchedother_0p6 = new std::vector<int>(); 
             std::vector<int>* W_N_AK4_matched_notgenmatchedother_0p6 = new std::vector<int>();
  
+
+            std::vector<double>* top_ak4jets_pt_reldiff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_mass_reldiff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_SDmass_reldiff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_pt_diff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_eta_diff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_phi_diff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_mass_diff = new std::vector<double>();
+            std::vector<double>* top_ak4jets_SDmass_diff = new std::vector<double>();
+
+            std::vector<double>* dR_AK4_notmatched_genmatched_gentop = new std::vector<double>();
+            std::vector<double>* dR_AK4_notmatched_genmatched_top = new std::vector<double>();
+
+
             if(tr.checkBranch("genDecayPdgIdVec") && &genDecayLVec != nullptr)
             {
                 // For each tagged top, find the matching gen particles
@@ -2617,13 +2631,28 @@ namespace plotterFunctions
                     //TLorentzVector mytop = puppiLVectight_top[imytop];
                     TLorentzVector mytop = puppiLVecLoose_top[imytop];
                     //std::cout << "Mytop info: " << mytop.Pt() << " " << mytop.Eta() << " " << mytop.Phi() << std::endl;
-                    // For now find the closest hadtop in deltaR
+
+                    // Get the subjets
+                    // Removing AK4 jets based on DR matching with subjets of tagged top
+                    std::vector<TLorentzVector> mysubjets = top_subjets[imytop];
+                    std::vector<int> ak4_removed;
+                    TLorentzVector matched_ak4;
+                    TLorentzVector matched_ak4_0p6;
+
+                    if(mysubjets.size() != 2)
+                        std::cout << "Attention: found " << mysubjets.size() << " subjets instead of 2" << std::endl;
+                    //std::cout << "Subjet 0: " << mysubjets[0].Pt() << " " << mysubjets[0].Eta() << " " << mysubjets[0].Phi() << std::endl;
+                    //std::cout << "Subjet 1: " << mysubjets[1].Pt() << " " << mysubjets[1].Eta() << " " << mysubjets[1].Phi() << std::endl;
+
+                    // For now find the closest hadtop (with pt>400) in deltaR
                     TLorentzVector temp_gentop_match_LV;
                     double min_DR = 99.;
                     int matched_hadtop_index = -1;
                     for(unsigned int myhadtop_i=0; myhadtop_i<hadtopLVec.size(); ++myhadtop_i)
                     {
                         TLorentzVector myhadtop = hadtopLVec[myhadtop_i];
+                        if (myhadtop.Pt() < 400)
+                            continue;
                         double DR_top = ROOT::Math::VectorUtil::DeltaR(mytop, myhadtop);
                         if (DR_top < min_DR) 
                         {
@@ -2641,7 +2670,6 @@ namespace plotterFunctions
                     // DR should be small for it to actually be a match
                     if(min_DR < 0.4)
                     {
-                        //std::cout << "Mytop info: " << mytop.Pt() << " " << mytop.Eta() << " " << mytop.Phi() << std::endl;
                         gentop_match->push_back(true);
                         pt_diff_top_gentop->push_back(mytop.Pt() - temp_gentop_match_LV.Pt());
                         pt_reldiff_top_gentop->push_back((mytop.Pt() - temp_gentop_match_LV.Pt())/temp_gentop_match_LV.Pt());
@@ -2650,14 +2678,6 @@ namespace plotterFunctions
 
                         // Now we have the tagged top (mytop), the gen had top (temp_gentop_match_LV), and the gen daughters (gentopdauLVec)
                         // ready for some matching FUN!
-
-                        // Removing AK4 jets based on DR matching with subjets of tagged top
-                        std::vector<TLorentzVector> mysubjets = top_subjets[imytop];
-                        std::vector<int> ak4_removed;
-                        if(mysubjets.size() != 2)
-                            std::cout << "Attention: found " << mysubjets.size() << " subjets instead of 2" << std::endl;
-                        //std::cout << "Subjet 0: " << mysubjets[0].Pt() << " " << mysubjets[0].Eta() << " " << mysubjets[0].Phi() << std::endl;
-                        //std::cout << "Subjet 0: " << mysubjets[1].Pt() << " " << mysubjets[1].Eta() << " " << mysubjets[1].Phi() << std::endl;
                          
                         // some counters
                         int N_AK4_matched_genmatched = 0;
@@ -2767,12 +2787,14 @@ namespace plotterFunctions
                                 // found a match
                                 subjetmatch = true;
                                 ak4_removed.push_back(j);
+                                matched_ak4 = matched_ak4 + jetsLVec_pt30[j];
                             }
                             if (DR1 < 0.6 || DR2 < 0.6)
                             {
                                 //std::cout << "Found AK4 jet matching a subjet" << std::endl;
                                 // found a match
                                 subjetmatch_0p6 = true;
+                                matched_ak4_0p6 = matched_ak4_0p6 + jetsLVec_pt30[j];
                             }
 
 
@@ -2792,6 +2814,11 @@ namespace plotterFunctions
                                         N_AK4_notmatched_genmatched_highpt++;
                                     else
                                         N_AK4_notmatched_genmatched_lowpt++;
+
+                                    // check what is going on here
+                                    dR_AK4_notmatched_genmatched_gentop->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], temp_gentop_match_LV));
+                                    dR_AK4_notmatched_genmatched_top->push_back(ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mytop));
+                                    
                                 }
                                 if(subjetmatch_0p6)
                                 {
@@ -2930,10 +2957,114 @@ namespace plotterFunctions
                             top_N_AK4_matched_notgenmatchedother_0p6_lowpt->push_back(N_AK4_matched_notgenmatchedother_0p6_lowpt);
                         }
                          
-                    } else // No match
+                    } else // No match, either no tops high enough in pt, or too large delta R
                     { 
                         gentop_match->push_back(false);
+
+                        // Also check here whether the jets that we would remove can be matched to gen daughters of any top
+
+                        // some counters
+                        int N_AK4_nogentop_matched_genmatched = 0;
+                        int N_AK4_nogentop_matched_notgenmatched = 0;
+                        int N_AK4_nogentop_notmatched_genmatched = 0;
+                        int N_AK4_nogentop_notmatched_notgenmatched = 0;
+                        // some counters
+                        int N_AK4_nogentop_matched_genmatched_0p6 = 0;
+                        int N_AK4_nogentop_matched_notgenmatched_0p6 = 0;
+                        int N_AK4_nogentop_notmatched_genmatched_0p6 = 0;
+                        int N_AK4_nogentop_notmatched_notgenmatched_0p6 = 0;
+                        // matched to another gentop
+                        int N_AK4_nogentop_matched_genmatchedother = 0;
+                        int N_AK4_nogentop_matched_notgenmatchedother = 0;
+                        int N_AK4_nogentop_matched_genmatchedother_0p6 = 0;
+                        int N_AK4_nogentop_matched_notgenmatchedother_0p6 = 0;
+
+                        for (unsigned int j=0; j<jetsLVec_pt30.size(); ++j)
+                        {
+                            // Check if it matches a gen daughter
+                            bool genmatch_daughter = false;
+                            for (unsigned int other=0; other<hadtopdauLVec.size() && !genmatch_daughter; ++other)
+                            {
+                                for (TLorentzVector gendau : hadtopdauLVec[other])
+                                {
+                                    double DR_AK4_gen = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], gendau);
+                                    //std::cout << "gen DR " << DR_AK4_gen << std::endl;
+                                    if (DR_AK4_gen < 0.4)
+                                    {
+                                        // matches gendaughter
+                                        genmatch_daughter = true;
+                                        break;
+                                    }
+                                }
+                            }
+
+                            bool subjetmatch = false;
+                            bool subjetmatch_0p6 = false;
+                            double DR1 = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mysubjets[0]);
+                            double DR2 = ROOT::Math::VectorUtil::DeltaR(jetsLVec_pt30[j], mysubjets[1]);
+                            //std::cout << "DR1, DR2: " << DR1 << " " << DR2 << std::endl;
+                            if (DR1 < 0.4 || DR2 < 0.4)
+                            {
+                                // found a match
+                                subjetmatch = true;
+                                ak4_removed.push_back(j);
+                                matched_ak4 = matched_ak4 + jetsLVec_pt30[j];
+                            }
+                            if (DR1 < 0.6 || DR2 < 0.6)
+                            {
+                                // found a match
+                                subjetmatch_0p6 = true;
+                                matched_ak4_0p6 = matched_ak4_0p6 + jetsLVec_pt30[j];
+                            }
+
+                            if(genmatch_daughter){
+                                if(subjetmatch)
+                                {
+                                    N_AK4_nogentop_matched_genmatched++;
+                                }
+                                else
+                                {
+                                    N_AK4_nogentop_notmatched_genmatched++;
+                                }
+                                if(subjetmatch_0p6)
+                                {
+                                    N_AK4_nogentop_matched_genmatched_0p6++;
+                                }
+                                else
+                                {
+                                    N_AK4_nogentop_notmatched_genmatched_0p6++;
+                                }
+                            } else { // Not genmatched to any top daughters
+                                if(subjetmatch)
+                                {
+                                    N_AK4_nogentop_matched_notgenmatched++;
+                                }
+                                else
+                                {
+                                    N_AK4_nogentop_notmatched_notgenmatched++;
+                                }
+                                if(subjetmatch_0p6)
+                                {
+                                    N_AK4_nogentop_matched_notgenmatched_0p6++;
+                                }
+                                else
+                                {
+                                    N_AK4_nogentop_notmatched_notgenmatched_0p6++;
+                                }
+
+                            }
+                        }
                     }
+
+                    // Compute the relevant differences between top and sum of matched ak4's
+                    top_subjets_pt_reldiff->push_back((mytop.Pt()-matched_ak4.Pt())/mytop.Pt());
+                    top_subjets_mass_reldiff->push_back((mytop.M()-matched_ak4.M())/mytop.M());
+                    top_subjets_SDmass_reldiff->push_back((puppisoftDropMass[puppiLVecLoose_top_index[imytop]]-matched_ak4.Pt())/puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
+                    top_subjets_pt_diff->push_back(mytop.Pt()-matched_ak4.Pt());
+                    top_subjets_eta_diff->push_back(mytop.Eta()-matched_ak4.Eta());
+                    top_subjets_phi_diff->push_back(mytop.Phi()-matched_ak4.Phi());
+                    top_subjets_mass_diff->push_back(mytop.M()-matched_ak4.M());
+                    top_subjets_SDmass_diff->push_back(puppisoftDropMass[puppiLVecLoose_top_index[imytop]] - matched_ak4.M());
 
                 }
 
@@ -3143,9 +3274,6 @@ namespace plotterFunctions
                     }
 
                 }
-
-
-
             }
             tr.registerDerivedVec("gentop_match", gentop_match);
             tr.registerDerivedVec("dR_top_gentop", dR_top_gentop);
@@ -3153,6 +3281,18 @@ namespace plotterFunctions
             tr.registerDerivedVec("dR_AK4_top_genmatched", dR_AK4_top_genmatched);
             tr.registerDerivedVec("pt_diff_top_gentop", pt_diff_top_gentop);
             tr.registerDerivedVec("pt_reldiff_top_gentop", pt_reldiff_top_gentop);
+
+            tr.registerDerivedVec("top_subjets_pt_reldiff", top_subjets_pt_reldiff);
+            tr.registerDerivedVec("top_subjets_mass_reldiff", top_subjets_mass_reldiff);
+            tr.registerDerivedVec("top_subjets_SDmass_reldiff", top_subjets_SDmass_reldiff);
+            tr.registerDerivedVec("top_subjets_pt_diff", top_subjets_pt_diff);
+            tr.registerDerivedVec("top_subjets_eta_diff", top_subjets_eta_diff);
+            tr.registerDerivedVec("top_subjets_phi_diff", top_subjets_phi_diff);
+            tr.registerDerivedVec("top_subjets_mass_diff", top_subjets_mass_diff);
+            tr.registerDerivedVec("top_subjets_SDmass_diff", top_subjets_SDmass_diff);
+
+            tr.registerDerivedVec("dR_AK4_notmatched_genmatched_top", dR_AK4_notmatched_genmatched_top);
+            tr.registerDerivedVec("dR_AK4_notmatched_genmatched_gentop", dR_AK4_notmatched_genmatched_gentop);
 
             tr.registerDerivedVec("top_N_AK4_matched_genmatched", top_N_AK4_matched_genmatched);
             tr.registerDerivedVec("top_N_AK4_matched_notgenmatched", top_N_AK4_matched_notgenmatched);
@@ -3230,8 +3370,8 @@ namespace plotterFunctions
 
 
 
-        }
-
+            }
+        
     public:
         Ak8DrMatch() {
         }

@@ -545,19 +545,10 @@ int main(int argc, char* argv[])
     vh.push_back(PHS("dR_AK4_Wsubjet_genmatched",  PDCMaker_boost("dR_AK4_Wsubjet_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
     vh.push_back(PHS("dR_AK4_W_genmatched",  PDCMaker_boost("dR_AK4_W_genmatched"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, W)",   "Entries"));
 
-    vh.push_back(PHS("dR_W_genW_lowpt",  PDCMaker_boost("dR_W_genW_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(W, genW)",   "Entries"));
-    vh.push_back(PHS("dR_AK4_Wsubjet_genmatched_lowpt",  PDCMaker_boost("dR_AK4_Wsubjet_genmatched_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
-    vh.push_back(PHS("dR_AK4_W_genmatched_lowpt",  PDCMaker_boost("dR_AK4_W_genmatched_lowpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, W)",   "Entries"));
-
-    vh.push_back(PHS("dR_W_genW_highpt",  PDCMaker_boost("dR_W_genW_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(W, genW)",   "Entries"));
-    vh.push_back(PHS("dR_AK4_Wsubjet_genmatched_highpt",  PDCMaker_boost("dR_AK4_Wsubjet_genmatched_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "min #DeltaR(AK4, subjet)",   "Entries"));
-    vh.push_back(PHS("dR_AK4_W_genmatched_highpt",  PDCMaker_boost("dR_AK4_W_genmatched_highpt"),  {1, 1}, "", 50, 0, 5, true, false,  "#DeltaR(AK4, W)",   "Entries"));
-
     vh.push_back(PHS("pt_diff_W_genW",  PDCMaker_boost("pt_diff_W_genW"),  {1, 1}, "", 50, -250, 250, false, false,  "pt diff (W, genW)",   "Entries"));
     vh.push_back(PHS("pt_diff_W_genW_log",  PDCMaker_boost("pt_diff_W_genW"),  {1, 1}, "", 50, -250, 250, true, false,  "pt diff (W, genW)",   "Entries"));
     vh.push_back(PHS("pt_reldiff_W_genW",  PDCMaker_boost("pt_reldiff_W_genW"),  {1, 1}, "", 50, -1, 1, false, false,  "rel pt diff (W, genW)",   "Entries"));
     vh.push_back(PHS("pt_reldiff_W_genW_log",  PDCMaker_boost("pt_reldiff_W_genW"),  {1, 1}, "", 50, -1, 1, true, false,  "rel pt diff (W, genW)",   "Entries"));
-
 
 
     vh.push_back(PHS("W_subjets_pt_reldiff",      PDCMaker_boost("W_subjets_pt_reldiff"),      {1, 1}, "", 50, -1, 1, false, false,  "rel pt diff(sum of subjets, W)",   "Entries"));
