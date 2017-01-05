@@ -307,7 +307,7 @@ void Plotter::createHistsFromTuple()
         file.readFileList();
 
         //make vector of hists to fill
-        std::vector<std::shared_ptr<HistCutSummary>> histsToFill;
+        std::map<std::pair<std::string, const DatasetSummary*>, std::pair<const HistSummary*, std::vector<std::shared_ptr<HistCutSummary>>>> histsToFill;
         for(HistSummary& hs : hists_)
         {
             for(HistVecAndType& histvec : hs.hists)
@@ -342,7 +342,16 @@ void Plotter::createHistsFromTuple()
                             if(file == fileToComp)
                             {
                                 hist->dssp = &ds;
-                                histsToFill.push_back(hist);
+                                auto theCuts = std::make_pair(hs.getCuts(), hist->dssp);
+                                auto iter = histsToFill.find(theCuts);
+                                if(iter == histsToFill.end())
+                                {
+                                    histsToFill[std::make_pair(hs.getCuts(), hist->dssp)] = std::make_pair(hist->hs, std::vector<std::shared_ptr<HistCutSummary>>({hist}));
+                                }
+                                else
+                                {
+                                    iter->second.second.push_back(hist);
+                                }
                             }
                         }
                     }
@@ -447,21 +456,22 @@ void Plotter::createHistsFromTuple()
                     if(firstFile)
                     {
                         firstFile = false;
-                        for(auto ihist = histsToFill.begin(); ihist != histsToFill.end();)
+                        for(auto& histsToFillVec : histsToFill)
                         {
-                            using namespace std::placeholders;
-                        
-                            try
+                            for(auto ihist = histsToFillVec.second.second.begin(); ihist != histsToFillVec.second.second.end();)
                             {
-                                (*ihist)->fillHist = getHistFillFunc((*ihist)->h, (*ihist)->variable, tr);
-                            }
-                            catch(std::string e)
-                            {
-                                ihist = histsToFill.erase(ihist);
-                                continue;
-                            }
+                                try
+                                {
+                                    (*ihist)->fillHist = getHistFillFunc((*ihist)->h, (*ihist)->variable, tr);
+                                }
+                                catch(std::string e)
+                                {
+                                    ihist = histsToFillVec.second.second.erase(ihist);
+                                    continue;
+                                }
 
-                            ++ihist;
+                                ++ihist;
+                            }
                         }
                     }
 
@@ -489,19 +499,29 @@ void Plotter::createHistsFromTuple()
                     //fill histograms
                     if(doHists_)
                     {
-                        for(auto& hist : histsToFill)
+                        double fileWgt = file.getWeight();
+
+                        for(auto& histsToFillVec : histsToFill)
                         {
+                            // get the dataset summary
+                            const DatasetSummary& dss = *histsToFillVec.first.second;
+                            
                             // tree level dynamical cuts are applied here
-                            if(!hist->dssp->passCuts(tr)) continue;
+                            if(!dss.passCuts(tr)) continue;
+
+                            const HistSummary& hs = *histsToFillVec.second.first;
 
                             // parse hist level cuts here
-                            if(!hist->hs->passCuts(tr)) continue;
+                            if(!hs.passCuts(tr)) continue;
 
-                            //fill histograms here
-                            double weight = file.getWeight() * hist->dssp->getWeight(tr) * hist->dssp->kfactor;
-                            
-                            //fillHist(hist->h, hist->variable, tr, weight);
-                            hist->fillHist(tr, weight);
+                            // get the weight associated with the dataset
+                            double weight = fileWgt * dss.getWeight(tr) * dss.kfactor;
+
+                            for(auto& hist : histsToFillVec.second.second)
+                            {
+                                //fill histograms here
+                                hist->fillHist(tr, weight);
+                            }
                         }
                     }
 
@@ -548,7 +568,6 @@ void Plotter::createHistsFromTuple()
         }
         if(mtm) delete mtm;
     }
-    throw 123;
 }
 
 void Plotter::createHistsFromFile()
@@ -1267,7 +1286,7 @@ std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(
     {
         if(type.find("*") != std::string::npos)
         {
-            if(type.find("TLorentzVector") != std::string::npos) return std::bind(returnHistFromVecFunc<TLorentzVector*>, h, name);
+            if(type.find("TLorentzVector") != std::string::npos) return returnHistFromVecFunc<TLorentzVector*>(h, name);
         }
         else
         {
