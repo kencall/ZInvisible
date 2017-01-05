@@ -311,19 +311,19 @@ private:
         }
     }
 
-    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecSize(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    template<typename T> static void fillHistFromVecSize(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
     {
         const auto& vec = tr.getVec<T>(name.name);
         if(&vec != nullptr) h->Fill(vec.size(), weight);
     }
 
-    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecSingle(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    template<typename T> static void fillHistFromVecSingle(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
     {
         const auto& var = getVarFromVec<T>(name, tr);
         if(&var != nullptr) vectorFill(h, name, pointerDeref(var), weight);
     }
 
-    template<typename T> static std::function<void(const NTupleReader&, const double)> fillHistFromVecAll(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
+    template<typename T> static void fillHistFromVecAll(TH1* const h, const VarName& name, const NTupleReader& tr, const double weight)
     {
         const auto& vec = tr.getVec<T>(name.name);
         for(const auto& var : vec) vectorFill(h, name, pointerDeref(var), weight);
