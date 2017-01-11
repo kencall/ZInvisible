@@ -470,6 +470,23 @@ void Plotter::createHistsFromTuple()
                                     continue;
                                 }
 
+                                try
+                                {
+                                    //make links for filling cuts (aaahhh, const casts!! shame on me)
+                                    for(auto& cut : const_cast<HistSummary*>((*ihist)->hs)->cutVec_)
+                                    {
+                                        cut.getVarInternal_ = Plotter::Cut::translateVarFunc(tr, cut.name);
+                                    }
+                                    for(auto& cut : const_cast<DatasetSummary*>((*ihist)->dssp)->cutVec_)
+                                    {
+                                        cut.getVarInternal_ = Plotter::Cut::translateVarFunc(tr, cut.name);
+                                    }
+                                }
+                                catch(const SATException& e)
+                                {
+                                    e.print();
+                                }
+
                                 ++ihist;
                             }
                         }
@@ -639,8 +656,9 @@ void Plotter::Cuttable::parseCutString()
         tmp = vname;
         double cutvalue;
         sscanf(t2.c_str(), "%lf", &cutvalue);
-        Cut tmpCut(tmp, cutType, inverted, cutvalue);
-        cutVec_.push_back(tmpCut);
+        //Cut tmpCut(tmp, cutType, inverted, cutvalue);
+        //cutVec_.push_back(tmpCut);
+        cutVec_.emplace_back(tmp, cutType, inverted, cutvalue);
     }
 }
 
@@ -648,19 +666,19 @@ bool Plotter::Cut::passCut(const NTupleReader& tr) const
 {
     switch(type)
     {
-    case '<': return translateVar(tr) < val;
-    case '>': return translateVar(tr) > val;
-    case '=': return translateVar(tr) == val;
-    case 'G': return translateVar(tr) >= val;
-    case 'L': return translateVar(tr) <= val;
-    case '-': return translateVar(tr) > val && translateVar(tr) < val2;
+    case '<': return getVarInternal_(tr) < val;
+    case '>': return getVarInternal_(tr) > val;
+    case '=': return getVarInternal_(tr) == val;
+    case 'G': return getVarInternal_(tr) >= val;
+    case 'L': return getVarInternal_(tr) <= val;
+    case '-': return getVarInternal_(tr) > val && translateVar(tr) < val2;
     case 'B': return boolReturn(tr);
     default:
         printf("Unrecognized cut type, %c\n", type);
         return false;
     }
 }
-
+                                        
 template<> const double& Plotter::getVarFromVec<TLorentzVector, double>(const VarName& name, const NTupleReader& tr)
 {
     const auto& vec = tr.getVec<TLorentzVector>(name.name);
@@ -669,6 +687,23 @@ template<> const double& Plotter::getVarFromVec<TLorentzVector, double>(const Va
     {
         const int& i = name.index;
         if(i < vec.size()) return tlvGetValue(name.var, vec.at(i));
+        else return *static_cast<double*>(nullptr);
+    }
+    return *static_cast<double*>(nullptr);
+}
+
+template<> const double& Plotter::getVarFromVec<std::pair<double, double>, double>(const VarName& name, const NTupleReader& tr)
+{
+    const auto& vec = tr.getVec<std::pair<double, double>>(name.name);
+
+    if(&vec != nullptr)
+    {
+        const int& i = name.index;
+        if(i < vec.size())
+        {
+            auto& var = pointerDeref(vec[i]).first;
+            return var;
+        }
         else return *static_cast<double*>(nullptr);
     }
     return *static_cast<double*>(nullptr);
@@ -696,6 +731,33 @@ double Plotter::Cut::translateVar(const NTupleReader& tr) const
         else if(type.find("char")         != std::string::npos) return static_cast<double>(tr.getVar<char>(name.name));
         else if(type.find("short")        != std::string::npos) return static_cast<double>(tr.getVar<short>(name.name));
         else if(type.find("long")         != std::string::npos) return static_cast<double>(tr.getVar<long>(name.name));
+    }
+}
+
+std::function<double(const NTupleReader&)> Plotter::Cut::translateVarFunc(const NTupleReader& tr, VarName name)
+{
+    std::string type;
+    tr.getType(name.name, type);
+
+    using namespace std::placeholders;
+
+    if(type.find("vector") != std::string::npos)
+    {
+        if     (type.find("pair")           != std::string::npos) return returnVarFromVecFunc<std::pair<double, double>, double>(tr, name);
+        else if(type.find("double")         != std::string::npos) return returnVarFromVecFunc<double>(tr, name);
+        else if(type.find("unsigned int")   != std::string::npos) return returnVarFromVecFunc<unsigned int>(tr, name);
+        else if(type.find("int")            != std::string::npos) return returnVarFromVecFunc<int>(tr, name);
+        else if(type.find("TLorentzVector") != std::string::npos) return returnVarFromVecFunc<TLorentzVector, double>(tr, name);
+    }
+    else
+    {
+        if     (type.find("double")       != std::string::npos) return std::bind(getVar<double>, _1, name);
+        else if(type.find("unsigned int") != std::string::npos) return std::bind(getVar<unsigned int>, _1, name);
+        else if(type.find("int")          != std::string::npos) return std::bind(getVar<int>, _1, name);
+        else if(type.find("float")        != std::string::npos) return std::bind(getVar<float>, _1, name);
+        else if(type.find("char")         != std::string::npos) return std::bind(getVar<char>, _1, name);
+        else if(type.find("short")        != std::string::npos) return std::bind(getVar<short>, _1, name);
+        else if(type.find("long")         != std::string::npos) return std::bind(getVar<long>, _1, name);
     }
 }
 
@@ -1275,7 +1337,7 @@ void Plotter::fillHist(TH1 * const h, const VarName& name, const NTupleReader& t
     }
 }
 
-std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(TH1 * const h, const VarName& name, const NTupleReader& tr)
+std::function<void(const NTupleReader&, const double)> Plotter::getHistFillFunc(TH1 * const h, const VarName& name, const NTupleReader& tr) 
 {
     using namespace std::placeholders;
 

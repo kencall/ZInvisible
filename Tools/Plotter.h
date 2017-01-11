@@ -50,6 +50,48 @@ private:
 
         Cut(std::string s, char t, bool inv, double v, double v2 = 0);
         bool passCut(const NTupleReader& tr) const;
+
+        static std::function<double(const NTupleReader&)> translateVarFunc(const NTupleReader& tr, VarName name);
+
+        template<typename T> static double getVar(const NTupleReader& tr, VarName name)
+        {
+            return static_cast<double>(tr.getVar<T>(name.name));
+        }
+
+        template<typename T> static double getVarFromVecSize(const NTupleReader& tr, VarName name)
+        {
+            const auto& vec = tr.getVec<T>(name.name);
+            return static_cast<double>(vec.size());
+        }
+        template<typename T, typename R = T> static double getVarFromVecSingle(const NTupleReader& tr, VarName name)
+        {
+            const auto& var = getVarFromVec<T, R>(name, tr);
+            return static_cast<double>(pointerDeref(var));
+        }
+
+        template<typename T, typename R = T> static std::function<double(const NTupleReader&)> returnVarFromVecFunc(const NTupleReader& tr, VarName name)
+        {
+            using namespace std::placeholders;
+
+            if(name.var.compare("size") == 0)
+            {
+                return std::bind(getVarFromVecSize<T>, _1, name);
+            }
+            else
+            {
+                if(name.index >= 0)
+                {
+                    return std::bind(getVarFromVecSingle<T, R>, _1, name);
+                }
+                else
+                {
+                    THROW_SATEXCEPTION("You may not cut on a whole vector, only size or individual elements! " + name.name + " " + name.var + " " + std::to_string(name.index));
+                }
+            }
+        }
+
+        std::function<double(const NTupleReader&)> getVarInternal_;
+
     private:
         void parseName();
         double translateVar(const NTupleReader& tr) const;
@@ -66,9 +108,10 @@ private:
         void extractCuts(std::set<std::string>& ab) const;
         const std::string& getCuts() const {return cuts_;}
 
+        std::vector<Cut> cutVec_;
+
     private:
         std::string cuts_;
-        std::vector<Cut> cutVec_;
         void parseCutString();
     };
 
