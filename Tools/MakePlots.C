@@ -283,8 +283,10 @@ int main(int argc, char* argv[])
 
     auto PDCMaker_boost = [&](std::string var)
     {
-        return std::vector<PDC>({Plotter::DataCollection("single",   var, {dsT1tttt1500}),
-                    //Plotter::DataCollection("single",   var, {dsT2tt800})
+        return std::vector<PDC>({//Plotter::DataCollection("single",   var, {dsT1tttt1500}),
+                //Plotter::DataCollection("single",   var, {dsT1tttt1200})
+                //Plotter::DataCollection("single",   var, {dsT2tt800})
+		Plotter::DataCollection("single",   var, {dsT2tt500})
 		    });
     };
 

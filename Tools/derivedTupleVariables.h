@@ -3057,14 +3057,14 @@ namespace plotterFunctions
                     }
 
                     // Compute the relevant differences between top and sum of matched ak4's
-                    top_subjets_pt_reldiff->push_back((mytop.Pt()-matched_ak4.Pt())/mytop.Pt());
-                    top_subjets_mass_reldiff->push_back((mytop.M()-matched_ak4.M())/mytop.M());
-                    top_subjets_SDmass_reldiff->push_back((puppisoftDropMass[puppiLVecLoose_top_index[imytop]]-matched_ak4.Pt())/puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
-                    top_subjets_pt_diff->push_back(mytop.Pt()-matched_ak4.Pt());
-                    top_subjets_eta_diff->push_back(mytop.Eta()-matched_ak4.Eta());
-                    top_subjets_phi_diff->push_back(mytop.Phi()-matched_ak4.Phi());
-                    top_subjets_mass_diff->push_back(mytop.M()-matched_ak4.M());
-                    top_subjets_SDmass_diff->push_back(puppisoftDropMass[puppiLVecLoose_top_index[imytop]] - matched_ak4.M());
+                    top_ak4jets_pt_reldiff->push_back((mytop.Pt()-matched_ak4.Pt())/mytop.Pt());
+                    top_ak4jets_mass_reldiff->push_back((mytop.M()-matched_ak4.M())/mytop.M());
+                    top_ak4jets_SDmass_reldiff->push_back((puppisoftDropMass[puppiLVecLoose_top_index[imytop]]-matched_ak4.Pt())/puppisoftDropMass[puppiLVecLoose_top_index[imytop]]);
+                    top_ak4jets_pt_diff->push_back(mytop.Pt()-matched_ak4.Pt());
+                    top_ak4jets_eta_diff->push_back(mytop.Eta()-matched_ak4.Eta());
+                    top_ak4jets_phi_diff->push_back(mytop.Phi()-matched_ak4.Phi());
+                    top_ak4jets_mass_diff->push_back(mytop.M()-matched_ak4.M());
+                    top_ak4jets_SDmass_diff->push_back(puppisoftDropMass[puppiLVecLoose_top_index[imytop]] - matched_ak4.M());
 
                 }
 
@@ -3282,14 +3282,14 @@ namespace plotterFunctions
             tr.registerDerivedVec("pt_diff_top_gentop", pt_diff_top_gentop);
             tr.registerDerivedVec("pt_reldiff_top_gentop", pt_reldiff_top_gentop);
 
-            tr.registerDerivedVec("top_subjets_pt_reldiff", top_subjets_pt_reldiff);
-            tr.registerDerivedVec("top_subjets_mass_reldiff", top_subjets_mass_reldiff);
-            tr.registerDerivedVec("top_subjets_SDmass_reldiff", top_subjets_SDmass_reldiff);
-            tr.registerDerivedVec("top_subjets_pt_diff", top_subjets_pt_diff);
-            tr.registerDerivedVec("top_subjets_eta_diff", top_subjets_eta_diff);
-            tr.registerDerivedVec("top_subjets_phi_diff", top_subjets_phi_diff);
-            tr.registerDerivedVec("top_subjets_mass_diff", top_subjets_mass_diff);
-            tr.registerDerivedVec("top_subjets_SDmass_diff", top_subjets_SDmass_diff);
+            tr.registerDerivedVec("top_ak4jets_pt_reldiff", top_ak4jets_pt_reldiff);
+            tr.registerDerivedVec("top_ak4jets_mass_reldiff", top_ak4jets_mass_reldiff);
+            tr.registerDerivedVec("top_ak4jets_SDmass_reldiff", top_ak4jets_SDmass_reldiff);
+            tr.registerDerivedVec("top_ak4jets_pt_diff", top_ak4jets_pt_diff);
+            tr.registerDerivedVec("top_ak4jets_eta_diff", top_ak4jets_eta_diff);
+            tr.registerDerivedVec("top_ak4jets_phi_diff", top_ak4jets_phi_diff);
+            tr.registerDerivedVec("top_ak4jets_mass_diff", top_ak4jets_mass_diff);
+            tr.registerDerivedVec("top_ak4jets_SDmass_diff", top_ak4jets_SDmass_diff);
 
             tr.registerDerivedVec("dR_AK4_notmatched_genmatched_top", dR_AK4_notmatched_genmatched_top);
             tr.registerDerivedVec("dR_AK4_notmatched_genmatched_gentop", dR_AK4_notmatched_genmatched_gentop);
