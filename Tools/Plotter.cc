@@ -475,7 +475,10 @@ void Plotter::createHistsFromTuple()
                                     //make links for filling cuts (aaahhh, const casts!! shame on me)
                                     for(auto& cut : const_cast<HistSummary*>((*ihist)->hs)->cutVec_)
                                     {
-                                        cut.getVarInternal_ = Plotter::Cut::translateVarFunc(tr, cut.name);
+                                        if(cut.type != 'B')
+                                        {
+                                            cut.getVarInternal_ = Plotter::Cut::translateVarFunc(tr, cut.name);
+                                        }
                                     }
                                     for(auto& cut : const_cast<DatasetSummary*>((*ihist)->dssp)->cutVec_)
                                     {
