@@ -511,10 +511,8 @@ void Plotter::createHistsFromTuple()
                     {
                         if(tr.getVar<bool>("passnJetsZinv"))
                         {
-                            std::cout<<"FUCK YEAH WORKING"<<std::endl;
-                            if(file.filePath.find("ZJetsToNuNu_") != std::string::npos || tr.getVar<bool>("passMuZinvSel"))
+			  if(file.filePath.find("ZJetsToNuNu_") != std::string::npos || tr.getVar<bool>("passMuZinvSel"))
                             {
-                                std::cout<<"Made it to the end of the line"<<std::endl;
                                 foutTuple_->cd();
                                 mtm->fill();
                                 fout_->cd();

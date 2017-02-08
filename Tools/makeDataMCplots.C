@@ -104,7 +104,7 @@ int main(int argc, char* argv[])
         char thistFile[128];
         sprintf(thistFile, "histoutput_%s_%d.root", dataSets.c_str(), startFile);
         histFile = thistFile;
-        //doSave = true;
+        doSave = true;
         //doPlots = false;
         fromTuple = true;
         sampleloc = "condor";
@@ -205,7 +205,7 @@ int main(int argc, char* argv[])
     Plotter::DatasetSummary dsData_SingleMuon("Data", fileMap["Data_HTMHT_Run2016G"], "passMuTrigger", "");
     //Plotter::DatasetSummary dsData_SingleMuon("Data",         fileMap["Data_HTMHT"], "passSingleMuTrigger",   "");
     Plotter::DatasetSummary dsData_SingleMuonNotrig("Data",   fileMap["Data_MET_Run2016G"], "",   "");
-    Plotter::DatasetSummary dsData_HTMHT(  "Data",            fileMap["Data_MET"],   "passHTMHTTrigger", "");
+    Plotter::DatasetSummary dsData_HTMHT(  "Data",            fileMap["Data_MET"],  "passMETMHTTrigger", "");//"passHTMHTTrigger", "");
     Plotter::DatasetSummary dsDY(             "DY",           fileMap["DYJetsToLL"],      "",                "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsT1tttt1500( "T1tttt(1500,100)", fileMap["Signal_T1tttt_mGluino1500_mLSP100"], "", "TriggerEffMC");//;bTagSF_EventWeightSimple_Central");
     Plotter::DatasetSummary dsT1tttt1200( "T1tttt(1200,800)", fileMap["Signal_T1tttt_mGluino1200_mLSP800"],      "",  "TriggerEffMC");

@@ -18,7 +18,7 @@ xrdcp root://cmseos.fnal.gov/$(echo $6 | sed 's|/eos/uscms||') .
 
 ls
 
-./makePlots -st --condor -D $1 -N $3 -M $4 -L $5 -S SB_v1_2017
+./makeDataMCplots -st --condor -D $1 -N $3 -M $4 -L $5 -S SB_v1_2017
 
 ls
 

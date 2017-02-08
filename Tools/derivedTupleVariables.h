@@ -1306,19 +1306,24 @@ namespace plotterFunctions
 	    /* else if (met<400) return 0.0001;  */
 	    /* else return 0.0018; */
 	}
-
+	
         void triggerInfo(NTupleReader& tr)
         {
             const std::vector<std::string>& triggerNames = tr.getVec<std::string>("TriggerNames");
             const std::vector<int>& passTrigger          = tr.getVec<int>("PassTrigger");
 
+	    int indexMuTrigger, indexElecTrigger, indexHTMHTTrigger, indexMuHTTrigger;
+
             bool passMuTrigger = false;
             bool passElecTrigger = false;
             bool passMETMHTTrigger = false;
+	    //bool passHTMHTTrigger = false;
+	    bool passMuHTTrigger = false;
 
 	    const std::string muTrigName = "HLT_Mu50_v";//"HLT_Mu45_eta2p1_v";
-	    const std::string elecTrigName = "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v";
+	    //const std::string elecTrigName = "HLT_DoubleEle33_CaloIdL_GsfTrkIdVL_MW_v";
             const std::string metmhtTrigName = "HLT_PFMET110_PFMHT110_IDTight_v";
+	    //const std::string htmhtTrigName = "HLT_PFMET110_PFMHT110_IDTight_v";
 
             // Find the index of our triggers if we don't know them already
             if(indexMuTrigger == -1 || indexElecTrigger == -1 || indexMETMHTTrigger == -1)
@@ -1329,14 +1334,19 @@ namespace plotterFunctions
                     {
                         indexMuTrigger = i;
                     }
-                    else if(triggerNames[i].find(elecTrigName) != std::string::npos)
+		    /*else if(triggerNames[i].find(elecTrigName) != std::string::npos)
                     {
                         indexElecTrigger = i;
-                    }
+			}*/
                     else if(triggerNames[i].find(metmhtTrigName) != std::string::npos)
                     {
                         indexMETMHTTrigger = i;
                     }
+		    /*
+		    else if(triggerNames[i].find(htmhtTrigName) != std::string::npos)
+		    {
+                        indexHTMHTTrigger = i;
+			}*/
                 }
             }
             if(indexMuTrigger != -1 && indexElecTrigger != -1)
@@ -1344,10 +1354,12 @@ namespace plotterFunctions
                 // Check if the event passes the trigger, and double check that we are looking at the right trigger
                 if(triggerNames[indexMuTrigger].find(muTrigName) != std::string::npos && passTrigger[indexMuTrigger])
                     passMuTrigger = true;
-                if(triggerNames[indexElecTrigger].find(elecTrigName) != std::string::npos && passTrigger[indexElecTrigger])
-                    passElecTrigger = true;
+                //if(triggerNames[indexElecTrigger].find(elecTrigName) != std::string::npos && passTrigger[indexElecTrigger])
+		//passElecTrigger = true;
                 if(triggerNames[indexMETMHTTrigger].find(metmhtTrigName) != std::string::npos && passTrigger[indexMETMHTTrigger])
                     passMETMHTTrigger = true;
+		//if(triggerNames[indexHTMHTTrigger].find(htmhtTrigName) != std::string::npos && passTrigger[indexHTMHTTrigger])
+		//passHTMHTTrigger = true;
             }
             else
             {
@@ -1355,10 +1367,12 @@ namespace plotterFunctions
             }
 
             tr.registerDerivedVar("passMuTrigger",passMuTrigger);
-            tr.registerDerivedVar("passElecTrigger",passElecTrigger);
+            //tr.registerDerivedVar("passElecTrigger",passElecTrigger);
             tr.registerDerivedVar("passMETMHTTrigger",passMETMHTTrigger);
+	    //tr.registerDerivedVar("passHTMHTTrigger",passHTMHTTrigger);
+	    //tr.registerDerivedVar("passMuHTorHTMHTTrigger", passHTMHTTrigger || passMuHTTrigger);
         }
-
+	
         void triggerInfoMC(NTupleReader& tr)
         {
             const double& met                            = tr.getVar<double>("cleanMetPt");
@@ -1536,12 +1550,12 @@ namespace plotterFunctions
 	}
 
     };
-
+    
     class PrepareTopVars
     {
     private:
 
-        int indexMuTrigger, indexElecTrigger, indexHTMHTTrigger, indexMuHTTrigger;
+      int indexMuTrigger, indexElecTrigger, indexHTMHTTrigger, indexMuHTTrigger;
         topTagger::type3TopTagger t3tagger;
         TopTagger *tt, *ttMVA, *ttAllComb;
         Mt2::ChengHanBisect_Mt2_332_Calculator mt2Calculator;
@@ -1898,7 +1912,6 @@ namespace plotterFunctions
             tr.registerDerivedVec("discriminatorsParNoMatch", discriminatorsParNoMatch);
         }
 
-
     public:
         PrepareTopVars() : tt(nullptr)
 	{
@@ -1914,7 +1927,7 @@ namespace plotterFunctions
             ttAllComb = new TopTagger();
             ttAllComb->setCfgFile("TopTagger_AllComb.cfg");
 
-            indexMuTrigger = indexElecTrigger = indexHTMHTTrigger = indexMuHTTrigger = -1;
+            //indexMuTrigger = indexElecTrigger = indexHTMHTTrigger = indexMuHTTrigger = -1;
 	}
 
         ~PrepareTopVars()
@@ -2328,7 +2341,7 @@ namespace plotterFunctions
 	    tr.registerDerivedVec("puppitau2Dtau1_SDM", puppitau2Dtau1_SDM);
 	    tr.registerDerivedVec("puppitau3Dtau2_SDM", puppitau3Dtau2_SDM);
 
-            (*hadWLVec) = genUtility::GetHadWLVec(genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec);
+            //(*hadWLVec) = genUtility::GetHadWLVec(genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec);
 	  }
 
         public:
