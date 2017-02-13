@@ -1386,7 +1386,7 @@ int main(int argc, char* argv[])
 	vh.push_back(PHS("DataMC_SingleMuon_met_"        +cut.first,  {dcData_SingleMuon_met,   dcMC_met},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                           "Events"));
 	vh.push_back(PHS("DataMC_SingleMuon_ht_"         +cut.first,  {dcData_SingleMuon_ht,    dcMC_ht},              {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                            "Events"));
 	vh.push_back(PHS("DataMC_SingleMuon_mht_"        +cut.first,  {dcData_SingleMuon_mht,   dcMC_mht},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                           "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nt_"         +cut.first,  {dcData_SingleMuon_nt,    dcMC_nt},              {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,                            "Events"));
+	vh.push_back(PHS("DataMC_SingleMuon_nt_"         +cut.first,  {dcData_SingleMuon_nt,    dcMC_nt},              {1, 2}, cut.second, 5,  0, 5,    true, true,   label_nt,                            "Events"));
 	//vh.push_back(PHS("DataMC_SingleMuon_nt1b_"       +cut.first,  {dcData_SingleMuon_nt1b,  dcMC_nt1b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                  "Events"));
 	//vh.push_back(PHS("DataMC_SingleMuon_nt2b_"       +cut.first,  {dcData_SingleMuon_nt2b,  dcMC_nt2b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                  "Events"));
 	//vh.push_back(PHS("DataMC_SingleMuon_nt3b_"       +cut.first,  {dcData_SingleMuon_nt3b,  dcMC_nt3b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                  "Events"));

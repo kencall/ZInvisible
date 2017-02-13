@@ -302,7 +302,7 @@ def normWeightwithReweight(f, SFs):
     # Run over the relevant histograms
     cuts_DY = ["muZinv"]
     selections = ["g1b_blnotag","0b_blnotag"]
-    selection2 = "blnotag"
+    selection2 = "g1b_blnotag"
     # histo names
     hname1 = "cntNJetsPt30Eta24Zinv/DataMC_SingleMuon_nj_%(cut)s_%(selection)scntNJetsPt30Eta24ZinvcntNJetsPt30Eta24ZinvDatadata"
     hnames2 = ["cntNJetsPt30Eta24Zinv/DataMC_SingleMuon_nj_%(cut)s_%(selection)scntNJetsPt30Eta24ZinvcntNJetsPt30Eta24ZinvDYstack",
@@ -318,14 +318,14 @@ def normWeightwithReweight(f, SFs):
     #            2. Subtract non-DY MC from data
     #            3. Make ratio of subtracted data and DY
     for cut in cuts_DY:
-        hname1_DY_0b = hname1 % {"cut":cut, "selection":selections[1]}
-        hnames2_DY_0b = [elem % {"cut":cut, "selection":selections[1]} for elem in hnames2]
+        #hname1_DY_0b = hname1 % {"cut":cut, "selection":selections[1]}
+        #hnames2_DY_0b = [elem % {"cut":cut, "selection":selections[1]} for elem in hnames2]
         hname1_DY_g1b = hname1 % {"cut":cut, "selection":selections[0]}
         hnames2_DY_g1b = [elem % {"cut":cut, "selection":selections[0]} for elem in hnames2]
         # Get all histos
-        h1_0b = f.Get(hname1_DY_0b)
-        print h1_0b.Integral()
-        h2s_0b = [f.Get(sel) for sel in hnames2_DY_0b]
+        #h1_0b = f.Get(hname1_DY_0b)
+        #print h1_0b.Integral()
+        #h2s_0b = [f.Get(sel) for sel in hnames2_DY_0b]
         h1_g1b = f.Get(hname1_DY_g1b)
         print h1_g1b.Integral()
         h2s_g1b = [f.Get(sel) for sel in hnames2_DY_g1b]
@@ -334,20 +334,22 @@ def normWeightwithReweight(f, SFs):
         print h1test.Integral()
 
         # apply weights to DY
-        h2s_0b[0]  = reweight(h2s_0b[0],  SFs["DY_muZinv_0b"])
+        #h2s_0b[0]  = reweight(h2s_0b[0],  SFs["DY_muZinv_0b"])
         h2s_g1b[0] = reweight(h2s_g1b[0], SFs["DY_muZinv_g1b"])
 
         # apply weights to ttbar
-        h2s_0b[1]=reweight(h2s_0b[1], SFs["TT_elmuZinv_g1b"])#.Scale(0.92)
+        #h2s_0b[1]=reweight(h2s_0b[1], SFs["TT_elmuZinv_g1b"])#.Scale(0.92)
         h2s_g1b[1]=reweight(h2s_g1b[1], SFs["TT_elmuZinv_g1b"])#.Scale(0.92)
-        print "why",h2s_0b[0]
+        #print "why",h2s_0b[0]
         # Combine histograms
-        h1 = h1_0b.Clone()
-        h1.Add(h1_g1b)
+        #h1 = h1_0b.Clone()
+        h1 = h1_g1b.Clone()
+        #h1.Add(h1_g1b)
         h2s = []
-        for i in xrange(len(h2s_0b)):
-            h2s.append(h2s_0b[i].Clone())
-            h2s[i].Add(h2s_g1b[i])
+        for i in xrange(len(h2s_g1b)):
+        #    h2s.append(h2s_0b[i].Clone())
+            h2s.append(h2s_g1b[i].Clone())
+        #    h2s[i].Add(h2s_g1b[i])
 
         # subtract relevant histograms from data
         data_subtracted = subtract(h1, h2s[1:])
