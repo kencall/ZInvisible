@@ -1349,7 +1349,7 @@ namespace plotterFunctions
 			}*/
                 }
             }
-            if(indexMuTrigger != -1 && indexElecTrigger != -1)
+            if(indexMuTrigger != -1 && indexMETMHTTrigger != -1)
             {
                 // Check if the event passes the trigger, and double check that we are looking at the right trigger
                 if(triggerNames[indexMuTrigger].find(muTrigName) != std::string::npos && passTrigger[indexMuTrigger])
