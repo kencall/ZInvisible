@@ -5,6 +5,7 @@
 #include "Systematic.h"
 #include "PDFUncertainty.h"
 #include "BTagCorrector.h"
+#include "PileupWeights.h"
 //x#include "ISRCorrector.h"
 
 const std::set<std::string> RegisterFunctions::getMiniTupleSet()
@@ -126,6 +127,18 @@ RegisterFunctionsNTuple::RegisterFunctionsNTuple(bool isCondor, std::string sbEr
         ISRcorrector= new ISRCorrector("TTbarNoHad_NJetsISR.root","/uscms_data/d3/snorberg/CMSSW_8_0_23_patch1/src/SusyAnaTools/Tools/ISR_Root_Files/","");
     }
     */
+
+    pileup = nullptr;
+    if(isCondor)
+      {
+	pileup = new Pileup_Sys("PileupHistograms_0121_69p2mb_pm4p6.root");
+      }
+    else
+      {
+	//bTagCorrector = new BTagCorrector("bTagEffHists.root", "/uscms/home/pastika/nobackup/zinv/dev/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);                                                  
+        //bTagCorrector = new BTagCorrector("bTagEffHists.root", "/uscms_data/d3/nstrobbe/HadronicStop/DataTest/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);                                        
+      }
+
 }
 RegisterFunctionsNTuple::~RegisterFunctionsNTuple()
 {
@@ -150,6 +163,7 @@ RegisterFunctionsNTuple::~RegisterFunctionsNTuple()
     if(systematicCalc) delete systematicCalc;
     //if(bTagCorrector) delete bTagCorrector;
     //if(ISRcorrector) delete ISRcorrector;
+    if(pileup) delete pileup;
 }
         
 void RegisterFunctionsNTuple::registerFunctions(NTupleReader& tr)
@@ -182,6 +196,7 @@ void RegisterFunctionsNTuple::registerFunctions(NTupleReader& tr)
     tr.registerFunction(*taudiv);
     tr.registerFunction(*ak8DrMatch);
     //tr.registerFunction(*ISRcorrector);
+    tr.registerFunction(*pileup);
 }
 
 void RegisterFunctionsNTuple::activateBranches(std::set<std::string>& activeBranches)

@@ -11,6 +11,7 @@ class BaselineVessel;
 class PDFUncertainty;
 class BTagCorrector;
 class ISRCorrector;
+class Pileup_Sys;
 
 namespace plotterFunctions
 {
@@ -70,6 +71,7 @@ private:
     PDFUncertainty *myPDFUnc;
     BTagCorrector *bTagCorrector;
     ISRCorrector *ISRcorrector;
+    Pileup_Sys *pileup;
     plotterFunctions::Taudiv *taudiv;
     plotterFunctions::NJetAk8 *nJetAk8;
     plotterFunctions::Ak8DrMatch *ak8DrMatch;

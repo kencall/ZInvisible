@@ -243,6 +243,7 @@ double Plotter::DatasetSummary::getWeight(const NTupleReader& tr) const
     for(auto& weightName : weightVec_)
     {
         const double& weight = tr.getVar<double>(weightName);
+        //std::cout<<weightName<<std::endl;
         if(weight == weight)
         {
             if(weight < 1e6)
@@ -392,6 +393,7 @@ void Plotter::createHistsFromTuple()
 
         if(registerfunc_ == nullptr) registerfunc_ = new RegisterFunctions();
         registerfunc_->remakeBTagCorrector(file.tag);
+        //registerfunc_->remakeISRreweight(file.tag);
 
         if(doTuple_)
         {
@@ -511,8 +513,10 @@ void Plotter::createHistsFromTuple()
                     {
                         if(tr.getVar<bool>("passnJetsZinv"))
                         {
-			  if(file.filePath.find("ZJetsToNuNu_") != std::string::npos || tr.getVar<bool>("passMuZinvSel"))
+                            //std::cout<<"FUCK YEAH WORKING"<<std::endl;
+                            if(file.filePath.find("ZJetsToNuNu_") != std::string::npos || tr.getVar<bool>("passMuZinvSel"))
                             {
+                                //std::cout<<"Made it to the end of the line"<<std::endl;
                                 foutTuple_->cd();
                                 mtm->fill();
                                 fout_->cd();
@@ -535,6 +539,7 @@ void Plotter::createHistsFromTuple()
 
         if(foutTuple_ && tOut && mtm)
         {
+            //std::cout<<"This is the end my friend"<<std::endl;
             foutTuple_->cd();
             tOut->Write();
         }
@@ -554,8 +559,8 @@ void Plotter::createHistsFromFile()
                 std::string histName = hist->name;
 
                 if(fout_) hist->h = static_cast<TH1*>(fout_->Get( (dirname+"/"+histName).c_str() ) );
-		else std::cout << "Input file \"" << fout_ << "\" not found!!!!" << std::endl;
-		if(!hist->h) std::cout << "Histogram not found: \"" << hist->name << "\"!!!!!!" << "dirname/histname " << dirname+"/"+hist->name << std::endl;
+			  else std::cout << "Input file \"" << fout_ << "\" not found!!!!" << std::endl;
+			       if(!hist->h) std::cout << "Histogram not found: \"" << hist->name << "\"!!!!!!" << "dirname/histname " << dirname+"/"+hist->name << std::endl;
             }
         }
     }
@@ -706,13 +711,13 @@ void Plotter::saveHists()
             {
                 for(auto& h : hvec.hcsVec)
                 {
-		    std::string dirname = h->variable.name;
-		    TDirectory* mydir = fout_->GetDirectory(dirname.c_str());
-		    if(mydir == 0)
-		    {
-			mydir = fout_->mkdir(dirname.c_str(),dirname.c_str());
-		    }
-		    mydir->cd();
+			    std::string dirname = h->variable.name;
+			    		    TDirectory* mydir = fout_->GetDirectory(dirname.c_str());
+					    		    if(mydir == 0)
+							    	         {
+											mydir = fout_->mkdir(dirname.c_str(),dirname.c_str());
+											          }
+													    mydir->cd();
                     h->h->Write();
                 }
             }
@@ -776,6 +781,7 @@ void Plotter::plot()
 
     for(HistSummary& hist : hists_)
     {
+        std::string plotname = plotDir_ + hist.name;
         bool skip = false;
         for(auto& hvec : hist.hists)  for(auto& h : hvec.hcsVec) if(!h->h) skip = true;
         if(skip) continue;
@@ -916,8 +922,7 @@ void Plotter::plot()
                 hvec.h = static_cast<TNamed*>(stack);
 
                 double sow = 0, te = 0;
-                bool firstHIS = true;
-                TH1* thstacksucks;
+                TH1* thstacksucks = nullptr;
                 int iStack = 0;
                 for(auto ih = hvec.hcsVec.begin(); ih != hvec.hcsVec.end(); ++ih)
                 {
@@ -933,20 +938,21 @@ void Plotter::plot()
                     leg->AddEntry((*ih)->h, legEntry, "F");
                     sow += (*ih)->h->GetSumOfWeights();
                     te +=  (*ih)->h->GetEntries();
-                }
-                for(auto ih = hvec.hcsVec.rbegin(); ih != hvec.hcsVec.rend(); ++ih)
-                {
-                    if(firstHIS)
+                    if(thstacksucks == nullptr)
                     {
-                        firstHIS = false;
                         thstacksucks = static_cast<TH1*>((*ih)->h->Clone());
                     }
                     else
                     {
                         thstacksucks->Add((*ih)->h);
                     }
+                }
+                for(auto ih = hvec.hcsVec.rbegin(); ih != hvec.hcsVec.rend(); ++ih)
+                {
+                    if(hist.isNorm) (*ih)->h->Scale(1.0/thstacksucks->Integral());
                     stack->Add((*ih)->h);
                 }
+                if(hist.isNorm) thstacksucks->Scale(1.0/thstacksucks->Integral());
                 smartMax(thstacksucks, leg, static_cast<TPad*>(gPad), min, max, lmax);
                 minAvgWgt = std::min(minAvgWgt, sow/te);
                 if(thstacksucks) delete thstacksucks;

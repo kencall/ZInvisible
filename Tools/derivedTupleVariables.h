@@ -1179,111 +1179,130 @@ namespace plotterFunctions
 
 	double GetMuonTriggerEff(const double& muEta) 
 	{
-                if     (-2.6 <= muEta && muEta < -2.2) return 0.016; //+/-0.013/0.008
-                else if(-2.2 <= muEta && muEta < -1.8) return 0.74641;//0.680; //+/-0.017/0.017
-                else if(-1.8 <= muEta && muEta < -1.4) return 0.806; //+/-0.012/0.012
-                else if(-1.4 <= muEta && muEta < -1.0) return 0.7961;//0.866; //+/-0.008/0.009
-                else if(-1.0 <= muEta && muEta < -0.6) return 0.768; //+/-0.006/0.007
-                else if(-0.6 <= muEta && muEta < -0.2) return 0.818;//0.892; //+/-0.006/0.007
-                else if(-0.2 <= muEta && muEta <  0.2) return 0.807;//0.927; //+/-0.005/0.006
-                else if( 0.2 <= muEta && muEta <  0.6) return 0.7205;//0.892; //+/-0.006/0.007
-                else if( 0.6 <= muEta && muEta <  1.0) return 0.877;//0.911; //+/-0.006/0.007
-                else if( 1.0 <= muEta && muEta <  1.4) return 0.810;//0.864; //+/-0.008/0.009
-                else if( 1.4 <= muEta && muEta <  1.8) return 0.801;//0.808; //+/-0.011/0.012
-                else if( 1.8 <= muEta && muEta <  2.2) return 0.936;//0.652; //+/-0.017/0.017
-                else if( 2.2 <= muEta && muEta <  2.6) return 0.889;//0.026; //+/-0.015/0.01
-                else                                   return 0.000;
+	  if (-2.6 <= muEta && muEta < -2.2) return 0.7861842;
+	  else if(-2.2 <= muEta && muEta < -1.8) return 0.8233438;
+	  else if(-1.8 <= muEta && muEta < -1.4) return 0.8151685;
+	  else if(-1.4 <= muEta && muEta < -1.0) return 0.8991723;
+	  else if(-1.0 <= muEta && muEta < -0.6) return 0.9125786;
+	  else if(-0.6 <= muEta && muEta < -0.2) return 0.8880085;
+	  else if(-0.2 <= muEta && muEta <  0.2) return 0.9334851;
+	  else if( 0.2 <= muEta && muEta <  0.6) return 0.8857523;
+	  else if( 0.6 <= muEta && muEta <  1.0) return 0.9052119;
+	  else if( 1.0 <= muEta && muEta <  1.4) return 0.9004312;
+	  else if( 1.4 <= muEta && muEta <  1.8) return 0.8384009;
+	  else if( 1.8 <= muEta && muEta <  2.2) return 0.8218332;
+	  else if( 2.2 <= muEta && muEta <  2.6) return 0.7781818;
+	  else                                   return 0.000;
 	}
 
 	double GetTriggerEffWeight(const double& met, const double& ht) 
 	{
-	    if (ht<1000)
+	  if (ht<1000)
 	    {
-		if (met<25) return 0.002;
-		else if (met<50) return 0.003;
-		else if (met<75) return 0.011;
-		else if (met<100) return 0.053;
-		else if (met<125) return 0.211;
-		else if (met<150) return 0.484;
-		else if (met<175) return 0.751;
-		else if (met<200) return 0.897;
-		else if (met<275) return 0.970;
-		else if (met<400) return 0.986; 
-		else return 0.97;
+	      if (met<25) return 0.001542561;
+	      else if (met<50) return 0.003222389;
+	      else if (met<75) return 0.00987073;
+	      else if (met<100) return 0.03865682;
+	      else if (met<125) return 0.1387231;
+	      else if (met<150) return 0.3564816;
+	      else if (met<175) return 0.6276442;
+	      else if (met<200) return 0.8154821;
+	      else if (met<275) return 0.9340538;
+	      else if (met<400) return 0.9858562; 
+	      else if (met<600) return 0.9931507;
+	      else if (met<1000) return 1.00;
+	      else return 1.00;
 	    } 
-	    else 
+	  else 
 	    {
-		if (met<25) return 0.014;
-		else if (met<50) return 0.019;
-		else if (met<75) return 0.037;
-		else if (met<100) return 0.089;
-		else if (met<125) return 0.204;
-		else if (met<150) return 0.358;
-		else if (met<175) return 0.568;
-		else if (met<200) return 0.747;
-		else if (met<275) return 0.907;
-		else if (met<400) return 0.988; 
-		else return 0.972;
+	      if (met<25) return  0.02067183;
+	      else if (met<50) return 0.02504944;
+	      else if (met<75) return 0.04486466;
+	      else if (met<100) return 0.07434402;
+	      else if (met<125) return 0.1518288;
+	      else if (met<150) return 0.2802669;
+	      else if (met<175) return 0.4642409;
+	      else if (met<200) return 0.6596434;
+	      else if (met<275) return 0.8510453;
+	      else if (met<400) return 0.9563492;
+	      else if (met<600) return 0.9874214;
+	      else if (met<1000) return 0.9736842; 
+	      else return 0.9736842;
 	    }
 	}
+
 	double GetTriggerEffStatUncHi(const double& met, const double& ht) 
 	{
-	    if (ht<1000)
+	  if (ht<1000)
 	    {
-		if (met<75) return 0.0;
-		else if (met<100) return 0.001;
-		else if (met<125) return 0.004;
-		else if (met<150) return 0.006;
-		else if (met<175) return 0.006;
-		else if (met<200) return 0.005;
-		else if (met<275) return 0.002;
-		else if (met<400) return 0.002; 
-		else return 0.007;
+	      if (met<25) return 0.0001251554;
+	      else if (met<50) return 0.0001310897;
+	      else if (met<75) return 0.0002597269;
+	      else if (met<100) return 0.0006525702;
+	      else if (met<125) return 0.001545856;
+	      else if (met<150) return 0.002821274;
+	      else if (met<200) return 0.003691577;
+	      else if (met<275) return 0.003877182;
+	      else if (met<400) return 0.002294442; 
+	      else if (met<600) return 0.002045071;
+	      else if (met<1000) return 0.003725375;
+	      else return 0.00;
 	    } 
-	    else 
+	  else 
 	    {
-		if (met<25) return 0.002;
-		else if (met<50) return 0.002;
-		else if (met<75) return 0.003;
-		else if (met<100) return 0.005;
-		else if (met<125) return 0.010;
-		else if (met<150) return 0.015;
-		else if (met<175) return 0.020;
-		else if (met<200) return 0.021;
-		else if (met<275) return 0.010;
-		else if (met<400) return 0.005; 
-		else return 0.009;
+	      if (met<25) return 0.004283915;
+	      else if (met<50) return 0.003169914;
+	      else if (met<75) return 0.004349597;
+	      else if (met<100) return 0.006241982;
+	      else if (met<125) return 0.01001983;
+	      else if (met<150) return 0.01455422;
+	      else if (met<175) return 0.0183275;
+	      else if (met<200) return 0.01960093;
+	      else if (met<275) return 0.01062354;
+	      else if (met<400) return 0.007445741;
+	      else if (met<600) return 0.006010458;
+	      else if (met<1000) return 0.01697945; 
+	      else return 0.01697945;
 	    }
 	}
+
 	double GetTriggerEffStatUncLo(const double& met, const double& ht) 
 	{
-	    if (ht<1000)
+	  if (ht<1000)
 	    {
-		if (met<75) return 0.0;
-		else if (met<100) return 0.001;
-		else if (met<125) return 0.004;
-		else if (met<150) return 0.006;
-		else if (met<175) return 0.007;
-		else if (met<200) return 0.006;
-		else if (met<275) return 0.003;
-		else if (met<400) return 0.003; 
-		else return 0.009;
-	    } 
-	    else 
+	      if (met<25) return 0.0001160878;
+	      else if (met<50) return 0.000126075;
+	      else if (met<75) return 0.0002532144;
+	      else if (met<100) return 0.000642253;
+	      else if (met<125) return 0.001531628;
+	      else if (met<150) return 0.002811409;
+	      else if (met<175) return 0.003706407;
+	      else if (met<200) return 0.003940439;
+	      else if (met<275) return 0.00236968;
+	      else if (met<400) return 0.002358961;
+	      else if (met<600) return 0.006617554;
+	      else if (met<1000) return 0.1422293;
+	      else return 0.1422293;
+            }
+	     
+	  else 
 	    {
-		if (met<25) return 0.002;
-		else if (met<50) return 0.002;
-		else if (met<75) return 0.002;
-		else if (met<100) return 0.005;
-		else if (met<125) return 0.010;
-		else if (met<150) return 0.015;
-		else if (met<175) return 0.020;
-		else if (met<200) return 0.022;
-		else if (met<275) return 0.011;
-		else if (met<400) return 0.007; 
-		else return 0.012;
+	      if (met<25) return 0.003609465;
+	      else if (met<50) return 0.002838673;
+	      else if (met<75) return 0.003996443;
+	      else if (met<100) return 0.005811049;
+	      else if (met<125) return 0.009521872;
+	      else if (met<150) return 0.01412113;
+	      else if (met<175) return 0.01823465;
+	      else if (met<200) return 0.02013986;
+	      else if (met<275) return 0.01126014;
+	      else if (met<400) return 0.008759573;
+	      else if (met<600) return 0.009833846;
+	      else if (met<1000) return 0.03365661; 
+	      else return 0.03365661;
 	    }
 	}
+
 	double GetTriggerEffSystUncHi(const double& met, const double& ht) 
 	{
 	    return 0.0;
@@ -2248,6 +2267,7 @@ namespace plotterFunctions
 
      class Taudiv {
       private:
+       //std::shared_ptr<TopTagger> ttPtr_mine;
           void generateTaudiv(NTupleReader& tr) {
             const std::vector<double>& tau1    = tr.getVec<double>("tau1");
             const std::vector<double>& tau2    = tr.getVec<double>("tau2");
@@ -2277,11 +2297,38 @@ namespace plotterFunctions
 
             std::vector<TLorentzVector> *hadWLVec = new std::vector<TLorentzVector>();
 
+	    const int& nTopCandSortedCnt = tr.getVar<int>("nTopCandSortedCntZinv");
+            /*
+	    //std::shared_ptr<TopTagger> ttPtr;
+            //const TopTaggerResults& ttr = ttPtr->getResults();
+            int monoJet=0;
+            int diJet=0;
+            int triJet=0;
+            //TopTagger tt;
+            //tt.setCfgFile("TopTagger.cfg");
+            //const TopTaggerResults& ttr = ttPtr_mine.getResults();
+            const TopTaggerResults& ttr =ttPtr_mine->getResults();
+	    std::vector<TopObject*> Ntop = ttr.getTops();
+            for(int i=0; i<nTopCandSortedCnt; i++){
+	      if(Ntop[i]->getNConstituents() == 1) monoJet++;
+	      else if(Ntop[i]->getNConstituents() == 2) diJet++;
+	      else if(Ntop[i]->getNConstituents() == 3) triJet++;
+	      //std::cout<<monoJet<<std::endl;
+            }
+	    */
+            //std::cout<<"Ntop: " << nTopCandSortedCnt<<std::endl;
+            //std::cout<<"Monojet: " << monoJet<<std::endl;
+            //std::cout<<"Dijet: " << diJet<<std::endl;
+            //std::cout<<"Trijet: " << triJet<<std::endl;
+
             const int& nJetsAk8 = ak8JetsLVec.size(); 
             const int& nJetsPuppi = puppiJetsLVec.size();
             tr.registerDerivedVar("nJetsAk8", nJetsAk8);
             tr.registerDerivedVar("nJetsPuppi", nJetsPuppi);
-            
+	    //tr.registerDerivedVar("typeMono",monoJet);
+            //tr.registerDerivedVar("typeDi",diJet);
+            //tr.registerDerivedVar("typeTri",triJet);
+            /*
             if(puppitau2.size()!=0 && puppitau1.size()!=0 && puppitau2.size()==puppitau1.size()){
 		for(int iJet = 0; iJet < nJetsPuppi; ++iJet){
 		    puppitau2Dtau1->push_back(puppitau2[iJet]/(puppitau1[iJet]));
@@ -2340,7 +2387,7 @@ namespace plotterFunctions
 	    tr.registerDerivedVec("puppiLVecLoose_w", puppiLVecLoose_w);
 	    tr.registerDerivedVec("puppitau2Dtau1_SDM", puppitau2Dtau1_SDM);
 	    tr.registerDerivedVec("puppitau3Dtau2_SDM", puppitau3Dtau2_SDM);
-
+	    */
             //(*hadWLVec) = genUtility::GetHadWLVec(genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec);
 	  }
 
@@ -2390,19 +2437,19 @@ namespace plotterFunctions
 	     {
 		 if(ak8JetsLVec.size() >= 1) ak81dRMin->push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], ak8JetsLVec[0]));
 		 if(ak8JetsLVec.size() >= 2) ak82dRMin->push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], ak8JetsLVec[1]));
-		 if(puppiLVectight_top.size() >= 1) puppi_top_L_1dRMin-> push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVectight_top[0]));
-		 if(puppiLVectight_top.size() >= 2) puppi_top_L_2dRMin ->push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVectight_top[1]));
-		 if(puppiLVecLoose_top.size() >= 1) puppi_top_T_1dRMin-> push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVecLoose_top[0]));
-		 if(puppiLVecLoose_top.size() >= 2) puppi_top_T_2dRMin ->push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVecLoose_top[1]));
+		 //if(puppiLVectight_top.size() >= 1) puppi_top_L_1dRMin-> push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVectight_top[0]));
+		 //if(puppiLVectight_top.size() >= 2) puppi_top_L_2dRMin ->push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVectight_top[1]));
+		 //if(puppiLVecLoose_top.size() >= 1) puppi_top_T_1dRMin-> push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVecLoose_top[0]));
+		 //if(puppiLVecLoose_top.size() >= 2) puppi_top_T_2dRMin ->push_back( ROOT::Math::VectorUtil::DeltaR(jetsLVec[iJet], puppiLVecLoose_top[1]));
 		 std::sort( ak81dRMin->begin(),ak81dRMin->end() );
 		 std::sort( ak82dRMin->begin(),ak82dRMin->end() );
 	     }
 	     tr.registerDerivedVec("ak81dRMin", ak81dRMin);
 	     tr.registerDerivedVec("ak82dRMin", ak82dRMin);
-	     tr.registerDerivedVec("puppi_top_L_1dRMin", puppi_top_L_1dRMin);
-	     tr.registerDerivedVec("puppi_top_L_2dRMin", puppi_top_L_2dRMin);    
-	     tr.registerDerivedVec("puppi_top_T_1dRMin", puppi_top_T_1dRMin);
-	     tr.registerDerivedVec("puppi_top_T_2dRMin", puppi_top_T_2dRMin);     
+	     //tr.registerDerivedVec("puppi_top_L_1dRMin", puppi_top_L_1dRMin);
+	     //tr.registerDerivedVec("puppi_top_L_2dRMin", puppi_top_L_2dRMin);    
+	     //tr.registerDerivedVec("puppi_top_T_1dRMin", puppi_top_T_1dRMin);
+	     //tr.registerDerivedVec("puppi_top_T_2dRMin", puppi_top_T_2dRMin);     
  
 	     for(int iJet1 = 0; iJet1 < ak81dRMin->size(); ++iJet1)
 	     {
@@ -2449,7 +2496,7 @@ namespace plotterFunctions
 	     // Also start looking at subjet information
 	     const std::vector<TLorentzVector>& puppiSubJetsLVec  = tr.getVec<TLorentzVector>("puppiSubJetsLVec");
 	     const std::vector<double>& puppiSubJetsBdisc = tr.getVec<double>("puppiSubJetsBdisc");
-
+	     /*
 	     // For each tagged top/W, find the corresponding subjets
 	     std::vector< std::vector<TLorentzVector> > W_subjets;
 	     std::vector<double>* W_subjets_pt_reldiff = new std::vector<double>();
@@ -2493,10 +2540,11 @@ namespace plotterFunctions
 		 }
 	     }
 	     tr.registerDerivedVec("W_subjets_pt_reldiff", W_subjets_pt_reldiff);
-
+	     */
 	     // For each tagged top/W, find the corresponding subjets
 	     std::vector< std::vector< TLorentzVector> > top_subjets;
 	     std::vector<double>* top_subjets_pt_reldiff = new std::vector<double>();
+	     /*
 	     for( TLorentzVector mytop : puppiLVectight_top)
 	     {
 		 std::vector<TLorentzVector> mytop_subjets;
@@ -2537,7 +2585,7 @@ namespace plotterFunctions
 		 }
 	     }
 	     tr.registerDerivedVec("top_subjets_pt_reldiff", top_subjets_pt_reldiff);
-
+	     */
 	     // Figure out gen matching..
 	     const std::vector<int>& genDecayPdgIdVec        = tr.getVec<int>("genDecayPdgIdVec");
 	     const std::vector<int>& genDecayIdxVec          = tr.getVec<int>("genDecayIdxVec");
@@ -2571,7 +2619,7 @@ namespace plotterFunctions
 		 {
 		     hadtopdauLVec.push_back(genUtility::GetTopdauLVec(hadtop, genDecayLVec, genDecayPdgIdVec, genDecayIdxVec, genDecayMomIdxVec));
 		 }
-
+		 /*
 		 // check all tagged tops
 		 for(unsigned int imytop=0; imytop<puppiLVectight_top.size(); ++imytop) 
 		 {
@@ -2746,7 +2794,9 @@ namespace plotterFunctions
 		     }
 
 		 }
+		 */
 	     }
+		
 	     tr.registerDerivedVec("gentop_match", gentop_match);
 	     tr.registerDerivedVec("dR_top_gentop", dR_top_gentop);
 	     tr.registerDerivedVec("dR_AK4_topsubjet_genmatched", dR_AK4_topsubjet_genmatched);
