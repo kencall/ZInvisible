@@ -10,13 +10,13 @@
 const std::set<std::string> RegisterFunctions::getMiniTupleSet()
 {
     //if you want to mot fill the minituple return std::set<std::string>({});
-    return std::set<std::string>({"HTZinv","cleanMetPt","cleanMetPhi","best_had_brJet_MT2Zinv","cntCSVSZinv","nTopCandSortedCntZinv","cntNJetsPt30Eta24Zinv","nSearchBin","cutMuVec","cutElecVec","jetsLVec_forTaggerZinv", "recoJetsBtag_forTaggerZinv","zEffWgt","zAccWgt","cuts","passMuTrigger","genHT","genWeight","bTagSF_EventWeightSimple_Central","isr_Unc_Cent"});
+    return std::set<std::string>({});
     //return std::set<std::string>({"HTZinv","cleanMetPt","cleanMetPhi","best_had_brJet_MT2Zinv","cntCSVSZinv","nTopCandSortedCntZinv","cntNJetsPt30Eta24Zinv","nSearchBin","cutMuVec","cutElecVec","jetsLVec_forTaggerZinv", "recoJetsBtag_forTaggerZinv","zEffWgt","zAccWgt","cuts","passMuTrigger","genHT","genWeight"});
 }
 
 const std::set<std::string> RegisterFunctions::getMiniTupleSetData()
 {
-    return std::set<std::string>({"HTZinv","cleanMetPt","cleanMetPhi","best_had_brJet_MT2Zinv","cntCSVSZinv","nTopCandSortedCntZinv","cntNJetsPt30Eta24Zinv","nSearchBin","cutMuVec","cutElecVec","jetsLVec_forTaggerZinv", "recoJetsBtag_forTaggerZinv","zEffWgt","zAccWgt","cuts","passMuTrigger"});
+    return std::set<std::string>({});
 }
 
 void activateBranches(std::set<std::string>& activeBranches)
@@ -80,77 +80,77 @@ RegisterFunctionsNTuple::RegisterFunctionsNTuple(bool isCondor, std::string sbEr
 {            
     //AnaFunctions::prepareTopTagger();
     myBLV     = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "", "");
-    blvZinv   = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv");
-    blvZinv1b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv1b");
-    blvZinv2b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv2b");
-    blvZinv3b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv3b");
-    blvZinvJEUUp = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvJEUUp");
-    blvZinvJEUDn = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvJEUDn");
-    blvZinvMEUUp = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvMEUUp");
-    blvZinvMEUDn = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvMEUDn");
+    //blvZinv   = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv");
+    //blvZinv1b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv1b");
+    //blvZinv2b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv2b");
+    //blvZinv3b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv3b");
+    //blvZinvJEUUp = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvJEUUp");
+    //blvZinvJEUDn = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvJEUDn");
+    //blvZinvMEUUp = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvMEUUp");
+    //blvZinvMEUDn = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvMEUDn");
 
-    weights              = new plotterFunctions::GenerateWeight;
-    njWeight             = new plotterFunctions::NJetWeight;
-    lepInfo              = new plotterFunctions::LepInfo;
-    fakebtagvectors      = new plotterFunctions::Fakebtagvectors;
+    //weights              = new plotterFunctions::GenerateWeight;
+    //njWeight             = new plotterFunctions::NJetWeight;
+    //lepInfo              = new plotterFunctions::LepInfo;
+    //fakebtagvectors      = new plotterFunctions::Fakebtagvectors;
     getSearchBin         = new plotterFunctions::GetSearchBin(sbEra);
     triggerInfo          = new plotterFunctions::TriggerInfo;
-    prepareMiniTupleVars = new plotterFunctions::PrepareMiniTupleVars(true);
-    systematicPrep       = new plotterFunctions::SystematicPrep;
-    systematicCalc       = new plotterFunctions::SystematicCalc(sbEra);
+    //prepareMiniTupleVars = new plotterFunctions::PrepareMiniTupleVars(true);
+    //systematicPrep       = new plotterFunctions::SystematicPrep;
+    //systematicCalc       = new plotterFunctions::SystematicCalc(sbEra);
 
     //taudiv               = new plotterFunctions::Taudiv;
-    taudiv               = new plotterFunctions::Taudiv(blvZinv->GetTopTaggerPtr());
-    nJetAk8              = new plotterFunctions::NJetAk8;
-    ak8DrMatch           = new plotterFunctions::Ak8DrMatch;
-
-    myPDFUnc = new PDFUncertainty();
-    bTagCorrector = nullptr;
-
-    if(isCondor)
-    {
-        bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "", false);
-    }
-    else
-    {
-        //bTagCorrector = new BTagCorrector("bTagEffHists.root", "/uscms_data/d3/snorberg/CMSSW_8_0_23_patch1/src/ZInvisible/Tools", false);
-        bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms_data/d3/nstrobbe/HadronicStop/CMSSW_8_0_25/src/ZInvisible/Tools/", false);
-    }
-
-    ISRcorrector = nullptr;
-    if(isCondor)
-    {
-       ISRcorrector = new ISRCorrector("allINone_ISRJets.root","","");   
-    }
-    else
-    {  
-        ISRcorrector = new ISRCorrector("allINone_ISRJets.root","/uscms_data/d3/nstrobbe/HadronicStop/CMSSW_8_0_25/src/SusyAnaTools/Tools/ISR_Root_Files/","");
-    }
+    //taudiv               = new plotterFunctions::Taudiv(blvZinv->GetTopTaggerPtr());
+    //nJetAk8              = new plotterFunctions::NJetAk8;
+    //ak8DrMatch           = new plotterFunctions::Ak8DrMatch;
+    //
+    //myPDFUnc = new PDFUncertainty();
+    //bTagCorrector = nullptr;
+    //
+    //if(isCondor)
+    //{
+    //    bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "", false);
+    //}
+    //else
+    //{
+    //    //bTagCorrector = new BTagCorrector("bTagEffHists.root", "/uscms_data/d3/snorberg/CMSSW_8_0_23_patch1/src/ZInvisible/Tools", false);
+    //    bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms_data/d3/nstrobbe/HadronicStop/CMSSW_8_0_25/src/ZInvisible/Tools/", false);
+    //}
+    //
+    //ISRcorrector = nullptr;
+    //if(isCondor)
+    //{
+    //   ISRcorrector = new ISRCorrector("allINone_ISRJets.root","","");   
+    //}
+    //else
+    //{  
+    //    ISRcorrector = new ISRCorrector("allINone_ISRJets.root","/uscms_data/d3/nstrobbe/HadronicStop/CMSSW_8_0_25/src/SusyAnaTools/Tools/ISR_Root_Files/","");
+    //}
 
 }
 RegisterFunctionsNTuple::~RegisterFunctionsNTuple()
 {
     if(myBLV) delete myBLV;
-    if(blvZinv) delete blvZinv;
-    if(blvZinv1b) delete blvZinv1b;
-    if(blvZinv2b) delete blvZinv2b;
-    if(blvZinv3b) delete blvZinv3b;
-    if(blvZinvJEUUp) delete blvZinvJEUUp;
-    if(blvZinvJEUDn) delete blvZinvJEUDn;
-    if(blvZinvMEUUp) delete blvZinvMEUUp;
-    if(blvZinvMEUDn) delete blvZinvMEUDn;
-    if(weights) delete weights;
-    if(njWeight) delete njWeight;
-    if(lepInfo) delete lepInfo;
-    if(fakebtagvectors) delete fakebtagvectors;
+    //if(blvZinv) delete blvZinv;
+    //if(blvZinv1b) delete blvZinv1b;
+    //if(blvZinv2b) delete blvZinv2b;
+    //if(blvZinv3b) delete blvZinv3b;
+    //if(blvZinvJEUUp) delete blvZinvJEUUp;
+    //if(blvZinvJEUDn) delete blvZinvJEUDn;
+    //if(blvZinvMEUUp) delete blvZinvMEUUp;
+    //if(blvZinvMEUDn) delete blvZinvMEUDn;
+    //if(weights) delete weights;
+    //if(njWeight) delete njWeight;
+    //if(lepInfo) delete lepInfo;
+    //if(fakebtagvectors) delete fakebtagvectors;
     if(getSearchBin) delete getSearchBin;
     if(triggerInfo) delete triggerInfo;
-    if(prepareMiniTupleVars) delete prepareMiniTupleVars;
-    if(myPDFUnc) delete myPDFUnc;
-    if(systematicPrep) delete systematicPrep;
-    if(systematicCalc) delete systematicCalc;
-    if(bTagCorrector) delete bTagCorrector;
-    if(ISRcorrector) delete ISRcorrector;
+    //if(prepareMiniTupleVars) delete prepareMiniTupleVars;
+    //if(myPDFUnc) delete myPDFUnc;
+    //if(systematicPrep) delete systematicPrep;
+    //if(systematicCalc) delete systematicCalc;
+    //if(bTagCorrector) delete bTagCorrector;
+    //if(ISRcorrector) delete ISRcorrector;
 }
         
 void RegisterFunctionsNTuple::registerFunctions(NTupleReader& tr)
@@ -159,30 +159,30 @@ void RegisterFunctionsNTuple::registerFunctions(NTupleReader& tr)
 
     //register functions with NTupleReader
     tr.registerFunction(*myBLV);
-    tr.registerFunction(*lepInfo);
-    tr.registerFunction(*weights);
-    tr.registerFunction(*blvZinv);
-    tr.registerFunction(*njWeight);
-    tr.registerFunction(*fakebtagvectors);
-    tr.registerFunction(*blvZinv1b);
-    tr.registerFunction(*blvZinv2b);
-    tr.registerFunction(*blvZinv3b);
-    tr.registerFunction(*systematicPrep);
-    tr.registerFunction(*blvZinvJEUUp);
-    tr.registerFunction(*blvZinvJEUDn);
-    tr.registerFunction(*blvZinvMEUUp);
-    tr.registerFunction(*blvZinvMEUDn);
+    //tr.registerFunction(*lepInfo);
+    //tr.registerFunction(*weights);
+    //tr.registerFunction(*blvZinv);
+    //tr.registerFunction(*njWeight);
+    //tr.registerFunction(*fakebtagvectors);
+    //tr.registerFunction(*blvZinv1b);
+    //tr.registerFunction(*blvZinv2b);
+    //tr.registerFunction(*blvZinv3b);
+    //tr.registerFunction(*systematicPrep);
+    //tr.registerFunction(*blvZinvJEUUp);
+    //tr.registerFunction(*blvZinvJEUDn);
+    //tr.registerFunction(*blvZinvMEUUp);
+    //tr.registerFunction(*blvZinvMEUDn);
     tr.registerFunction(*getSearchBin);
-    tr.registerFunction(*systematicCalc);
+    //tr.registerFunction(*systematicCalc);
     tr.registerFunction(*triggerInfo);
-    tr.registerFunction(*prepareMiniTupleVars);
+    //tr.registerFunction(*prepareMiniTupleVars);
     //tr.registerFunction(&printInterestingEvents);
-    tr.registerFunction(*myPDFUnc);
-    tr.registerFunction(*bTagCorrector);
-    tr.registerFunction(*nJetAk8);
-    tr.registerFunction(*taudiv);
-    tr.registerFunction(*ak8DrMatch);
-    tr.registerFunction(*ISRcorrector);
+    //tr.registerFunction(*myPDFUnc);
+    //tr.registerFunction(*bTagCorrector);
+    //tr.registerFunction(*nJetAk8);
+    //tr.registerFunction(*taudiv);
+    //tr.registerFunction(*ak8DrMatch);
+    //tr.registerFunction(*ISRcorrector);
 }
 
 void RegisterFunctionsNTuple::activateBranches(std::set<std::string>& activeBranches)
