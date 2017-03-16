@@ -1132,7 +1132,7 @@ namespace plotterFunctions
             const double w1b = wnb01 * weight1fakeb;
             const double w2b = wnb02 * weight2fakeb;
             const double w3b = wnb03 * weight3fakeb;
-
+	    /*
             if(cntCSVS == 0)
             {
                 //nb0Bins->push_back(std::make_pair(find_Binning_Index(0, nTopCandSortedCnt, MT2, cleanMet), 1.0));
@@ -1156,7 +1156,7 @@ namespace plotterFunctions
             tr.registerDerivedVar("weight1fakebComb", w1b);
             tr.registerDerivedVar("weight2fakebComb", w2b);
             tr.registerDerivedVar("weight3fakebComb", w3b);
-        }
+	    */ }
 
     public:
 
@@ -1801,7 +1801,7 @@ namespace plotterFunctions
             {
                 auto& top = topMVACands[iTop];
                 
-                auto MVAinputs = ttUtility::createMVAInputs(top);
+                auto MVAinputs = ttUtility::createMVAInputs(top,AnaConsts::cutCSVS);
                 for(auto& vec : mvaCandVars)
                 {
                     vec.second->push_back(MVAinputs[vec.first]);
@@ -1813,7 +1813,7 @@ namespace plotterFunctions
                 auto& top = *ttrMVA.getTops()[iTop];
                 vTopsNCandNewMVA->push_back(top.getNConstituents());
 
-                auto MVAinputs = ttUtility::createMVAInputs(top);
+                auto MVAinputs = ttUtility::createMVAInputs(top,AnaConsts::cutCSVS);
                 for(auto& vec : mvaVars)
                 {
                     vec.second->push_back(MVAinputs[vec.first]);

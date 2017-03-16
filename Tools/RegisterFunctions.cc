@@ -72,6 +72,9 @@ void activateBranches(std::set<std::string>& activeBranches)
     activeBranches.insert("nJetsAk8");
     activeBranches.insert("ak82dRMin");
     activeBranches.insert("ak81dRMin");
+    activeBranches.insert("tru_npv");
+    activeBranches.insert("npv");
+    activeBranches.insert("vtxSize");
 }
 
 ////////////////////////////////
@@ -81,9 +84,9 @@ RegisterFunctionsNTuple::RegisterFunctionsNTuple(bool isCondor, std::string sbEr
     //AnaFunctions::prepareTopTagger();
     myBLV     = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "", "");
     blvZinv   = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv");
-    blvZinv1b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv1b");
-    blvZinv2b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv2b");
-    blvZinv3b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv3b");
+    //blvZinv1b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv1b");
+    //blvZinv2b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv2b");
+    //blvZinv3b = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "Zinv3b");
     blvZinvJEUUp = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvJEUUp");
     blvZinvJEUDn = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvJEUDn");
     blvZinvMEUUp = new BaselineVessel(*static_cast<NTupleReader*>(nullptr), "ZinvMEUUp");
@@ -108,23 +111,23 @@ RegisterFunctionsNTuple::RegisterFunctionsNTuple(bool isCondor, std::string sbEr
 
     if(isCondor)
     {
-      //        bTagCorrector = new BTagCorrector("bTagEffHists.root", "", false);//"bTagEffHists.root", "", false);
+      //        bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "", false);//"bTagEffHists.root", "", false);
     }
     else
     {
-      //bTagCorrector = new BTagCorrector("bTagEffHists.root", "/uscms/home/pastika/nobackup/zinv/dev/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);
-        //bTagCorrector = new BTagCorrector("bTagEffHists.root", "/uscms_data/d3/nstrobbe/HadronicStop/DataTest/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);
+      //bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms/home/pastika/nobackup/zinv/dev/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);
+        //bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms_data/d3/nstrobbe/HadronicStop/DataTest/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);
     }
 
     /*
      ISRcorrector = nullptr;
     if(isCondor)
     {
-       ISRcorrector= new ISRCorrector("TTbarNoHad_NJetsISR.root","","");   
+       ISRcorrector= new ISRCorrector("allINone_ISRJets.root.root","","");   
     }
     else
     {  
-        ISRcorrector= new ISRCorrector("TTbarNoHad_NJetsISR.root","/uscms_data/d3/snorberg/CMSSW_8_0_23_patch1/src/SusyAnaTools/Tools/ISR_Root_Files/","");
+        ISRcorrector= new ISRCorrector("allINone_ISRJets.root.root","/uscms_data/d3/snorberg/CMSSW_8_0_23_patch1/src/SusyAnaTools/Tools/ISR_Root_Files/","");
     }
     */
 
@@ -143,9 +146,9 @@ RegisterFunctionsNTuple::~RegisterFunctionsNTuple()
 {
     if(myBLV) delete myBLV;
     if(blvZinv) delete blvZinv;
-    if(blvZinv1b) delete blvZinv1b;
-    if(blvZinv2b) delete blvZinv2b;
-    if(blvZinv3b) delete blvZinv3b;
+    //if(blvZinv1b) delete blvZinv1b;
+    //if(blvZinv2b) delete blvZinv2b;
+    //if(blvZinv3b) delete blvZinv3b;
     if(blvZinvJEUUp) delete blvZinvJEUUp;
     if(blvZinvJEUDn) delete blvZinvJEUDn;
     if(blvZinvMEUUp) delete blvZinvMEUUp;
@@ -176,9 +179,9 @@ void RegisterFunctionsNTuple::registerFunctions(NTupleReader& tr)
     tr.registerFunction(*blvZinv);
     tr.registerFunction(*njWeight);
     tr.registerFunction(*fakebtagvectors);
-    tr.registerFunction(*blvZinv1b);
-    tr.registerFunction(*blvZinv2b);
-    tr.registerFunction(*blvZinv3b);
+    //tr.registerFunction(*blvZinv1b);
+    //tr.registerFunction(*blvZinv2b);
+    //tr.registerFunction(*blvZinv3b);
     tr.registerFunction(*systematicPrep);
     tr.registerFunction(*blvZinvJEUUp);
     tr.registerFunction(*blvZinvJEUDn);

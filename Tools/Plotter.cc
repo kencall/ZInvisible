@@ -842,11 +842,11 @@ void Plotter::plot()
             else if(hvec.type.compare("stack") == 0)                             NlegEntries += hvec.hcsVec.size();
         }
 
-        TLegend *leg = new TLegend(0.50, 0.88 - NlegEntries * 0.045, 0.89, 0.88);
+        TLegend *leg = new TLegend(0.36, 0.60, 0.89, 0.90);//0.88 - NlegEntries * 0.045, 0.89, 0.88);
         leg->SetFillStyle(0);
         leg->SetBorderSize(0);
         leg->SetLineWidth(1);
-        leg->SetNColumns(1);
+        leg->SetNColumns(2);
         leg->SetTextFont(42);
 
         double max = 0.0, lmax = 0.0, min = 1.0e300, minAvgWgt = 1.0e300;
@@ -869,7 +869,7 @@ void Plotter::plot()
                     else                      sprintf(legEntry, "%s (%0.2e)",  hvec.hcsVec.front()->label.c_str(), integral);
                     leg->AddEntry(hvec.hcsVec.front()->h, legEntry, "PE");
                     //if(hist.isNorm) hvec.hcsVec.front()->h->Scale(hist.fhist()->Integral()/hvec.hcsVec.front()->h->Integral());
-                    if(hist.isNorm) hvec.hcsVec.front()->h->Scale(1.0/hvec.hcsVec.front()->h->Integral());
+                    //if(hist.isNorm) hvec.hcsVec.front()->h->Scale(1.0/hvec.hcsVec.front()->h->Integral());
                     smartMax(hvec.hcsVec.front()->h, leg, static_cast<TPad*>(gPad), min, max, lmax, true);
 
                     hvec.h = static_cast<TNamed*>(hvec.hcsVec.front()->h->Clone());
@@ -895,8 +895,8 @@ void Plotter::plot()
                     else if(integral < 1.0e5) sprintf(legEntry, "%s (%0.0lf)", h->label.c_str(), integral);
                     else                      sprintf(legEntry, "%s (%0.2e)",  h->label.c_str(), integral);
                     leg->AddEntry(h->h, legEntry, drawOptions.c_str());
-                    //if(hist.isNorm) h->h->Scale(hist.fhist()->Integral()/h->h->Integral());
-                    if(hist.isNorm) h->h->Scale(1.0/h->h->Integral());
+                    if(hist.isNorm) h->h->Scale(hist.fhist()->Integral()/h->h->Integral());
+                    //if(hist.isNorm) h->h->Scale(1.0/h->h->Integral());
                     smartMax(h->h, leg, static_cast<TPad*>(gPad), min, max, lmax);
                     minAvgWgt = std::min(minAvgWgt, h->h->GetSumOfWeights()/h->h->GetEntries());
                 }
@@ -949,10 +949,10 @@ void Plotter::plot()
                 }
                 for(auto ih = hvec.hcsVec.rbegin(); ih != hvec.hcsVec.rend(); ++ih)
                 {
-                    if(hist.isNorm) (*ih)->h->Scale(1.0/thstacksucks->Integral());
+		  //if(hist.isNorm) (*ih)->h->Scale(1.0/thstacksucks->Integral());
                     stack->Add((*ih)->h);
                 }
-                if(hist.isNorm) thstacksucks->Scale(1.0/thstacksucks->Integral());
+                //if(hist.isNorm) thstacksucks->Scale(1.0/thstacksucks->Integral());
                 smartMax(thstacksucks, leg, static_cast<TPad*>(gPad), min, max, lmax);
                 minAvgWgt = std::min(minAvgWgt, sow/te);
                 if(thstacksucks) delete thstacksucks;
