@@ -6,7 +6,7 @@
 #include "PDFUncertainty.h"
 #include "BTagCorrector.h"
 #include "PileupWeights.h"
-//x#include "ISRCorrector.h"
+#include "ISRCorrector.h"
 
 const std::set<std::string> RegisterFunctions::getMiniTupleSet()
 {
@@ -111,25 +111,25 @@ RegisterFunctionsNTuple::RegisterFunctionsNTuple(bool isCondor, std::string sbEr
 
     if(isCondor)
     {
-      //        bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "", false);//"bTagEffHists.root", "", false);
+      bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "", false);//"bTagEffHists.root", "", false);
     }
     else
     {
       //bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms/home/pastika/nobackup/zinv/dev/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);
-        //bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms_data/d3/nstrobbe/HadronicStop/DataTest/CMSSW_7_4_8/src/SusyAnaTools/Tools/", false);
+      bTagCorrector = new BTagCorrector("allINone_bTagEff.root", "/uscms_data/d3/nstrobbe/HadronicStop/CMSSW_8_0_25/src/ZInvisible/Tools/", false);
     }
 
-    /*
+    
      ISRcorrector = nullptr;
     if(isCondor)
     {
-       ISRcorrector= new ISRCorrector("allINone_ISRJets.root.root","","");   
+      ISRcorrector= new ISRCorrector("allINone_ISRJets.root","","");   
     }
     else
     {  
-        ISRcorrector= new ISRCorrector("allINone_ISRJets.root.root","/uscms_data/d3/snorberg/CMSSW_8_0_23_patch1/src/SusyAnaTools/Tools/ISR_Root_Files/","");
+      ISRcorrector = new ISRCorrector("allINone_ISRJets.root","/uscms_data/d3/nstrobbe/HadronicStop/CMSSW_8_0_25/src/SusyAnaTools/Tools/ISR_Root_Files/","");
     }
-    */
+    
 
     pileup = nullptr;
     if(isCondor)
@@ -193,11 +193,11 @@ void RegisterFunctionsNTuple::registerFunctions(NTupleReader& tr)
     tr.registerFunction(*prepareMiniTupleVars);
     //tr.registerFunction(&printInterestingEvents);
     tr.registerFunction(*myPDFUnc);
-    //tr.registerFunction(*bTagCorrector);
+    tr.registerFunction(*bTagCorrector);
     tr.registerFunction(*nJetAk8);
     tr.registerFunction(*taudiv);
     tr.registerFunction(*ak8DrMatch);
-    //tr.registerFunction(*ISRcorrector);
+    tr.registerFunction(*ISRcorrector);
     tr.registerFunction(*pileup);
 }
 
@@ -209,7 +209,7 @@ void RegisterFunctionsNTuple::activateBranches(std::set<std::string>& activeBran
 void RegisterFunctionsNTuple::remakeBTagCorrector(std::string sampleName)
 {
     if(sampleName.find("Data") == std::string::npos){
-      //  if(bTagCorrector) bTagCorrector->resetEffs(sampleName);
+      if(bTagCorrector) bTagCorrector->resetEffs(sampleName);
     }
 }
 

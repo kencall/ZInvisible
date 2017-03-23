@@ -16,20 +16,54 @@ with file(environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/TopTagger.cfg") as meow
             mvaFileName = line.split("=")[1].strip().strip("\"")
             break
 
+
+#here I hack in the tarball for GMP, this needs to be generalized to the other options 
+
+filestoTransferGMP = [environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/makeDataMCplots", 
+                      environ["CMSSW_BASE"] + "/src/SusyAnaTools/Tools/data/allINone_bTagEff.root", 
+                      environ["CMSSW_BASE"] + "/src/SusyAnaTools/Tools/ISR_Root_Files/ISRWeights.root", 
+                      environ["CMSSW_BASE"] + "/src/SusyAnaTools/Tools/ISR_Root_Files/allINone_ISRJets.root", 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/lepEffHists.root", 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/njetWgtHists.root", 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/dataMCweights.root", 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/CSVv2_Moriond17_B_H.csv", 
+                      environ["CMSSW_BASE"] + "/lib/${SCRAM_ARCH}/librecipeAUXOxbridgeMT2.so", 
+                      environ["CMSSW_BASE"] + "/src/opencv/lib/libopencv_ml.so.3.1", 
+                      environ["CMSSW_BASE"] + "/src/opencv/lib/libopencv_core.so.3.1", 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/%(trainingFile)s"%{"trainingFile":mvaFileName}, 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/TopTagger.cfg",
+                      environ["CMSSW_BASE"] + "/src/SusyAnaTools/Tools/data/PileupHistograms_0121_69p2mb_pm4p6.root", 
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/puppiCorr.root"]
+
+
 #go make plots!
 submitFileGMP = """universe = vanilla
 Executable = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh
 Requirements = OpSys == "LINUX"&& (Arch != "DUMMY" )
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
-Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/makeDataMCplots, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/allINone_bTagEff.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/allINone_ISRJets.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/lepEffHists.root,  $ENV(CMSSW_BASE)/src/ZInvisible/Tools/njetWgtHists.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/dataMCweights.root, $ENV(CMSSW_BASE)/src/SusyAnaTools/Tools/CSVFiles/CSVv2_ichep.csv, $ENV(CMSSW_BASE)/lib/$ENV(SCRAM_ARCH)/librecipeAUXOxbridgeMT2.so, $ENV(CMSSW_BASE)/src/opencv/lib/libopencv_core.so.3.1, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/%(trainingFile)s, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/TopTagger.cfg, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/ISRWeights.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/PileupHistograms_0121_69p2mb_pm4p6.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/puppiCorr.root
-Output = logs/makePlots_$(Process).stdout
-Error = logs/makePlots_$(Process).stderr
-Log = logs/makePlots_$(Process).log
+Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh,$ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/gmp.tar.gz,$ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/$ENV(CMSSW_VERSION).tar.gz
+Output = logs/makeDataMCplots_$(Process).stdout
+Error = logs/makeDataMCplots_$(Process).stderr
+Log = logs/makeDataMCplots_$(Process).log
 notify_user = ${LOGNAME}@FNAL.GOV
 x509userproxy = $ENV(X509_USER_PROXY)
 
-"""%{"trainingFile":mvaFileName} 
+"""
+
+filestoTransferGTP = [environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/makeTopPlots",
+                      environ["CMSSW_BASE"] + "/lib/${SCRAM_ARCH}/librecipeAUXOxbridgeMT2.so",
+                      environ["CMSSW_BASE"] + "/lib/${SCRAM_ARCH}/libTopTaggerTopTagger.so",
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/TopTagger.cfg",
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/Legacy_TopTagger.cfg",
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/TopTagger_AllComb.cfg",
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/TopTaggerCfg-MVAAK8_Tight_v1.2.1_trijetOnly.cfg",
+                      environ["CMSSW_BASE"] + "/src/opencv/lib/libopencv_core.so.3.1",
+                      environ["CMSSW_BASE"] + "/src/opencv/lib/libopencv_ml.so.3.1",
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/%(trainingFile)s"%{"trainingFile":mvaFileName},
+                      environ["CMSSW_BASE"] + "/src/ZInvisible/Tools/puppiCorr.root"
+                      ]
+
 
 #go make top plots!
 submitFileGTP = """universe = vanilla
@@ -37,15 +71,15 @@ Executable = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakeTopPlots.sh
 Requirements = OpSys == "LINUX"&& (Arch != "DUMMY" )
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
-Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/makeTopPlots, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/allINone_bTagEff.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/allINone_ISRJets.root,  $ENV(CMSSW_BASE)/src/ZInvisible/Tools/lepEffHists.root,  $ENV(CMSSW_BASE)/src/ZInvisible/Tools/njetWgtHists.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/dataMCweights.root, $ENV(CMSSW_BASE)/src/SusyAnaTools/Tools/CSVFiles/CSVv2_ichep.csv, $ENV(CMSSW_BASE)/lib/$ENV(SCRAM_ARCH)/librecipeAUXOxbridgeMT2.so, $ENV(CMSSW_BASE)/lib/$ENV(SCRAM_ARCH)/libTopTaggerTopTagger.so, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/TopTagger.cfg, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/TopTagger_noMVA.cfg, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/TopTagger_AllComb.cfg, $ENV(CMSSW_BASE)/src/opencv/lib/libopencv_core.so.3.1, $ENV(CMSSW_BASE)/src/opencv/lib/libopencv_ml.so.3.1, #$ENV(CMSSW_BASE)/src/ZInvisible/Tools/%(trainingFile)s, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/PileupHistograms_0121_69p2mb_pm4p6.root, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/puppiCorr.root
-Output = logs/makePlots_$(Process).stdout
-Error = logs/makePlots_$(Process).stderr
-Log = logs/makePlots_$(Process).log
+Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakePlots.sh,$ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/gtp.tar.gz,$ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/$ENV(CMSSW_VERSION).tar.gz 
+Output = logs/makeDataMCplots_$(Process).stdout
+Error = logs/makeDataMCplots_$(Process).stderr
+Log = logs/makeDataMCplots_$(Process).log
 notify_user = ${LOGNAME}@FNAL.GOV
 x509userproxy = $ENV(X509_USER_PROXY)
 
 
-"""%{"trainingFile":mvaFileName} 
+"""
 
 #go make lepton efficiency
 submitFileGME = """universe = vanilla
@@ -66,9 +100,9 @@ Requirements = OpSys == "LINUX"&& (Arch != "DUMMY" )
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/beffCalc, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakeBeff.sh
-Output = logs/makePlots_$(Process).stdout
-Error = logs/makePlots_$(Process).stderr
-Log = logs/makePlots_$(Process).log
+Output = logs/makeDataMCplots_$(Process).stdout
+Error = logs/makeDataMCplots_$(Process).stderr
+Log = logs/makeDataMCplots_$(Process).log
 notify_user = ${LOGNAME}@FNAL.GOV
 x509userproxy = $ENV(X509_USER_PROXY)
 
@@ -81,9 +115,9 @@ Requirements = OpSys == "LINUX"&& (Arch != "DUMMY" )
 Should_Transfer_Files = YES
 WhenToTransferOutput = ON_EXIT
 Transfer_Input_Files = $ENV(CMSSW_BASE)/src/ZInvisible/Tools/makeSignalHistograms, $ENV(CMSSW_BASE)/src/ZInvisible/Tools/condor/goMakeSigEff.sh
-Output = logs/makePlots_$(Process).stdout
-Error = logs/makePlots_$(Process).stderr
-Log = logs/makePlots_$(Process).log
+Output = logs/makeDataMCplots_$(Process).stdout
+Error = logs/makeDataMCplots_$(Process).stderr
+Log = logs/makeDataMCplots_$(Process).log
 notify_user = ${LOGNAME}@FNAL.GOV
 x509userproxy = $ENV(X509_USER_PROXY)
 
@@ -94,7 +128,7 @@ parser = optparse.OptionParser("usage: %prog [options]\n")
 parser.add_option ('-n',  dest='numfile', type='int', default = 5, help="number of files per job")
 parser.add_option ('-d',  dest='datasets', type='string', default = '', help="List of datasets 'ZJetsToNuNu,DYJetsToLL'")
 parser.add_option ('-l',  dest='dataCollections', action='store_true', default = False, help="List all datacollections")
-parser.add_option ('-L', dest='dataCollectionslong', action='store_true', default = False, help="List all datacollections and sub collections")
+parser.add_option ('-L',  dest='dataCollectionslong', action='store_true', default = False, help="List all datacollections and sub collections")
 parser.add_option ('-r',  dest='refLumi', type='string', default = None, help="Data collection to define lumi (uses default lumi if no reference data collection is defined)")
 parser.add_option ('-c',  dest='noSubmit', action='store_true', default = False, help="Do not submit jobs.  Only create condor_submit.txt.")
 parser.add_option ('-e',  dest='goMakeEff', action='store_true', default = False, help="Run calcEff instead of makePlots.")
@@ -106,6 +140,23 @@ options, args = parser.parse_args()
 
 submitFile = ""
 exeName = ""
+
+def makeExeAndFriendsTarrball(filestoTransfer, fname):
+    if not options.dataCollections and not options.dataCollectionslong:
+        #WORLDSWORSESOLUTIONTOAPROBLEM
+        system("mkdir -p WORLDSWORSESOLUTIONTOAPROBLEM")
+        for fn in filestoTransfer:
+            system("cd WORLDSWORSESOLUTIONTOAPROBLEM; ln -s %s"%fn)
+        
+        tarallinputs = "tar czvf %s.tar.gz WORLDSWORSESOLUTIONTOAPROBLEM --dereference"%fname
+        print tarallinputs
+        system(tarallinputs)
+        system("rm -r WORLDSWORSESOLUTIONTOAPROBLEM")
+
+
+if not options.dataCollections and not options.dataCollectionslong:
+    system("tar --exclude-caches-all --exclude-vcs -zcf ${CMSSW_VERSION}.tar.gz -C ${CMSSW_BASE}/.. ${CMSSW_VERSION} --exclude=src --exclude=tmp")
+
 
 if options.goMakeEff:
     exeName = "calcEff"
@@ -119,9 +170,11 @@ elif options.goMakeSigEff:
 elif options.goMakeTopPlots:
     exeName = "makeTopPlots"
     submitFile = submitFileGTP
+    makeExeAndFriendsTarrball(filestoTransferGTP, "gtp")
 else:
-    exeName = "makeDataMCplots"#"makePlots"
+    exeName = "makeDataMCplots"
     submitFile = submitFileGMP
+    makeExeAndFriendsTarrball(filestoTransferGMP, "gmp")
 
 nFilesPerJob = options.numfile
 
@@ -167,7 +220,7 @@ for ds in datasets:
                 if '.root' in l and not 'failed' in l:
                     count = count + 1
             for startFileNum in xrange(0, count, nFilesPerJob):
-                fileParts.append("Arguments = %s $ENV(CMSSW_BASE) %i %i %f %s\n"%(n, nFilesPerJob, startFileNum, lumi, s))
+                fileParts.append("Arguments = %s $ENV(CMSSW_VERSION) %i %i %f %s\n"%(n, nFilesPerJob, startFileNum, lumi, s))
                 fileParts.append("Output = logs/%s_%s_%i.stdout\n"%(exeName, n, startFileNum))
                 fileParts.append("Error = logs/%s_%s_%i.stderr\n"%(exeName, n, startFileNum))
                 fileParts.append("Log = logs/%s_%s_%i.log\n"%(exeName, n, startFileNum))

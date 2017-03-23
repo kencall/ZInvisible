@@ -350,10 +350,10 @@ int main(int argc, char* argv[])
 	//{"muZinv_loose0_ht500",       "passNoiseEventFilterZinv;passMuZinvSel;HTZinv>500;passnJetsZinv;passdPhisZinv"},
 	//{"muZinv_blnotagmt2",         "passMuZinvSel;passBaselineNoTagMT2Zinv"},
 	{"baseline",                  "passBaseline"},
-	{"baseline_Zinv",             "passBaselineZinv;passNoiseEventFilter"},//;passKoushik"},
-	{"baseline_ICHEP",            "cntCSVS>0;passLeptVeto;passnJets;passdPhis;passBJets;passTagger;passMT2;passNoiseEventFilter;passQCDHighMETFilter;passFastsimEventFilter;HT>500;met>200"}, //Andres
-	{"baseline_original",         "cntCSVS>0;passLeptVeto;passnJets;passdPhis;passBJets;passTagger;passMT2;passNoiseEventFilter;passQCDHighMETFilter;passFastsimEventFilter;passHT;passMET"},
-
+	//{"baseline_Zinv",             "passBaselineZinv;passNoiseEventFilter"},//;passKoushik"},
+	//{"baseline_ICHEP",            "cntCSVS>0;passLeptVeto;passnJets;passdPhis;passBJets;passTagger;passMT2;passNoiseEventFilter;passQCDHighMETFilter;passFastsimEventFilter;HT>500;met>200"}, //Andres
+	//{"baseline_original",         "cntCSVS>0;passLeptVeto;passnJets;passdPhis;passBJets;passTagger;passMT2;passNoiseEventFilter;passQCDHighMETFilter;passFastsimEventFilter;passHT;passMET"},
+	{"baseline_0b",               "cntCSVSZinv=0;passBaselineNoTag"},
 	//{"muZinv_0b",                 "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0"},
 /*
 	{"muZinv_0b_ht200",           "passNoiseEventFilterZinv;passMuZinvSel;cntCSVSZinv=0;HTZinv>200"},
