@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
     int nFiles = -1, startFile = 0, nEvts = -1;
     double lumi = AnaSamples::luminosity;
     std::string sbEra = "SB_v1_2017";//"SB_v1_2017";
+    std::string sbEraOri = "SB_v1_2017";//"SB_v1_2017";
 
     while((opt = getopt_long(argc, argv, "pstfcH:D:N:M:E:P:L:S:", long_options, &option_index)) != -1)
     {
@@ -161,7 +162,9 @@ int main(int argc, char* argv[])
 
     // Number of searchbins
     SearchBins sb(sbEra);
+    SearchBins sbOri(sbEraOri);
     int NSB = sb.nSearchBins();//37; // 45
+    int NSBOri = sbOri.nSearchBins();//37; // 45
     int NSB_1b_bins = 32;
 
     // Shortcuts for axis labels
@@ -1471,6 +1474,9 @@ int main(int argc, char* argv[])
     Plotter::DataCollection JEU_nSearchBin(      "single", {{"nSearchBin",    dsDY_nunu_njetnorm_bl}, {"nSearchBinJEUUp", dsDY_nunu_njetnorm_JEUUp}, {"nSearchBinJEUDn", dsDY_nunu_njetnorm_JEUDown}  });
     Plotter::DataCollection MEU_nSearchBin(      "single", {{"nSearchBin",    dsDY_nunu_njetnorm_bl}, {"nSearchBinMEUUp", dsDY_nunu_njetnorm_MEUUp}, {"nSearchBinMEUDn", dsDY_nunu_njetnorm_MEUDown}  });
     Plotter::DataCollection trigger_nSearchBin( "single", {{"nSearchBin",    dsDY_nunu_njetnorm_TriggerCentral}, {"nSearchBin",    dsDY_nunu_njetnorm_TriggerUp}, {"nSearchBin",    dsDY_nunu_njetnorm_TriggerDown}, {"nSearchBin",    dsDY_nunu_njetnorm}  });
+
+    Plotter::DataCollection trigger_nSearchBin_ori( "single", {{"nSearchBinOri",    dsDY_nunu_njetnorm_TriggerCentral}, {"nSearchBinOri",    dsDY_nunu_njetnorm_TriggerUp}, {"nSearchBinOri",    dsDY_nunu_njetnorm_TriggerDown}, {"nSearchBinOri",    dsDY_nunu_njetnorm}  });
+
         Plotter::DataCollection trigger_nSearchBin_1b_bins( "single", {{"nSearchBin_1b_bins",    dsDY_nunu_njetnorm_TriggerCentral}, {"nSearchBin_1b_bins",    dsDY_nunu_njetnorm_TriggerUp}, {"nSearchBin_1b_bins",    dsDY_nunu_njetnorm_TriggerDown}, {"nSearchBin_1b_bins",    dsDY_nunu_njetnorm}  });
     Plotter::DataCollection btag_nSearchBin(    "single", {{"nSearchBin", dsDY_nunu_njetnorm_btagCentral}, {"nSearchBin", dsDY_nunu_njetnorm_btagUp}, {"nSearchBin", dsDY_nunu_njetnorm_btagDn}});
     Plotter::DataCollection bmistag_nSearchBin( "single", {{"nSearchBin", dsDY_nunu_njetnorm_btagCentral}, {"nSearchBin", dsDY_nunu_njetnorm_bmistagUp}, {"nSearchBin", dsDY_nunu_njetnorm_bmistagDn}});
@@ -1501,6 +1507,7 @@ int main(int argc, char* argv[])
     vh.push_back(PHS("syst_JESUncert_nSearchBin",     {JEU_nSearchBin},   {2, 1}, "",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
     vh.push_back(PHS("syst_MESUncert_nSearchBin",     {MEU_nSearchBin},   {2, 1}, "",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
     vh.push_back(PHS("TriggerWgt_nSearchBin",         {trigger_nSearchBin},  {2, 1}, "passBaselineZinv",   NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    vh.push_back(PHS("TriggerWgt_nSearchBin_Ori",         {trigger_nSearchBin_ori},  {2, 1}, "passBaselineZinv",   NSBOri,  0,     NSBOri,   false, false,  "Search Bin",     "Events", true));
     //1b bins with ob
         vh.push_back(PHS("NJetWgt_nSearchBin_1b_bins",            {njetw_nSearchBin_1b_bins}, {2, 1}, "cntCSVSZinv=0;passBaselineNoTagZinv",        NSB_1b_bins,  0,     NSB_1b_bins,   false, false,  "Search Bin",     "Events", true));
     vh.push_back(PHS("NJetWgt_nSearchBin_log_1b_bins",        {njetw_nSearchBin_1b_bins}, {2, 1}, "cntCSVSZinv=0;passBaselineNoTagZinv",        NSB_1b_bins,  0,     NSB_1b_bins,   true,  false,  "Search Bin",     "Events", true));

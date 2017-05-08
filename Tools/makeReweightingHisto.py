@@ -539,12 +539,13 @@ def systHarvest(filename):
     #fout = TFile.Open("syst_shape.root", "RECREATE")
     # Run over the relevant histograms
     # histo names
-    NSB = 84
+    NSB = 10
 
     # Get shape central value uncertainty
     f = TFile("systematics.root")
 
-    hShape_MET_Nom1 = f.Get("nSearchBin/systWgtTest_cleanMetPtnSearchBinnSearchBinNominalsingle")
+                                       
+    hShape_MET_Nom = f.Get("nSearchBin/systWgtMET_cleanMetPtnSearchBinnSearchBinNominalsingle")
     hShape_MET_Var = f.Get("nSearchBin/systWgtMET_cleanMetPtnSearchBinnSearchBinvariedsingle")
     hShape_MT2_Nom = f.Get("nSearchBin/systWgtMT2_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
     hShape_MT2_Var = f.Get("nSearchBin/systWgtMT2_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
@@ -552,6 +553,8 @@ def systHarvest(filename):
     hShape_NT_Var  = f.Get("nSearchBin/systWgtNT_nTopCandSortedCntZinvnSearchBinnSearchBinvariedsingle")
     hShape_NB_Nom  = f.Get("nSearchBin/systWgtNB_cntCSVSZinvnSearchBinnSearchBinNominalsingle")
     hShape_NB_Var  = f.Get("nSearchBin/systWgtNB_cntCSVSZinvnSearchBinnSearchBinvariedsingle")
+    hShape_HT_Nom  = f.Get("nSearchBin/systWgtHT_HTZinvnSearchBinnSearchBinNominalsingle")
+    hShape_HT_Var  = f.Get("nSearchBin/systWgtHT_HTZinvnSearchBinnSearchBinvariedsingle")
     #When we move to the spacing than it is done!
     #hShape_MET_Nom1 = f.Get("nSearchBin/systWgtTest_cleanMetPt__nSearchBin______nSearchBin__Nominal__single")
     #hShape_MET_Var = f.Get("nSearchBin/systWgtMET_cleanMetPt__nSearchBin______nSearchBin__varied__single")
@@ -562,10 +565,8 @@ def systHarvest(filename):
     #hShape_NB_Nom  = f.Get("nSearchBin/systWgtNB_cntCSVSZinv__nSearchBin______nSearchBin__Nominal__single")
     #hShape_NB_Var  = f.Get("nSearchBin/systWgtNB_cntCSVSZinv__nSearchBin______nSearchBin__varied__single")
 
-    print hShape_MET_Var.Clone("nSearchBin/"+hShape_MET_Nom1.GetName()+"_ratio").GetName(), f
-    hShape_MET_ratio = hShape_MET_Var.Clone("nSearchBin/"+hShape_MET_Nom1.GetName()+"_ratio")
-    print hShape_MET_Var.GetName()
-    hShape_MET_ratio.Divide(hShape_MET_Nom1)
+    hShape_MET_ratio = hShape_MET_Var.Clone(hShape_MET_Nom.GetName()+"_ratio")
+    hShape_MET_ratio.Divide(hShape_MET_Nom)
 
     hShape_MT2_ratio = hShape_MT2_Var.Clone(hShape_MT2_Nom.GetName()+"_ratio")
     hShape_MT2_ratio.Divide(hShape_MT2_Nom)
@@ -576,6 +577,9 @@ def systHarvest(filename):
     hShape_NB_ratio = hShape_NB_Var.Clone(hShape_NB_Nom.GetName()+"_ratio")
     hShape_NB_ratio.Divide(hShape_NB_Nom)
 
+    hShape_HT_ratio = hShape_HT_Var.Clone(hShape_HT_Nom.GetName()+"_ratio")
+    hShape_HT_ratio.Divide(hShape_NB_Nom)
+
     hShape_final = hShape_MET_ratio.Clone("shape_central")
 
     for i in xrange(1, hShape_MET_ratio.GetNbinsX() + 1):
@@ -583,79 +587,85 @@ def systHarvest(filename):
         uncertMT2 = hShape_MT2_ratio.GetBinContent(i) - 1 if hShape_MT2_ratio.GetBinContent(i) > 0 else 0
         uncertNT = hShape_NT_ratio.GetBinContent(i) - 1 if hShape_NT_ratio.GetBinContent(i) > 0 else 0
         uncertNB = hShape_NB_ratio.GetBinContent(i) - 1 if hShape_NB_ratio.GetBinContent(i) > 0 else 0
-        hShape_final.SetBinContent(i, sqrt(uncertMET**2 + uncertMT2**2 + uncertNT**2 + uncertNB**2))
+        uncertHT = hShape_HT_ratio.GetBinContent(i) - 1 if hShape_HT_ratio.GetBinContent(i) > 0 else 0
+        hShape_final.SetBinContent(i, sqrt(uncertMET**2 + uncertMT2**2 + uncertNT**2 + uncertNB**2 + uncertHT**2))
 
     fout = TFile("syst_all.root", "RECREATE")
     hShape_final.Write()
+    hShape_MET_ratio.Write()
+    hShape_MT2_ratio.Write()
+    hShape_NT_ratio.Write()
+    hShape_NB_ratio.Write()
+    hShape_HT_ratio.Write()
 
 
-    # Get correlation study info
-    hCorr_METGaus_Nom = f.Get("nSearchBin/CorrMETGaus_cleanMetPtnSearchBinnSearchBinNominalsingle")
-    hCorr_METGaus_Var = f.Get("nSearchBin/CorrMETGaus_cleanMetPtnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2Gaus_Nom = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2Gaus_Var = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2vMETGaus_Nom = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2vMETGaus_Var = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-    hCorr_METLogi_Nom = f.Get("nSearchBin/CorrMETLogi_cleanMetPtnSearchBinnSearchBinNominalsingle")
-    hCorr_METLogi_Var = f.Get("nSearchBin/CorrMETLogi_cleanMetPtnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2Logi_Nom = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2Logi_Var = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-    hCorr_MT2vMETLogi_Nom = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
-    hCorr_MT2vMETLogi_Var = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
-
-    #hCorr_METGaus_Nom = f.Get("nSearchBin/CorrMETGaus_cleanMetPt__nSearchBin______nSearchBin__Nominal__single")
-    #hCorr_METGaus_Var = f.Get("nSearchBin/CorrMETGaus_cleanMetPt__nSearchBin______nSearchBin__varied__single")
-    #hCorr_MT2Gaus_Nom = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
-    #hCorr_MT2Gaus_Var = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
-    #hCorr_MT2vMETGaus_Nom = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
-    #hCorr_MT2vMETGaus_Var = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
-    #hCorr_METLogi_Nom = f.Get("nSearchBin/CorrMETLogi_cleanMetPt__nSearchBin______nSearchBin__Nominal__single")
-    #hCorr_METLogi_Var = f.Get("nSearchBin/CorrMETLogi_cleanMetPt__nSearchBin______nSearchBin__varied__single")
-    #hCorr_MT2Logi_Nom = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
-    #hCorr_MT2Logi_Var = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
-    #hCorr_MT2vMETLogi_Nom = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
-    #hCorr_MT2vMETLogi_Var = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
-
-    hCorr_METGaus_ratio = hCorr_METGaus_Var.Clone(hCorr_METGaus_Nom.GetName()+"_ratio")
-    hCorr_METGaus_ratio.Divide(hCorr_METGaus_Nom)
-    hCorr_METGaus_ratio.Write()
-
-    hCorr_MT2Gaus_ratio = hCorr_MT2Gaus_Var.Clone(hCorr_MT2Gaus_Nom.GetName()+"_ratio")
-    hCorr_MT2Gaus_ratio.Divide(hCorr_MT2Gaus_Nom)
-    hCorr_MT2Gaus_ratio.Write()
-
-    hCorr_MT2vMETGaus_ratio = hCorr_MT2vMETGaus_Var.Clone(hCorr_MT2vMETGaus_Nom.GetName()+"_ratio")
-    hCorr_MT2vMETGaus_ratio.Divide(hCorr_MT2vMETGaus_Nom)
-
-    hCorr_METLogi_ratio = hCorr_METLogi_Var.Clone(hCorr_METLogi_Nom.GetName()+"_ratio")
-    hCorr_METLogi_ratio.Divide(hCorr_METLogi_Nom)
-    hCorr_METLogi_ratio.Write()
-
-    hCorr_MT2Logi_ratio = hCorr_MT2Logi_Var.Clone(hCorr_MT2Logi_Nom.GetName()+"_ratio")
-    hCorr_MT2Logi_ratio.Divide(hCorr_MT2Logi_Nom)
-    hCorr_MT2Logi_ratio.Write()
-
-    hCorr_MT2vMETLogi_ratio = hCorr_MT2vMETLogi_Var.Clone(hCorr_MT2vMETLogi_Nom.GetName()+"_ratio")
-    hCorr_MT2vMETLogi_ratio.Divide(hCorr_MT2vMETLogi_Nom)
-
-    hCorr_Gaus_final = hCorr_METGaus_ratio.Clone("Corr_1D_Gauss")
-    hCorr_Logi_final = hCorr_METLogi_ratio.Clone("Corr_1D_Logistic")
-    for i in xrange(1, hCorr_METGaus_ratio.GetNbinsX() + 1):
-        uncertCorrMET = hCorr_METGaus_ratio.GetBinContent(i) - 1 if hCorr_METGaus_ratio.GetBinContent(i) > 0 else 0
-        uncertCorrMT2 = hCorr_MT2Gaus_ratio.GetBinContent(i) - 1 if hCorr_MT2Gaus_ratio.GetBinContent(i) > 0 else 0
-        hCorr_Gaus_final.SetBinContent(i, sqrt(uncertCorrMET**2 + uncertCorrMT2**2))
-    for i in xrange(1, hCorr_METLogi_ratio.GetNbinsX() + 1):
-        uncertCorrMET = hCorr_METLogi_ratio.GetBinContent(i) - 1 if hCorr_METLogi_ratio.GetBinContent(i) > 0 else 0
-        uncertCorrMT2 = hCorr_MT2Logi_ratio.GetBinContent(i) - 1 if hCorr_MT2Logi_ratio.GetBinContent(i) > 0 else 0
-        hCorr_Logi_final.SetBinContent(i, sqrt(uncertCorrMET**2 + uncertCorrMT2**2))
-    for i in xrange(1, hCorr_MT2vMETGaus_ratio.GetNbinsX()+1):
-        hCorr_MT2vMETGaus_ratio.SetBinContent(i,abs(hCorr_MT2vMETGaus_ratio.GetBinContent(i)-1) if hCorr_MT2vMETGaus_ratio.GetBinContent(i)>0 else 0)
-        hCorr_MT2vMETLogi_ratio.SetBinContent(i,abs(hCorr_MT2vMETLogi_ratio.GetBinContent(i)-1) if hCorr_MT2vMETLogi_ratio.GetBinContent(i)>0 else 0)
-
-    hCorr_Gaus_final.Write()
-    hCorr_Logi_final.Write()
-    hCorr_MT2vMETGaus_ratio.Write("Corr_2D_Gauss")
-    hCorr_MT2vMETLogi_ratio.Write("Corr_2D_Logistic")
+#    # Get correlation study info
+#    hCorr_METGaus_Nom = f.Get("nSearchBin/CorrMETGaus_cleanMetPtnSearchBinnSearchBinNominalsingle")
+#    hCorr_METGaus_Var = f.Get("nSearchBin/CorrMETGaus_cleanMetPtnSearchBinnSearchBinvariedsingle")
+#    hCorr_MT2Gaus_Nom = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
+#    hCorr_MT2Gaus_Var = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
+#    hCorr_MT2vMETGaus_Nom = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
+#    hCorr_MT2vMETGaus_Var = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
+#    hCorr_METLogi_Nom = f.Get("nSearchBin/CorrMETLogi_cleanMetPtnSearchBinnSearchBinNominalsingle")
+#    hCorr_METLogi_Var = f.Get("nSearchBin/CorrMETLogi_cleanMetPtnSearchBinnSearchBinvariedsingle")
+#    hCorr_MT2Logi_Nom = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
+#    hCorr_MT2Logi_Var = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
+#    hCorr_MT2vMETLogi_Nom = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinNominalsingle")
+#    hCorr_MT2vMETLogi_Var = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2ZinvnSearchBinnSearchBinvariedsingle")
+#
+#    #hCorr_METGaus_Nom = f.Get("nSearchBin/CorrMETGaus_cleanMetPt__nSearchBin______nSearchBin__Nominal__single")
+#    #hCorr_METGaus_Var = f.Get("nSearchBin/CorrMETGaus_cleanMetPt__nSearchBin______nSearchBin__varied__single")
+#    #hCorr_MT2Gaus_Nom = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
+#    #hCorr_MT2Gaus_Var = f.Get("nSearchBin/CorrMT2Gaus_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
+#    #hCorr_MT2vMETGaus_Nom = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
+#    #hCorr_MT2vMETGaus_Var = f.Get("nSearchBin/CorrMT2vMETGaus_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
+#    #hCorr_METLogi_Nom = f.Get("nSearchBin/CorrMETLogi_cleanMetPt__nSearchBin______nSearchBin__Nominal__single")
+#    #hCorr_METLogi_Var = f.Get("nSearchBin/CorrMETLogi_cleanMetPt__nSearchBin______nSearchBin__varied__single")
+#    #hCorr_MT2Logi_Nom = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
+#    #hCorr_MT2Logi_Var = f.Get("nSearchBin/CorrMT2Logi_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
+#    #hCorr_MT2vMETLogi_Nom = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__Nominal__single")
+#    #hCorr_MT2vMETLogi_Var = f.Get("nSearchBin/CorrMT2vMETLogi_cleanMetPt_best_had_brJet_MT2Zinv__nSearchBin______nSearchBin__varied__single")
+#
+#    hCorr_METGaus_ratio = hCorr_METGaus_Var.Clone(hCorr_METGaus_Nom.GetName()+"_ratio")
+#    hCorr_METGaus_ratio.Divide(hCorr_METGaus_Nom)
+#    hCorr_METGaus_ratio.Write()
+#
+#    hCorr_MT2Gaus_ratio = hCorr_MT2Gaus_Var.Clone(hCorr_MT2Gaus_Nom.GetName()+"_ratio")
+#    hCorr_MT2Gaus_ratio.Divide(hCorr_MT2Gaus_Nom)
+#    hCorr_MT2Gaus_ratio.Write()
+#
+#    hCorr_MT2vMETGaus_ratio = hCorr_MT2vMETGaus_Var.Clone(hCorr_MT2vMETGaus_Nom.GetName()+"_ratio")
+#    hCorr_MT2vMETGaus_ratio.Divide(hCorr_MT2vMETGaus_Nom)
+#
+#    hCorr_METLogi_ratio = hCorr_METLogi_Var.Clone(hCorr_METLogi_Nom.GetName()+"_ratio")
+#    hCorr_METLogi_ratio.Divide(hCorr_METLogi_Nom)
+#    hCorr_METLogi_ratio.Write()
+#
+#    hCorr_MT2Logi_ratio = hCorr_MT2Logi_Var.Clone(hCorr_MT2Logi_Nom.GetName()+"_ratio")
+#    hCorr_MT2Logi_ratio.Divide(hCorr_MT2Logi_Nom)
+#    hCorr_MT2Logi_ratio.Write()
+#
+#    hCorr_MT2vMETLogi_ratio = hCorr_MT2vMETLogi_Var.Clone(hCorr_MT2vMETLogi_Nom.GetName()+"_ratio")
+#    hCorr_MT2vMETLogi_ratio.Divide(hCorr_MT2vMETLogi_Nom)
+#
+#    hCorr_Gaus_final = hCorr_METGaus_ratio.Clone("Corr_1D_Gauss")
+#    hCorr_Logi_final = hCorr_METLogi_ratio.Clone("Corr_1D_Logistic")
+#    for i in xrange(1, hCorr_METGaus_ratio.GetNbinsX() + 1):
+#        uncertCorrMET = hCorr_METGaus_ratio.GetBinContent(i) - 1 if hCorr_METGaus_ratio.GetBinContent(i) > 0 else 0
+#        uncertCorrMT2 = hCorr_MT2Gaus_ratio.GetBinContent(i) - 1 if hCorr_MT2Gaus_ratio.GetBinContent(i) > 0 else 0
+#        hCorr_Gaus_final.SetBinContent(i, sqrt(uncertCorrMET**2 + uncertCorrMT2**2))
+#    for i in xrange(1, hCorr_METLogi_ratio.GetNbinsX() + 1):
+#        uncertCorrMET = hCorr_METLogi_ratio.GetBinContent(i) - 1 if hCorr_METLogi_ratio.GetBinContent(i) > 0 else 0
+#        uncertCorrMT2 = hCorr_MT2Logi_ratio.GetBinContent(i) - 1 if hCorr_MT2Logi_ratio.GetBinContent(i) > 0 else 0
+#        hCorr_Logi_final.SetBinContent(i, sqrt(uncertCorrMET**2 + uncertCorrMT2**2))
+#    for i in xrange(1, hCorr_MT2vMETGaus_ratio.GetNbinsX()+1):
+#        hCorr_MT2vMETGaus_ratio.SetBinContent(i,abs(hCorr_MT2vMETGaus_ratio.GetBinContent(i)-1) if hCorr_MT2vMETGaus_ratio.GetBinContent(i)>0 else 0)
+#        hCorr_MT2vMETLogi_ratio.SetBinContent(i,abs(hCorr_MT2vMETLogi_ratio.GetBinContent(i)-1) if hCorr_MT2vMETLogi_ratio.GetBinContent(i)>0 else 0)
+#
+#    hCorr_Gaus_final.Write()
+#    hCorr_Logi_final.Write()
+#    hCorr_MT2vMETGaus_ratio.Write("Corr_2D_Gauss")
+#    hCorr_MT2vMETLogi_ratio.Write("Corr_2D_Logistic")
 
     # Pull
     #hPull = hCorr_MT2vMETLogi_ratio.Clone("Pull_Logi")
@@ -702,15 +712,15 @@ def systHarvest(filename):
     fout.cd()
     hMCstats.Write()
 
-    hClosureZ = f4.Get("nSearchBin/nSearchBinnSearchBinnSearchBinZ#rightarrow#nu#nusingle")
-    hClosureDY = f4.Get("nSearchBin/nSearchBinnSearchBinnSearchBinDY#rightarrow#mu#mu no #mu, Z eff+accsingle")
-    hClosureRatio = hClosureZ.Clone("MC_closure")
-    hClosureRatio.Add(hClosureDY, -1)
-    hClosureRatio.Divide(hClosureZ)
-    for i in xrange(1, hClosureRatio.GetNbinsX() + 1):
-        hClosureRatio.SetBinContent(i, abs(hClosureRatio.GetBinContent(i)))
-    fout.cd()
-    hClosureRatio.Write()
+    #hClosureZ = f4.Get("nSearchBin/nSearchBinnSearchBinnSearchBinZ#rightarrow#nu#nusingle")
+    #hClosureDY = f4.Get("nSearchBin/nSearchBinnSearchBinnSearchBinDY#rightarrow#mu#mu no #mu, Z eff+accsingle")
+    #hClosureRatio = hClosureZ.Clone("MC_closure")
+    #hClosureRatio.Add(hClosureDY, -1)
+    #hClosureRatio.Divide(hClosureZ)
+    #for i in xrange(1, hClosureRatio.GetNbinsX() + 1):
+    #    hClosureRatio.SetBinContent(i, abs(hClosureRatio.GetBinContent(i)))
+    #fout.cd()
+    #hClosureRatio.Write()
 
     hJECNom = f4.Get("nSearchBin/syst_JESUncert_nSearchBinnSearchBinnSearchBinZ#rightarrow#nu#nu Njet+norm weightsingle")
     hJECUp = f4.Get("nSearchBinJEUUp/syst_JESUncert_nSearchBinnSearchBinJEUUpnSearchBinJEUUpZ#rightarrow#nu#nu JEC Upsingle")
@@ -904,7 +914,7 @@ def systHarvest(filename):
     #print "%-25s = %s"%("cs_event", ' '.join(["%8.3f" % (hNEff.GetBinContent(i)) for i in xrange(1, NSB+1)]))
 
     data = []
-    for i in xrange(1, hNEff.GetNbinsX() + 1):
+    for i in xrange(1, NSB+1):
         if hNEff.GetBinContent(i) >= 1:
             data.append("%8.5f" % (hPrediction.GetBinContent(i)/math.floor(hNEff.GetBinContent(i))))
         else:

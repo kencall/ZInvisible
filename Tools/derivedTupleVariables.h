@@ -1154,7 +1154,7 @@ namespace plotterFunctions
     class GetSearchBin
     {
     private:
-        SearchBins sbins;
+        SearchBins sbins, sbinsOri;
 
         void getSearchBin(NTupleReader& tr)
         {
@@ -1192,6 +1192,10 @@ namespace plotterFunctions
             //int nSearchBin = sbins.find_Binning_Index(cntCSVS, nTopCandSortedCnt, MT2, cleanMet);
             std::vector<int>* nSearchBin = new std::vector<int>();
             *nSearchBin = sbins.find_Binning_Indices(cntCSVS, nTopCandSortedCnt, MT2, cleanMet, HT);            
+
+            std::vector<int>* nSearchBinOri = new std::vector<int>();
+            *nSearchBinOri = sbinsOri.find_Binning_Indices(cntCSVS, nTopCandSortedCnt, MT2, cleanMet, HT);            
+
             int nSearchBin_1b_bins = sbins.find_Binning_Index(cntCSVS == 1, nTopCandSortedCnt, MT2, cleanMet, HT);
             
             //std::vector<std::pair<double, double> > * nb0Bins = new std::vector<std::pair<double, double> >();
@@ -1228,6 +1232,7 @@ namespace plotterFunctions
             }
 
             tr.registerDerivedVec("nSearchBin", nSearchBin);
+            tr.registerDerivedVec("nSearchBinOri", nSearchBinOri);
             tr.registerDerivedVar("nSearchBin_1b_bins", nSearchBin_1b_bins);
             //tr.registerDerivedVec("nb0BinsNW", nb0BinsNW);
             //tr.registerDerivedVec("nb0Bins", nb0Bins);
@@ -1239,7 +1244,7 @@ namespace plotterFunctions
 
     public:
 
-        GetSearchBin(std::string sb_era) : sbins(sb_era) {}
+        GetSearchBin(std::string sb_era) : sbins(sb_era), sbinsOri("SB_v1_2017") {}
 
         void operator()(NTupleReader& tr)
         {

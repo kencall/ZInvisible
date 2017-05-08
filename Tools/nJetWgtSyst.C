@@ -64,6 +64,7 @@ int main()
     TH1* shapeMT2;
     TH1* shapeNT;
     TH1* shapeNB;
+    TH1* shapeHT;
 
     TRandom3 tr3(153474);
 
@@ -89,6 +90,7 @@ int main()
         shapeMT2 = static_cast<TH1*>(f->Get("ShapeRatio_mt2")->Clone());
         shapeNT  = static_cast<TH1*>(f->Get("ShapeRatio_nt")->Clone());
         shapeNB  = static_cast<TH1*>(f->Get("ShapeRatio_nb")->Clone());
+        shapeHT  = static_cast<TH1*>(f->Get("ShapeRatio_ht")->Clone());
         f->Close();
         delete f;
     }
@@ -104,14 +106,15 @@ int main()
 
     //Prep variables for nJet and shape systematic weights
     const int NTRIALS = 1000;
-    const int NSEARCHBINS = 84;
+    const int NSEARCHBINS = 30;
 
-    TH1 *h[5][NSEARCHBINS];
-    std::vector<std::string> hnames = {"njet", "met", "mt2", "nt", "nb"};
+    const int Nhnames = 6;
+    TH1 *h[Nhnames][NSEARCHBINS];
+    std::vector<std::string> hnames = {"njet", "met", "mt2", "nt", "nb", "ht"};
 
     float N0[NSEARCHBINS];
     float N0square[NSEARCHBINS];
-    float N[5][NSEARCHBINS][NTRIALS];
+    float N[Nhnames][NSEARCHBINS][NTRIALS];
     float N0_83=0.0;
     float N0square_83=0.0;
     float N0_divide_83=0.0; 
@@ -130,18 +133,19 @@ int main()
     int n84t_num=0;
     int n80_num=0;
 
-    float variations[5][20][NTRIALS];
+    float variations[Nhnames][20][NTRIALS];
     for(int iT = 0; iT < NTRIALS; ++iT)
     {
-        for(int i = 0; i < 5; ++i) for(int j = 0; j < 20; ++j) variations[i][j][iT] = 1.0;
+        for(int i = 0; i < Nhnames; ++i) for(int j = 0; j < 20; ++j) variations[i][j][iT] = 1.0;
         for(int i = 0; i <= njWDYZ_g1b->GetNbinsX() + 1; ++i) if(njWDYZ_g1b->GetBinContent(i) > 1e-10) variations[0][i][iT] = (float)tr3.Gaus(1.0, njWDYZ_g1b->GetBinError(i)/njWDYZ_g1b->GetBinContent(i));
         for(int i = 0; i <= shapeMET  ->GetNbinsX() + 1; ++i) if(shapeMET->GetBinContent(i) > 1e-10)   variations[1][i][iT] = (float)tr3.Gaus(1.0, shapeMET->GetBinError(i)/shapeMET->GetBinContent(i));
         for(int i = 0; i <= shapeMT2  ->GetNbinsX() + 1; ++i) if(shapeMT2->GetBinContent(i) > 1e-10)   variations[2][i][iT] = (float)tr3.Gaus(1.0, shapeMT2->GetBinError(i)/shapeMT2->GetBinContent(i));
         for(int i = 0; i <= shapeNT   ->GetNbinsX() + 1; ++i) if(shapeNT->GetBinContent(i) > 1e-10)    variations[3][i][iT] = (float)tr3.Gaus(1.0, shapeNT->GetBinError(i)/shapeNT->GetBinContent(i));
         for(int i = 0; i <= shapeNB   ->GetNbinsX() + 1; ++i) if(shapeNB->GetBinContent(i) > 1e-10)    variations[4][i][iT] = (float)tr3.Gaus(1.0, shapeNB->GetBinError(i)/shapeNB->GetBinContent(i));
+        for(int i = 0; i <= shapeHT   ->GetNbinsX() + 1; ++i) if(shapeHT->GetBinContent(i) > 1e-10)    variations[5][i][iT] = (float)tr3.Gaus(1.0, shapeHT->GetBinError(i)/shapeHT->GetBinContent(i));
     }
 
-    for(int ih = 0; ih < 5; ++ih)
+    for(int ih = 0; ih < Nhnames; ++ih)
     {
         for(int i = 0; i < NSEARCHBINS; ++i)
         {
@@ -245,12 +249,13 @@ int main()
             {
                 if(tr.getEvtNum() % 10000 == 0) std::cout << "Event #: " << tr.getEvtNum() << std::endl;
 
-                const int& nSearchBin = tr.getVar<int>("nSearchBin");
+                const std::vector<int>& nSearchBinVec = tr.getVec<int>("nSearchBin");
                 const int& cntNJetsPt30Eta24Zinv = tr.getVar<int>("cntNJetsPt30Eta24Zinv");
                 const double& cleanMetPt = tr.getVar<double>("cleanMetPt");
                 const double& best_had_brJet_MT2Zinv = tr.getVar<double>("best_had_brJet_MT2Zinv");
                 const int& cntCSVSZinv            = tr.getVar<int>("cntCSVSZinv");
                 const int& nTopCandSortedCntZinv  = tr.getVar<int>("nTopCandSortedCntZinv");
+                const double& HTZinv   = tr.getVar<double>("HTZinv");
                 const bool& passBaseline = tr.getVar<bool>("passBaseline");
                 const bool& passBaselineZinv = tr.getVar<bool>("passBaselineZinv");
                 const bool& passLeptVeto = tr.getVar<bool>("passLeptVeto");
@@ -306,19 +311,23 @@ int main()
                 {
                     double weight = triggerEffMC * nJetWgtDYZ * normWgt0b * bTagSF_EventWeightSimple_Central * fs.getWeight();
 
-                    if(nSearchBin >= 0 && nSearchBin < NSEARCHBINS)
+                    for(const int nSearchBin: nSearchBinVec)
                     {
-                        N0[nSearchBin] += weight;
-                        N0square[nSearchBin] += weight*weight;
-                        for(int iTrial = 0; iTrial < NTRIALS; ++iTrial)
+                        if(nSearchBin >= 0 && nSearchBin < NSEARCHBINS)
                         {
-                            if(iTrial < NTRIALS)
+                            N0[nSearchBin] += weight;
+                            N0square[nSearchBin] += weight*weight;
+                            for(int iTrial = 0; iTrial < NTRIALS; ++iTrial)
                             {
-                                N[0][nSearchBin][iTrial] += variations[0][njWDYZ_g1b->FindBin(cntNJetsPt30Eta24Zinv)][iTrial] * weight;
-                                N[1][nSearchBin][iTrial] += variations[1][shapeMET->FindBin(cleanMetPt)][iTrial]              * weight;
-                                N[2][nSearchBin][iTrial] += variations[2][shapeMT2->FindBin(best_had_brJet_MT2Zinv)][iTrial]  * weight;
-                                N[3][nSearchBin][iTrial] += variations[3][shapeNT->FindBin(nTopCandSortedCntZinv)][iTrial]    * weight;
-                                N[4][nSearchBin][iTrial] += variations[4][shapeNB->FindBin(cntCSVSZinv)][iTrial]              * weight;
+                                if(iTrial < NTRIALS)
+                                {
+                                    N[0][nSearchBin][iTrial] += variations[0][njWDYZ_g1b->FindBin(cntNJetsPt30Eta24Zinv)][iTrial] * weight;
+                                    N[1][nSearchBin][iTrial] += variations[1][shapeMET->FindBin(cleanMetPt)][iTrial]              * weight;
+                                    N[2][nSearchBin][iTrial] += variations[2][shapeMT2->FindBin(best_had_brJet_MT2Zinv)][iTrial]  * weight;
+                                    N[3][nSearchBin][iTrial] += variations[3][shapeNT->FindBin(nTopCandSortedCntZinv)][iTrial]    * weight;
+                                    N[4][nSearchBin][iTrial] += variations[4][shapeNB->FindBin(cntCSVSZinv)][iTrial]              * weight;
+                                    N[5][nSearchBin][iTrial] += variations[5][shapeHT->FindBin(HTZinv)][iTrial]                   * weight;
+                                }
                             }
                         }
                     }
@@ -337,7 +346,7 @@ int main()
         return 0;
     }
 
-    for(int ih = 0; ih < 5; ++ih)
+    for(int ih = 0; ih < Nhnames; ++ih)
     {
         for(int i = 0; i < NSEARCHBINS; ++i)
         {
@@ -350,7 +359,7 @@ int main()
 
     TFile fout("syst_nJetWgt.root", "RECREATE");
     TH1 *syst68Max = new TH1D("syst68Max", "syst68Max", NSEARCHBINS, 0, NSEARCHBINS);
-    for(int ih = 0; ih < 5; ++ih)
+    for(int ih = 0; ih < Nhnames; ++ih)
     {
         char name[128];
         sprintf(name, "syst68_%s", hnames[ih].c_str());
