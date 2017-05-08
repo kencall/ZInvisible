@@ -1190,7 +1190,8 @@ namespace plotterFunctions
              std::cout<<monoJet<<std::endl;
             */
             //int nSearchBin = sbins.find_Binning_Index(cntCSVS, nTopCandSortedCnt, MT2, cleanMet);
-            int nSearchBin = sbins.find_Binning_Index(cntCSVS, nTopCandSortedCnt, MT2, cleanMet, HT);            
+            std::vector<int>* nSearchBin = new std::vector<int>();
+            *nSearchBin = sbins.find_Binning_Indices(cntCSVS, nTopCandSortedCnt, MT2, cleanMet, HT);            
             int nSearchBin_1b_bins = sbins.find_Binning_Index(cntCSVS == 1, nTopCandSortedCnt, MT2, cleanMet, HT);
             
             //std::vector<std::pair<double, double> > * nb0Bins = new std::vector<std::pair<double, double> >();
@@ -1226,7 +1227,7 @@ namespace plotterFunctions
                 //nb0BinsNW->emplace_back(sbins.find_Binning_Index(3, nTopCandSortedCnt3b, MT2_3b, cleanMet, HT));
             }
 
-            tr.registerDerivedVar("nSearchBin", nSearchBin);
+            tr.registerDerivedVec("nSearchBin", nSearchBin);
             tr.registerDerivedVar("nSearchBin_1b_bins", nSearchBin_1b_bins);
             //tr.registerDerivedVec("nb0BinsNW", nb0BinsNW);
             //tr.registerDerivedVec("nb0Bins", nb0Bins);

@@ -365,25 +365,25 @@ int main(int argc, char* argv[])
     //vh.push_back(PHS("METdeltaPtSyst",            {PDC("single", "dPtMet",  {dsDY_nunu})}, {1, 1}, "",                      200, -2.0, 2.0,  false,  false,  "#DeltaP_{T} p_{T}^{miss} [GeV]", "Events"));
     //vh.push_back(PHS("METdeltaPhiSyst",           {PDC("single", "dPhiMet", {dsDY_nunu})}, {1, 1}, "",                      100, -3.14, 3.14,  false,  false,  "#Delta#phi p_{T}^{miss}", "Events"));
 */
-    vh.push_back(PHS("dPhi1",                   {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2",                   {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_ak8",                   {PDC("single", "dPhiVec_ak8Zinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_ak8",                   {PDC("single", "dPhiVec_ak8Zinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    //vh.push_back(PHS("dPhi3",                   {PDC("single", "dPhiVecZinv[2]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_comp",              {PDC("single", {{"dPhiVecZinv[0]", dsDY_ll_clean}, {"dPhiVec[0]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_comp",              {PDC("single", {{"dPhiVecZinv[1]", dsDY_ll_clean}, {"dPhiVec[1]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_comp_ak8",              {PDC("single", {{"dPhiVec_ak8Zinv[0]", dsDY_ll_clean}, {"dPhiVec_ak8[0]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_comp_ak8",              {PDC("single", {{"dPhiVec_ak8Zinv[1]", dsDY_ll_clean}, {"dPhiVec_ak8[1]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    //vh.push_back(PHS("dPhi3_comp",              {PDC("single", {{"dPhiVecZinv[2]", dsDY_ll_clean}, {"dPhiVec[2]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_nJet",              {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_nJet",              {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_nJet_ak8",              {PDC("single", "dPhiVec_ak8Zinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_nJet_ak8",              {PDC("single", "dPhiVec_ak8Zinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    //vh.push_back(PHS("dPhi3_nJet",              {PDC("single", "dPhiVecZinv[2]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_nJetMET",           {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_nJetMET",           {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
-    vh.push_back(PHS("dPhi1_nJetMET_ak8",           {PDC("single", "dPhiVec_ak8Zinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
-    vh.push_back(PHS("dPhi2_nJetMET_ak8",           {PDC("single", "dPhiVec_ak8Zinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1",                   {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2",                   {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_ak8",                   {PDC("single", "dPhiVec_ak8Zinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_ak8",                   {PDC("single", "dPhiVec_ak8Zinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    ////vh.push_back(PHS("dPhi3",                   {PDC("single", "dPhiVecZinv[2]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "",                             100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_comp",              {PDC("single", {{"dPhiVecZinv[0]", dsDY_ll_clean}, {"dPhiVec[0]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_comp",              {PDC("single", {{"dPhiVecZinv[1]", dsDY_ll_clean}, {"dPhiVec[1]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_comp_ak8",              {PDC("single", {{"dPhiVec_ak8Zinv[0]", dsDY_ll_clean}, {"dPhiVec_ak8[0]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_comp_ak8",              {PDC("single", {{"dPhiVec_ak8Zinv[1]", dsDY_ll_clean}, {"dPhiVec_ak8[1]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    ////vh.push_back(PHS("dPhi3_comp",              {PDC("single", {{"dPhiVecZinv[2]", dsDY_ll_clean}, {"dPhiVec[2]", dsDY_ll}})}, {1, 1}, "",                          100, 0, 3.1415,  false, true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_nJet",              {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_nJet",              {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_nJet_ak8",              {PDC("single", "dPhiVec_ak8Zinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_nJet_ak8",              {PDC("single", "dPhiVec_ak8Zinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    ////vh.push_back(PHS("dPhi3_nJet",              {PDC("single", "dPhiVecZinv[2]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv",                100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_nJetMET",           {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_nJetMET",           {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi1_nJetMET_ak8",           {PDC("single", "dPhiVec_ak8Zinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
+    //vh.push_back(PHS("dPhi2_nJetMET_ak8",           {PDC("single", "dPhiVec_ak8Zinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
     //vh.push_back(PHS("dPhi3_nJetMET",           {PDC("single", "dPhiVecZinv[2]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {3, 2}, "passnJetsZinv;passMETZinv",    100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j3)",   "Norm Events"));
     //vh.push_back(PHS("dPhi1_nJet_met_gt_600",   {PDC("single", "dPhiVecZinv[0]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv;cleanMetPt>600", 100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j1)",   "Norm Events"));
     //vh.push_back(PHS("dPhi2_nJet_met_gt_600",   {PDC("single", "dPhiVecZinv[1]",      {dsDY_ll, dsDY_nunu, dsDY_ll_zAcc})}, {1, 2}, "passnJetsZinv;cleanMetPt>600", 100, 0, 3.1415,  true,  true,  "#Delta#phi(p_{T}^{miss},j2)",   "Norm Events"));
@@ -597,73 +597,73 @@ int main(int argc, char* argv[])
     vh.push_back(PHS("trigRatio_singleMu45_cleannJet", {PDC("ratio", "cntNJetsPt30Eta24Zinv", {dsDY_ll_singleMu45, dsDY_ll_zAcc})},   {1, 1}, "passBaselineNoTagZinv",  20,  0,   20, false,  false,  label_nj,         "Ratio"));
     vh.push_back(PHS("trigRatio_singleMu45_nBottom",   {PDC("ratio", "cntCSVSZinv",           {dsDY_ll_singleMu45, dsDY_ll_zAcc})},   {1, 1}, "passBaselineNoTagZinv",  10,  0,   10, false,  false,  label_nb,           "Ratio"));
     */
-    vh.push_back(PHS("genht_DY_mumu_stack",           {scaled_stacked_DYtoll_genht},    {1, 1}, "",                                    100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("genht_DY_mumu_stack_noweight",  {DYtoll_genht_noweight},    {1, 1}, "", 200, 0, 4000,  true,  false,  "genHT",    "Events"));
-    vh.push_back(PHS("cleanht_DY_mumu_stack_er",      {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "",                 150, 0,     3000, true,  false,  label_ht,    "Events"));
-
-    vh.push_back(PHS("cleanht_DY_mumu_stack",           {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "",                                     100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("ht_DY_mumu_stack",                {scaled_stacked_DYtoll_ht,       ht_znunu      },    {1, 1}, "",                                     100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("cleanmht_DY_mumu_stack",          {scaled_stacked_DYtoll_cleanmht, cleanmht_znunu},    {1, 1}, "",                                     100, 0,     1500, true,  false,  label_mht,   "Events"));
-    vh.push_back(PHS("cleanmet_DY_mumu_stack",          {scaled_stacked_DYtoll_cleanMet, cleanMet_znunu},    {1, 1}, "",                                     100, 0,     1500, true,  false,  label_met,      "Events"));
-
-    vh.push_back(PHS("baseline_cleanht_DY_mumu_stack",  {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "passBaselineZinv",                     100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("baseline_cleanmht_DY_mumu_stack", {scaled_stacked_DYtoll_cleanmht, cleanmht_znunu},    {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_mht,   "Events"));
-    vh.push_back(PHS("baseline_cleanmet_DY_mumu_stack", {scaled_stacked_DYtoll_cleanMet, cleanMet_znunu},    {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_met,      "Events"));
-
-    vh.push_back(PHS("nb_0_cleanht_DY_mumu_stack",      {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("nb_0_cleanmht_DY_mumu_stack",     {scaled_stacked_DYtoll_cleanmht, cleanmht_znunu},    {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_mht,   "Events"));
-    vh.push_back(PHS("nb_0_cleanmet_DY_mumu_stack",     {scaled_stacked_DYtoll_cleanMet, cleanMet_znunu},    {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_met,      "Events"));
-
-    vh.push_back(PHS("cleanht_DY_nunu_stack",           {scaled_stacked_DYtonunu_cleanht},   {1, 1}, "",                                     100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("cleanmht_DY_nunu_stack",          {scaled_stacked_DYtonunu_cleanmht},  {1, 1}, "",                                     100, 0,     1500, true,  false,  label_mht,   "Events"));
-    vh.push_back(PHS("cleanmet_DY_nunu_stack",          {scaled_stacked_DYtonunu_cleanMet},  {1, 1}, "",                                     100, 0,     1500, true,  false,  label_met,      "Events"));
-
-    vh.push_back(PHS("baseline_cleanht_DY_nunu_stack",  {scaled_stacked_DYtonunu_cleanht},   {1, 1}, "passBaselineZinv",                     100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("baseline_cleanmht_DY_nunu_stack", {scaled_stacked_DYtonunu_cleanmht},  {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_mht,   "Events"));
-    vh.push_back(PHS("baseline_cleanmet_DY_nunu_stack", {scaled_stacked_DYtonunu_cleanMet},  {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_met,      "Events"));
-
-    vh.push_back(PHS("nb_0_cleanht_DY_nunu_stack",      {scaled_stacked_DYtonunu_cleanht},   {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     2000, true,  false,  label_ht,    "Events"));
-    vh.push_back(PHS("nb_0_cleanmht_DY_nunu_stack",     {scaled_stacked_DYtonunu_cleanmht},  {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_mht,   "Events"));
-    vh.push_back(PHS("nb_0_cleanmet_DY_nunu_stack",     {scaled_stacked_DYtonunu_cleanMet},  {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_met,      "Events"));
-
-    vh.push_back(PHS("nSearchBin",               {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_log",           {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_stat",          {scaled_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_stat_log",      {scaled_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBinnb0",            {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBinnb0_log",        {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBinnb0ZZ",          {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBinnb0ZZ_log",      {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_pull",          {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("nSearchBin_pull_log",      {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("nSearchBinnb0_pull",       {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("nSearchBinnb0_pull_log",   {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("nSearchBinnb0ZZ_pull",     {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("nSearchBinnb0ZZ_pull_log", {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
-
-    vh.push_back(PHS("elec_nSearchBin",               {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBin_log",           {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBin_stat",          {scaled_Elec_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBin_stat_log",      {scaled_Elec_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBinnb0",            {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBinnb0_log",        {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBinnb0ZZ",          {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBinnb0ZZ_log",      {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("elec_nSearchBin_pull",          {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("elec_nSearchBin_pull_log",      {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("elec_nSearchBinnb0_pull",       {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("elec_nSearchBinnb0_pull_log",   {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("elec_nSearchBinnb0ZZ_pull",     {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
-    vh.push_back(PHS("elec_nSearchBinnb0ZZ_pull_log", {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
-
-    vh.push_back(PHS("nSearchBin_Sig_mm",          {scaled_nSearchBin_Sig_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Sig_mm_log",      {scaled_nSearchBin_Sig_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Con_mm",          {scaled_nSearchBin_Con_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Con_mm_log",      {scaled_nSearchBin_Con_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Sig_ee",          {scaled_nSearchBin_Sig_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Sig_ee_log",      {scaled_nSearchBin_Sig_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Con_ee",          {scaled_nSearchBin_Con_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
-    vh.push_back(PHS("nSearchBin_Con_ee_log",      {scaled_nSearchBin_Con_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("genht_DY_mumu_stack",           {scaled_stacked_DYtoll_genht},    {1, 1}, "",                                    100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("genht_DY_mumu_stack_noweight",  {DYtoll_genht_noweight},    {1, 1}, "", 200, 0, 4000,  true,  false,  "genHT",    "Events"));
+    //vh.push_back(PHS("cleanht_DY_mumu_stack_er",      {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "",                 150, 0,     3000, true,  false,  label_ht,    "Events"));
+    //
+    //vh.push_back(PHS("cleanht_DY_mumu_stack",           {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "",                                     100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("ht_DY_mumu_stack",                {scaled_stacked_DYtoll_ht,       ht_znunu      },    {1, 1}, "",                                     100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("cleanmht_DY_mumu_stack",          {scaled_stacked_DYtoll_cleanmht, cleanmht_znunu},    {1, 1}, "",                                     100, 0,     1500, true,  false,  label_mht,   "Events"));
+    //vh.push_back(PHS("cleanmet_DY_mumu_stack",          {scaled_stacked_DYtoll_cleanMet, cleanMet_znunu},    {1, 1}, "",                                     100, 0,     1500, true,  false,  label_met,      "Events"));
+    //
+    //vh.push_back(PHS("baseline_cleanht_DY_mumu_stack",  {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "passBaselineZinv",                     100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("baseline_cleanmht_DY_mumu_stack", {scaled_stacked_DYtoll_cleanmht, cleanmht_znunu},    {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_mht,   "Events"));
+    //vh.push_back(PHS("baseline_cleanmet_DY_mumu_stack", {scaled_stacked_DYtoll_cleanMet, cleanMet_znunu},    {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_met,      "Events"));
+    //
+    //vh.push_back(PHS("nb_0_cleanht_DY_mumu_stack",      {scaled_stacked_DYtoll_cleanht,  cleanht_znunu },    {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("nb_0_cleanmht_DY_mumu_stack",     {scaled_stacked_DYtoll_cleanmht, cleanmht_znunu},    {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_mht,   "Events"));
+    //vh.push_back(PHS("nb_0_cleanmet_DY_mumu_stack",     {scaled_stacked_DYtoll_cleanMet, cleanMet_znunu},    {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_met,      "Events"));
+    //
+    //vh.push_back(PHS("cleanht_DY_nunu_stack",           {scaled_stacked_DYtonunu_cleanht},   {1, 1}, "",                                     100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("cleanmht_DY_nunu_stack",          {scaled_stacked_DYtonunu_cleanmht},  {1, 1}, "",                                     100, 0,     1500, true,  false,  label_mht,   "Events"));
+    //vh.push_back(PHS("cleanmet_DY_nunu_stack",          {scaled_stacked_DYtonunu_cleanMet},  {1, 1}, "",                                     100, 0,     1500, true,  false,  label_met,      "Events"));
+    //
+    //vh.push_back(PHS("baseline_cleanht_DY_nunu_stack",  {scaled_stacked_DYtonunu_cleanht},   {1, 1}, "passBaselineZinv",                     100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("baseline_cleanmht_DY_nunu_stack", {scaled_stacked_DYtonunu_cleanmht},  {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_mht,   "Events"));
+    //vh.push_back(PHS("baseline_cleanmet_DY_nunu_stack", {scaled_stacked_DYtonunu_cleanMet},  {1, 1}, "passBaselineZinv",                     100, 0,     1500, true,  false,  label_met,      "Events"));
+    //
+    //vh.push_back(PHS("nb_0_cleanht_DY_nunu_stack",      {scaled_stacked_DYtonunu_cleanht},   {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     2000, true,  false,  label_ht,    "Events"));
+    //vh.push_back(PHS("nb_0_cleanmht_DY_nunu_stack",     {scaled_stacked_DYtonunu_cleanmht},  {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_mht,   "Events"));
+    //vh.push_back(PHS("nb_0_cleanmet_DY_nunu_stack",     {scaled_stacked_DYtonunu_cleanMet},  {1, 1}, "passBaselineNoTagZinv;cntCSVSZinv=0",  100, 0,     1500, true,  false,  label_met,      "Events"));
+    //
+    //vh.push_back(PHS("nSearchBin",               {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_log",           {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_stat",          {scaled_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_stat_log",      {scaled_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBinnb0",            {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBinnb0_log",        {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBinnb0ZZ",          {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBinnb0ZZ_log",      {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_pull",          {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("nSearchBin_pull_log",      {scaled_nSearchBin},      {2, 1}, "passBaselineZinv",                                             NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("nSearchBinnb0_pull",       {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("nSearchBinnb0_pull_log",   {scaled_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("nSearchBinnb0ZZ_pull",     {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("nSearchBinnb0ZZ_pull_log", {scaled_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",               NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
+    //
+    //vh.push_back(PHS("elec_nSearchBin",               {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBin_log",           {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBin_stat",          {scaled_Elec_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBin_stat_log",      {scaled_Elec_nSearchBin_stat}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBinnb0",            {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBinnb0_log",        {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBinnb0ZZ",          {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBinnb0ZZ_log",      {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("elec_nSearchBin_pull",          {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("elec_nSearchBin_pull_log",      {scaled_Elec_nSearchBin},      {2, 1}, "passBaselineZinv",                                      NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("elec_nSearchBinnb0_pull",       {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("elec_nSearchBinnb0_pull_log",   {scaled_Elec_nSearchBinNb0},   {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("elec_nSearchBinnb0ZZ_pull",     {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", false));
+    //vh.push_back(PHS("elec_nSearchBinnb0ZZ_pull_log", {scaled_Elec_nSearchBinNb0ZZ}, {2, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", false));
+    //
+    //vh.push_back(PHS("nSearchBin_Sig_mm",          {scaled_nSearchBin_Sig_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Sig_mm_log",      {scaled_nSearchBin_Sig_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Con_mm",          {scaled_nSearchBin_Con_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Con_mm_log",      {scaled_nSearchBin_Con_mm}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Sig_ee",          {scaled_nSearchBin_Sig_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Sig_ee_log",      {scaled_nSearchBin_Sig_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Con_ee",          {scaled_nSearchBin_Con_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   false, false,  "Search Bin",     "Events", true));
+    //vh.push_back(PHS("nSearchBin_Con_ee_log",      {scaled_nSearchBin_Con_ee}, {1, 1}, "passBaselineNoTagZinv;!nTopCandSortedCntZinv=0",        NSB,  0,     NSB,   true,  false,  "Search Bin",     "Events", true));
 
     // Save time
     
@@ -700,26 +700,26 @@ int main(int argc, char* argv[])
         {{"loose0_MT2_MET",      "HTZinv>300;passnJetsZinv;passdPhisZinv;best_had_brJet_MT2Zinv>0;cleanMetPt>100"  },  80}
     };
 
-    for(auto& cut : cutlevels_MCCLosure)
-    {
-        //muons
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_mT2Zinv",    {scaled_cleanmt2},   {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_mt2,   "Events"));
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleanht",    {scaled_cleanht},    {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_ht,    "Events"));
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleanmht",   {scaled_cleanmht},   {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_mht,   "Events"));
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleanmet",   {scaled_cleanMet},   {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_met,      "Events"));
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_nTop",       {scaled_nTop},       {2, 1}, cut.first.second,           10, 0, 10,   true,  false,  label_nt,           "Events"));
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleannJet",  {scaled_nCleanJet},  {2, 1}, cut.first.second,           20, 0, 20,   true,  false,  label_nj,         "Events"));
-        vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_nBottom",    {scaled_nBottom},    {2, 1}, cut.first.second,           10, 0, 10,   true,  false,  label_nb,           "Events"));
-    
-        //electron
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_mT2Zinv",     {scaled_elec_cleanmt2},   {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_mt2,   "Events"));
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleanht",     {scaled_elec_cleanht},    {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_ht,    "Events"));
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleanmht",    {scaled_elec_cleanmht},   {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_mht,   "Events"));
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleanmet",    {scaled_elec_cleanMet},   {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_met,      "Events"));
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_nTop",        {scaled_elec_nTop},       {2, 1}, cut.first.second,           10, 0,       10, true,  false,  label_nt,           "Events"));
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleannJet",   {scaled_elec_nCleanJet},  {2, 1}, cut.first.second,           20, 0,       20, true,  false,  label_nj,         "Events"));
-        vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_nBottom",     {scaled_elec_nBottom},    {2, 1}, cut.first.second,           10, 0,       10, true,  false,  label_nb,           "Events"));
-    }
+    //for(auto& cut : cutlevels_MCCLosure)
+    //{
+    //    //muons
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_mT2Zinv",    {scaled_cleanmt2},   {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_mt2,   "Events"));
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleanht",    {scaled_cleanht},    {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_ht,    "Events"));
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleanmht",   {scaled_cleanmht},   {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_mht,   "Events"));
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleanmet",   {scaled_cleanMet},   {2, 1}, cut.first.second,   cut.second, 0, 2000, true,  false,  label_met,      "Events"));
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_nTop",       {scaled_nTop},       {2, 1}, cut.first.second,           10, 0, 10,   true,  false,  label_nt,           "Events"));
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_cleannJet",  {scaled_nCleanJet},  {2, 1}, cut.first.second,           20, 0, 20,   true,  false,  label_nj,         "Events"));
+    //    vh.push_back(PHS("MCClosure_muon_" + cut.first.first + "_nBottom",    {scaled_nBottom},    {2, 1}, cut.first.second,           10, 0, 10,   true,  false,  label_nb,           "Events"));
+    //
+    //    //electron
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_mT2Zinv",     {scaled_elec_cleanmt2},   {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_mt2,   "Events"));
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleanht",     {scaled_elec_cleanht},    {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_ht,    "Events"));
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleanmht",    {scaled_elec_cleanmht},   {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_mht,   "Events"));
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleanmet",    {scaled_elec_cleanMet},   {2, 1}, cut.first.second,   cut.second, 0,     2000, true,  false,  label_met,      "Events"));
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_nTop",        {scaled_elec_nTop},       {2, 1}, cut.first.second,           10, 0,       10, true,  false,  label_nt,           "Events"));
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_cleannJet",   {scaled_elec_nCleanJet},  {2, 1}, cut.first.second,           20, 0,       20, true,  false,  label_nj,         "Events"));
+    //    vh.push_back(PHS("MCClosure_elec_" + cut.first.first + "_nBottom",     {scaled_elec_nBottom},    {2, 1}, cut.first.second,           10, 0,       10, true,  false,  label_nb,           "Events"));
+    //}
     
 
     //vh.push_back(PHS("fake1b_nTop",               {PDC("single", {{"nTopCandSortedCntZinv", dsDY_nunu_1b},         {"nTopCandSortedCntZinv1b", dsDY_nunu_0b_1fake}})},         {2, 1}, "", 10, 0, 10, true, true, label_nt, "Norm Events"));
@@ -1561,202 +1561,202 @@ int main(int argc, char* argv[])
     */
 
     //push the histograms in a loop, save some copy-paste time
-    for(std::pair<std::string,std::string>& cut : cutlevels_muon)
-    {
-	// unweighted
-	vh.push_back(PHS("DataMC_SingleMuon_met_"        +cut.first,  {dcData_SingleMuon_met,   dcMC_met},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                           "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_ht_"         +cut.first,  {dcData_SingleMuon_ht,    dcMC_ht},              {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                            "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_mht_"        +cut.first,  {dcData_SingleMuon_mht,   dcMC_mht},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                           "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nt_"         +cut.first,  {dcData_SingleMuon_nt,    dcMC_nt},              {1, 2}, cut.second, 5,  0, 5,    false, false,  label_nt,                            "Events"));
-	//vh.push_back(PHS("DataMC_SingleMuon_nt1b_"       +cut.first,  {dcData_SingleMuon_nt1b,  dcMC_nt1b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                  "Events"));
-	//vh.push_back(PHS("DataMC_SingleMuon_nt2b_"       +cut.first,  {dcData_SingleMuon_nt2b,  dcMC_nt2b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                  "Events"));
-	//vh.push_back(PHS("DataMC_SingleMuon_nt3b_"       +cut.first,  {dcData_SingleMuon_nt3b,  dcMC_nt3b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                  "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_mt2_"        +cut.first,  {dcData_SingleMuon_mt2,   dcMC_mt2},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,                           "Events"));
-	//vh.push_back(PHS("DataMC_SingleMuon_mt21b_"      +cut.first,  {dcData_SingleMuon_mt21b, dcMC_mt21b},           {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",                   "Events"));
-	//vh.push_back(PHS("DataMC_SingleMuon_mt22b_"      +cut.first,  {dcData_SingleMuon_mt22b, dcMC_mt22b},           {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",                   "Events"));
-	//vh.push_back(PHS("DataMC_SingleMuon_mt23b_"      +cut.first,  {dcData_SingleMuon_mt23b, dcMC_mt23b},           {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",                   "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nb_"         +cut.first,  {dcData_SingleMuon_nb,    dcMC_nb},              {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,                            "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nj_"         +cut.first,  {dcData_SingleMuon_nj,    dcMC_nj},              {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                            "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_nj_noTrig"         +cut.first,  {dcData_SingleMuon_nj,    dcMC_nj_noTrig},              {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                            "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_toppt_"      +cut.first,  PDCData("vTopsZinv[0](pt)"),                     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_toppt,                         "Events"));
-        //vh.push_back(PHS("DataMC_SingleMuon_toppt_"      +cut.first,  PDCData_noISR("vTopsZinv[0](pt)"),                     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_toppt,                         "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_trigEff_"    +cut.first,  PDCData("muTrigWgt"),                            {1, 2}, cut.second, 50, 0, 1,    true, false,  "Trig Eff",                          "Events"));
-        //vh.push_back(PHS("DataMC_SingleMuon_trigEff_"    +cut.first,  PDCData_noISR("muTrigWgt"),                            {1, 2}, cut.second, 50, 0, 1,    true, false,  "Trig Eff",                          "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_jpt_"        +cut.first,  {dcData_SingleMuon_jpt,   dcMC_jpt},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,                           "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_j1pt_"       +cut.first,  {dcData_SingleMuon_j1pt,  dcMC_j1pt},            {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,                          "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_j2pt_"       +cut.first,  {dcData_SingleMuon_j2pt,  dcMC_j2pt},            {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,                          "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_j3pt_"       +cut.first,  {dcData_SingleMuon_j3pt,  dcMC_j3pt},            {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,                          "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_mupt_"       +cut.first,  {dcData_SingleMuon_mupt,  dcMC_mupt},            {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                          "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_mupt_noTrig"       +cut.first,  {dcData_SingleMuon_mupt,  dcMC_mupt_noT},            {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                          "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_mu1pt"      +cut.first,  {dcData_SingleMuon_mu1pt, dcMC_mu1pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                         "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_mu1pt_noT"      +cut.first,  {dcData_SingleMuon_mu1pt, dcMC_mu1pt_noT},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                         "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_mu2pt_"      +cut.first,  {dcData_SingleMuon_mu2pt, dcMC_mu2pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,                         "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_elpt_"       +cut.first,  {dcData_SingleMuon_elpt,  dcMC_elpt},            {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,                          "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_el1pt_"      +cut.first,  {dcData_SingleMuon_el1pt, dcMC_el1pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,                         "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_el2pt_"      +cut.first,  {dcData_SingleMuon_el2pt, dcMC_el2pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,                         "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_mll_"        +cut.first,  {dcData_SingleMuon_mll,   dcMC_mll},             {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,                           "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
-	vh.push_back(PHS("DataMC_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_nb0NJwBins_effAcc_" +cut.first,  {dcData_SingleMuon_nb0NJwBins_effAcc, dcMC_nb0NJwBins_effAcc}, {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin", "Events"));
-   
-        vh.push_back(PHS("DataMC_SingleMuon_bestRecoZPt_"        +cut.first,  {dcData_SingleMuon_Zrecpt, dcMC_Zrecpt},             {1, 2}, cut.second, 60, 0, 1500,  true, false,  "Z p_{T} [GeV]",                           "Events")); 
-
-        vh.push_back(PHS("DataMC_SingleMuon_tru_tru_npv_"        +cut.first,  {dcData_SingleMuon_tru_npv, dcMC_tru_npv},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "True nPV",                           "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_tru_npv_w_"        +cut.first,  {dcData_SingleMuon_tru_npv, dcMC_tru_npv_w},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "True nPV",                           "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_tru_npv_np_"        +cut.first,  {dcData_SingleMuon_tru_npv, dcMC_tru_npv_np},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "True nPV",                           "Events"));
-
-        vh.push_back(PHS("DataMC_SingleMuon_vtxSize"        +cut.first,  {dcData_SingleMuon_avg_npv, dcMC_avg_npv},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "Vertex Size",                           "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_avg_vtxSize"        +cut.first,  {dcData_SingleMuon_avg_npv, dcMC_avg_npv_w},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "Vertex Size",                           "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_avg_vtxSize"        +cut.first,  {dcData_SingleMuon_avg_npv, dcMC_avg_npv_np},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "Vertex Size",                           "Events"));
-     
-        vh.push_back(PHS("Zrecopt",     {PDC("single", "bestRecoZPt",            {dsTT_mm_lepSel, dsTT_ee_lepSel, dsTT_em_lepSel})}, {1, 2}, "", 100, 0, 1500,  true,  true,  "Z p_{T} [GeV]",           "Norm Events"));
-
-	// DataMC weights applied
-        vector<double> metBins = {0, 50, 100, 150, 200, 275, 300, 350, 400, 450, 2000};
-        vector<double> mt2Bins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 2000};
-	vh.push_back(PHS("DataMCw_SingleMuon_met_"        +cut.first,  {dcData_SingleMuon_met,        dcwMC_met},        {1, 2}, cut.second, 25, 0, 1500, true, false,  label_met,             "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_rebin_met_"  +cut.first,  {dcData_SingleMuon_met,        dcwMC_met},        {1, 2}, cut.second, metBins,     true, false,  label_met,             "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_ht_"         +cut.first,  {dcData_SingleMuon_ht,         dcwMC_ht},         {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,              "Events"));
-        vh.push_back(PHS("DataMC_SingleMuon_ht_noT"         +cut.first,  {dcData_SingleMuon_ht,         dcMC_ht_noT},         {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,              "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_mht_"        +cut.first,  {dcData_SingleMuon_mht,        dcwMC_mht},        {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,             "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nt_"         +cut.first,  {dcData_SingleMuon_nt,         dcwMC_nt},         {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,              "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_nt1b_"  +cut.first,  {dcData_SingleMuon_nt1b,  dcwMC_nt1b},               {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",      "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_nt2b_"  +cut.first,  {dcData_SingleMuon_nt2b,  dcwMC_nt2b},               {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",      "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_nt3b_"  +cut.first,  {dcData_SingleMuon_nt3b,  dcwMC_nt3b},               {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",      "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_mt2_"        +cut.first,  {dcData_SingleMuon_mt2,        dcwMC_mt2},        {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,             "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwMC_mt21b},              {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",       "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwMC_mt22b},              {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",       "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwMC_mt23b},              {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",       "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt2_"  +cut.first,  {dcData_SingleMuon_mt2,        dcwMC_mt2},        {1, 2}, cut.second, mt2Bins,     true, false,  label_mt2,             "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwMC_mt21b},        {1, 2}, cut.second, mt2Bins,     true, false,  "mt2 (1b fake)",       "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwMC_mt22b},        {1, 2}, cut.second, mt2Bins,     true, false,  "mt2 (2b fake)",       "Events"));
-	//vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwMC_mt23b},        {1, 2}, cut.second, mt2Bins,     true, false,  "mt2 (3b fake)",       "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nb_"         +cut.first,  {dcData_SingleMuon_nb,         dcwMC_nb},         {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,              "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nj_"         +cut.first,  {dcData_SingleMuon_nj,         dcwMC_nj},         {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,              "Events"));
-        vh.push_back(PHS("DataMCw_SingleMuon_toppt_"      +cut.first,  PDCDataw("vTopsZinv[0](pt)"),                     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_toppt,           "Events"));
-        vh.push_back(PHS("DataMCw_SingleMuon_trigEff_"    +cut.first,  PDCDataw("muTrigWgt"),                            {1, 2}, cut.second, 50, 0, 1,    true, false,  "Trig Eff",            "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_jpt_"        +cut.first,  {dcData_SingleMuon_jpt,        dcwMC_jpt},        {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,             "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_j1pt_"       +cut.first,  {dcData_SingleMuon_j1pt,       dcwMC_j1pt},       {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,            "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_j2pt_"       +cut.first,  {dcData_SingleMuon_j2pt,       dcwMC_j2pt},       {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,            "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_j3pt_"       +cut.first,  {dcData_SingleMuon_j3pt,       dcwMC_j3pt},       {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,            "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_mupt_"       +cut.first,  {dcData_SingleMuon_mupt,       dcwMC_mupt},       {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,            "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_mu1pt_"      +cut.first,  {dcData_SingleMuon_mu1pt,      dcwMC_mu1pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,           "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_mu2pt_"      +cut.first,  {dcData_SingleMuon_mu2pt,      dcwMC_mu2pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,           "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_elpt_"       +cut.first,  {dcData_SingleMuon_elpt,       dcwMC_elpt},       {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,            "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_el1pt_"      +cut.first,  {dcData_SingleMuon_el1pt,      dcwMC_el1pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,           "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_el2pt_"      +cut.first,  {dcData_SingleMuon_el2pt,      dcwMC_el2pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,           "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_mll_"        +cut.first,  {dcData_SingleMuon_mll,        dcwMC_mll},        {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,             "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcwMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcwMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
-	vh.push_back(PHS("DataMCw_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcwMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
-        vh.push_back(PHS("DataMCw_SingleMuon_Zrecopt_"    +cut.first,  {dcData_SingleMuon_Zrecpt,     dcwMC_Zrecpt},     {1, 2}, cut.second, 100, 0, 1500, true, false,  "Z p_{T} [GeV]",      "Events")); 
-
-	// Normalization weight applied for ttbar only, only for loose0 selections
-	if(cut.first.rfind("loose0") == (cut.first.size()-6) || cut.first.find("loose0_mt2_MET") != std::string::npos)
-	{
-	    // DataMC weights applied
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwttMC_met},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                                "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwttMC_ht},    {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                                 "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_mht_"   +cut.first,  {dcData_SingleMuon_mht,   dcwttMC_mht},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                                "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwttMC_nt},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,                                 "Events"));
-	    //vh.push_back(PHS("DataMCwtt_SingleMuon_nt1b_"  +cut.first,  {dcData_SingleMuon_nt1b,  dcwttMC_nt1b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                       "Events"));
-	    //vh.push_back(PHS("DataMCwtt_SingleMuon_nt2b_"  +cut.first,  {dcData_SingleMuon_nt2b,  dcwttMC_nt2b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                       "Events"));
-	    //vh.push_back(PHS("DataMCwtt_SingleMuon_nt3b_"  +cut.first,  {dcData_SingleMuon_nt3b,  dcwttMC_nt3b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                       "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwttMC_mt2},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,                                "Events"));
-	    //vh.push_back(PHS("DataMCwtt_SingleMuon_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwttMC_mt21b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",                        "Events"));
-	    //vh.push_back(PHS("DataMCwtt_SingleMuon_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwttMC_mt22b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",                        "Events"));
-	    //vh.push_back(PHS("DataMCwtt_SingleMuon_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwttMC_mt23b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",                        "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwttMC_nb},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,                                 "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwttMC_nj},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                                 "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwttMC_jpt},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,                                "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_j1pt_"  +cut.first,  {dcData_SingleMuon_j1pt,  dcwttMC_j1pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,                               "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_j2pt_"  +cut.first,  {dcData_SingleMuon_j2pt,  dcwttMC_j2pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,                               "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_j3pt_"  +cut.first,  {dcData_SingleMuon_j3pt,  dcwttMC_j3pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,                               "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwttMC_mupt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                               "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_mu1pt_" +cut.first,  {dcData_SingleMuon_mu1pt, dcwttMC_mu1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                              "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_mu2pt_" +cut.first,  {dcData_SingleMuon_mu2pt, dcwttMC_mu2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,                              "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_elpt_"  +cut.first,  {dcData_SingleMuon_elpt,  dcwttMC_elpt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,                               "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_el1pt_" +cut.first,  {dcData_SingleMuon_el1pt, dcwttMC_el1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,                              "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_el2pt_" +cut.first,  {dcData_SingleMuon_el2pt, dcwttMC_el2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,                              "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_mll_"   +cut.first,  {dcData_SingleMuon_mll,   dcwttMC_mll},   {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,                                "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwttMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcwttMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcwttMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
-	    vh.push_back(PHS("DataMCwtt_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcwttMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
-	    
-	}
-
-	//// Normalization weight applied, only for blnotag selections
-	if(cut.first.rfind("blnotag") == (cut.first.size()-7))
-	{
-	    // DataMC weights applied
-	    vh.push_back(PHS("DataMCww_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwwMC_met},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                                  "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwwMC_ht},    {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                                   "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_mht_"   +cut.first,  {dcData_SingleMuon_mht,   dcwwMC_mht},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                                  "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwwMC_nt},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,                                   "Events"));
-	    //vh.push_back(PHS("DataMCww_SingleMuon_nt1b_"  +cut.first,  {dcData_SingleMuon_nt1b,  dcwwMC_nt1b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                         "Events"));
-	    //vh.push_back(PHS("DataMCww_SingleMuon_nt2b_"  +cut.first,  {dcData_SingleMuon_nt2b,  dcwwMC_nt2b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                         "Events"));
-	    //vh.push_back(PHS("DataMCww_SingleMuon_nt3b_"  +cut.first,  {dcData_SingleMuon_nt3b,  dcwwMC_nt3b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                         "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwwMC_mt2},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,                                  "Events"));
-	    //vh.push_back(PHS("DataMCww_SingleMuon_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwwMC_mt21b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",                          "Events"));
-	    //vh.push_back(PHS("DataMCww_SingleMuon_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwwMC_mt22b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",                          "Events"));
-	    //vh.push_back(PHS("DataMCww_SingleMuon_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwwMC_mt23b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",                          "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwwMC_nb},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,                                   "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwwMC_nj},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                                   "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwwMC_jpt},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,                                  "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_j1pt_"  +cut.first,  {dcData_SingleMuon_j1pt,  dcwwMC_j1pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,                                 "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_j2pt_"  +cut.first,  {dcData_SingleMuon_j2pt,  dcwwMC_j2pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,                                 "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_j3pt_"  +cut.first,  {dcData_SingleMuon_j3pt,  dcwwMC_j3pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,                                 "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwwMC_mupt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                                 "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_mu1pt_" +cut.first,  {dcData_SingleMuon_mu1pt, dcwwMC_mu1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                                "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_mu2pt_" +cut.first,  {dcData_SingleMuon_mu2pt, dcwwMC_mu2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,                                "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_elpt_"  +cut.first,  {dcData_SingleMuon_elpt,  dcwwMC_elpt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,                                 "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_el1pt_" +cut.first,  {dcData_SingleMuon_el1pt, dcwwMC_el1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,                                "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_el2pt_" +cut.first,  {dcData_SingleMuon_el2pt, dcwwMC_el2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,                                "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_mll_"   +cut.first,  {dcData_SingleMuon_mll,   dcwwMC_mll},   {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,                                  "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwwMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcwwMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcwwMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
-	    vh.push_back(PHS("DataMCww_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcwwMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
-	    
-	}
-    }
+    //for(std::pair<std::string,std::string>& cut : cutlevels_muon)
+    //{
+    //    // unweighted
+    //    vh.push_back(PHS("DataMC_SingleMuon_met_"        +cut.first,  {dcData_SingleMuon_met,   dcMC_met},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_ht_"         +cut.first,  {dcData_SingleMuon_ht,    dcMC_ht},              {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                            "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mht_"        +cut.first,  {dcData_SingleMuon_mht,   dcMC_mht},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nt_"         +cut.first,  {dcData_SingleMuon_nt,    dcMC_nt},              {1, 2}, cut.second, 5,  0, 5,    false, false,  label_nt,                            "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_nt1b_"       +cut.first,  {dcData_SingleMuon_nt1b,  dcMC_nt1b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                  "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_nt2b_"       +cut.first,  {dcData_SingleMuon_nt2b,  dcMC_nt2b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                  "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_nt3b_"       +cut.first,  {dcData_SingleMuon_nt3b,  dcMC_nt3b},            {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                  "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mt2_"        +cut.first,  {dcData_SingleMuon_mt2,   dcMC_mt2},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,                           "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_mt21b_"      +cut.first,  {dcData_SingleMuon_mt21b, dcMC_mt21b},           {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",                   "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_mt22b_"      +cut.first,  {dcData_SingleMuon_mt22b, dcMC_mt22b},           {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",                   "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_mt23b_"      +cut.first,  {dcData_SingleMuon_mt23b, dcMC_mt23b},           {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",                   "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nb_"         +cut.first,  {dcData_SingleMuon_nb,    dcMC_nb},              {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,                            "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nj_"         +cut.first,  {dcData_SingleMuon_nj,    dcMC_nj},              {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                            "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nj_noTrig"         +cut.first,  {dcData_SingleMuon_nj,    dcMC_nj_noTrig},              {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                            "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_toppt_"      +cut.first,  PDCData("vTopsZinv[0](pt)"),                     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_toppt,                         "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_toppt_"      +cut.first,  PDCData_noISR("vTopsZinv[0](pt)"),                     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_toppt,                         "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_trigEff_"    +cut.first,  PDCData("muTrigWgt"),                            {1, 2}, cut.second, 50, 0, 1,    true, false,  "Trig Eff",                          "Events"));
+    //    //vh.push_back(PHS("DataMC_SingleMuon_trigEff_"    +cut.first,  PDCData_noISR("muTrigWgt"),                            {1, 2}, cut.second, 50, 0, 1,    true, false,  "Trig Eff",                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_jpt_"        +cut.first,  {dcData_SingleMuon_jpt,   dcMC_jpt},             {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_j1pt_"       +cut.first,  {dcData_SingleMuon_j1pt,  dcMC_j1pt},            {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_j2pt_"       +cut.first,  {dcData_SingleMuon_j2pt,  dcMC_j2pt},            {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_j3pt_"       +cut.first,  {dcData_SingleMuon_j3pt,  dcMC_j3pt},            {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mupt_"       +cut.first,  {dcData_SingleMuon_mupt,  dcMC_mupt},            {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mupt_noTrig"       +cut.first,  {dcData_SingleMuon_mupt,  dcMC_mupt_noT},            {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mu1pt"      +cut.first,  {dcData_SingleMuon_mu1pt, dcMC_mu1pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                         "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mu1pt_noT"      +cut.first,  {dcData_SingleMuon_mu1pt, dcMC_mu1pt_noT},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                         "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mu2pt_"      +cut.first,  {dcData_SingleMuon_mu2pt, dcMC_mu2pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,                         "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_elpt_"       +cut.first,  {dcData_SingleMuon_elpt,  dcMC_elpt},            {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,                          "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_el1pt_"      +cut.first,  {dcData_SingleMuon_el1pt, dcMC_el1pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,                         "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_el2pt_"      +cut.first,  {dcData_SingleMuon_el2pt, dcMC_el2pt},           {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,                         "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_mll_"        +cut.first,  {dcData_SingleMuon_mll,   dcMC_mll},             {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin",                      "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_nb0NJwBins_effAcc_" +cut.first,  {dcData_SingleMuon_nb0NJwBins_effAcc, dcMC_nb0NJwBins_effAcc}, {1, 2}, cut.second, NSB, 0, NSB,   true, false,  "Search Bin", "Events"));
+    //
+    //    vh.push_back(PHS("DataMC_SingleMuon_bestRecoZPt_"        +cut.first,  {dcData_SingleMuon_Zrecpt, dcMC_Zrecpt},             {1, 2}, cut.second, 60, 0, 1500,  true, false,  "Z p_{T} [GeV]",                           "Events")); 
+    //
+    //    vh.push_back(PHS("DataMC_SingleMuon_tru_tru_npv_"        +cut.first,  {dcData_SingleMuon_tru_npv, dcMC_tru_npv},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "True nPV",                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_tru_npv_w_"        +cut.first,  {dcData_SingleMuon_tru_npv, dcMC_tru_npv_w},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "True nPV",                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_tru_npv_np_"        +cut.first,  {dcData_SingleMuon_tru_npv, dcMC_tru_npv_np},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "True nPV",                           "Events"));
+    //
+    //    vh.push_back(PHS("DataMC_SingleMuon_vtxSize"        +cut.first,  {dcData_SingleMuon_avg_npv, dcMC_avg_npv},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "Vertex Size",                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_avg_vtxSize"        +cut.first,  {dcData_SingleMuon_avg_npv, dcMC_avg_npv_w},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "Vertex Size",                           "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_avg_vtxSize"        +cut.first,  {dcData_SingleMuon_avg_npv, dcMC_avg_npv_np},             {1, 2}, cut.second, 70, 0, 70,  true, false,  "Vertex Size",                           "Events"));
+    // 
+    //    vh.push_back(PHS("Zrecopt",     {PDC("single", "bestRecoZPt",            {dsTT_mm_lepSel, dsTT_ee_lepSel, dsTT_em_lepSel})}, {1, 2}, "", 100, 0, 1500,  true,  true,  "Z p_{T} [GeV]",           "Norm Events"));
+    //
+    //    // DataMC weights applied
+    //    vector<double> metBins = {0, 50, 100, 150, 200, 275, 300, 350, 400, 450, 2000};
+    //    vector<double> mt2Bins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 2000};
+    //    vh.push_back(PHS("DataMCw_SingleMuon_met_"        +cut.first,  {dcData_SingleMuon_met,        dcwMC_met},        {1, 2}, cut.second, 25, 0, 1500, true, false,  label_met,             "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_rebin_met_"  +cut.first,  {dcData_SingleMuon_met,        dcwMC_met},        {1, 2}, cut.second, metBins,     true, false,  label_met,             "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_ht_"         +cut.first,  {dcData_SingleMuon_ht,         dcwMC_ht},         {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,              "Events"));
+    //    vh.push_back(PHS("DataMC_SingleMuon_ht_noT"         +cut.first,  {dcData_SingleMuon_ht,         dcMC_ht_noT},         {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,              "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_mht_"        +cut.first,  {dcData_SingleMuon_mht,        dcwMC_mht},        {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,             "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nt_"         +cut.first,  {dcData_SingleMuon_nt,         dcwMC_nt},         {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,              "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_nt1b_"  +cut.first,  {dcData_SingleMuon_nt1b,  dcwMC_nt1b},               {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",      "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_nt2b_"  +cut.first,  {dcData_SingleMuon_nt2b,  dcwMC_nt2b},               {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",      "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_nt3b_"  +cut.first,  {dcData_SingleMuon_nt3b,  dcwMC_nt3b},               {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",      "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_mt2_"        +cut.first,  {dcData_SingleMuon_mt2,        dcwMC_mt2},        {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,             "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwMC_mt21b},              {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",       "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwMC_mt22b},              {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",       "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwMC_mt23b},              {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",       "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt2_"  +cut.first,  {dcData_SingleMuon_mt2,        dcwMC_mt2},        {1, 2}, cut.second, mt2Bins,     true, false,  label_mt2,             "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwMC_mt21b},        {1, 2}, cut.second, mt2Bins,     true, false,  "mt2 (1b fake)",       "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwMC_mt22b},        {1, 2}, cut.second, mt2Bins,     true, false,  "mt2 (2b fake)",       "Events"));
+    //    //vh.push_back(PHS("DataMCw_SingleMuon_rebin_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwMC_mt23b},        {1, 2}, cut.second, mt2Bins,     true, false,  "mt2 (3b fake)",       "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nb_"         +cut.first,  {dcData_SingleMuon_nb,         dcwMC_nb},         {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,              "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nj_"         +cut.first,  {dcData_SingleMuon_nj,         dcwMC_nj},         {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,              "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_toppt_"      +cut.first,  PDCDataw("vTopsZinv[0](pt)"),                     {1, 2}, cut.second, 50, 0, 1500, true, false,  label_toppt,           "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_trigEff_"    +cut.first,  PDCDataw("muTrigWgt"),                            {1, 2}, cut.second, 50, 0, 1,    true, false,  "Trig Eff",            "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_jpt_"        +cut.first,  {dcData_SingleMuon_jpt,        dcwMC_jpt},        {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,             "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_j1pt_"       +cut.first,  {dcData_SingleMuon_j1pt,       dcwMC_j1pt},       {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,            "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_j2pt_"       +cut.first,  {dcData_SingleMuon_j2pt,       dcwMC_j2pt},       {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,            "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_j3pt_"       +cut.first,  {dcData_SingleMuon_j3pt,       dcwMC_j3pt},       {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,            "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_mupt_"       +cut.first,  {dcData_SingleMuon_mupt,       dcwMC_mupt},       {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,            "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_mu1pt_"      +cut.first,  {dcData_SingleMuon_mu1pt,      dcwMC_mu1pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,           "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_mu2pt_"      +cut.first,  {dcData_SingleMuon_mu2pt,      dcwMC_mu2pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,           "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_elpt_"       +cut.first,  {dcData_SingleMuon_elpt,       dcwMC_elpt},       {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,            "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_el1pt_"      +cut.first,  {dcData_SingleMuon_el1pt,      dcwMC_el1pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,           "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_el2pt_"      +cut.first,  {dcData_SingleMuon_el2pt,      dcwMC_el2pt},      {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,           "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_mll_"        +cut.first,  {dcData_SingleMuon_mll,        dcwMC_mll},        {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,             "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcwMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcwMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcwMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB, true, false,  "Search Bin",          "Events"));
+    //    vh.push_back(PHS("DataMCw_SingleMuon_Zrecopt_"    +cut.first,  {dcData_SingleMuon_Zrecpt,     dcwMC_Zrecpt},     {1, 2}, cut.second, 100, 0, 1500, true, false,  "Z p_{T} [GeV]",      "Events")); 
+    //
+    //    // Normalization weight applied for ttbar only, only for loose0 selections
+    //    if(cut.first.rfind("loose0") == (cut.first.size()-6) || cut.first.find("loose0_mt2_MET") != std::string::npos)
+    //    {
+    //        // DataMC weights applied
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwttMC_met},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                                "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwttMC_ht},    {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                                 "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_mht_"   +cut.first,  {dcData_SingleMuon_mht,   dcwttMC_mht},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                                "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwttMC_nt},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,                                 "Events"));
+    //        //vh.push_back(PHS("DataMCwtt_SingleMuon_nt1b_"  +cut.first,  {dcData_SingleMuon_nt1b,  dcwttMC_nt1b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                       "Events"));
+    //        //vh.push_back(PHS("DataMCwtt_SingleMuon_nt2b_"  +cut.first,  {dcData_SingleMuon_nt2b,  dcwttMC_nt2b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                       "Events"));
+    //        //vh.push_back(PHS("DataMCwtt_SingleMuon_nt3b_"  +cut.first,  {dcData_SingleMuon_nt3b,  dcwttMC_nt3b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                       "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwttMC_mt2},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,                                "Events"));
+    //        //vh.push_back(PHS("DataMCwtt_SingleMuon_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwttMC_mt21b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",                        "Events"));
+    //        //vh.push_back(PHS("DataMCwtt_SingleMuon_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwttMC_mt22b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",                        "Events"));
+    //        //vh.push_back(PHS("DataMCwtt_SingleMuon_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwttMC_mt23b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",                        "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwttMC_nb},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,                                 "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwttMC_nj},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                                 "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwttMC_jpt},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,                                "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_j1pt_"  +cut.first,  {dcData_SingleMuon_j1pt,  dcwttMC_j1pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,                               "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_j2pt_"  +cut.first,  {dcData_SingleMuon_j2pt,  dcwttMC_j2pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,                               "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_j3pt_"  +cut.first,  {dcData_SingleMuon_j3pt,  dcwttMC_j3pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,                               "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwttMC_mupt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                               "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_mu1pt_" +cut.first,  {dcData_SingleMuon_mu1pt, dcwttMC_mu1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                              "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_mu2pt_" +cut.first,  {dcData_SingleMuon_mu2pt, dcwttMC_mu2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,                              "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_elpt_"  +cut.first,  {dcData_SingleMuon_elpt,  dcwttMC_elpt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,                               "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_el1pt_" +cut.first,  {dcData_SingleMuon_el1pt, dcwttMC_el1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,                              "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_el2pt_" +cut.first,  {dcData_SingleMuon_el2pt, dcwttMC_el2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,                              "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_mll_"   +cut.first,  {dcData_SingleMuon_mll,   dcwttMC_mll},   {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,                                "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwttMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcwttMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcwttMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
+    //        vh.push_back(PHS("DataMCwtt_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcwttMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",             "Events"));
+    //        
+    //    }
+    //
+    //    //// Normalization weight applied, only for blnotag selections
+    //    if(cut.first.rfind("blnotag") == (cut.first.size()-7))
+    //    {
+    //        // DataMC weights applied
+    //        vh.push_back(PHS("DataMCww_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwwMC_met},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_met,                                  "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwwMC_ht},    {1, 2}, cut.second, 50, 0, 1500, true, false,  label_ht,                                   "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_mht_"   +cut.first,  {dcData_SingleMuon_mht,   dcwwMC_mht},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mht,                                  "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwwMC_nt},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,                                   "Events"));
+    //        //vh.push_back(PHS("DataMCww_SingleMuon_nt1b_"  +cut.first,  {dcData_SingleMuon_nt1b,  dcwwMC_nt1b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (1b fake)",                         "Events"));
+    //        //vh.push_back(PHS("DataMCww_SingleMuon_nt2b_"  +cut.first,  {dcData_SingleMuon_nt2b,  dcwwMC_nt2b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (2b fake)",                         "Events"));
+    //        //vh.push_back(PHS("DataMCww_SingleMuon_nt3b_"  +cut.first,  {dcData_SingleMuon_nt3b,  dcwwMC_nt3b},  {1, 2}, cut.second, 5,  0, 5,    true, false,  "Ntop (3b fake)",                         "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwwMC_mt2},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_mt2,                                  "Events"));
+    //        //vh.push_back(PHS("DataMCww_SingleMuon_mt21b_" +cut.first,  {dcData_SingleMuon_mt21b, dcwwMC_mt21b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (1b fake)",                          "Events"));
+    //        //vh.push_back(PHS("DataMCww_SingleMuon_mt22b_" +cut.first,  {dcData_SingleMuon_mt22b, dcwwMC_mt22b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (2b fake)",                          "Events"));
+    //        //vh.push_back(PHS("DataMCww_SingleMuon_mt23b_" +cut.first,  {dcData_SingleMuon_mt23b, dcwwMC_mt23b}, {1, 2}, cut.second, 50, 0, 1500, true, false,  "mt2 (3b fake)",                          "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwwMC_nb},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,                                   "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwwMC_nj},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,                                   "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwwMC_jpt},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,                                  "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_j1pt_"  +cut.first,  {dcData_SingleMuon_j1pt,  dcwwMC_j1pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j1pt,                                 "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_j2pt_"  +cut.first,  {dcData_SingleMuon_j2pt,  dcwwMC_j2pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j2pt,                                 "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_j3pt_"  +cut.first,  {dcData_SingleMuon_j3pt,  dcwwMC_j3pt},  {1, 2}, cut.second, 50, 0, 1500, true, false,  label_j3pt,                                 "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwwMC_mupt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,                                 "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_mu1pt_" +cut.first,  {dcData_SingleMuon_mu1pt, dcwwMC_mu1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu1pt,                                "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_mu2pt_" +cut.first,  {dcData_SingleMuon_mu2pt, dcwwMC_mu2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mu2pt,                                "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_elpt_"  +cut.first,  {dcData_SingleMuon_elpt,  dcwwMC_elpt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_elpt,                                 "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_el1pt_" +cut.first,  {dcData_SingleMuon_el1pt, dcwwMC_el1pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el1pt,                                "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_el2pt_" +cut.first,  {dcData_SingleMuon_el2pt, dcwwMC_el2pt}, {1, 2}, cut.second, 50, 0, 1000, true, false,  label_el2pt,                                "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_mll_"   +cut.first,  {dcData_SingleMuon_mll,   dcwwMC_mll},   {1, 2}, cut.second, 40, 0, 200,  true, false,  label_mll,                                  "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwwMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nb0Bins_"    +cut.first,  {dcData_SingleMuon_nb0Bins,    dcwwMC_nb0Bins},    {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nb0BinsNW_"  +cut.first,  {dcData_SingleMuon_nb0BinsNW,  dcwwMC_nb0BinsNW},  {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
+    //        vh.push_back(PHS("DataMCww_SingleMuon_nb0NJwBins_" +cut.first,  {dcData_SingleMuon_nb0NJwBins, dcwwMC_nb0NJwBins}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",               "Events"));
+    //        
+    //    }
+    //}
 
     //push the histograms in a loop, save some copy-paste time
-    for(std::pair<std::string,std::string>& cut : cutlevels_muon_syst)
-    {
-        // DataMC weights applied
-        vector<double> metBins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 2000};
-        vector<double> mt2Bins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 2000};
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwMC_met},   {1, 2}, cut.second, metBins,     true, false,  label_met,            ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwMC_ht},    {1, 2}, cut.second, 150, 0, 1500, true, false,  label_ht,             ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwMC_nt},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,           ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwMC_mt2},   {1, 2}, cut.second, mt2Bins,     true, false,  label_mt2,            ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwMC_nb},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,             ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwMC_nj},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,             ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwMC_jpt},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,         ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwMC_mupt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,          ""));
-        vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",            ""));
-    }
+    //for(std::pair<std::string,std::string>& cut : cutlevels_muon_syst)
+    //{
+    //    // DataMC weights applied
+    //    vector<double> metBins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 2000};
+    //    vector<double> mt2Bins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 2000};
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwMC_met},   {1, 2}, cut.second, metBins,     true, false,  label_met,            ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwMC_ht},    {1, 2}, cut.second, 150, 0, 1500, true, false,  label_ht,             ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwMC_nt},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,           ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwMC_mt2},   {1, 2}, cut.second, mt2Bins,     true, false,  label_mt2,            ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwMC_nb},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,             ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwMC_nj},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,             ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwMC_jpt},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,         ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwMC_mupt},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,          ""));
+    //    vh.push_back(PHS("SystPlots_DataMCw_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwMC_nSearchBin}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",            ""));
+    //}
 //Stupid trigger question
-     for(std::pair<std::string,std::string>& cut : cutlevels_muon_syst_Trigger)
-    {
-        // DataMC weights applied
-        vector<double> metBins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 2000};
-        vector<double> mt2Bins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 2000};
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwMC_met_noT},   {1, 2}, cut.second, metBins,     true, false,  label_met,            ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwMC_ht_noT},    {1, 2}, cut.second, 150, 0, 1500, true, false,  label_ht,             ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwMC_nt_noT},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,           ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwMC_mt2_noT},   {1, 2}, cut.second, mt2Bins,     true, false,  label_mt2,            ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwMC_nb_noT},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,             ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwMC_nj_noT},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,             ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwMC_jpt_noT},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,         ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwMC_mupt_noT},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,          ""));
-        vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwMC_nSearchBin_noT}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",            ""));
-    } 
+    // for(std::pair<std::string,std::string>& cut : cutlevels_muon_syst_Trigger)
+    //{
+    //    // DataMC weights applied
+    //    vector<double> metBins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 450, 2000};
+    //    vector<double> mt2Bins = {0, 50, 100, 150, 200, 250, 300, 350, 400, 2000};
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_met_"   +cut.first,  {dcData_SingleMuon_met,   dcwMC_met_noT},   {1, 2}, cut.second, metBins,     true, false,  label_met,            ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_ht_"    +cut.first,  {dcData_SingleMuon_ht,    dcwMC_ht_noT},    {1, 2}, cut.second, 150, 0, 1500, true, false,  label_ht,             ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nt_"    +cut.first,  {dcData_SingleMuon_nt,    dcwMC_nt_noT},    {1, 2}, cut.second, 5,  0, 5,    true, false,  label_nt,           ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_mt2_"   +cut.first,  {dcData_SingleMuon_mt2,   dcwMC_mt2_noT},   {1, 2}, cut.second, mt2Bins,     true, false,  label_mt2,            ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nb_"    +cut.first,  {dcData_SingleMuon_nb,    dcwMC_nb_noT},    {1, 2}, cut.second, 10, 0, 10,   true, false,  label_nb,             ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nj_"    +cut.first,  {dcData_SingleMuon_nj,    dcwMC_nj_noT},    {1, 2}, cut.second, 20, 0, 20,   true, false,  label_nj,             ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_jpt_"   +cut.first,  {dcData_SingleMuon_jpt,   dcwMC_jpt_noT},   {1, 2}, cut.second, 50, 0, 1500, true, false,  label_jpt,         ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_mupt_"  +cut.first,  {dcData_SingleMuon_mupt,  dcwMC_mupt_noT},  {1, 2}, cut.second, 50, 0, 1000, true, false,  label_mupt,          ""));
+    //    vh.push_back(PHS("SystPlots_Trigger_DataMCw_SingleMuon_nSearchBin_" +cut.first,  {dcData_SingleMuon_nSearchBin, dcwMC_nSearchBin_noT}, {1, 2}, cut.second, NSB, 0, NSB,  true, false,  "Search Bin",            ""));
+    //} 
     // Do no look at electron plots for now. Save some time and space
     /*
     for(std::pair<std::string,std::string>& cut : cutlevels_electron)
