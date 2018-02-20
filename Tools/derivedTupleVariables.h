@@ -987,6 +987,79 @@ namespace plotterFunctions
         }
     };
 
+    class LepInfoData
+    {
+    private:
+        TRandom3 *tr3;
+        void lepInfoData(NTupleReader& tr)
+        {
+            const std::vector<TLorentzVector>& muonsLVec    = tr.getVec<TLorentzVector>("muonsLVec");
+            const std::vector<double>& muonsRelIso          = tr.getVec<double>("muonsRelIso");
+            const std::vector<double>& muonsMiniIso         = tr.getVec<double>("muonsMiniIso");
+            const std::vector<int> & muonsFlagIDVec = tr.getVec<int>("muonsFlagMedium");
+            const std::vector<int>&  elesFlagIDVec  = tr.getVec<int>("elesFlagVeto");
+
+            const double& met                            = tr.getVar<double>("met");
+            const double& metphi                         = tr.getVar<double>("metphi");
+
+            const std::vector<TLorentzVector, std::allocator<TLorentzVector> > elesLVec = tr.getVec<TLorentzVector>("elesLVec");
+            const std::vector<double>& elesMiniIso          = tr.getVec<double>("elesMiniIso");
+            const std::vector<unsigned int>& elesisEB       = tr.getVec<unsigned int>("elesisEB");
+
+            bool passMuonVeto = false;
+            bool passEleVeto = false;
+
+            if(tr.checkBranch("passMuonVeto"))
+            {
+                passMuonVeto = tr.getVar<bool>("passMuonVeto");
+            }
+            if(tr.checkBranch("passEleVeto"))
+            {
+                passEleVeto = tr.getVar<bool>("passEleVeto");
+            }
+
+            std::vector<TLorentzVector>* cutElecVec = new std::vector<TLorentzVector>();
+
+            std::vector<TLorentzVector>* cutMuVec = new std::vector<TLorentzVector>();
+
+
+            for(int i = 0; i < muonsLVec.size(); ++i)
+            {
+                if(AnaFunctions::passMuon( muonsLVec[i], muonsMiniIso[i], 0.0, muonsFlagIDVec[i], AnaConsts::muonsMiniIsoArr))
+                {
+                    cutMuVec->push_back(muonsLVec[i]);
+                    //std::cout<<"cutMuVec PT "<<muonsLVec[i].Pt()<<std::endl; 
+                }
+            }
+            //std::cout<<"New Muon Selection "<<(*cutMuVec).size()<<std::endl;
+            //electron selection
+            int sumElecCharge = 0;
+            for(int i = 0; i < elesLVec.size(); ++i)
+            {
+
+                if(AnaFunctions::passElectron(elesLVec[i], elesMiniIso[i], -1, elesisEB[i], elesFlagIDVec[i], AnaConsts::elesMiniIsoArr))
+                {
+                    cutElecVec->push_back(elesLVec[i]);
+                }
+            }
+
+
+            tr.registerDerivedVec("cutMuVec", cutMuVec);
+            tr.registerDerivedVec("cutElecVec", cutElecVec);
+        }
+
+    public:
+        LepInfoData()
+        {
+            tr3 = new TRandom3();
+        }
+
+        void operator()(NTupleReader& tr)
+        {
+            lepInfoData(tr);
+        }
+    };
+
     class Fakebtagvectors
     {
     private:

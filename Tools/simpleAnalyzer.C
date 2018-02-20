@@ -45,7 +45,7 @@ bool filterEvents(NTupleReader& tr)
     const std::vector<TLorentzVector>& jetsLVec = tr.getVec<TLorentzVector>("jetsLVec");
     const double& met = tr.getVar<double>("met");
 
-    return jetsLVec.size() >= 4 && met > 250;
+    return jetsLVec.size() >= 4;// && met > 250;
 }
 
 class HistoContainer
@@ -62,14 +62,23 @@ private:
 
 public:
     TH1* hMET;
+    TH1* hHT;
     TH1* hNJets;
     TH1* hNVertices;
+    TH1* hMETTagged;
+    TH1* hHTTagged;
+    TH1* hNJetsTagged;
+    TH1* hNVerticesTagged;
     TH1* hTopMass;
     TH1* hTopP;
     TH1* hTopPt;
     TH1* hDiTopMass;
     TH1* hLepMtw;
+    TH1* hLepPt;
+    TH1* hBPt;
+    TH1* hBMass;
     TH1* hDPhiLepCand;
+    TH1* hcutflow;
     TH1 *bestTopCandPt, *bestTopCandMass, *bestTopCandEta, *bestTopCandnJets, *bestTopCandnVert, *bestTopCandMVA;
     TH1 *bestTopPt, *bestTopMass, *bestTopEta, *bestTopnJets, *bestTopnVert, *bestTopMVA;
     TH1 *bestTightTopCandPt, *bestTightTopCandMass, *bestTightTopCandEta, *bestTightTopCandnJets, *bestTightTopCandnVert, *bestTightTopCandMVA;
@@ -78,15 +87,26 @@ public:
     HistoContainer()
     {
         hMET       = bookHisto("MET",100,0, 1000);
+        hHT        = bookHisto("HT",100,0, 3000);
         hNJets     = bookHisto("nJets",21,-0.5, 20.5);
         hNVertices = bookHisto("nVertices",61,-0.5, 60.5);
+        hMETTagged = bookHisto("METTagged",100,0, 1000);
+        hHTTagged  = bookHisto("HTTagged",100,0, 3000);
+        hNJetsTagged = bookHisto("nJetsTagged",21,-0.5, 20.5);
+        hNVerticesTagged = bookHisto("nVerticesTagged",61,-0.5, 60.5);
         hTopMass   = bookHisto("TopMass", 100, 0, 300);
         hTopP      = bookHisto("TopP", 100 , 0, 1000);
         hTopPt     = bookHisto("TopPt", 100, 0, 1000);
         hDiTopMass = bookHisto("DiTopMass", 100, 0, 1500);
 
         hLepMtw    = bookHisto("hlepMtW",100,0,200);
+        hLepPt     = bookHisto("hLepPt",100,0,1000);
+        hBPt       = bookHisto("hBPt",100,0,1000);
+        hBMass     = bookHisto("hBMass",100,0,1000);
+
         hDPhiLepCand = bookHisto("hDPhiLepCand",50,M_PI/2,M_PI);
+
+        hcutflow = bookHisto("hcutflow",20,0,20);
 
         bestTopPt    = bookHisto("bestTopPt",   100,  0, 1000);
         bestTopMass  = bookHisto("bestTopMass", 100,  0, 500);
@@ -259,7 +279,7 @@ int main(int argc, char* argv[])
             
             BaselineVessel myBLV(*static_cast<NTupleReader*>(nullptr), "TopTag", "");
             plotterFunctions::PrepareTopVars prepareTopVars;
-            plotterFunctions::LepInfo lepInfo;
+            plotterFunctions::LepInfoData lepInfoData;
             plotterFunctions::TriggerInfo triggerInfo(false, false);
             
             BTagCorrector bTagCorrector("allINone_bTagEff.root", "", false);
@@ -271,7 +291,7 @@ int main(int argc, char* argv[])
             tr.registerFunction(filterEvents);
             tr.registerFunction(myBLV);
             tr.registerFunction(prepareTopVars);
-            tr.registerFunction(lepInfo);
+            tr.registerFunction(lepInfoData);
             tr.registerFunction(triggerInfo);
             tr.registerFunction(bTagCorrector);
             tr.registerFunction(ttbarCorrector);
@@ -279,6 +299,9 @@ int main(int argc, char* argv[])
             tr.registerFunction(pileup);
 
             double fileWgt = fs.getWeight();
+
+
+            hists.hcutflow->Sumw2(); hists.hcutflow->SetCanExtend(TH1::kAllAxes);
 
 
             while(tr.getNextEvent())
@@ -292,10 +315,15 @@ int main(int argc, char* argv[])
                 if(tr.getEvtNum() % 100 == 0) std::cout << "Event #: " << tr.getEvtNum() << std::endl;
 
                 const double& met    = tr.getVar<double>("met");
+                const double& metphi = tr.getVar<double>("metphi");
+
+                TLorentzVector metV;
+                metV.SetPtEtaPhiM(met, 0.0, metphi, 0.0);
 
                 const bool&   passNoiseEventFilter = tr.getVar<bool>("passNoiseEventFilterTopTag");
                 const bool&   passSingleLep20      = tr.getVar<bool>("passSingleLep20");
                 const bool&   passBJets            = tr.getVar<bool>("passBJetsTopTag");
+                const bool&   passLeptVeto         = tr.getVar<bool>("passLeptVetoTopTag");
                 const bool&   passnJets            = tr.getVar<bool>("passnJetsTopTag");
                 const bool&   passdPhis            = tr.getVar<bool>("passdPhisTopTag");
                 const double& ht                   = tr.getVar<double>("HTTopTag");
@@ -303,6 +331,9 @@ int main(int argc, char* argv[])
 
                 const std::vector<double>& velesMtw = tr.getVec<double>("elesMtw");
                 const std::vector<double>& vmuonsMtw = tr.getVec<double>("muonsMtw");
+
+                const std::vector<TLorentzVector>& jetsLVec  = tr.getVec<TLorentzVector>("jetsLVec");
+                const std::vector<double>& recoJetsBtag      = tr.getVec<double>("recoJetsBtag_0");
 
                 double lepMtw = 0;
                 for(int i = 0; i < velesMtw.size(); i++){
@@ -336,6 +367,7 @@ int main(int argc, char* argv[])
                 int cntNJetsPt30Eta24 = AnaFunctions::countJets(tr.getVec<TLorentzVector>(jetVecLabel), AnaConsts::pt30Eta24Arr);
 
                 const std::vector<TLorentzVector>& vTops        = tr.getVec<TLorentzVector>("vTopsNewMVA");
+                const std::vector<int>&            vTopConst    = tr.getVec<int>("vTopsNCandNewMVA");
                 const std::vector<TLorentzVector>& cutMuVec     = tr.getVec<TLorentzVector>("cutMuVec");
                 const std::vector<TLorentzVector>& cutElecVec   = tr.getVec<TLorentzVector>("cutElecVec");
 
@@ -353,25 +385,80 @@ int main(int argc, char* argv[])
                 double bestTopMass = tr.getVar<double>("bestTopMass");
                 const TLorentzVector& bestCandLV = tr.getVar<TLorentzVector>("bestTopMassLV");
 
+                bool passBLep = false;
+                TLorentzVector semiLepB;
+
+                //Now we loop over the jets vector to find the b jets and decided if it passes our criteria
+                // deltaR(b,Lep) < 1, deltaR(b,cand) > 2; this criteria needs to be satisfied
+                for(int i = 0; i < jetsLVec.size(); i++){
+                    //Is this a b-tagged jet?
+                    if(recoJetsBtag[i] < 0.8) continue;
+
+                    if(jetsLVec[i].DeltaR(highLep) < 1){
+                        passBLep = true;
+                        semiLepB = TLorentzVector(jetsLVec[i]);
+                        break;
+
+                    }
+                }
+
+                bool passHT      = ht  > 1000;
+//                bool passHT      = ht  > 300;
+                bool passMET     = met > 250;
+                bool passCand    = bestTopMass > 0.;
+                bool passLepCand = highLep.DeltaR(bestCandLV) > 2;
+                bool passMT      = lepMtw < 100;
+
+
+                hists.hcutflow->Fill("All", eWeight);
+                if(passNoiseEventFilter) hists.hcutflow->Fill("NoiseFilter", eWeight);
+                if(passNoiseEventFilter&&passLeptVeto) hists.hcutflow->Fill("LeptonVeto", eWeight);
+                if(passNoiseEventFilter&&passLeptVeto&&passBJets) hists.hcutflow->Fill("nBJets", eWeight);
+                if(passNoiseEventFilter&&passLeptVeto&&passBJets&&passnJets&&passdPhis&&passHT) hists.hcutflow->Fill("HT", eWeight);
+
 
                 if( passNoiseEventFilter 
-                 && passSingleLep20
+                 && passLeptVeto
                  && passBJets
-                 && passnJets
-                 && passdPhis
-                 && (ht >300)
-                 && (met > 250)
-                 && (bestTopMass > 0.)
-                 && (fabs(highLep.DeltaPhi(bestCandLV)) > M_PI/2))
+                 && passHT)
+
+//                if(passNoiseEventFilter) hists.hcutflow->Fill("NoiseFilter", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20) hists.hcutflow->Fill("Lepton", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets) hists.hcutflow->Fill("nBJets", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets) hists.hcutflow->Fill("nJets", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis) hists.hcutflow->Fill("dPhis", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis&&passHT) hists.hcutflow->Fill("HT", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis&&passHT&&passMET) hists.hcutflow->Fill("MET", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis&&passHT&&passMET&&passCand) hists.hcutflow->Fill("TopCandConstruction", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis&&passHT&&passMET&&passCand&&passBLep) hists.hcutflow->Fill("deltaRBLep", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis&&passHT&&passMET&&passCand&&passBLep&&passLepCand) hists.hcutflow->Fill("deltaRx2", eWeight);
+//                if(passNoiseEventFilter&&passSingleLep20&&passBJets&&passnJets&&passdPhis&&passHT&&passMET&&passCand&&passBLep&&passLepCand&&passMT) hists.hcutflow->Fill("MT", eWeight);
+
+
+//                if( passNoiseEventFilter 
+//                 && passSingleLep20
+//                 && passBJets
+//                 && passnJets
+//                 && passdPhis
+//                 && passHT
+//                 && passMET
+//                 && passCand
+//                 && passBLep
+//                 && passLepCand
+//                 && passMT)
                 {
 
                     pevents++;
                     //std::cout << "Trigger weight: " << triggerWF << std::endl;
 
                     hists.hMET->Fill(met, eWeight);
+                    hists.hHT->Fill(ht, eWeight);
                     hists.hNJets->Fill(cntNJetsPt30Eta24, eWeight);
                     hists.hNVertices->Fill(vtxSize,eWeight);
                     hists.hLepMtw->Fill(lepMtw,eWeight);
+                    hists.hLepPt->Fill(highLep.Pt(),eWeight);
+                    hists.hBPt->Fill(semiLepB.Pt(),eWeight);
+                    hists.hBMass->Fill(semiLepB.M(),eWeight);
                     hists.hDPhiLepCand->Fill(fabs(highLep.DeltaPhi(bestCandLV)),eWeight);
 
                     //SF plots
@@ -418,11 +505,15 @@ int main(int argc, char* argv[])
                         }
                     }
 
+                    bool passTop = false;
+
                     if(vTops.size() > 0)
                     {
 
                         for(int tidx = 0; tidx < vTops.size(); tidx++)
                         {
+                            if(vTopConst[tidx] == 3) passTop = true;
+
                             hists.hTopMass->Fill(vTops[tidx].M(),eWeight);
                             hists.hTopP->Fill(vTops[tidx].Rho(),eWeight);
                             hists.hTopPt->Fill(vTops[tidx].Perp(),eWeight);
@@ -435,6 +526,14 @@ int main(int argc, char* argv[])
                         }
                     }
                     //std::cout << "MET: " << met << ", puWF: " << puWF << ", bTagWF: " << bTagWF << ", ttbarWF: " << ttbarWF << std::endl;
+
+
+		    if(passTop){
+                        hists.hMETTagged->Fill(met, eWeight);
+                        hists.hHTTagged->Fill(ht, eWeight);
+                        hists.hNJetsTagged->Fill(cntNJetsPt30Eta24, eWeight);
+                        hists.hNVerticesTagged->Fill(vtxSize,eWeight);
+                    }
                 }
             }
         }
